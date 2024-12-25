@@ -1,0 +1,122 @@
+<html> 
+    <head>
+        <title>Blood Donations</title>
+        <link rel="icon" type="image/x-icon" href="CSS Sheets/Images/AboutUsImages/favicon.svg">
+        <link rel="stylesheet" href="CSS Sheets/donationFormStyle.css.css">
+    </head>
+    <body>
+        <h1 id="title">Blood Donations</h1>
+        <a href="Donations-Homepage.html">Donations HomePage</a>
+        <h1><b>Description:</b></h1>
+        <p><br>Blood donation is a selfless act that can save lives.
+         By donating blood, you provide a vital resource for patients undergoing surgeries, battling chronic illnesses,
+         or recovering from accidents. Your donation can help ensure that hospitals have a sufficient supply of blood to care for those in need,
+         particularly vulnerable individuals who may not have access to adequate healthcare.
+         Every drop of blood donated can make a significant difference in the lives of others,
+         making it a truly noble act of compassion.</p><hr>
+         <form method="get">
+            <table border="1">
+                <tr>
+                    <td>First Name</td>
+                    <td><input type="text" name="FirstName" placeholder="Enter First Name"></td>
+                </tr>
+                <tr>
+                    <td>Middle Name</td>
+                    <td><input type="text" name="MiddleName" placeholder="Enter Last Name"></td>
+                </tr>
+                <tr>
+                    <td>Last Name</td>
+                    <td><input type="text" name="LastName" placeholder="Enter Last Name"></td>
+                </tr>
+                <tr>
+                    <td>Gender</td>
+                    <td>
+                        <input type="radio" name="Gender" value="M">Male<br>
+                        <input type="radio" name="Gender" value="F">Female
+                    </td>
+                </tr>
+                <tr>
+                    <td>Nationality</td>
+                    <td>
+                        <select name="Country">
+                            <option value="EG" selected>Egypt</option>
+                            <option value="GE">Germany</option>
+                            <option value="SR">Turkey</option>
+                            <option value="UAE">United Arab Emirates</option>
+                            <option value="SAR">Saudi Arabia</option>
+                            <option value="QTR">Qatar</option>
+                            <option value="ENG">England</option>
+                            <option value="FR">France</option>
+                            <option value="USA">United States of America</option>
+                            <option value="SK">South Korea</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Select your birth day</td>
+                    <td><input type="date" name="DateOfBirth"></td>
+                </tr>
+                <tr>
+                    <td>Mobile Number</td>
+                    <td><input type="text" name="MobileNumber" placeholder="Enter Mobile Number"></td>
+                </tr>
+                <tr>
+                    <td>Email Address</td>
+                    <td><input type="text" name="EmailAddress" placeholder="Enter Email Address"></td>
+                </tr>
+                <tr>
+                    <td>Blood Type</td>
+                    <td>
+                        <table>
+                            <tr>
+                                <td>Type A</td>
+                                <td><input type="checkbox" value="A" name="TypeA"></td>
+                            </tr>
+                            <tr>
+                                <td>Type B</td>
+                                <td><input type="checkbox" value="B" name="TypeB"></td>
+                            </tr>
+                            <tr>
+                                <td>Type O</td>
+                                <td><input type="checkbox" value="O" name="TypeO"></td>
+                            </tr>
+                            <tr>
+                                <td>Type AB</td>
+                                <td><input type="checkbox" value="AB" name="TypeAB"></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>When did you draw blood in the hospital?</td>
+                    <td><input type="date" name="BloodDonationDate"></td>
+                </tr>
+                <tr>
+                    <td>How are we going to receive your donated blood bag?</td>
+                    <td>
+                        <input type="radio" name="DonationMethod" value="Post">Per Post<br>
+                        <input type="radio" name="DonationMethod" value="Plane">Per Plane
+                    </td>
+                </tr>
+                <tr>
+                    <td>Post Office Name</td>
+                    <td><input type="text" name="PostOffice"></td>
+                </tr>
+                <tr>
+                    <td>Package Tracking Number</td>
+                    <td><input type="text" name="PackageTrackingNumber"></td>
+                </tr>
+                <tr>
+                    <td>When is the plane going to release the package in the air in front of our hospital?</td>
+                    <td><input type="date" name="PackageReleaseDate"></td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center">
+                    <input type="submit" value="Proceed With Donation">
+                    <input type="reset" value="Recede Donation Process">
+                </td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>

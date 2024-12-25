@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="CSS Sheets/Images/AboutUsImages/favicon.svg">
+    <title>Heart Check Services - Al Haram Hospital</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .navbar-nav {
+            margin-left: auto;
+            width: 100%;
+            justify-content: space-between;
+        }
+        .nav-item .nav-link {
+            font-size: 1.2em;
+            padding: 10px;
+        }
+        .dropdown-menu a {
+            background-color: green;
+            color: white;
+            border-bottom: 1px solid black;
+        }
+        .dropdown-menu a:hover {
+            background-color: darkgreen;
+        }
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-border {
+            border: 2px solid green;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .visit-section {
+            background-color: grey;
+            padding: 20px;
+            color: white;
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+        .footer {
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        .phone-number {
+            text-align: right;
+            padding: 20px;
+            font-size: 1.5em;
+            background-color: white;
+            color: black;
+            font-family: 'Arial Black', sans-serif;
+        }
+        .phone-number .big-number {
+            font-size: 2.5em;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="phone-number">
+        Call us: <br>
+        <span class="big-number">02 33860236</span>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark w-100">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="CSS Sheets/Images/AboutUsImages/Hospital_Logo.svg" alt="Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Donations-Homepage.html">Donation</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            Services
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="servicesDropdown">
+                            <a class="dropdown-item" href="ServicesMain.html">Services Home</a>
+                            <a class="dropdown-item" href="Pharmacy.html">Pharmacy</a>
+                            <a class="dropdown-item" href="Tests.html">Tests</a>
+                            <a class="dropdown-item" href="Appointments.html">Book Us</a>
+                            <a class="dropdown-item" href="Outpatient.html">Outpatient</a>
+                            <a class="dropdown-item" href="Surgery.html">Surgery</a>
+                            <a class="dropdown-item" href="PrevMed.html">PrevMed™</a>
+                            <a class="dropdown-item" href="Emergency.html">Emergency</a>
+                            <a class="dropdown-item" href="Dentistry.html">Dentistry</a>
+                            <a class="dropdown-item" href="ICU.html">ICU</a>
+                            <a class="dropdown-item" href="Oncology.html">Oncology</a>
+                        </div>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="aboutPageMain.html">About</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            Contact
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="contact Details.html">Contact Details</a>
+                            <a class="dropdown-item" href="Online Consultaitions.html">Online Consultations</a>
+                            <a class="dropdown-item" href="heart checks.html">Heart Checks</a>
+                            <a class="dropdown-item" href="Directions to hospital.html">Directions to the Hospital</a>
+                        </div>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="Volunteering-Homepage.html">Volunteering</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Login.html">Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h2>Heart Check Services</h2>
+        <div class="form-border">
+            <form>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="patient-name">Patient Name</label>
+                        <input type="text" class="form-control" id="patient-name" placeholder="Enter patient name" required>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="phone-number">Phone Number</label>
+                        <input type="tel" class="form-control" id="phone-number" placeholder="Enter phone number" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="mobile-number">Mobile Number</label>
+                        <input type="tel" class="form-control" id="mobile-number" placeholder="Enter mobile number" required>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="file1">Upload File No:1</label>
+                        <input type="file" class="form-control-file" id="file1">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="file2">Upload File No:2</label>
+                        <input type="file" class="form-control-file" id="file2">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="file3">Upload File No:3</label>
+                        <input type="file" class="form-control-file" id="file3">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="file4">Upload File No:4</label>
+                        <input type="file" class="form-control-file" id="file4">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="visit-section">
+        <h2>Visit Us</h2>
+        <p>11111 Street</p>
+        <h2>Call Us</h2>
+        <p>Reserve an appointment: 11111</p>
+        <p>WhatsApp: 11111</p>
+        <p>To contact us: 11111@gmail.com</p>
+        <p>Emergency Ambulance: 11111</p>
+    </div>
+
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2024  Al Haram Hospital. All rights reserved.</p>
+    </footer>
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+body{
+    background:linear-gradient( to right, rgb(115, 211, 115), rgb(92, 171, 197));
+    background-repeat: repeat;
+    background-position: fixed;
+}
+
+#h1{
+    display: inline-block;
+    color: rgb(0, 0, 0);
+    font-family: Titillium Web;
+    margin-top: 130px;
+}
+
+.input{
+    font-size: 25px;
+    border-radius: 8px;
+}
+
+.td{
+    font-size: 40px;
+}
+
+#submit{
+        border-radius: 8px;
+    }
+
+#reset{
+    border-radius: 8px;
+}
+
+#table1{
+    font-size: 30px;
+    margin-top: 30px;
+}
+
+#footer{
+    margin-top: 265px;
+}
+
+.divs{
+    font-size: 30px;
+}
+
+#div1{
+    margin-top: 30px;
+}
+
+#div2{
+    margin-top: 100px;
+    border: black;
+    border-style: solid;
+    display: inline-block;
+    border-radius: 9px;
+    border-width: 5px;
+    font-family: Oswald;
+}
+
+#img1{
+    float: left;
+    border-radius: 9px;
+}
+
+form{
+    border-radius: 9px;
+    background:linear-gradient( to left, rgb(115, 211, 115), rgb(92, 171, 197));
+    display: inline-block;
+    padding: 20px;
+}
+
+#ul1{
+    text-align: left;
+}
+
+#img2{
+    float: left;
+    border-radius: 9px;
+}
+#img3{
+    border-radius: 9px;
+}
+
+#div3{
+    margin-top: 70px;
+}
+
+#p1{
+    margin-top: 30px;
+    font-family: Oswald;
+    border: solid;
+    border-color: black;
+    border-radius: 9px;
+    -webkit-border-radius: 9px;
+    -moz-border-radius: 9px;
+    -ms-border-radius: 9px;
+    -o-border-radius: 9px;
+}

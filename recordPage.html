@@ -1,0 +1,134 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/c19e8a164c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="CSS Sheets/aboutNavStyle.css">
+    <link rel="stylesheet" href="CSS Sheets/visitStyle.css">
+    <link rel="icon" type="image/x-icon" href="CSS Sheets/Images/AboutUsImages/favicon.svg">
+    <title>Al Haram Hospital</title>
+</head>
+<body>
+    <nav>
+        <img src="CSS Sheets/Images/AboutUsImages/Hospital_Logo.svg" class="nav-logo" alt="">
+        <div class="nav-container">
+            <a class="nav-links" href="index.html">Home</a>
+            <a class="nav-links" href="Donations-Homepage.html">Donation</a>
+            <div class="nav-dropdown">
+                <a class="nav-links" href="vehiclesPage.html">Services<i class="fa-solid fa-caret-down"></i></a>
+                <div class="nav-dropdown-links">
+                    <a class="dropdown-item" href="ServicesMain.html">Services Home</a>
+                    <a class="dropdown-item" href="Pharmacy.html">Pharmacy</a>
+                    <a class="dropdown-item" href="Tests.html">Tests</a>
+                    <a class="dropdown-item" href="Appointments.html">Book Us</a>
+                    <a class="dropdown-item" href="Outpatient.html">Outpatient</a>
+                    <a class="dropdown-item" href="Surgery.html">Surgery</a>
+                    <a class="dropdown-item" href="PrevMed.html">PrevMed™</a>
+                    <a class="dropdown-item" href="Emergency.html">Emergency</a>
+                    <a class="dropdown-item" href="Dentistry.html">Dentistry</a>
+                    <a class="dropdown-item" href="ICU.html">ICU</a>
+                    <a class="dropdown-item" href="Oncology.html">Oncology</a>
+                </div>
+            </div>
+            
+            <div class="nav-dropdown">
+                <a class="nav-links" href="contact Details.html">Contact Us<i class="fa-solid fa-caret-down"></i></a>
+                <div class="nav-dropdown-links">
+                    <a href="contact Details.html">Contact Details</a>
+                    <a href="Online Consultaitions.html">Online Consultations</a>
+                    <a href="heart checks.html">Heart Checks</a>
+                    <a href="Directions to hospital.html">Directions to the Hospital</a>
+                </div>
+            </div>
+            <a class="nav-links" href="recordPage.html">Records</a>
+            <a class="nav-links" href="aboutPageMain.html">About Us</a>
+            
+            <a class="nav-links" href="Volunteering-Homepage.html">Volunteering</a>
+            <a href="Login.html" class="nav-links"><i class="fa-solid fa-user"></i></a>
+        </div>
+    </nav>
+    <header class="header-section">
+    </header>
+    <div class="header-title">
+        <h1>Records</h1>
+    </div>
+    
+    <!-- Main Content of the page -->
+    <section class="content-section">
+        <div class="content-box">
+            <h2 class="content-box-title">Records</h2>
+            <h3 class="content-box-subtitle">Request Patient Records<hr class="content-box-subtitle-hr"></h3>
+
+            <form action="successRecord.html" method="get">
+                <table>
+                    <tr>
+                        <td class="name-cell"><label for="Fname">First Name</label></td>
+                        <td><input type="text" name="Fname" required></td>
+                        <td class="name-cell"><label for="Lname">Last Name</label></td>
+                        <td><input type="text" name="Lname" required></td>
+                    </tr>
+                    <tr>
+                        <td class="name-cell"><label for="patientID">Patient ID</label></td>
+                        <td><input type="number" name="patientID" required></td>
+
+                        <td class="name-cell"><label for="DOB">Date of Birth</label></td>
+                        <td><input type="date" name="DOB" required></td>
+                    </tr>
+
+                    <tr>
+                        <td class="name-cell"><label for="phone">Phone Number</label></td>
+                        <td><input type="tel" name="phone" required></td>
+
+                        <td class="name-cell">Gender</td>
+                        <td class="gender-cell">
+                                <label for="gender">Male</label><input class="radio-btn" type="radio" name="gender" required>
+                                <label for="gender">Female</label><input class="radio-btn" type="radio" name="gender" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="Gaddress">Governorate</label></td>
+                        <td>
+                            <select oninput="addOptions()" name="Gaddress" id="governorateSelect">
+                                <option value="none"  selected>Choose Governorate</option>
+                                <option value="cai">Cairo</option>
+                                <option value="giz">Giza</option>
+                                <option value="alx">Alexandria</option>
+                            </select>
+                        </td>
+                        <td><label for="Caddress">City</label></td>
+                        <td>
+                            <select name="Caddress" id="citySelect">
+                                <option value="none" selected>None</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="address">Address</label></td>
+                        <td colspan="4"><input type="text" name="address"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="card">Card Number</label></td>
+                        <td><input type="number" name="card"></td>
+                        <td><label for="card">Exp. Date</label></td>
+                        <td class="date-cell">
+                            <input class="short-input" type="text" name="card" maxlength="2" placeholder="MM" />
+                            <input class="short-input" type="text" name="card" maxlength="2" placeholder="YY" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="card">CVV</label></td>
+                        <td><input type="tel" maxlength="3" name="cvv"></td>
+                    </tr>
+                </table>
+
+                <input class="submit-btn" type="submit" value="Request Record">
+            </form>
+        </div>
+    </section>
+
+    <script src="form.js"></script>
+</body>
+</html>

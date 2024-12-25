@@ -1,0 +1,25 @@
+body {
+    background-color: white; 
+    font-family: sans-serif;
+}
+
+#title {
+    color: skyblue;
+    text-align: center;
+    font-size: 35px;
+    font-style: italic;
+}
+p {
+    color:navy;
+    font-family: sans-serif;
+}
+table {
+    border: 10px ridge cyan;
+    width: 40%;
+    border-spacing: 0;
+}
+table td {
+    background-color: lightblue;
+    padding: 10px;
+    border: 1px solid black; 
+}

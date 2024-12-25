@@ -1,0 +1,121 @@
+<html>
+    <head>
+        <title>Organ Donations</title>
+        <link rel="stylesheet" href="CSS Sheets/donationFormStyle.css.css">
+        <link rel="icon" type="image/x-icon" href="CSS Sheets/Images/AboutUsImages/favicon.svg">
+    </head>
+    <body>
+        <h1 id="title">Organ Donations</h1>
+        <a href="Donations-Homepage.html">Donations HomePage</a>
+        <h1><b>Description:</b></h1>
+        <p><br>Organ donation is an extraordinary act of compassion that can offer a second chance at life to countless individuals.
+         By registering as an organ donor, you have the power to save multiple lives. When organs are donated to public hospitals,
+         they can be transplanted into patients suffering from organ failure, providing them with a renewed chance to live full and healthy lives.
+         This selfless act not only benefits the recipient but also brings comfort to the donor's family,
+         knowing that their loved one's legacy will live on through the lives of others.</p><hr>
+         <form method="get">
+            <table border="1">
+                <tr>
+                    <td>First Name</td>
+                    <td><input type="text" name="FirstName" placeholder="Enter First Name"></td>
+                </tr>
+                <tr>
+                    <td>Middle Name</td>
+                    <td><input type="text" name="MiddleName" placeholder="Enter Middle Name"></td>
+                </tr>
+                <tr>
+                    <td>Last Name</td>
+                    <td><input type="text" name="LastName" placeholder="Enter Last Name" ></td>
+                </tr>
+                <tr>
+                    <td>Gender</td>
+                    <td>
+                        <input type="radio" name="Gender" value="M">Male<br>
+                        <input type="radio" name="Gender" value="F">Female
+                    </td>
+                </tr>
+                <tr>
+                    <td>Nationality</td>
+                    <td>
+                        <select name="Country">
+                            <option value="EG" selected>Egypt</option>
+                            <option value="GE">Germany</option>
+                            <option value="SR">Turkey</option>
+                            <option value="UAE">United Arab Emirates</option>
+                            <option value="SAR">Saudi Arabia</option>
+                            <option value="QTR">Qatar</option>
+                            <option value="ENG">England</option>
+                            <option value="FR">France</option>
+                            <option value="USA">United States of America</option>
+                            <option value="SK">South Korea</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Select your birth day</td>
+                    <td><input type="date" name="DOB"></td>
+                </tr>
+                <tr>
+                    <td>Mobile Number</td>
+                    <td><input type="text" name="MobileNumber" placeholder="Enter Mobile Number"></td>
+                </tr>
+                <tr>
+                    <td>Email Address</td>
+                    <td><input type="text" name="EmailAddress" placeholder="Enter Email Address"></td>
+                </tr>
+                <tr>
+                    <td>Organ Type</td>
+                    <td>
+                        <table>
+                            <tr>
+                                <td>Heart</td>
+                                <td><input type="checkbox" value="Heart" name="Heart"></td>
+                            </tr>
+                            <tr>
+                                <td>Kidneys</td>
+                                <td><input type="checkbox" value="Kidneys" name="Kidneys"></td>
+                            </tr>
+                            <tr>
+                                <td>Liver</td>
+                                <td><input type="checkbox" value="Liver" name="Liver"></td>
+                            </tr>
+                            <tr>
+                                <td>Other Organ</td>
+                                <td><input type="checkbox" value="OO" name="OtherOrgan"></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>When is your organ removal surgery scheduled in the hospital?</td>
+                    <td><input type="date" name="SurgeryDate"></td>
+                </tr>
+                <tr>
+                    <td>How are we going to receive your donated Organ?</td>
+                    <td>
+                        <input type="radio" name="PostMethod" value="Post"> Per Post<br>
+                        <input type="radio" name="PostMethod" value="Plane"> Per Plane
+                    </td>
+                </tr>
+                <tr>
+                    <td>Post Office Name</td>
+                    <td><input type="text" name="PostOffice"></td>
+                </tr>
+                <tr>
+                    <td>Package Tracking Number</td>
+                    <td><input type="text" name="PackageTrackingNumber"></td>
+                </tr>
+                <tr>
+                    <td>When is the plane going to release the package?</td>
+                    <td><input type="date" name="PlaneReleaseDate"></td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center">
+                    <input type="submit" value="Proceed With Donation">
+                    <input type="reset" value="Recede Donation Process">
+                </td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>

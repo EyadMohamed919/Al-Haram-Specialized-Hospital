@@ -1,0 +1,33 @@
+
+.navbar-nav {
+    margin-left: auto;
+    width: 100%;
+    justify-content: space-between;
+}
+.nav-item .nav-link {
+    font-size: 1.2em;
+    padding: 10px;
+}
+.dropdown-menu a {
+    background-color: green;
+    color: white;
+    border-bottom: 1px solid black;
+}
+.dropdown-menu a:hover {
+    background-color: darkgreen;
+}
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+.navbar {
+    margin-top: 0px;
+    width: 100%;
+}
+.dropdown-item {
+    background-color: white;
+    color: black;
+    border-bottom: 1px solid black;
+}
+.dropdown-item:last-child {
+    border-bottom: none;
+}

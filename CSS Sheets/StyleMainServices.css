@@ -1,0 +1,36 @@
+body{
+    background:linear-gradient( to right, rgb(115, 211, 115), rgb(92, 171, 197));
+    background-repeat: repeat;
+    background-position: fixed;
+    margin: 0;
+    box-sizing:border-box;
+}
+#h1{
+    display: inline-block;
+    color: rgb(0, 0, 0);
+    font-family: Titillium Web;
+    margin-top: 110px;
+}
+
+#table1{
+    font-size: 25px;
+    margin-top: 60px;
+}
+.button{
+    display: inline-block;
+    padding: 25px 45px;
+    background-color: #007BFF;
+    color: black;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 28px;
+    font-family: Agdasima;
+}
+.Paras{
+    font-family: Oswald;
+    text-align: center;
+}
+
+#footer{
+    margin-top: 230px;
+}

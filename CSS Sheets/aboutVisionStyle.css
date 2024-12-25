@@ -1,0 +1,149 @@
+body{
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    font-family: "Josefin Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;   
+}
+
+
+.header-section{
+    width: 100%;
+    height: 400px;
+    background-image: url(Images/AboutUsImages/aboutBanner.jpg);
+    background-size: cover;
+    background-position: 0 -500px;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} 
+
+.header-section::after{
+    content: "";
+    position: absolute;
+    background: linear-gradient(rgba(0, 0, 0, 0), rgb(0, 91, 128));
+    filter: opacity(70%);
+    z-index: 3;
+    width: 100%;
+    height: 400px;
+}
+
+.header-title{
+    position: absolute;
+    font-size: 50px;
+    color: white;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 2;
+}
+
+.content-section{
+    width: 100%;
+    height: max-content;
+    padding-bottom: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-box{
+    background-color: transparent;
+    width: 70%;
+    margin-right: 30px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+}
+
+.content-box-title{
+    margin: auto;
+    margin-bottom: 0px;
+    margin-top: 20px;
+    font-size: 40px;
+    color: rgb(0, 118, 164);
+    
+}
+
+.content-box-container{
+    margin: auto;
+    margin-bottom: 0px;
+    margin-top: 20px;
+    margin-left: 0;
+}
+
+.content-box-subtitle{
+    font-size: 28px;
+    color: black;
+    z-index: 1;
+}
+
+.content-box-subtitle-hr{
+    width: 300px;
+    height: 5px;
+    margin-left: 0;
+    z-index: 4;
+    background-color: rgb(0, 118, 164);
+    border-style: none;
+}
+
+.content-box-paragraph{
+    font-size: 24px;
+}
+
+li{
+    color: rgb(34, 34, 34);
+    font-size: 24px;
+    font-weight: 400;
+}
+
+aside{
+    width: 300px;
+    padding: 30px;
+    padding-top: 10px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    height: 600px;
+    background-color: rgb(0, 118, 164);
+    box-shadow: 0px 6px 8px rgb(0, 118, 164);
+    border-radius: 20px;
+    margin-right: 20px;
+    color: white;
+}
+
+.aside-container{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    margin: auto;
+    width: 100%;
+    height: max-content;
+    margin-top: 10px;
+}
+
+.aside-links{
+    text-decoration: none;
+    color: white;
+    width: 300px;
+    height: 100%;
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: max-content;
+    transition: 0.3s;
+}
+
+.aside-links:hover{
+    font-weight: bold;
+}
+
+.aside-horizontal{
+    width: 200px;
+}
+

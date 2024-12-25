@@ -1,0 +1,89 @@
+<html>
+    <head>
+        <link rel="icon" type="image/x-icon" href="CSS Sheets/Images/AboutUsImages/favicon.svg">
+        <title>Child Life Volunteering</title>
+        <link rel="stylesheet" href="CSS Sheets/volFormStyle.css">
+    </head>
+    <body>
+        <h1 id="title">Child Life Volunteering</h1>
+        <a href="Volunteering-Homepage.html">Volunteering HomePage</a>
+        <h1><b>Description:</b></h1>
+        <p><br>Child life specialists play a crucial role in providing emotional and psychological support to young patients in hospitals.
+             By incorporating play therapy, art therapy, and other therapeutic interventions, these volunteers help alleviate anxiety,
+              fear, and stress in children facing medical procedures.</p><hr>
+        <form method="post" action="your-server-side-script.php">
+            <table border="1">
+                <tr>
+                    <td><label for="firstName">First Name</label></td>
+                    <td><input type="text" id="firstName" name="FirstName" placeholder="Enter First Name"></td>
+                </tr>
+                <tr>
+                    <td><label for="secondName">Second Name</label></td>
+                    <td><input type="text" id="secondName" name="SecondName" placeholder="Enter Second Name"></td>
+                </tr>
+                <tr>
+                    <td><label for="thirdName">Third Name</label></td>
+                    <td><input type="text" id="thirdName" name="ThirdName" placeholder="Enter Third Name"></td>
+                </tr>
+                <tr>
+                    <td><label for="gender">Gender</label></td>
+                    <td>
+                        <input type="radio" id="male" name="gender" value="M"><label for="male">Male</label><br>
+                        <input type="radio" id="female" name="gender" value="F"><label for="female">Female</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="country">Nationality</label></td>
+                    <td>
+                        <select id="country" name="Country">
+                            <option value="EG" selected>Egypt</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="dob">Select your birth day</label></td>
+                    <td><input type="date" id="dob" name="DOB"></td>
+                </tr>
+                <tr>
+                    <td><label for="mobileNumber">Mobile Number</label></td>
+                    <td><input type="text" id="mobileNumber" name="MobileNumber" placeholder="Enter Mobile Number"></td>
+                </tr>
+                <tr>
+                    <td><label for="emailAddress">Email Address</label></td>
+                    <td><input type="text" id="emailAddress" name="EmailAddress" placeholder="Enter Email Address"></td>
+                </tr>
+                <tr>
+                    <td><label for="understandChildDevelopment">Do you understand what child development is?</label></td>
+                    <td>
+                        <input type="radio" id="yes" name="understandChildDevelopment" value="YES"><label for="yes">Yes</label><br>
+                        <input type="radio" id="no" name="understandChildDevelopment" value="NO"><label for="no">No</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="preparechildrenformedicalprocedures">Are you able to prepare children for medical procedures?</label></td>
+                    <td>
+                        <input type="radio" id="yes" name="preparechildrenformedicalprocedures" value="YES"><label for="yes">Yes</label><br>
+                        <input type="radio" id="no" name="preparechildrenformedicalprocedures" value="NO"><label for="no">No</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="communicatewithchildren">Can you communicate with children?</label></td>
+                    <td>
+                        <input type="radio" id="yes" name="communicatewithchildren" value="YES"><label for="yes">Yes</label><br>
+                        <input type="radio" id="no" name="communicatewithchildren" value="NO"><label for="no">No</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="startDate">When are you going to start volunteering at our hospital?</label></td>
+                    <td><input type="date" id="startDate" name="startDate"></td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center">
+                        <input type="submit" value="Proceed With the Volunteering Process">
+                        <input type="reset" value="Stop the Volunteering Process">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>

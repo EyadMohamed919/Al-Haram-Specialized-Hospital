@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <link rel="icon" type="image/x-icon" href="CSS Sheets/Images/AboutUsImages/favicon.svg">
+    <title>HPH Outpatient services</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='CSS Sheets/page2Services.css'>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel='stylesheet' type='text/css' media='screen' href='CSS Sheets/StyleSecondaryServices.css'>
+    <link href="https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="CSS Sheets/Images/AboutUsImages/Hospital_Logo.svg" width="20%" height="20%" alt="Logo">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="Donations-Homepage.html">Donation</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                Services
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="servicesDropdown">
+                                <a class="dropdown-item" href="ServicesMain.html">Services Home</a>
+                                <a class="dropdown-item" href="Pharmacy.html">Pharmacy</a>
+                                <a class="dropdown-item" href="Tests.html">Tests</a>
+                                <a class="dropdown-item" href="Appointments.html">Book Us</a>
+                                <a class="dropdown-item" href="Outpatient.html">Outpatient</a>
+                                <a class="dropdown-item" href="Surgery.html">Surgery</a>
+                                <a class="dropdown-item" href="PrevMed.html">PrevMed™</a>
+                                <a class="dropdown-item" href="Emergency.html">Emergency</a>
+                                <a class="dropdown-item" href="Dentistry.html">Dentistry</a>
+                                <a class="dropdown-item" href="ICU.html">ICU</a>
+                                <a class="dropdown-item" href="Oncology.html">Oncology</a>
+                            </div>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="aboutPageMain.html">About</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Contact
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="contact Details.html">Contact Details</a>
+                                <a class="dropdown-item" href="Online Consultaitions.html">Online Consultations</a>
+                                <a class="dropdown-item" href="heart checks.html">Heart Checks</a>
+                                <a class="dropdown-item" href="Directions to hospital.html">Directions to the Hospital</a>
+                            </div>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="Volunteering-Homepage.html">Volunteering</a></li>
+                        <li class="nav-item"><a class="nav-link" href="Login.html">Login</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <center>
+                <h1 id="h1">Outpatient services</h1><br>
+                <form method="get">
+                <div class="divs" id="div1">
+                    <label>Service type:</label>
+                    <select class="input" name="OutService">
+                        <option value="AP" selected>Ambulance pick-up</option>
+                        <option value="HC">Home check-up</option>
+                        <option value="ON">Out-house Nurse</option>
+                        <option value="PD">Physically disabled assistance</option>
+                        <option value="TC">Telephone consultation</option>
+                    </select>
+                </div><br>
+                <div class="divs">
+                    <label>First Name: </label>
+                    <input type="text" class="input" name="FirstName" placeholder="John">
+                </div><br>
+                <div class="divs">
+                    <label>Last Name:</label>
+                    <input type="text" class="input" name="LastName" placeholder="Doe">
+                </div><br>
+                <div class="divs">
+                    <label>Address:</label>
+                    <input type="text" class="input" name="Address" placeholder="New York, queens, ...">
+                </div><br>
+                <div class="divs">
+                    <label>Phone Number:</label>
+                    <input type="number" class="input" name="PN" placeholder="01234567890">
+                </div><br>
+                <div class="divs">
+                    <label>Email:</label>
+                    <input type="text" class="input" name="Email" placeholder="johndoe@email.com">
+                </div><br>
+                <div class="divs">
+                    <label>Date:</label>
+                    <input type="date" class="input" name="Date">
+                </div><br>
+                <div class="divs">
+                    <label>Time:</label>
+                    <input type="time" class="input" name="time">
+                </div><br>
+                <div>
+                    <input type="submit" id="submit" class="input" name="submit">
+                    <input type="reset" id="reset" class="input" name="reset">
+                </div>
+            </form>
+            <footer id="footer">
+                <hr>
+                © 2024 Haram Public Hospital, all rights reserved
+            </footer>
+        </center>
+    </body>
