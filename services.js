@@ -10,10 +10,5 @@ function ValidateForm(event) {
             return false
         }
     }
-    document.getElementById("statusUpdate").value = "Submitted successfully";
     return true;
 }
-
-const form = document.getElementsByTagName("form");
-const email = document.getElementById ("email");
-const pn = document.getElementById ("pn");

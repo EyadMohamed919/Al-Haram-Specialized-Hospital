@@ -95,14 +95,14 @@ form{
     -o-border-radius: 9px;
 }
 
-.input input:focus {
-    outline: 0;
+.error {
+    color: red;
 }
 
-.input.success input{
-    border-color: rgb(62, 255, 28);
+.success {
+    color: green;
 }
 
-.input.error input{
-    border-color: rgb(234, 35, 35);
+.error, .success {
+    font-size: 12px;
 }
