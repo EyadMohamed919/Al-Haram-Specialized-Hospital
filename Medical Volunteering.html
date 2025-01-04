@@ -1,44 +1,37 @@
 <html>
     <head>
-        <link rel="icon" type="image/x-icon" href="CSS Sheets/Images/AboutUsImages/favicon.svg">
         <title>Medical Volunteering</title>
-        <link rel="stylesheet" href="CSS Sheets/volFormStyle.css">
+        <link rel="stylesheet" href="FormStyle2.css">
+        <script src="MedicalVol.js" defer></script>
     </head>
     <body>
         <h1 id="title">Medical Volunteering</h1>
-        <a href="Volunteering-Homepage.html">Volunteering HomePage</a>
-        <h1><b>Description:</b></h1>
-        <p><br>Medical volunteering offers a unique opportunity to make a tangible difference in the lives of patients and their families.
-             By utilizing their medical expertise, volunteers can provide valuable assistance to healthcare professionals,
-             alleviating their workload and improving patient care. From assisting with patient examinations and procedures to providing emotional support,
-              medical volunteers contribute to a more efficient and compassionate healthcare environment.
-               Additionally, volunteering in a medical setting can enhance one's own skills and knowledge,
-                fostering personal and professional growth.</p><hr>
-        <form method="post">
+        <a href="Volunteering-Homepage.html">Volunteering HomePage</a><hr>
+        <form method="get" onsubmit="event.preventDefault(); validateForm();">
             <table border="1">
                 <tr>
                     <td>First Name</td>
-                    <td><input type="text" name="FirstName" placeholder="Enter First Name"></td>
+                    <td><input type="text" id="FirstName" name="FirstName" placeholder="Enter First Name"></td>
                 </tr>
                 <tr>
                     <td>Second Name</td>
-                    <td><input type="text" name="SecondName" placeholder="Enter Second Name"></td>
+                    <td><input type="text" id="SecondName" name="SecondName" placeholder="Enter Second Name"></td>
                 </tr>
                 <tr>
                     <td>Third Name</td>
-                    <td><input type="text" name="ThirdName" placeholder="Enter Third Name"></td>
+                    <td><input type="text" id="ThirdName" name="ThirdName" placeholder="Enter Third Name"></td>
                 </tr>
                 <tr>
                     <td>Gender</td>
                     <td>
-                        <input type="radio" name="Gender" value="M">Male<br>
-                        <input type="radio" name="Gender" value="F">Female
+                        <input type="radio" id="GenderMale" name="Gender" value="M"> Male<br>
+                        <input type="radio" id="GenderFemale" name="Gender" value="F"> Female
                     </td>
                 </tr>
                 <tr>
                     <td>Nationality</td>
                     <td>
-                        <select name="Country">
+                        <select id="Country" name="Country">
                             <option value="EG" selected>Egypt</option>
                             <option value="GE">Germany</option>
                             <option value="SR">Turkey</option>
@@ -54,92 +47,59 @@
                 </tr>
                 <tr>
                     <td>Select your birth day</td>
-                    <td><input type="date" name="DOB"></td>
+                    <td><input type="date" id="DOB" name="DOB"></td>
                 </tr>
                 <tr>
                     <td>Mobile Number</td>
-                    <td><input type="text" name="MobileNumber" placeholder="Enter Mobile Number"></td>
+                    <td><input type="tel" id="MobileNumber" name="MobileNumber" placeholder="Enter Mobile Number"></td>
                 </tr>
                 <tr>
                     <td>Email Address</td>
-                    <td><input type="text" name="EmailAddress" placeholder="Enter Email Address"></td>
+                    <td><input type="email" id="EmailAddress" name="EmailAddress" placeholder="Enter Email Address"></td>
                 </tr>
                 <tr>
                     <td>Which 2 of the following Medical Knowledges are you familiar with the most?</td>
                     <td>
                         <table>
-                            <tr>
-                                <td>Basic Human Anatomy And Physiology</td>
-                                <td><input type="checkbox" value="BHAAP" name="BasicHumanAnatomyAndPhysiology"></td>
-                            </tr>
-                            <tr>
-                                <td>Understanding Of Common Medical Conditions And Illnesses</td>
-                                <td><input type="checkbox" value="UOCMCAI" name="UnderstandingOfCommonMedicalConditionsAndIllnesses"></td>
-                            </tr>
-                            <tr>
-                                <td>Knowledge Of Basic First Aid And CPR</td>
-                                <td><input type="checkbox" value="KOBFAAC" name="KnowledgeOfBasicFirstAidAndCPR"></td>
-                            </tr>
-                            <tr>
-                                <td>Familiarity With Medical Terminology And Procedures</td>
-                                <td><input type="checkbox" value="FWMTAP" name="FamiliarityWithMedicalTerminologyAndProcedures"></td>
-                            </tr>
+                            <tr><td>Basic Human Anatomy And Physiology</td><td><input type="checkbox" id="BHAAP" value="BHAAP" name="MedicalKnowledge"></td></tr>
+                            <tr><td>Understanding Of Common Medical Conditions And Illnesses</td><td><input type="checkbox" id="UOCMCAI" value="UOCMCAI" name="MedicalKnowledge"></td></tr>
+                            <tr><td>Knowledge Of Basic First Aid And CPR</td><td><input type="checkbox" id="KOBFAAC" value="KOBFAAC" name="MedicalKnowledge"></td></tr>
+                            <tr><td>Familiarity With Medical Terminology And Procedures</td><td><input type="checkbox" id="FWMTAP" value="FWMTAP" name="MedicalKnowledge"></td></tr>
                         </table>
+                        <p id="MedicalKnowledgeError"></p>
                     </td>
                 </tr>
-                <tr>
+                    <tr>
                     <td>Pick at least 2 of the following interpersonal skills that you truly possess:</td>
                     <td>
                         <table>
-                            <tr>
-                                <td>Empathy And Compassion</td>
-                                <td><input type="checkbox" value="EAC" name="EmpathyAndCompassion"></td>
-                            </tr>
-                            <tr>
-                                <td>Effective Communication Skills</td>
-                                <td><input type="checkbox" value="ECS" name="EffectiveCommunicationSkills"></td>
-                            </tr>
-                            <tr>
-                                <td>Patience And Understanding</td>
-                                <td><input type="checkbox" value="PAU" name="PatienceAndUnderstanding"></td>
-                            </tr>
-                            <tr>
-                                <td>Ability To Work Well With People From Diverse Backgrounds</td>
-                                <td><input type="checkbox" value="ATWWWPfDB" name="AbilityToWorkWellWithPeopleFromDiverseBackgrounds"></td>
-                            </tr>
+                            <tr><td>Empathy And Compassion</td><td><input type="checkbox" id="EAC" value="EAC" name="InterpersonalSkills"></td></tr>
+                            <tr><td>Effective Communication Skills</td><td><input type="checkbox" id="ECS" value="ECS" name="InterpersonalSkills"></td></tr>
+                            <tr><td>Patience And Understanding</td><td><input type="checkbox" id="PAU" value="PAU" name="InterpersonalSkills"></td></tr>
+                            <tr><td>Ability To Work Well With People From Diverse Backgrounds</td><td><input type="checkbox" id="ATWWWPfDB" value="ATWWWPfDB" name="InterpersonalSkills"></td></tr>
                         </table>
+                        <p id="InterpersonalSkillsError"></p>
                     </td>
                 </tr>
-                <tr>
+                    <tr>
                     <td>Pick at least 2 of the following practical skills that you truly possess:</td>
                     <td>
                         <table>
-                            <tr>
-                                <td>Ability To Follow Instructions And Protocols</td>
-                                <td><input type="checkbox" value="ATFIAP" name="AbilityToFollowInstructionsAndProtocols"></td>
-                            </tr>
-                            <tr>
-                                <td>Attention to details</td>
-                                <td><input type="checkbox" value="ATD" name="AttentionToDetails"></td>
-                            </tr>
-                            <tr>
-                                <td>Time Management Skills</td>
-                                <td><input type="checkbox" value="TMS" name="TimeManagementSkills"></td>
-                            </tr>
-                            <tr>
-                                <td>Basic Computer Skills</td>
-                                <td><input type="checkbox" value="BCS" name="BasicComputerSkills"></td>
-                            </tr>
+                            <tr><td>Ability To Follow Instructions And Protocols</td><td><input type="checkbox" id="ATFIAP" value="ATFIAP" name="PracticalSkills"></td></tr>
+                            <tr><td>Attention to Details</td><td><input type="checkbox" id="ATD" value="ATD" name="PracticalSkills"></td></tr>
+                            <tr><td>Time Management Skills</td><td><input type="checkbox" id="TMS" value="TMS" name="PracticalSkills"></td></tr>
+                            <tr><td>Basic Computer Skills</td><td><input type="checkbox" id="BCS" value="BCS" name="PracticalSkills"></td></tr>
                         </table>
+                        <p id="PracticalSkillsError"></p>
                     </td>
                 </tr>
-                <tr>
-                    <td>When are you going to start volunteering at our hospital?</td>
-                    <td><input type="date" name="VolunteeringStartDate"></td>
-                </tr>
-                <tr>
+                    <tr>
+                        <td><label for="startDate">When are you going to start volunteering at our hospital?</label></td>
+                        <td><input type="date" id="startDate" name="startDate" required></td>
+                    </tr>
+                    <tr>
                     <td colspan="2" align="center">
-                        <input type="submit" value="Proceed With the Volunteering Process">
+                        <button type="button" onclick="validateForm()">Proceed with the volunteering process</button>
                         <input type="reset" value="Stop the Volunteering Process">
                     </td>
                 </tr>
