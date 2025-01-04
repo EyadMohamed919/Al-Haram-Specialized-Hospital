@@ -1,111 +1,93 @@
 <html>
-    <head>
-        <title>Money Donations</title>
-        <link rel="stylesheet" href="CSS Sheets/donationFormStyle.css.css">
-        <link rel="icon" type="image/x-icon" href="CSS Sheets/Images/AboutUsImages/favicon.svg">
-    </head>
-    <body>
-        <h1 id="title">Money Donations</h1>
-        <a href="Donations-Homepage.html">Donations HomePage</a>
-        <h2>Description:</h2>
-        <p>Money donations to public hospitals have the power to transform lives and strengthen communities.
-            By contributing financially, individuals can directly support essential medical services, cutting-edge research,
-            and state-of-the-art equipment. These donations enable hospitals to provide quality care to patients in need
-            regardless of their ability to pay. Moreover, they empower healthcare professionals to deliver life-saving treatments and improve patient outcomes.
-            Through the generosity of donors, public hospitals can continue to serve as beacons of hope, healing, and compassion.
-        </p><hr>
-        <form method="get">
-            <table border="1">
-                <tr>
-                    <td>First Name</td>
-                    <td><input type="text" name="FirstName" placeholder="Enter First Name" required></td>
-                </tr>
-                <tr>
-                    <td>Middle Name</td>
-                    <td><input type="text" name="MiddleName" placeholder="Enter Middle Name" required></td>
-                </tr>
-                <tr>
-                    <td>Last Name</td>
-                    <td><input type="text" name="LastName" placeholder="Enter Last Name" required></td>
-                </tr>
-                <tr>
-                    <td>Gender</td>
-                    <td>
-                        <input type="radio" name="Gender" value="M" required> Male<br>
-                        <input type="radio" name="Gender" value="F"> Female
-                    </td>
-                </tr>
-                <tr>
-                    <td>Nationality</td>
-                    <td>
-                        <select name="Country" required>
-                            <option value="EG" selected>Egypt</option>
-                            <option value="GE">Germany</option>
-                            <option value="SR">Turkey</option>
-                            <option value="UAE">United Arab Emirates</option>
-                            <option value="SAR">Saudi Arabia</option>
-                            <option value="QTR">Qatar</option>
-                            <option value="ENG">England</option>
-                            <option value="FR">France</option>
-                            <option value="USA">United States of America</option>
-                            <option value="SK">South Korea</option>
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Select your birth day</td>
-                    <td><input type="date" name="DOB" required></td>
-                </tr>
-                <tr>
-                    <td>Mobile Number</td>
-                    <td><input type="tel" name="MobileNumber" placeholder="Enter Mobile Number" required></td>
-                </tr>
-                <tr>
-                    <td>Email Address</td>
-                    <td><input type="email" name="EmailAddress" placeholder="Enter Email Address" required></td>
-                </tr>
-                <tr>
-                    <td>Payment Method</td>
-                    <td>
-                        <table>
-                            <tr>
-                                <td>Visa Card</td>
-                                <td><input type="radio" value="VS" name="PaymentMethod"></td>
-                            </tr>
-                            <tr>
-                                <td>Insta pay</td>
-                                <td><input type="radio" value="IP" name="PaymentMethod"></td>
-                            </tr>
-                            <tr>
-                                <td>Pay Pal</td>
-                                <td><input type="radio" value="PP" name="PaymentMethod"></td>
-                            </tr>
-                        </table>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Donation Amount</td>
-                    <td>
-                        <select name="Amount" required>
-                            <option value="0 Dollars" selected>0</option>
-                            <option value="100 Dollars">100 $</option>
-                            <option value="200 Dollars">200 $</option>
-                            <option value="500 Dollars">500 $</option>
-                            <option value="1000 Dollars">1000 $</option>
-                            <option value="100 Euros">100 e€</option>
-                            <option value="200 Euros">200 e€</option>
-                            <option value="500 Euros">500 e€</option>
-                            <option value="1000 Euros">1000 e€</option>
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2" align="center">
-                        <input type="submit" value="Proceed With Donation">
-                        <input type="reset" value="Recede Donation Process">
-                    </td>
-                </tr>
-            </table>
-        </form>
-    </body>
+<head>
+    <title>Money Donations</title>
+    <link rel="stylesheet" href="FormStyle1.css">
+    <script src="MoneyDon.js" defer></script>
+</head>
+<body>
+    <h1 id="title">Money Donations</h1>
+    <a href="Donations-Homepage.html">Donations HomePage</a><hr>
+    <form method="get" onsubmit="event.preventDefault(); validateForm();">
+        <table border="1">
+            <tr>
+                <td>First Name</td>
+                <td><input type="text" id="FirstName" name="FirstName" placeholder="Enter First Name"></td>
+            </tr>
+            <tr>
+                <td>Second Name</td>
+                <td><input type="text" id="SecondName" name="SecondName" placeholder="Enter Second Name"></td>
+            </tr>
+            <tr>
+                <td>Third Name</td>
+                <td><input type="text" id="ThirdName" name="ThirdName" placeholder="Enter Third Name"></td>
+            </tr>
+            <tr>
+                <td>Gender</td>
+                <td>
+                    <input type="radio" id="GenderMale" name="Gender" value="M"> Male<br>
+                    <input type="radio" id="GenderFemale" name="Gender" value="F"> Female
+                </td>
+            </tr>
+            <tr>
+                <td>Nationality</td>
+                <td>
+                    <select name="Country">
+                        <option value="EG" selected>Egypt</option>
+                        <option value="GE">Germany</option>
+                        <option value="SR">Turkey</option>
+                        <option value="UAE">United Arab Emirates</option>
+                        <option value="SAR">Saudi Arabia</option>
+                        <option value="QTR">Qatar</option>
+                        <option value="ENG">England</option>
+                        <option value="FR">France</option>
+                        <option value="USA">United States of America</option>
+                        <option value="SK">South Korea</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Select your birth day</td>
+                <td><input type="date" id="DOB" name="DOB"></td>
+            </tr>
+            <tr>
+                <td>Mobile Number</td>
+                <td><input type="tel" id="MobileNumber" name="MobileNumber" placeholder="Enter Mobile Number"></td>
+            </tr>
+            <tr>
+                <td>Email Address</td>
+                <td><input type="email" id="EmailAddress" name="EmailAddress" placeholder="Enter Email Address"></td>
+            </tr>
+            <tr>
+                <td>Payment Method</td>
+                <td>
+                    <input type="checkbox" id="Visa" value="VS" name="PaymentMethod"> Visa Card<br>
+                    <input type="checkbox" id="InstaPay" value="IP" name="PaymentMethod"> Insta pay<br>
+                    <input type="checkbox" id="PayPal" value="PP" name="PaymentMethod"> Pay Pal
+                </td>
+            </tr>
+            <tr>
+                <td>Donation Amount</td>
+                <td>
+                    <select id="Amount" name="Amount">
+                        <option value="0" selected>0</option>
+                        <option value="100">$100</option>
+                        <option value="200">$200</option>
+                        <option value="500">$500</option>
+                        <option value="1000">$1000</option>
+                        <option value="100-Euros">€100</option>
+                        <option value="200-Euros">€200</option>
+                        <option value="500-Euros">€500</option>
+                        <option value="1000-Euros">€1000</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <button type="button" onclick="validateForm()">Proceed With Donation</button>
+                    <input type="reset" value="Recede Donation Process">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
 </html>
