@@ -1,43 +1,37 @@
 <html>
     <head>
         <title>Organ Donations</title>
-        <link rel="stylesheet" href="CSS Sheets/donationFormStyle.css.css">
-        <link rel="icon" type="image/x-icon" href="CSS Sheets/Images/AboutUsImages/favicon.svg">
+        <link rel="stylesheet" href="FormStyle1.css">
+        <script src="OrganDon.js" defer></script>
     </head>
     <body>
         <h1 id="title">Organ Donations</h1>
-        <a href="Donations-Homepage.html">Donations HomePage</a>
-        <h1><b>Description:</b></h1>
-        <p><br>Organ donation is an extraordinary act of compassion that can offer a second chance at life to countless individuals.
-         By registering as an organ donor, you have the power to save multiple lives. When organs are donated to public hospitals,
-         they can be transplanted into patients suffering from organ failure, providing them with a renewed chance to live full and healthy lives.
-         This selfless act not only benefits the recipient but also brings comfort to the donor's family,
-         knowing that their loved one's legacy will live on through the lives of others.</p><hr>
-         <form method="get">
+        <a href="Donations-Homepage.html">Donations HomePage</a><hr>
+        <form method="get" onsubmit="event.preventDefault(); validateForm();">
             <table border="1">
                 <tr>
                     <td>First Name</td>
-                    <td><input type="text" name="FirstName" placeholder="Enter First Name"></td>
+                    <td><input type="text" id="FirstName" name="FirstName" placeholder="Enter First Name"></td>
                 </tr>
                 <tr>
-                    <td>Middle Name</td>
-                    <td><input type="text" name="MiddleName" placeholder="Enter Middle Name"></td>
+                    <td>Second Name</td>
+                    <td><input type="text" id="SecondName" name="SecondName" placeholder="Enter Second Name"></td>
                 </tr>
                 <tr>
-                    <td>Last Name</td>
-                    <td><input type="text" name="LastName" placeholder="Enter Last Name" ></td>
+                    <td>Third Name</td>
+                    <td><input type="text" id="ThirdName" name="ThirdName" placeholder="Enter Third Name"></td>
                 </tr>
                 <tr>
                     <td>Gender</td>
                     <td>
-                        <input type="radio" name="Gender" value="M">Male<br>
-                        <input type="radio" name="Gender" value="F">Female
+                        <input type="radio" id="GenderMale" name="Gender" value="M"> Male<br>
+                        <input type="radio" id="GenderFemale" name="Gender" value="F"> Female
                     </td>
                 </tr>
                 <tr>
                     <td>Nationality</td>
                     <td>
-                        <select name="Country">
+                        <select id="Country" name="Country">
                             <option value="EG" selected>Egypt</option>
                             <option value="GE">Germany</option>
                             <option value="SR">Turkey</option>
@@ -53,15 +47,15 @@
                 </tr>
                 <tr>
                     <td>Select your birth day</td>
-                    <td><input type="date" name="DOB"></td>
+                    <td><input type="date" id="DOB" name="DOB"></td>
                 </tr>
                 <tr>
                     <td>Mobile Number</td>
-                    <td><input type="text" name="MobileNumber" placeholder="Enter Mobile Number"></td>
+                    <td><input type="tel" id="MobileNumber" name="MobileNumber" placeholder="Enter Mobile Number"></td>
                 </tr>
                 <tr>
                     <td>Email Address</td>
-                    <td><input type="text" name="EmailAddress" placeholder="Enter Email Address"></td>
+                    <td><input type="email" id="EmailAddress" name="EmailAddress" placeholder="Enter Email Address"></td>
                 </tr>
                 <tr>
                     <td>Organ Type</td>
@@ -69,50 +63,47 @@
                         <table>
                             <tr>
                                 <td>Heart</td>
-                                <td><input type="checkbox" value="Heart" name="Heart"></td>
+                                <td><input type="checkbox" id="Heart" value="Heart" name="Heart"></td>
                             </tr>
                             <tr>
                                 <td>Kidneys</td>
-                                <td><input type="checkbox" value="Kidneys" name="Kidneys"></td>
+                                <td><input type="checkbox" id="Kidneys" value="Kidneys" name="Kidneys"></td>
                             </tr>
                             <tr>
                                 <td>Liver</td>
-                                <td><input type="checkbox" value="Liver" name="Liver"></td>
+                                <td><input type="checkbox" id="Liver" value="Liver" name="Liver"></td>
                             </tr>
                             <tr>
                                 <td>Other Organ</td>
-                                <td><input type="checkbox" value="OO" name="OtherOrgan"></td>
+                                <td><input type="checkbox" id="OtherOrgan" value="OO" name="OtherOrgan"></td>
                             </tr>
                         </table>
                     </td>
                 </tr>
                 <tr>
                     <td>When is your organ removal surgery scheduled in the hospital?</td>
-                    <td><input type="date" name="SurgeryDate"></td>
+                    <td><input type="date" id="SurgeryDate" name="SurgeryDate" required></td>
                 </tr>
                 <tr>
-                    <td>How are we going to receive your donated Organ?</td>
+                    <td>Which post office are you going to use to send the donated organ?</td>
                     <td>
-                        <input type="radio" name="PostMethod" value="Post"> Per Post<br>
-                        <input type="radio" name="PostMethod" value="Plane"> Per Plane
+                        <input type="radio" id="DonationMethodPost" name="DonationMethod" value="Post">UPS<br>
+                        <input type="radio" id="DonationMethodPost" name="DonationMethod" value="Post">DHL<br>
+                        <input type="radio" id="DonationMethodPost" name="DonationMethod" value="Post">Egypt Post<br>
                     </td>
                 </tr>
                 <tr>
-                    <td>Post Office Name</td>
-                    <td><input type="text" name="PostOffice"></td>
+                    <td>Post Office Location</td>
+                    <td><input type="text" id="PostOffice" name="PostOffice"></td>
                 </tr>
                 <tr>
                     <td>Package Tracking Number</td>
-                    <td><input type="text" name="PackageTrackingNumber"></td>
-                </tr>
-                <tr>
-                    <td>When is the plane going to release the package?</td>
-                    <td><input type="date" name="PlaneReleaseDate"></td>
+                    <td><input type="text" id="PackageTrackingNumber" name="PackageTrackingNumber"></td>
                 </tr>
                 <tr>
                     <td colspan="2" align="center">
-                    <input type="submit" value="Proceed With Donation">
-                    <input type="reset" value="Recede Donation Process">
+                        <button type="button" onclick="validateForm()">Proceed With Donation</button>
+                        <input type="reset" value="Recede Donation Process">
                 </td>
                 </tr>
             </table>
