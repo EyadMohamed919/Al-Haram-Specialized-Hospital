@@ -182,5 +182,31 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const form = document.querySelector("form");
+            
+            form.addEventListener("submit", function(event) {
+                let isValid = true;
+    
+                const requiredFields = form.querySelectorAll("[required]");
+                requiredFields.forEach(function(field) {
+                    if (!field.value) {
+                        isValid = false;
+                        field.classList.add("is-invalid");
+                        field.classList.remove("is-valid");
+                    } else {
+                        field.classList.add("is-valid");
+                        field.classList.remove("is-invalid");
+                    }
+                });
+    
+                if (!isValid) {
+                    event.preventDefault(); 
+                    alert("Please fill out all required fields.");
+                }
+            });
+        });
+    </script>
 </body>
 </html>
