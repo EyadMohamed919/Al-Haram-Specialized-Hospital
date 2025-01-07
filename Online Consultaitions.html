@@ -165,35 +165,35 @@
             <form>
                 <div class="form-group">
                     <label for="patient-name">Patient Name</label>
-                    <input type="text" class="form-control" id="patient-name" placeholder="Enter patient name">
+                    <input type="text" class="form-control" id="patient-name" placeholder="Enter patient name" required>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="patient-number">Patient Number</label>
-                        <input type="text" class="form-control" id="patient-number" placeholder="Enter patient number">
+                        <input type="text" class="form-control" id="patient-number" placeholder="Enter patient number" required>
                     </div>
                     <div class="form-group col-md-6">
                         <label for="phone-number">Phone Number</label>
-                        <input type="tel" class="form-control" id="phone-number" placeholder="Enter phone number">
+                        <input type="tel" class="form-control" id="phone-number" placeholder="Enter phone number" required>
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="email">Email</label>
-                        <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                        <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
                     </div>
                     <div class="form-group col-md-6">
                         <label for="area">Area</label>
-                        <input type="text" class="form-control" id="area" placeholder="Enter your area">
+                        <input type="text" class="form-control" id="area" placeholder="Enter your area" required>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="case-subject">Case Subject</label>
-                    <input type="text" class="form-control" id="case-subject" placeholder="Enter the subject of the case">
+                    <input type="text" class="form-control" id="case-subject" placeholder="Enter the subject of the case" required>
                 </div>
                 <div class="form-group">
                     <label for="case-history">Case History</label>
-                    <textarea class="form-control" id="case-history" rows="5" placeholder="Enter the case history"></textarea>
+                    <textarea class="form-control" id="case-history" rows="5" placeholder="Enter the case history" required></textarea>
                 </div>
                 <div class="form-group">
                     <label for="file1">Upload File No:1</label>
@@ -230,5 +230,31 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const form = document.querySelector("form");
+            
+            form.addEventListener("submit", function(event) {
+                let isValid = true;
+    
+                const requiredFields = form.querySelectorAll("[required]");
+                requiredFields.forEach(function(field) {
+                    if (!field.value) {
+                        isValid = false;
+                        field.classList.add("is-invalid");
+                        field.classList.remove("is-valid");
+                    } else {
+                        field.classList.add("is-valid");
+                        field.classList.remove("is-invalid");
+                    }
+                });
+    
+                if (!isValid) {
+                    event.preventDefault(); 
+                    alert("Please fill out all required fields.");
+                }
+            });
+        });
+    </script>
 </body>
 </html>
