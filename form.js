@@ -63,10 +63,10 @@ function saveAdminData()
     const email = document.getElementById("email").value;
     if(password === JSON.parse(localStorage.getItem("savedData")).password)
     {
-        const data = { 
+        const data = {
             name: name,
             email: email,
-            password: newPassword            
+            password: newPassword
         };
         localStorage.setItem('savedData', JSON.stringify(data));
         alert('Data saved!');

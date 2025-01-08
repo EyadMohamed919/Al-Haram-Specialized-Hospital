@@ -1,0 +1,19 @@
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(120deg, #87CEEB, #C0C0C0);
+    background-attachment: fixed;
+    background-size: cover;
+    color: #333;
+}
+.button-link img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.donation-types {
+    display: flex;
+    justify-content: space-between;
+    width: 100%; 
+}

@@ -4,10 +4,11 @@ body {
 }
 
 #title {
-    color: skyblue;
+    color: rgb(60, 37, 118);
     text-align: center;
     font-size: 35px;
     font-style: italic;
+    margin-top: 70px;
 }
 p {
     color:navy;
@@ -15,11 +16,19 @@ p {
 }
 table {
     border: 10px ridge cyan;
-    width: 40%;
+    width: 30%;
     border-spacing: 0;
 }
 table td {
     background-color: lightblue;
     padding: 10px;
     border: 1px solid black; 
+}
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(120deg, lightseagreen, #C0C0C0);
+    background-attachment: fixed;
+    background-size: cover;
+    color: #333;
 }

@@ -9,7 +9,7 @@ p {
     border-collapse: collapse;
     width: 50%;
     margin: 20px auto;
-    border: 2px solid cyan; 
+    border: 2px solid black; 
 }
 
 #VolunteersTable th, #VolunteersTable td {
@@ -25,7 +25,7 @@ p {
 }
 
 form {
-    border: 2px solid cyan; 
+    border: 2px solid black; 
     padding: 20px;
     margin: 20px auto;
     width: 50%;
@@ -66,4 +66,13 @@ form button {
 
 form button:hover {
     background-color: deepskyblue; 
+}
+
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(120deg, aqua, #C0C0C0);
+    background-attachment: fixed;
+    background-size: cover;
+    color: #333;
 }
