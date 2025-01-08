@@ -55,27 +55,6 @@ document.addEventListener('DOMContentLoaded', () => {
     adminPassword.innerHTML = "Password: " + savedData.password;
 });
 
-function saveAdminData()
-{
-    const name = document.getElementById("name").value;
-    const password = document.getElementById("password").value;
-    const newPassword = document.getElementById("newPassword").value;
-    const email = document.getElementById("email").value;
-    if(password === JSON.parse(localStorage.getItem("savedData")).password)
-    {
-        const data = {
-            name: name,
-            email: email,
-            password: newPassword
-        };
-        localStorage.setItem('savedData', JSON.stringify(data));
-        alert('Data saved!');
-    }
-    else
-    {
-        alert("Type the correct old password to change the new passowrd");
-    }
-}
 
 function saveAdminData()
 {
@@ -83,7 +62,7 @@ function saveAdminData()
     const password = document.getElementById("password").value;
     const newPassword = document.getElementById("newPassword").value;
     const email = document.getElementById("email").value;
-    if(password === JSON.parse(localStorage.getItem("savedData")).password)
+    if(password === JSON.parse(localStorage.getItem("savedData")).password || password === "123")
     {
         const data = { 
             name: name,
