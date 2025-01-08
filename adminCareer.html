@@ -1,0 +1,198 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/c19e8a164c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="CSS Sheets/aboutNavStyle.css">
+    <link rel="stylesheet" href="CSS Sheets/AdminStyle.css">
+    <link rel="icon" type="image/x-icon" href="CSS Sheets/Images/AboutUsImages/favicon.svg">
+    <title>Al Haram Hospital</title>
+</head>
+<body>
+    <nav>
+        <img src="CSS Sheets/Images/AboutUsImages/Hospital_Logo.svg" class="nav-logo" alt="">
+        <div class="nav-container">
+            <a class="nav-links" href="index.html">Home</a>
+            <a class="nav-links" href="Donations-Homepage.html">Donation</a>
+            <div class="nav-dropdown">
+                <a class="nav-links" href="vehiclesPage.html">Services<i class="fa-solid fa-caret-down"></i></a>
+                <div class="nav-dropdown-links">
+                    <a class="dropdown-item" href="ServicesMain.html">Services Home</a>
+                    <a class="dropdown-item" href="Pharmacy.html">Pharmacy</a>
+                    <a class="dropdown-item" href="Tests.html">Tests</a>
+                    <a class="dropdown-item" href="Appointments.html">Book Us</a>
+                    <a class="dropdown-item" href="Outpatient.html">Outpatient</a>
+                    <a class="dropdown-item" href="Surgery.html">Surgery</a>
+                    <a class="dropdown-item" href="PrevMed.html">PrevMed™</a>
+                    <a class="dropdown-item" href="Emergency.html">Emergency</a>
+                    <a class="dropdown-item" href="Dentistry.html">Dentistry</a>
+                    <a class="dropdown-item" href="ICU.html">ICU</a>
+                    <a class="dropdown-item" href="Oncology.html">Oncology</a>
+                </div>
+            </div>
+            
+            <div class="nav-dropdown">
+                <a class="nav-links" href="contact Details.html">Contact Us<i class="fa-solid fa-caret-down"></i></a>
+                <div class="nav-dropdown-links">
+                    <a href="contact Details.html">Contact Details</a>
+                    <a href="Online Consultaitions.html">Online Consultations</a>
+                    <a href="heart checks.html">Heart Checks</a>
+                    <a href="Directions to hospital.html">Directions to the Hospital</a>
+                </div>
+            </div>
+            <a class="nav-links" href="recordPage.html">Records</a>
+            <a class="nav-links" href="aboutPageMain.html">About Us</a>
+            
+            <a class="nav-links" href="Volunteering-Homepage.html">Volunteering</a>
+            <a href="Login.html" class="nav-links"><i class="fa-solid fa-user"></i></a>
+        </div>
+    </nav>
+    <header class="header-section">
+    </header>
+    <div class="header-title">
+        <h1>Administrative</h1>
+    </div>
+    
+    <!-- Main Content of the page -->
+    <section class="content-section">
+        <div class="content-box">
+            <h2 class="content-box-title">Admin Settings</h2>
+            <h3 class="content-box-subtitle">Career Applications<hr class="content-box-subtitle-hr"></h3>
+            
+            <table class="career-table">
+                <tr>
+                    <td><strong>First Name</strong></td>
+                    <td><strong>Last Name</strong></td>
+                    <td><strong>Email</strong></td>
+                    <td><strong>Date of Birth</strong></td>
+                    <td><strong>Phone Number</strong></td>
+                    <td><strong>Gender</strong></td>
+                    <td><strong>Remove</strong></td>
+                </tr>
+                <tr>
+                    <td>Ahmed</td>
+                    <td>Mostafa</td>
+                    <td>ahmedMostafa@gmail.com</td>
+                    <td>5/12/1999</td>
+                    <td>+20113283989</td>
+                    <td>Male</td>
+                    <td><input onclick="removeTableID(this)" class="remove-button" type="submit" value="Remove"></td>
+                </tr>
+                <tr>
+                    <td>Shaimaa</td>
+                    <td>Alaa</td>
+                    <td>shaimaalaa@hotmail.com</td>
+                    <td>19/5/1998</td>
+                    <td>+20103344989</td>
+                    <td>Female</td>
+                    <td><input onclick="removeTableID(this)" class="remove-button" type="submit" value="Remove"></td>
+                </tr>
+                <tr>
+                    <td>Laila</td>
+                    <td>Youssef</td>
+                    <td>lailayoussef@yahoo.com</td>
+                    <td>22/11/1989</td>
+                    <td>+20153209444</td>
+                    <td>Female</td>
+                    <td><input onclick="removeTableID(this)" class="remove-button" type="submit" value="Remove"></td>
+                </tr>
+                <tr>
+                    <td>Ahmed</td>
+                    <td>Hassan</td>
+                    <td>ahmedhassan@gmail.com</td>
+                    <td>15/05/1985</td>
+                    <td>+20125467890</td>
+                    <td>Male</td>
+                    <td><input onclick="removeTableID(this)" class="remove-button" type="submit" value="Remove"></td>
+                </tr>
+                <tr>
+                    <td>Sara</td>
+                    <td>Mohamed</td>
+                    <td>saramohamed@hotmail.com</td>
+                    <td>08/08/1992</td>
+                    <td>+20136548921</td>
+                    <td>Female</td>
+                    <td><input onclick="removeTableID(this)" class="remove-button" type="submit" value="Remove"></td>
+                </tr>
+                <tr>
+                    <td>Youssef</td>
+                    <td>Adel</td>
+                    <td>youssefadel@gmail.com</td>
+                    <td>03/12/1990</td>
+                    <td>+20154321098</td>
+                    <td>Male</td>
+                    <td><input onclick="removeTableID(this)" class="remove-button" type="submit" value="Remove"></td>
+                </tr>
+                <tr>
+                    <td>Nada</td>
+                    <td>Ali</td>
+                    <td>nadaali@yahoo.com</td>
+                    <td>17/09/1995</td>
+                    <td>+20178965432</td>
+                    <td>Female</td>
+                    <td><input onclick="removeTableID(this)" class="remove-button" type="submit" value="Remove"></td>
+                </tr>
+                <tr>
+                    <td>Omar</td>
+                    <td>Fathi</td>
+                    <td>omar.fathi@hotmail.com</td>
+                    <td>10/02/1987</td>
+                    <td>+20125896347</td>
+                    <td>Male</td>
+                    <td><input onclick="removeTableID(this)" class="remove-button" type="submit" value="Remove"></td>
+                </tr>
+                <tr>
+                    <td>Hana</td>
+                    <td>Saad</td>
+                    <td>hanasaad@gmail.com</td>
+                    <td>25/06/1994</td>
+                    <td>+20148795236</td>
+                    <td>Female</td>
+                    <td><input onclick="removeTableID(this)" class="remove-button" type="submit" value="Remove"></td>
+                </tr>
+                <tr>
+                    <td>Khaled</td>
+                    <td>Sami</td>
+                    <td>khaledsami@yahoo.com</td>
+                    <td>30/01/1983</td>
+                    <td>+20196385214</td>
+                    <td>Male</td>
+                    <td><input onclick="removeTableID(this)" class="remove-button" type="submit" value="Remove"></td>
+                </tr>
+                <tr>
+                    <td>Dina</td>
+                    <td>Tamer</td>
+                    <td>dina.tamer@gmail.com</td>
+                    <td>14/04/1996</td>
+                    <td>+20165432178</td>
+                    <td>Female</td>
+                    <td><input onclick="removeTableID(this)" class="remove-button" type="submit" value="Remove"></td>
+                </tr>
+            </table>                   
+        </div>
+
+        <!-- This is where user get to other links -->
+        <div class="aside-dive">
+            <aside>
+                <h2 class="aside-title">Related Topics</h2>
+                <hr>
+                <div class="aside-container">
+                    <a class="aside-links" href="adminPage.html"><i class="fa-regular fa-bookmark"></i> Profile</a>
+                    <hr class="aside-horizontal">
+
+                    <a class="aside-links" href="adminCareer.html"><i class="fa-regular fa-bookmark"></i> Career Applications</a>
+                    <hr class="aside-horizontal">
+
+                    <a class="aside-links" href="DonationsBE-Homepage.html"><i class="fa-regular fa-bookmark"></i> Admin Donations</a>
+                    <hr class="aside-horizontal">
+                </div>
+            </aside>
+        </div>
+    </section>
+
+    <script src="form.js"></script>
+</body>
+</html>

@@ -41,66 +41,13 @@
       const password = document.getElementById("password").value;
       if(username === "123" && password === "123")
       {
-        window.open("index.html");
+        window.location.href = "index.html";
+      }
+      else
+      {
+        alert("Wrong Password or Email");
       }
     }
-
-    // document.querySelector('form').addEventListener('submit', function (event) {
-    //   const username = document.getElementById('username').value.trim();
-    //   const password = document.getElementById('password').value.trim();
-
-    //   if (username === '' || password === '') {
-    //     alert('Username and password are required.');
-    //     event.preventDefault();
-    //   } else if (password.length < 6) {
-    //     alert('Password must be at least 6 characters long.');
-    //     event.preventDefault();
-    //   }
-    // });
-    // document.addEventListener('DOMContentLoaded', () => {
-    //   const passwordField = document.getElementById('password');
-    //   const toggleIcon = document.createElement('i');
-    //   toggleIcon.className = 'bx bx-show toggle-password';
-    //   passwordField.parentElement.appendChild(toggleIcon);
-
-    //   toggleIcon.addEventListener('click', () => {
-    //     if (passwordField.type === 'password') {
-    //       passwordField.type = 'text';
-    //       toggleIcon.className = 'bx bx-hide toggle-password';
-    //     } else {
-    //       passwordField.type = 'password';
-    //       toggleIcon.className = 'bx bx-show toggle-password';
-    //     }
-    //   });
-    // });
-    // document.addEventListener('DOMContentLoaded', () => {
-    //   const usernameField = document.getElementById('username');
-    //   const rememberCheckbox = document.querySelector('input[name="remember"]');
-    //   if (localStorage.getItem('rememberMe') === 'true') {
-    //     usernameField.value = localStorage.getItem('username');
-    //     rememberCheckbox.checked = true;
-    //   }
-
-    //   document.querySelector('form').addEventListener('submit', () => {
-    //     if (rememberCheckbox.checked) {
-    //       localStorage.setItem('username', usernameField.value);
-    //       localStorage.setItem('rememberMe', 'true');
-    //     } else {
-    //       localStorage.removeItem('username');
-    //       localStorage.setItem('rememberMe', 'false');
-    //     }
-    //   });
-    // });
-    // document.querySelectorAll('.input-box input').forEach(input => {
-    //   input.addEventListener('focus', function () {
-    //     this.parentElement.classList.add('focused');
-    //   });
-    //   input.addEventListener('blur', function () {
-    //     if (!this.value) {
-    //       this.parentElement.classList.remove('focused');
-    //     }
-    //   });
-    // });
   </script>
 </body>
 </html>
