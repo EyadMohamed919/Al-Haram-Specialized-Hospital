@@ -1,67 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/x-icon" href="CSS Sheets/Images/AboutUsImages/favicon.svg">
   <title>Login</title>
-  <link rel="stylesheet" href="CSS Sheets/LogRegStyle.css">
+  <link rel="stylesheet" href="style.css">
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
-  <link href="CSS Sheets/logNavStyle.css" rel="stylesheet">
+  <link href="CSS Sheets/LogRegStyle.css" rel="stylesheet">
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container">
-        <a class="navbar-brand" href="index.html">
-            <img src="CSS Sheets/Images/AboutUsImages/Hospital_Logo.svg" width="20%" height="20%" alt="Logo">
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="Donations-Homepage.html">Donation</a></li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                        Services
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="servicesDropdown">
-                        <a class="dropdown-item" href="ServicesMain.html">Services Home</a>
-                        <a class="dropdown-item" href="Pharmacy.html">Pharmacy</a>
-                        <a class="dropdown-item" href="Tests.html">Tests</a>
-                        <a class="dropdown-item" href="Appointments.html">Book Us</a>
-                        <a class="dropdown-item" href="Outpatient.html">Outpatient</a>
-                        <a class="dropdown-item" href="Surgery.html">Surgery</a>
-                        <a class="dropdown-item" href="PrevMed.html">PrevMed™</a>
-                        <a class="dropdown-item" href="Emergency.html">Emergency</a>
-                        <a class="dropdown-item" href="Dentistry.html">Dentistry</a>
-                        <a class="dropdown-item" href="ICU.html">ICU</a>
-                        <a class="dropdown-item" href="Oncology.html">Oncology</a>
-                    </div>
-                </li>
-                <li class="nav-item"><a class="nav-link" href="aboutPageMain.html">About</a></li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Contact
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="contact Details.html">Contact Details</a>
-                        <a class="dropdown-item" href="Online Consultaitions.html">Online Consultations</a>
-                        <a class="dropdown-item" href="heart checks.html">Heart Checks</a>
-                        <a class="dropdown-item" href="Directions to hospital.html">Directions to the Hospital</a>
-                    </div>
-                </li>
-                <li class="nav-item"><a class="nav-link" href="Volunteering-Homepage.html">Volunteering</a></li>
-                <li class="nav-item"><a class="nav-link" href="Login.html">Login</a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
-  <div class="wrapper" id="div1">
-    <form method="get" action="index.html">
-      <h1>Login</h1>
+  <div class="wrapper">
+    <form method="get">
+      <h1>Login</h1> 
       <div class="input-box">
         <label for="username" class="sr-only">Username</label>
         <input type="text" id="username" name="username" placeholder="Username" required>
@@ -73,15 +22,85 @@
         <i class='bx bx-lock-alt'></i>
       </div>
       <div class="remember-forgot">
-        <label><input type="checkbox" name="remember"> Remember me</label>
+        <label><input type="checkbox" name="remember">Remember me</label>
         <a href="forgotpassword.html">Forgot password?</a>
       </div>
-      <button type="submit" class="btn">Login</button>
+      <button onclick="checkPassword()"  type="submit" class="btn">Login</button>
       <div class="register-link">
-        <p>Don't have an account? <a href="registerPage.html">Register</a></p>
-        <p>Log in as administrator? <a href="adminLogin.html">Admin login</a></p>
+        <p>Don't have an account? <a href="reg.html">Register</a></p>
+        <p>Log in as administrator? <a href="admin.html">Admin login</a></p>
       </div>
     </form>
   </div>
+
+  <script>
+
+    function checkPassword()
+    {
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+      if(username === "123" && password === "123")
+      {
+        window.open("index.html");
+      }
+    }
+
+    // document.querySelector('form').addEventListener('submit', function (event) {
+    //   const username = document.getElementById('username').value.trim();
+    //   const password = document.getElementById('password').value.trim();
+
+    //   if (username === '' || password === '') {
+    //     alert('Username and password are required.');
+    //     event.preventDefault();
+    //   } else if (password.length < 6) {
+    //     alert('Password must be at least 6 characters long.');
+    //     event.preventDefault();
+    //   }
+    // });
+    // document.addEventListener('DOMContentLoaded', () => {
+    //   const passwordField = document.getElementById('password');
+    //   const toggleIcon = document.createElement('i');
+    //   toggleIcon.className = 'bx bx-show toggle-password';
+    //   passwordField.parentElement.appendChild(toggleIcon);
+
+    //   toggleIcon.addEventListener('click', () => {
+    //     if (passwordField.type === 'password') {
+    //       passwordField.type = 'text';
+    //       toggleIcon.className = 'bx bx-hide toggle-password';
+    //     } else {
+    //       passwordField.type = 'password';
+    //       toggleIcon.className = 'bx bx-show toggle-password';
+    //     }
+    //   });
+    // });
+    // document.addEventListener('DOMContentLoaded', () => {
+    //   const usernameField = document.getElementById('username');
+    //   const rememberCheckbox = document.querySelector('input[name="remember"]');
+    //   if (localStorage.getItem('rememberMe') === 'true') {
+    //     usernameField.value = localStorage.getItem('username');
+    //     rememberCheckbox.checked = true;
+    //   }
+
+    //   document.querySelector('form').addEventListener('submit', () => {
+    //     if (rememberCheckbox.checked) {
+    //       localStorage.setItem('username', usernameField.value);
+    //       localStorage.setItem('rememberMe', 'true');
+    //     } else {
+    //       localStorage.removeItem('username');
+    //       localStorage.setItem('rememberMe', 'false');
+    //     }
+    //   });
+    // });
+    // document.querySelectorAll('.input-box input').forEach(input => {
+    //   input.addEventListener('focus', function () {
+    //     this.parentElement.classList.add('focused');
+    //   });
+    //   input.addEventListener('blur', function () {
+    //     if (!this.value) {
+    //       this.parentElement.classList.remove('focused');
+    //     }
+    //   });
+    // });
+  </script>
 </body>
 </html>

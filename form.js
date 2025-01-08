@@ -1,16 +1,17 @@
+// This script is for the about and admin pages
+
+// About
 var isCompleter = false;
 
-function completer()
+function completer() // completes the 
 {
     var inputBox = document.getElementById("email");
     var textValue = inputBox.value;
     var firstPart = "Nothing";
     if(!isCompleter)
     {
-        console.log("Inside the loop");
         if(textValue.includes("@g"))
-        {   
-            console.log("includes @g");
+        {
             firstPart = textValue.substring(0, textValue.indexOf("@"));
             inputBox.value = firstPart + "@gmail.com";
             isCompleter = true;
@@ -20,7 +21,7 @@ function completer()
 }
 
 
-function addOptions()
+function addOptions() // this is responsible for adding options depending on user choice
 {
     console.log("We are inside");
     const governorate = document.getElementById("governorateSelect");
@@ -37,5 +38,41 @@ function addOptions()
     else
     {
         city.innerHTML = '<option value="mnd">El Mandara</option> <option value="asf">Asafra</option> <option value="bes">Sidi Beshr</option> <option value="gab">Sidi Gaber</option> <option value="san">San Stefano</option>'
+    }
+}
+
+
+// Admin Page
+document.addEventListener('DOMContentLoaded', () => {
+    console.log("started to load");
+    const adminName = document.getElementById("adminName");
+    const adminEmail = document.getElementById("adminEmail");
+    const adminPassword = document.getElementById("adminPassword");
+    const savedData = JSON.parse(localStorage.getItem('savedData'));
+
+    adminName.innerHTML = "Hello, " + savedData.name;
+    adminEmail.innerHTML = "Email: " + savedData.email;
+    adminPassword.innerHTML = "Password: " + savedData.password;
+});
+
+function saveAdminData()
+{
+    const name = document.getElementById("name").value;
+    const password = document.getElementById("password").value;
+    const newPassword = document.getElementById("newPassword").value;
+    const email = document.getElementById("email").value;
+    if(password === JSON.parse(localStorage.getItem("savedData")).password)
+    {
+        const data = { 
+            name: name,
+            email: email,
+            password: newPassword            
+        };
+        localStorage.setItem('savedData', JSON.stringify(data));
+        alert('Data saved!');
+    }
+    else
+    {
+        alert("Type the correct old password to change the new passowrd");
     }
 }

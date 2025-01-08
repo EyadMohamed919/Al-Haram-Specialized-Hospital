@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login as Administrator</title>
+  <link rel="stylesheet" href="CSS Sheets/adminLoginCSS.css">
+
+</head>
+<body>
+  <div class="wrapper">
+    <form id="admin-login-form" method="post">
+      <h1>Login as Administrator</h1>
+      <div class="input-box">
+        <label for="admin-username" class="sr-only">Username</label>
+        <input type="text" id="admin-username" name="username" placeholder="Username" required>
+      </div>
+      <div class="input-box">
+        <label for="admin-email" class="sr-only">Email</label>
+        <input type="email" id="admin-email" name="email" placeholder="Email" required>
+      </div>
+      <div class="input-box">
+        <label for="admin-password" class="sr-only">Password</label>
+        <input type="password" id="admin-password" name="password" placeholder="Password" required>
+      </div>
+      <button type="button" class="btn" onclick="validateAdminLogin()">Login</button>
+      <div class="register-link">
+        <p>Back to login page? <a href="Login.html">Login</a></p>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    function validateAdminLogin() {
+      // Hardcoded admin credentials
+      const adminUsername = "admin";
+      const adminEmail = "admin@example.com";
+      const adminPassword = "admin123";
+
+      // Get input values
+      const username = document.getElementById("admin-username").value;
+      const email = document.getElementById("admin-email").value;
+      const password = document.getElementById("admin-password").value;
+
+      // Validate credentials
+      if (username === adminUsername && email === adminEmail && password === adminPassword) {
+        // Redirect to admin page
+        window.location.href = "adminPage.html";
+      } else {
+        // Show error message
+        alert("Invalid credentials. Please try again.");
+      }
+    }
+  </script>
+</body>
+</html>

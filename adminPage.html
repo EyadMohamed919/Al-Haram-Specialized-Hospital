@@ -64,6 +64,31 @@
             <div  class="userPhoto">
                 <i class="fa-solid fa-user"></i>
             </div>
+
+            <h2 id="adminName">Name: Hamada</h2>
+            <h2 id="adminEmail">Email: </h2>
+            <h2 id="adminPassword">Password: </h2>
+            
+            <form  method="get">
+                <h2>Change Admin Profile</h2>
+                <table>
+                    <tr>
+                        <td class="name-cell"><label for="name">Admin Name</label></td>
+                        <td><input type="text" name="name" id="name" required></td>
+                        <td class="name-cell"><label for="email">Email</label></td>
+                        <td><input oninput="completer()" type="email" name="email" id="email" required></td>
+                    </tr>
+                    <tr>
+                        <td class="name-cell"><label for="password">Old Password</label></td>
+                        <td><input oninput="completer()" type="password" name="password" id="password" required></td>
+
+                        <td class="name-cell"><label for="newPassword">New Password</label></td>
+                        <td><input oninput="completer()" type="password" name="newPassword" id="newPassword" required></td>
+                    </tr>
+                </table>
+
+                <input onclick="saveAdminData()" class="submit-btn" type="submit" value="Save">
+            </form>
         </div>
 
         <!-- This is where user get to other links -->
@@ -74,9 +99,14 @@
                 <div class="aside-container">
                     <a class="aside-links" href="aboutPageMain.html"><i class="fa-regular fa-bookmark"></i> Profile</a>
                     <hr class="aside-horizontal">
+
+                    <a class="aside-links" href="DonationsBE-Homepage.html"><i class="fa-regular fa-bookmark"></i> Admin Donations</a>
+                    <hr class="aside-horizontal">
                 </div>
             </aside>
         </div>
     </section>
+
+    <script src="form.js"></script>
 </body>
 </html>
