@@ -76,7 +76,3 @@ body {
     background-size: cover;
     color: #333;
 }
-
-form button:hover {
-    background-color: deepskyblue; 
-}
