@@ -24,3 +24,11 @@ table td {
     padding: 10px;
     border: 1px solid black; 
 }
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(120deg, lightseagreen, #C0C0C0);
+    background-attachment: fixed;
+    background-size: cover;
+    color: #333;
+}
