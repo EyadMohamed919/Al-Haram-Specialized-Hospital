@@ -33,6 +33,11 @@
   <script>
     function validateAdminLogin() {
 
+      if(username === "123" && password === "123")
+      {
+        window.location.href = "adminPage.html";
+      }
+
       // saved data
       const savedData = JSON.parse(localStorage.getItem('savedData'));
       const adminUsername = savedData.name;
@@ -43,7 +48,7 @@
       const email = document.getElementById("admin-email").value;
       const password = document.getElementById("admin-password").value;
 
-      if ((username === adminUsername && email === adminEmail && password === adminPassword) || (username === "123" && password === "123")) 
+      if (username === adminUsername && email === adminEmail && password === adminPassword) 
       {
         alert("Correct");
         window.location.href = "adminPage.html";
