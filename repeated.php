@@ -9,18 +9,18 @@ function navBar()
                 <a class='nav-links' href='Donations-Homepage.html'>Donation</a>
                 <div class='nav-dropdown'>
                     <a class='nav-links' href='vehiclesPage.html'>Services<i class='fa-solid fa-caret-down'></i></a>
-                    <div class'nav-dropdown-links'>
-                        <a class='dropdown-item' href='ServicesMain.html'>Services Home</a>
-                        <a class='dropdown-item' href='Pharmacy.html'>Pharmacy</a>
-                        <a class='dropdown-item' href='Tests.html'>Tests</a>
-                        <a class='dropdown-item' href='Appointments.html'>Book Us</a>
-                        <a class='dropdown-item' href='Outpatient.html'>Outpatient</a>
-                        <a class='dropdown-item' href='Surgery.html'>Surgery</a>
-                        <a class='dropdown-item' href='PrevMed.html'>PrevMed™</a>
-                        <a class='dropdown-item' href='Emergency.html'>Emergency</a>
-                        <a class='dropdown-item' href='Dentistry.html'>Dentistry</a>
-                        <a class='dropdown-item' href='ICU.html'>ICU</a>
-                        <a class='dropdown-item' href='Oncology.html'>Oncology</a>
+                    <div class='nav-dropdown-links'>
+                        <a class='dropdown-item' href='ServicesMain.php'>Services Home</a>
+                        <a class='dropdown-item' href='Pharmacy.php'>Pharmacy</a>
+                        <a class='dropdown-item' href='Tests.php'>Tests</a>
+                        <a class='dropdown-item' href='Appointments.php'>Book Us</a>
+                        <a class='dropdown-item' href='Outpatient.php'>Outpatient</a>
+                        <a class='dropdown-item' href='Surgery.php'>Surgery</a>
+                        <a class='dropdown-item' href='PrevMed.php'>PrevMed™</a>
+                        <a class='dropdown-item' href='Emergency.php'>Emergency</a>
+                        <a class='dropdown-item' href='Dentistry.php'>Dentistry</a>
+                        <a class='dropdown-item' href='ICU.php'>ICU</a>
+                        <a class='dropdown-item' href='Oncology.php'>Oncology</a>
                     </div>
                 </div>
                 <div class='nav-dropdown'>
@@ -38,6 +38,25 @@ function navBar()
                 <a href='Login.html' class='nav-links'><i class='fa-solid fa-user'></i></a>
             </div>
         </nav>";
+}
+
+function servicesSEO()
+{
+    echo "<meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <link rel='icon' type='image/x-icon' href='CSS Sheets/Images/AboutUsImages/favicon.svg'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='preconnect' href='https://fonts.googleapis.com'>
+    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+    <link href='https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap' rel='stylesheet'>
+    <script src='https://kit.fontawesome.com/c19e8a164c.js' crossorigin='anonymous'></script>
+    <link rel='stylesheet' href='CSS Sheets/aboutNavStyle.css'>
+    <link rel='stylesheet' href='CSS Sheets/aboutAwardStyle.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='CSS Sheets/StyleSecondaryServices.css'>
+    <link href='https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&display=swap' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap' rel='stylesheet'>
+    <link href='https://fonts.goophppis.com/css2?family=Oswald:wght@200..700&display=swap' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap' rel='stylesheet'>";
 }
 
 ?>
