@@ -1,29 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>HPH Surgery booking</title>
+        <title>HPH Outpatient services</title>
         <?php
-            include_once(__DIR__ . '/../repeated.php');
+            include_once("repeated.php");
             servicesSEO();
         ?>
     </head>
     <body>
         <?php
-            include_once(__DIR__ . '/../repeated.php');
+            include_once("repeated.php");
             navBar();
         ?>
         <center>
-            <h1 id="h1">Surgery booking</h1><br>
+            <h1 id="h1">Outpatient services</h1><br>
             <form method="get" onsubmit="ValidateForm(event)">
                 <div class="divs" id="div1">
-                    <label>Surgery type:</label>
-                    <select class="input" name="SurgeryType">
-                        <option value="PA" selected>Cardiac Procedures</option>
-                        <option value="BR">Oncological Surgeries</option>
-                        <option value="AS">Neurosurgical</option>
-                        <option value="AU">Transplants</option>
-                        <option value="CA">Eye Surgeries</option>
-                        <option value="AM">ENT and Cochlear Implants</option>
+                    <label>Service type:</label>
+                    <select class="input" name="OutService">
+                        <option value="AP" selected>Ambulance pick-up</option>
+                        <option value="HC">Home check-up</option>
+                        <option value="ON">Out-house Nurse</option>
+                        <option value="PD">Physically disabled assistance</option>
+                        <option value="TC">Telephone consultation</option>
                     </select>
                 </div><br>
                 <div class="divs">
@@ -35,12 +34,12 @@
                     <input type="text" class="input" name="LastName" placeholder="Doe">
                 </div><br>
                 <div class="divs">
-                    <label>Phone Number:</label>
-                    <input type="number" id="pn" class="input" name="PN" placeholder="01234567890">
+                    <label>Address:</label>
+                    <input type="text" class="input" name="Address" placeholder="New York, queens, ...">
                 </div><br>
                 <div class="divs">
-                    <label>Surgery authorization ID:</label>
-                    <input type="number" id="AuthID" class="input" name="PN" placeholder="12345678">
+                    <label>Phone Number:</label>
+                    <input type="number" id="pn" class="input" name="PN" placeholder="01234567890">
                 </div><br>
                 <div class="divs">
                     <label>Email:</label>
@@ -54,7 +53,7 @@
                     <label>Time:</label>
                     <input type="time" class="input" name="time">
                 </div><br>
-                <div class="divs">
+                <div>
                     <input type="submit" id="submit" class="input" name="submit">
                     <input type="reset" id="reset" class="input" name="reset">
                 </div>

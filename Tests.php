@@ -1,33 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>HPH Oncology</title>
+        <title>HPH Tests</title>
         <?php
-            include_once(__DIR__ . '/../repeated.php');
+            include_once("repeated.php");
             servicesSEO();
         ?>
     </head>
     <body>
         <?php
-            include_once(__DIR__ . '/../repeated.php');
+            include_once("repeated.php");
             navBar();
         ?>
         <center>
-            <h1 id="h1">Book your treatment session</h1><br>
+            <h1 id="h1">Book a test!</h1><br>
             <form method="get" onsubmit="ValidateForm(event)">
                 <table id="table1">
                     <tr>
-                        <td class="td">Type of Therapy:</td>
+                        <td class="td">Test type:</td>
                         <td class="td">
-                            <select class="input" name="Treatment">
-                                <option value="RT" selected>Radiation Therapy</option>
-                                <option value="CT">Chemotherapy</option>
-                                <option value="IT">Immunotherapy</option>
-                                <option value="TT">Targeted Therapy</option>
-                                <option value="HT">Hormone Therapy</option>
-                                <option value="SCT">Stem Cell Transplant</option>
-                                <option value="PM">Precision Medicine</option>
-                                <option value="CLT">Clinical Trials</option>
+                            <select class="input" name="Test">
+                                <option value="CBC" selected>Complete Blood Count (CBC)</option>
+                                <option value="BGC">Blood Glucose Test</option>
+                                <option value="LFT">Liver Function Tests</option>
+                                <option value="KFT">Kidney Function Tests</option>
+                                <option value="CLP">Cholesterol and Lipid Profile</option>
+                                <option value="U">Urinalysis</option>
+                                <option value="HH">Hematocrit and Hemoglobin Tests</option>
+                                <option value="TFT">Thyroid Function Tests</option>
+                                <option value="ECG">Electrocardiogram (ECG)</option>
+                                <option value="XR">X-Ray</option>
+                                <option value="US">Ultrasound</option>
+                                <option value="MRI">MRI Scan</option>
+                                <option value="CT">CT Scan</option>
+                                <option value="PS">Pap Smear</option>
+                                <option value="PSA">Prostate-Specific Antigen (PSA)</option>
+                                <option value="HIV">HIV Test</option>
+                                <option value="HBC">Hepatitis B and C Tests</option>
+                                <option value="S">Stool Tests</option>
+                                <option value="A">Allergy Tests</option>
+                                <option value="BC">Blood Culture</option>
+                                <option value="P">Pregnancy Test</option>
+                                <option value="BDT">Bone Density Test</option>
+                                <option value="DLT">Vitamin D Level Test</option>
+                                <option value="SE">Serum Electrolytes</option>
+                                <option value="COT">Coagulation Tests</option>
+                                <option value="CRET">Creatinine Test</option>
+                                <option value="CRP">C-Reactive Protein (CRP)</option>
+                                <option value="BNP">B-type Natriuretic Peptide (BNP)</option>
+                                <option value="GT">Genetic Testing</option>
+                                <option value="ST">Serological Tests</option>
                             </select>
                         </td>
                     </tr>

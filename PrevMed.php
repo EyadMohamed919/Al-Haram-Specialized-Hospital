@@ -3,18 +3,18 @@
     <head>
     <title>HPH PrevMed™</title>
         <?php
-        include_once(__DIR__ . '/../repeated.php');
+        include_once("repeated.php");
         servicesSEO();
     ?>
     </head>
     <body>
         <?php
-            include_once(__DIR__ . '/../repeated.php');
+            include_once("repeated.php");
             navBar();
         ?>
         <center>
             <div id="div2">
-                <img src="../CSS Sheets/Images/ServicesImages/Our-London-Health-Treatments.jpg" id="img1" width="15%" height="15%">
+                <img src="CSS Sheets/Images/ServicesImages/Our-London-Health-Treatments.jpg" id="img1" width="15%" height="15%">
                 <!-- Image source: https://www.optimisehealth.com/what-we-treat/london-health -->
                 <p><big>Join PrevMed™ today!</big><br>This is our preventive medicine course that will help teach you how to lead a healthy lifestyle that maintains and prevents your body from developing long-term health issues. In this preventive medicine course, we’ll explore key strategies for promoting your overall well-being. You’ll learn about nutrition, physical activity, stress management, and the importance of regular health screenings. We’ll also delve into the impact of lifestyle choices on chronic diseases and provide practical tips for incorporating healthier habits into your daily routine. By the end of the course, you’ll be equipped with the knowledge and tools to take proactive steps toward a healthier future, empowering you to make informed decisions that support your long-term health and vitality. Let’s embark on this journey together to cultivate a lifestyle that prioritizes prevention and wellness!</p>
             </div><br>

@@ -1,32 +1,33 @@
-<!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>HPH Surgery booking</title>
+        <title>HPH Dentistry</title>
         <?php
-            include_once(__DIR__ . '/../repeated.php');
+            include_once("repeated.php");
             servicesSEO();
         ?>
     </head>
     <body>
         <?php
-            include_once(__DIR__ . '/../repeated.php');
+            include_once("repeated.php");
             navBar();
         ?>
         <center>
-            <h1 id="h1">Surgery booking</h1><br>
+            <div id="div2">
+                <img src="CSS Sheets/Images/ServicesImages/istockphoto-1277540215-1024x1024.jpg" id="img1"><br>
+                <!-- Image source: https://www.istockphoto.com/photo/portrait-of-a-caucasian-female-dentist-in-her-office-gm1277540215-376717852 -->
+                <p><big>HPH's Dental department is specialized in various aspects of dentistry including:</big></p><br>
+                <ul id="ul1">
+                    <li>Dental Surgery</li>
+                    <li>Endodontics</li>
+                    <li>Prosthetic appliances</li>
+                    <li>Cosmetic rehabilitation</li>
+                    <li>Orthodontics</li>
+                </ul>
+                <p><big>Every procedure is performed under the supervision of highly qualified consultants at fully equipped dental clinics.</big></p><br>
+            </div><br>
+            <h1 id="h1">Dentist appointment booking</h1><br>
             <form method="get" onsubmit="ValidateForm(event)">
                 <div class="divs" id="div1">
-                    <label>Surgery type:</label>
-                    <select class="input" name="SurgeryType">
-                        <option value="PA" selected>Cardiac Procedures</option>
-                        <option value="BR">Oncological Surgeries</option>
-                        <option value="AS">Neurosurgical</option>
-                        <option value="AU">Transplants</option>
-                        <option value="CA">Eye Surgeries</option>
-                        <option value="AM">ENT and Cochlear Implants</option>
-                    </select>
-                </div><br>
-                <div class="divs">
                     <label>First Name: </label>
                     <input type="text" class="input" name="FirstName" placeholder="John">
                 </div><br>
@@ -35,12 +36,8 @@
                     <input type="text" class="input" name="LastName" placeholder="Doe">
                 </div><br>
                 <div class="divs">
-                    <label>Phone Number:</label>
-                    <input type="number" id="pn" class="input" name="PN" placeholder="01234567890">
-                </div><br>
-                <div class="divs">
-                    <label>Surgery authorization ID:</label>
-                    <input type="number" id="AuthID" class="input" name="PN" placeholder="12345678">
+                <label>Phone Number:</label>
+                <input type="number" id="pn" class="input" name="PN" placeholder="01234567890">
                 </div><br>
                 <div class="divs">
                     <label>Email:</label>

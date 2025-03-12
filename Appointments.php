@@ -3,18 +3,18 @@
     <head>
         <title>HPH Appointments</title>
         <?php
-            include_once(__DIR__ . '/../repeated.php');
+            include_once("repeated.php");
             servicesSEO();
         ?>
     </head>
     <body>
         <?php
-            include_once(__DIR__ . '/../repeated.php');
+            include_once("repeated.php");
             navBar();
         ?>
         <center>
             <h1 id="h1">Book an appointment with a specialist today!</h1><br>
-            <form method="post" action="forms.php" onsubmit="ValidateForm(event)">
+            <form method="get" onsubmit="ValidateForm(event)">
                 <table id="table1">
                     <tr>
                         <td class="td">Specialization:</td>

@@ -3,16 +3,16 @@
     <head>
         <meta charset='utf-8'>
         <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-        <link rel="icon" type="image/x-icon" href="../CSS Sheets/Images/AboutUsImages/favicon.svg">
+        <link rel="icon" type="image/x-icon" href="CSS Sheets/Images/AboutUsImages/favicon.svg">
         <title>Al Haram Public Hospital Services Portal</title>
         <meta name='viewport' content='width=device-width, initial-scale=1'>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
         <script src="https://kit.fontawesome.com/c19e8a164c.js" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="../CSS Sheets/aboutNavStyle.css">
-        <link rel="stylesheet" href="../CSS Sheets/aboutAwardStyle.css">
-        <link rel='stylesheet' type='text/css' media='screen' href='../CSS Sheets/StyleMainServices.css'>
+        <link rel="stylesheet" href="CSS Sheets/aboutNavStyle.css">
+        <link rel="stylesheet" href="CSS Sheets/aboutAwardStyle.css">
+        <link rel='stylesheet' type='text/css' media='screen' href='CSS Sheets/StyleMainServices.css'>
         <link href="https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
@@ -20,7 +20,7 @@
     </head>
     <body>
         <?php
-            include_once(__DIR__ . '/../repeated.php');
+            include_once("repeated.php");
             navBar();
         ?>
         <center>
@@ -28,76 +28,76 @@
             <table width="50%" id="table1">
                 <tr>
                     <td colspan="2" align="center">
-                        <img src="../CSS Sheets/Images/ServicesImages/pharmacy-symbol-icon-903x1024-upcu4ion.png" width="40%" height="40%">
+                        <img src="CSS Sheets/Images/ServicesImages/pharmacy-symbol-icon-903x1024-upcu4ion.png" width="40%" height="40%">
                         <!--Image source: https://www.iconduck.com/icons/299580/pharmacy-symbol -->
                     </td>
                     <td colspan="2" align="center">
-                        <img src="../CSS Sheets/Images/ServicesImages/medical_hospital_test-08-512.webp" width="65%" height="65%">
+                        <img src="CSS Sheets/Images/ServicesImages/medical_hospital_test-08-512.webp" width="65%" height="65%">
                         <!--Image source: https://www.iconfinder.com/icons/2905568/hospital_medical_test_icon -->
                     </td>
                     <td colspan="2" align="center">
-                        <img src="../CSS Sheets/Images/ServicesImages/appointment-icon-png-27.png" width="75%" height="75%">
+                        <img src="CSS Sheets/Images/ServicesImages/appointment-icon-png-27.png" width="75%" height="75%">
                         <!--Image source: https://icon-library.com/icon/appointment-icon-png-27.html -->
                     </td>
                     <td colspan="2" align="center">
-                        <img src="../CSS Sheets/Images/ServicesImages/Oncology.png" width="70%" height="70%">
+                        <img src="CSS Sheets/Images/ServicesImages/Oncology.png" width="70%" height="70%">
                         <!-- Image source: https://www.flaticon.com/free-icon/healthcare_15295360?term=chemo&page=1&position=4&origin=tag&related_id=15295360 -->
                     </td>
                     <td colspan="2" align="center">
-                        <img src="../CSS Sheets/Images/ServicesImages/patient.png" width="70%" height="70%">
+                        <img src="CSS Sheets/Images/ServicesImages/patient.png" width="70%" height="70%">
                         <!-- Image source: https://www.flaticon.com/free-icon/patient_13522997?term=patient&page=1&position=10&origin=tag&related_id=13522997 -->
                     </td>
                     <td colspan="2" align="center">
-                        <img src="../CSS Sheets/Images/ServicesImages/surgery.png" width="70%" height="70%">
+                        <img src="CSS Sheets/Images/ServicesImages/surgery.png" width="70%" height="70%">
                         <!-- Image source: https://www.flaticon.com/free-icon/surgery_9441984?term=surgery&page=1&position=6&origin=search&related_id=9441984 -->
                     </td>
                     <td colspan="2" align="center">
-                        <img src="../CSS Sheets/Images/ServicesImages/healthcare.png" width="70%" height="70%">
+                        <img src="CSS Sheets/Images/ServicesImages/healthcare.png" width="70%" height="70%">
                         <!-- Image source: https://www.flaticon.com/free-icon/healthcare_2957990?term=healthcare&page=1&position=11&origin=search&related_id=2957990 -->
                     </td>
                     <td colspan="2" align="center">
-                        <img src="../CSS Sheets/Images/ServicesImages/siren_6372661.png" width="70%" height="70%">
+                        <img src="CSS Sheets/Images/ServicesImages/siren_6372661.png" width="70%" height="70%">
                         <!-- Image source: https://www.freepik.com/icon/siren_6372661#fromView=keyword&page=1&position=50&uuid=759ba514-3271-4464-9637-df1b66a1bb1a -->
                     </td>
                     <td colspan="2" align="center">
-                        <img src="../CSS Sheets/Images/ServicesImages/tooth.png" width="70%" height="70%">
+                        <img src="CSS Sheets/Images/ServicesImages/tooth.png" width="70%" height="70%">
                         <!-- Image source: https://www.flaticon.com/free-icon/tooth_435266?term=dentist&page=1&position=41&origin=tag&related_id=435266 -->
                     </td>
                     <td colspan="2" align="center">
-                        <img src="../CSS Sheets/Images/ServicesImages/disease_15939605.png" width="70%" height="70%">
+                        <img src="CSS Sheets/Images/ServicesImages/disease_15939605.png" width="70%" height="70%">
                         <!-- Image source: https://www.freepik.com/icon/disease_15939605#fromView=keyword&page=1&position=21&uuid=c6e6f3d9-728a-4c3a-84c7-a3d63e01bb7e -->
                     </td>
                 </tr>
                 <tr>
                     <td colspan="2" align="center">
-                        <a href="Pharmacy.php" class="button" target="_blank">Pharmacy</a>
+                        <a href="Pharmacy.html" class="button" target="_blank">Pharmacy</a>
                     </td>
                     <td colspan="2" align="center">
-                        <a href="Tests.php" class="button" target="_blank">Tests</a>
+                        <a href="Tests.html" class="button" target="_blank">Tests</a>
                     </td>
                     <td colspan="2" align="center">
-                        <a href="Appointments.php" class="button" target="_blank">Book</a>
+                        <a href="Appointments.html" class="button" target="_blank">Book</a>
                     </td>
                     <td colspan="2" align="center">
-                        <a href="Oncology.php" class="button" target="_blank">Oncology</a>
+                        <a href="Oncology.html" class="button" target="_blank">Oncology</a>
                     </td>
                     <td colspan="2" align="center">
-                        <a href="Outpatient.php" class="button" target="_blank">Outpatient</a>
+                        <a href="Outpatient.html" class="button" target="_blank">Outpatient</a>
                     </td>
                     <td colspan="2" align="center">
-                        <a href="Surgery.php" class="button" target="_blank">Surgery</a>
+                        <a href="Surgery.html" class="button" target="_blank">Surgery</a>
                     </td>
                     <td colspan="2" align="center">
-                        <a href="PrevMed.php" class="button" target="_blank">PrevMed™</a>
+                        <a href="PrevMed.html" class="button" target="_blank">PrevMed™</a>
                     </td>
                     <td colspan="2" align="center">
-                        <a href="Emergency.php" class="button" target="_blank">Emergency</a>
+                        <a href="Emergency.html" class="button" target="_blank">Emergency</a>
                     </td>
                     <td colspan="2" align="center">
-                        <a href="Dentistry.php" class="button" target="_blank">Dentistry</a>
+                        <a href="Dentistry.html" class="button" target="_blank">Dentistry</a>
                     </td>
                     <td colspan="2" align="center">
-                        <a href="ICU.php" class="button" target="_blank">ICU</a>
+                        <a href="ICU.html" class="button" target="_blank">ICU</a>
                     </td>
                 </tr>
                 <tr id="ParasTable">

@@ -3,13 +3,13 @@
     <head>
         <title>Al Haram Hospital Pharmacy</title>
         <?php
-            include_once(__DIR__ . '/../repeated.php');
+            include_once("repeated.php");
             servicesSEO();
         ?>
     </head>
     <body>
         <?php
-            include_once(__DIR__ . '/../repeated.php');
+            include_once("repeated.php");
             navBar();
         ?>
         <center>
