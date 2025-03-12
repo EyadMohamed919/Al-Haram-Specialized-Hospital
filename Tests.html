@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>HPH Tests</title>
+        <link rel="icon" type="image/x-icon" href="CSS Sheets/Images/AboutUsImages/favicon.svg">
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/c19e8a164c.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="CSS Sheets/aboutNavStyle.css">
+        <link rel="stylesheet" href="CSS Sheets/aboutAwardStyle.css">
+        <link rel='stylesheet' type='text/css' media='screen' href='CSS Sheets/StyleSecondaryServices.css'>
+        <link href="https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <nav>
+            <img src="CSS Sheets/Images/AboutUsImages/Hospital_Logo.svg" class="nav-logo" alt="">
+            <div class="nav-container">
+                <a class="nav-links" href="index.html">Home</a>
+                <a class="nav-links" href="Donations-Homepage.html">Donation</a>
+                <div class="nav-dropdown">
+                    <a class="nav-links" href="vehiclesPage.html">Services<i class="fa-solid fa-caret-down"></i></a>
+                    <div class="nav-dropdown-links">
+                        <a class="dropdown-item" href="ServicesMain.html">Services Home</a>
+                        <a class="dropdown-item" href="Pharmacy.html">Pharmacy</a>
+                        <a class="dropdown-item" href="Tests.html">Tests</a>
+                        <a class="dropdown-item" href="Appointments.html">Book Us</a>
+                        <a class="dropdown-item" href="Outpatient.html">Outpatient</a>
+                        <a class="dropdown-item" href="Surgery.html">Surgery</a>
+                        <a class="dropdown-item" href="PrevMed.html">PrevMed™</a>
+                        <a class="dropdown-item" href="Emergency.html">Emergency</a>
+                        <a class="dropdown-item" href="Dentistry.html">Dentistry</a>
+                        <a class="dropdown-item" href="ICU.html">ICU</a>
+                        <a class="dropdown-item" href="Oncology.html">Oncology</a>
+                    </div>
+                </div>
+                <div class="nav-dropdown">
+                    <a class="nav-links" href="contact Details.html">Contact Us<i class="fa-solid fa-caret-down"></i></a>
+                    <div class="nav-dropdown-links">
+                        <a href="contact Details.html">Contact Details</a>
+                        <a href="Online Consultaitions.html">Online Consultations</a>
+                        <a href="heart checks.html">Heart Checks</a>
+                        <a href="Directions to hospital.html">Directions to the Hospital</a>
+                    </div>
+                </div>
+                <a class="nav-links" href="recordPage.html">Records</a>
+                <a class="nav-links" href="aboutPageMain.html">About Us</a>
+                <a class="nav-links" href="Volunteering-Homepage.html">Volunteering</a>
+                <a href="Login.html" class="nav-links"><i class="fa-solid fa-user"></i></a>
+            </div>
+        </nav>
+        <center>
+            <h1 id="h1">Book a test!</h1><br>
+            <form method="get" onsubmit="ValidateForm(event)">
+                <table id="table1">
+                    <tr>
+                        <td class="td">Test type:</td>
+                        <td class="td">
+                            <select class="input" name="Test">
+                                <option value="CBC" selected>Complete Blood Count (CBC)</option>
+                                <option value="BGC">Blood Glucose Test</option>
+                                <option value="LFT">Liver Function Tests</option>
+                                <option value="KFT">Kidney Function Tests</option>
+                                <option value="CLP">Cholesterol and Lipid Profile</option>
+                                <option value="U">Urinalysis</option>
+                                <option value="HH">Hematocrit and Hemoglobin Tests</option>
+                                <option value="TFT">Thyroid Function Tests</option>
+                                <option value="ECG">Electrocardiogram (ECG)</option>
+                                <option value="XR">X-Ray</option>
+                                <option value="US">Ultrasound</option>
+                                <option value="MRI">MRI Scan</option>
+                                <option value="CT">CT Scan</option>
+                                <option value="PS">Pap Smear</option>
+                                <option value="PSA">Prostate-Specific Antigen (PSA)</option>
+                                <option value="HIV">HIV Test</option>
+                                <option value="HBC">Hepatitis B and C Tests</option>
+                                <option value="S">Stool Tests</option>
+                                <option value="A">Allergy Tests</option>
+                                <option value="BC">Blood Culture</option>
+                                <option value="P">Pregnancy Test</option>
+                                <option value="BDT">Bone Density Test</option>
+                                <option value="DLT">Vitamin D Level Test</option>
+                                <option value="SE">Serum Electrolytes</option>
+                                <option value="COT">Coagulation Tests</option>
+                                <option value="CRET">Creatinine Test</option>
+                                <option value="CRP">C-Reactive Protein (CRP)</option>
+                                <option value="BNP">B-type Natriuretic Peptide (BNP)</option>
+                                <option value="GT">Genetic Testing</option>
+                                <option value="ST">Serological Tests</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="td">First Name:</td>
+                        <td class="td"><input type="text" class="input" name="FirstName" placeholder="John"></td>
+                    </tr>
+                    <tr>
+                        <td class="td">Last Name:</td>
+                        <td class="td"><input type="text" class="input" name="LastName" placeholder="Doe"></td>
+                    </tr>
+                    <tr>
+                        <td class="td">Sex:</td>
+                        <td class="td">
+                            <label><input type="radio" class="input" name="Sex" value="Male">Male</label>
+                            <label><input type="radio" class="input" name="Sex" value="Female">Female</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="td">Phone number:</td>
+                        <td class="td"><input type="number" id="pn" class="input" name="PN" placeholder="01234567890"></td>
+                    </tr>
+                    <tr>
+                        <td class="td">Email:</td>
+                        <td class="td"><input type="email" id="email" class="input" name="Email" placeholder="johndoe@email.com"></td>
+                    </tr>
+                    <tr>
+                        <td class="td">Date:</td>
+                        <td class="td"><input type="date" class="input" name="Date"></td>
+                    </tr>
+                    <tr>
+                        <td class="td">Time:</td>
+                        <td class="td"><input type="time" class="input" name="Time"></td>
+                    </tr>
+                    <tr>
+                        <td class="td" align="right"><input type="submit" id="submit" class="input" name="submit"></td>
+                        <td class="td"><input type="reset" id="reset" class="input" name="reset"></td>
+                    </tr>
+                </table>
+            </form>
+            <footer id="footer">
+                <hr>
+                © 2024 Haram Public Hospital, all rights reserved
+            </footer>
+        </center>
+        <script src="services.js"></script>
+    </body>
+</html>
