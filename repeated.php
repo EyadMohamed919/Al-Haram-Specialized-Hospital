@@ -10,17 +10,17 @@ function navBar()
                 <div class='nav-dropdown'>
                     <a class='nav-links' href='vehiclesPage.html'>Services<i class='fa-solid fa-caret-down'></i></a>
                     <div class='nav-dropdown-links'>
-                        <a class='dropdown-item' href='ServicesMain.php'>Services Home</a>
-                        <a class='dropdown-item' href='Pharmacy.php'>Pharmacy</a>
-                        <a class='dropdown-item' href='Tests.php'>Tests</a>
-                        <a class='dropdown-item' href='Appointments.php'>Book Us</a>
-                        <a class='dropdown-item' href='Outpatient.php'>Outpatient</a>
-                        <a class='dropdown-item' href='Surgery.php'>Surgery</a>
-                        <a class='dropdown-item' href='PrevMed.php'>PrevMed™</a>
-                        <a class='dropdown-item' href='Emergency.php'>Emergency</a>
-                        <a class='dropdown-item' href='Dentistry.php'>Dentistry</a>
-                        <a class='dropdown-item' href='ICU.php'>ICU</a>
-                        <a class='dropdown-item' href='Oncology.php'>Oncology</a>
+                        <a class='dropdown-item' href='services/ServicesMain.php'>Services Home</a>
+                        <a class='dropdown-item' href='services/Pharmacy.php'>Pharmacy</a>
+                        <a class='dropdown-item' href='services/Tests.php'>Tests</a>
+                        <a class='dropdown-item' href='services/Appointments.php'>Book Us</a>
+                        <a class='dropdown-item' href='services/Outpatient.php'>Outpatient</a>
+                        <a class='dropdown-item' href='services/Surgery.php'>Surgery</a>
+                        <a class='dropdown-item' href='services/PrevMed.php'>PrevMed™</a>
+                        <a class='dropdown-item' href='services/Emergency.php'>Emergency</a>
+                        <a class='dropdown-item' href='services/Dentistry.php'>Dentistry</a>
+                        <a class='dropdown-item' href='services/ICU.php'>ICU</a>
+                        <a class='dropdown-item' href='services/Oncology.php'>Oncology</a>
                     </div>
                 </div>
                 <div class='nav-dropdown'>
