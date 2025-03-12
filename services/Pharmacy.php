@@ -3,18 +3,19 @@
     <head>
         <title>Al Haram Hospital Pharmacy</title>
         <?php
-            include_once("repeated.php");
+            include_once(__DIR__ . '/../repeated.php');
             servicesSEO();
         ?>
     </head>
     <body>
         <?php
-            include_once("repeated.php");
+            include_once(__DIR__ . '/../repeated.php');
             navBar();
         ?>
         <center>
             <h1 id="h1">Order your medicine from home!</h1><br>
-            <form method="get" onsubmit="ValidateForm(event)">
+            <form method="post" action="forms.php" onsubmit="ValidateForm(event)">
+                <input type="hidden" name="formType" value="Pharmacy">
                 <table id="table1">
                     <tr>
                         <td class="td">Medicine:</td>

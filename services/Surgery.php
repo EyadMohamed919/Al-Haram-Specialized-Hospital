@@ -3,18 +3,19 @@
     <head>
         <title>HPH Surgery booking</title>
         <?php
-            include_once("repeated.php");
+            include_once(__DIR__ . '/../repeated.php');
             servicesSEO();
         ?>
     </head>
     <body>
         <?php
-            include_once("repeated.php");
+            include_once(__DIR__ . '/../repeated.php');
             navBar();
         ?>
         <center>
             <h1 id="h1">Surgery booking</h1><br>
-            <form method="get" onsubmit="ValidateForm(event)">
+            <form method="post" action="forms.php" onsubmit="ValidateForm(event)">
+                <input type="hidden" name="formType" value="Surgery">
                 <div class="divs" id="div1">
                     <label>Surgery type:</label>
                     <select class="input" name="SurgeryType">

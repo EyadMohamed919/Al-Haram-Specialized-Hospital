@@ -2,18 +2,18 @@
     <head>
         <title>HPH Dentistry</title>
         <?php
-            include_once("repeated.php");
+            include_once(__DIR__ . '/../repeated.php');
             servicesSEO();
         ?>
     </head>
     <body>
         <?php
-            include_once("repeated.php");
+            include_once(__DIR__ . '/../repeated.php');
             navBar();
         ?>
         <center>
             <div id="div2">
-                <img src="CSS Sheets/Images/ServicesImages/istockphoto-1277540215-1024x1024.jpg" id="img1"><br>
+                <img src="../CSS Sheets/Images/ServicesImages/istockphoto-1277540215-1024x1024.jpg" id="img1"><br>
                 <!-- Image source: https://www.istockphoto.com/photo/portrait-of-a-caucasian-female-dentist-in-her-office-gm1277540215-376717852 -->
                 <p><big>HPH's Dental department is specialized in various aspects of dentistry including:</big></p><br>
                 <ul id="ul1">
@@ -26,7 +26,8 @@
                 <p><big>Every procedure is performed under the supervision of highly qualified consultants at fully equipped dental clinics.</big></p><br>
             </div><br>
             <h1 id="h1">Dentist appointment booking</h1><br>
-            <form method="get" onsubmit="ValidateForm(event)">
+            <form method="post" action="forms.php" onsubmit="ValidateForm(event)">
+                <input type="hidden" name="formType" value="Dentistry">
                 <div class="divs" id="div1">
                     <label>First Name: </label>
                     <input type="text" class="input" name="FirstName" placeholder="John">
