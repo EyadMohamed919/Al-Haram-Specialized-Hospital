@@ -55,7 +55,7 @@
         </div>
     </nav>
     <h1 id="title">Money Donations</h1><hr>
-    <form method="get" onsubmit="event.preventDefault(); validateForm();">
+    <form action="MoneyDon.php" method="POST" onsubmit="validateForm();">
         <table border="1">
             <tr>
                 <td>First Name</td>
@@ -131,7 +131,7 @@
             </tr>
             <tr>
                 <td colspan="2" align="center">
-                    <button type="button" onclick="validateForm()">Proceed With Donation</button>
+                    <button type="submit" onclick="validateForm()">Proceed With Donation</button>
                     <input type="reset" value="Recede Donation Process">
                 </td>
             </tr>

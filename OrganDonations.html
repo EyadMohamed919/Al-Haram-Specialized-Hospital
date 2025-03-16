@@ -54,7 +54,7 @@
             </div>
         </nav>
         <h1 id="title">Organ Donations</h1><hr>
-        <form method="get" onsubmit="event.preventDefault(); validateForm();">
+        <form action="OrganDo.php" method="post">
             <table border="1">
                 <tr>
                     <td>First Name</td>
@@ -110,19 +110,19 @@
                         <table>
                             <tr>
                                 <td>Heart</td>
-                                <td><input type="checkbox" id="Heart" value="Heart" name="Heart"></td>
+                                <td><input type="checkbox" id="Heart" value="Heart" name="organSelection"></td>
                             </tr>
                             <tr>
                                 <td>Kidneys</td>
-                                <td><input type="checkbox" id="Kidneys" value="Kidneys" name="Kidneys"></td>
+                                <td><input type="checkbox" id="Kidneys" value="Kidneys" name="organSelection"></td>
                             </tr>
                             <tr>
                                 <td>Liver</td>
-                                <td><input type="checkbox" id="Liver" value="Liver" name="Liver"></td>
+                                <td><input type="checkbox" id="Liver" value="Liver" name="organSelection"></td>
                             </tr>
                             <tr>
                                 <td>Other Organ</td>
-                                <td><input type="checkbox" id="OtherOrgan" value="OO" name="OtherOrgan"></td>
+                                <td><input type="checkbox" id="OtherOrgan" value="OO" name="organSelection"></td>
                             </tr>
                         </table>
                     </td>
