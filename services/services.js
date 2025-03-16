@@ -1,3 +1,12 @@
+document.addEventListener("DOMContentLoaded", function() {
+    let form = document.getElementById("yourFormId"); // Replace with your form's ID
+    if (form) {
+        form.addEventListener("submit", ValidateForm);
+    } else {
+        console.error("Form with ID 'yourFormId' not found.");
+    }
+});
+
 function ValidateForm(event) {
     let inputs = document.getElementsByClassName("input");
     let formIsValid = true;
