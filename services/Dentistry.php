@@ -26,7 +26,7 @@
                 <p><big>Every procedure is performed under the supervision of highly qualified consultants at fully equipped dental clinics.</big></p><br>
             </div><br>
             <h1 id="h1">Dentist appointment booking</h1><br>
-            <form method="post" action="forms.php" onsubmit="ValidateForm(event)">
+            <form method="post" action="forms.php" onsubmit="return ValidateForm(event)">
                 <input type="hidden" name="formType" value="Dentistry">
                 <div class="divs" id="div1">
                     <label>First Name: </label>

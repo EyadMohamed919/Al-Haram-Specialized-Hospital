@@ -14,7 +14,7 @@
         ?>
         <center>
             <h1 id="h1">Outpatient services</h1><br>
-            <form method="post" action="forms.php" onsubmit="ValidateForm(event)">
+            <form method="post" action="forms.php" onsubmit="return ValidateForm(event)">
                 <input type="hidden" name="formType" value="Outpatient">
                 <div class="divs" id="div1">
                     <label>Service type:</label>

@@ -14,7 +14,7 @@
         ?>
         <center>
             <h1 id="h1">Surgery booking</h1><br>
-            <form method="post" action="forms.php" onsubmit="ValidateForm(event)">
+            <form method="post" action="forms.php" onsubmit="return ValidateForm(event)">
                 <input type="hidden" name="formType" value="Surgery">
                 <div class="divs" id="div1">
                     <label>Surgery type:</label>

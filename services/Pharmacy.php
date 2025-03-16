@@ -14,7 +14,7 @@
         ?>
         <center>
             <h1 id="h1">Order your medicine from home!</h1><br>
-            <form method="post" action="forms.php" onsubmit="ValidateForm(event)">
+            <form method="post" action="forms.php" onsubmit="return ValidateForm(event)">
                 <input type="hidden" name="formType" value="Pharmacy">
                 <table id="table1">
                     <tr>
