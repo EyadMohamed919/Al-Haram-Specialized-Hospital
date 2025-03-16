@@ -34,7 +34,7 @@ function navBar()
                 </div>
                 <a class='nav-links' href='../recordPage.html'>Records</a>
                 <a class='nav-links' href='../aboutPageMain.html'>About Us</a>
-                <a class='nav-links' href='../Volunteering-Homepage.html'>Volunteering</a>
+                <a class='nav-links' href='../Volunteering/volunteeringUserSide/Volunteering-Homepage.html'>Volunteering</a>
                 <a href='../Login.html' class='nav-links'><i class='fa-solid fa-user'></i></a>
             </div>
         </nav>";
