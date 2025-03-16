@@ -8,62 +8,82 @@ body{
     display: inline-block;
     color: rgb(0, 0, 0);
     font-family: Titillium Web;
-    margin-top: 130px;
+    margin-top: 8.125rem;
 }
 
 .input{
-    font-size: 25px;
-    border-radius: 8px;
+    font-size: 1.5625rem;
+    border-radius: 0.5rem;
+    -webkit-border-radius: 0.5rem;
+    -moz-border-radius: 0.5rem;
+    -ms-border-radius: 0.5rem;
+    -o-border-radius: 0.5rem;
 }
 
 .td{
-    font-size: 40px;
+    font-size: 2.5rem;
 }
 
 #submit{
-        border-radius: 8px;
-    }
+        border-radius: 0.5rem;
+        -webkit-border-radius: 0.5rem;
+        -moz-border-radius: 0.5rem;
+        -ms-border-radius: 0.5rem;
+        -o-border-radius: 0.5rem;
+}
 
 #reset{
-    border-radius: 8px;
+    border-radius: 0.5rem;
+    -webkit-border-radius: 0.5rem;
+    -moz-border-radius: 0.5rem;
+    -ms-border-radius: 0.5rem;
+    -o-border-radius: 0.5rem;
 }
 
 #table1{
-    font-size: 30px;
-    margin-top: 30px;
+    font-size: 1.875rem;
+    margin-top: 1.875rem;
 }
 
 #footer{
-    margin-top: 265px;
+    margin-top: 16.5625rem;
 }
 
 .divs{
-    font-size: 30px;
+    font-size: 1.875rem;
 }
 
 #div1{
-    margin-top: 30px;
+    margin-top: 0.875rem;
 }
 
 #div2{
-    margin-top: 100px;
+    margin-top: 6.25rem;
     border: black;
     border-style: solid;
     display: inline-block;
-    border-radius: 9px;
-    border-width: 5px;
+    border-radius: 0.5625rem;
+    border-width: 0.3125rem;
     font-family: Oswald;
+    -webkit-border-radius: 0.5625rem;
+    -moz-border-radius: 0.5625rem;
+    -ms-border-radius: 0.5625rem;
+    -o-border-radius: 0.5625rem;
 }
 
 #img1{
     float: left;
-    border-radius: 9px;
+    border-radius: 0.5625rem;
+    -webkit-border-radius: 0.5625rem;
+    -moz-border-radius: 0.5625rem;
+    -ms-border-radius: 0.5625rem;
+    -o-border-radius: 0.5625rem;
 }
 
 form{
-    border-radius: 9px;
+    border-radius: 0.5625rem;
     background:linear-gradient( to left, rgb(115, 211, 115), rgb(92, 171, 197));
-    padding: 20px;
+    padding: 1.25rem;
     display: inline-block;
     justify-content: center;
     flex-direction: column;
@@ -75,24 +95,32 @@ form{
 
 #img2{
     float: left;
-    border-radius: 9px;
+    border-radius: 0.5625rem;
+    -webkit-border-radius: 0.5625rem;
+    -moz-border-radius: 0.5625rem;
+    -ms-border-radius: 0.5625rem;
+    -o-border-radius: 0.5625rem;
 }
 #img3{
-    border-radius: 9px;
+    border-radius: 0.5625rem;
+    -webkit-border-radius: 0.5625rem;
+    -moz-border-radius: 0.5625rem;
+    -ms-border-radius: 0.5625rem;
+    -o-border-radius: 0.5625rem;
 }
 
 #div3{
-    margin-top: 70px;
+    margin-top: 4.375rem;
 }
 
 #p1{
-    margin-top: 30px;
+    margin-top: 1.875rem;
     font-family: Oswald;
     border: solid;
     border-color: black;
-    border-radius: 9px;
-    -webkit-border-radius: 9px;
-    -moz-border-radius: 9px;
-    -ms-border-radius: 9px;
-    -o-border-radius: 9px;
+    border-radius: 0.5625rem;
+    -webkit-border-radius: 0.5625rem;
+    -moz-border-radius: 0.5625rem;
+    -ms-border-radius: 0.5625rem;
+    -o-border-radius: 0.5625rem;
 }
