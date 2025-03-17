@@ -46,6 +46,7 @@ if ($data) {
 
     echo "</table>";
 } 
+}
 else 
 {
     echo "<p>No data found.</p>";
