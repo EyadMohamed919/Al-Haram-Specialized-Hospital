@@ -1,41 +1,51 @@
 <?php
-// Function to read data from the file
 function readFormData() {
-    $file = fopen("MedVol.txt", "r"); // Open file in read mode
+    $filename = "MedVol.txt";
+
+    if (!file_exists($filename)) {
+        return false; 
+    }
+
+    $file = fopen($filename, "r"); 
+    $data = [];
+
     if ($file) {
-        $data = [];
-        while (!feof($file)) {
-            $line = fgets($file); // Read each line
+        while (($line = fgets($file)) !== false) { 
+            $line = trim($line); 
             if (!empty($line)) {
-                $data[] = $line; // Add line to the data array
+                $data[] = $line;
             }
         }
-        fclose($file); // Close the file
-        return $data;
-    } else {
-        return false;
+        fclose($file); 
     }
-}
 
-// Read data from the file
+    return $data;
+}
 $data = readFormData();
 
 if ($data) {
     echo "<h1>Medical Volunteering Data</h1>";
     echo "<table border='1'>";
-    echo "<tr><th>First Name</th><th>Second Name</th><th>Third Name</th><th>Gender</th><th>Nationality</th><th>DOB</th><th>Mobile</th><th>Email</th><th>Medical Knowledge</th><th>Interpersonal Skills</th><th>Practical Skills</th><th>Start Date</th></tr>";
+    echo "<tr>
+            <th>First Name</th><th>Second Name</th><th>Third Name</th>
+            <th>Gender</th><th>Nationality</th><th>DOB</th>
+            <th>Mobile</th><th>Email</th><th>Medical Knowledge</th>
+            <th>Interpersonal Skills</th><th>Practical Skills</th><th>Start Date</th>
+          </tr>";
 
-    // Loop through the data and display in a table
     foreach ($data as $line) {
-        $fields = explode(" | ", $line); // Split the line into fields
-        echo "<tr>";
-        foreach ($fields as $field) {
-            echo "<td>" . htmlspecialchars(trim($field)) . "</td>"; // Display each field
+        $fields = array_map('trim', explode(" | ", $line)); 
+
+        if (count($fields) === 12) {
+            echo "<tr>";
+            foreach ($fields as $field) {
+                echo "<td>" . htmlspecialchars($field) . "</td>"; 
+            echo "</tr>";
         }
-        echo "</tr>";
     }
+
     echo "</table>";
 } else {
-    echo "No data found.";
+    echo "<p>No data found.</p>";
 }
 ?>
