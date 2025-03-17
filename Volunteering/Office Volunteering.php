@@ -13,15 +13,15 @@
         <link rel="stylesheet" href="../CSS Sheets/aboutNavStyle.css">
         <link rel="stylesheet" href="../CSS Sheets/aboutAwardStyle.css">
         <script src="OfficeVol.js" defer></script>
-    </head>
+        </head>
     <body>
         <?php
             include_once("../repeated.php");
             navBar();
         ?>
         <h1 id="title">Office Volunteering</h1><hr>
-        <form method="get" onsubmit="event.preventDefault(); validateForm();">
-            <table border="1">
+        <form id="officeVolForm" action="SaveOfcVol.php" method="get" onsubmit="return validateForm();">
+        <table border="1">
                     <tr>
                         <td>First Name</td>
                         <td><input type="text" id="FirstName" name="FirstName" placeholder="Enter First Name"></td>
