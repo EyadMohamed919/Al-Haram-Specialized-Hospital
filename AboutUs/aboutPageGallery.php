@@ -6,52 +6,18 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/c19e8a164c.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="CSS Sheets/aboutNavStyle.css">
-    <link rel="stylesheet" href="CSS Sheets/aboutGalleryStyle.css">
-    <link rel="icon" type="image/x-icon" href="CSS Sheets/Images/AboutUsImages/favicon.svg">
+    <link rel="stylesheet" href="../CSS Sheets/aboutNavStyle.css">
+    <link rel="stylesheet" href="../CSS Sheets/aboutGalleryStyle.css">
+    <link rel="icon" type="image/x-icon" href="../CSS Sheets/Images/AboutUsImages/favicon.svg">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
     <title>Al Haram Hospital</title>
 </head>
 <body>
-    <nav>
-        <img src="CSS Sheets/Images/AboutUsImages/Hospital_Logo.svg" class="nav-logo" alt="">
-        <div class="nav-container">
-            <a class="nav-links" href="index.html">Home</a>
-            <a class="nav-links" href="Donations-Homepage.html">Donation</a>
-            <div class="nav-dropdown">
-                <a class="nav-links" href="vehiclesPage.html">Services<i class="fa-solid fa-caret-down"></i></a>
-                <div class="nav-dropdown-links">
-                    <a class="dropdown-item" href="ServicesMain.html">Services Home</a>
-                    <a class="dropdown-item" href="Pharmacy.html">Pharmacy</a>
-                    <a class="dropdown-item" href="Tests.html">Tests</a>
-                    <a class="dropdown-item" href="Appointments.html">Book Us</a>
-                    <a class="dropdown-item" href="Outpatient.html">Outpatient</a>
-                    <a class="dropdown-item" href="Surgery.html">Surgery</a>
-                    <a class="dropdown-item" href="PrevMed.html">PrevMed™</a>
-                    <a class="dropdown-item" href="Emergency.html">Emergency</a>
-                    <a class="dropdown-item" href="Dentistry.html">Dentistry</a>
-                    <a class="dropdown-item" href="ICU.html">ICU</a>
-                    <a class="dropdown-item" href="Oncology.html">Oncology</a>
-                </div>
-            </div>
-            
-            <div class="nav-dropdown">
-                <a class="nav-links" href="contact Details.html">Contact Us<i class="fa-solid fa-caret-down"></i></a>
-                <div class="nav-dropdown-links">
-                    <a href="contact Details.html">Contact Details</a>
-                    <a href="Online Consultaitions.html">Online Consultations</a>
-                    <a href="heart checks.html">Heart Checks</a>
-                    <a href="Directions to hospital.html">Directions to the Hospital</a>
-                </div>
-            </div>
-            <a class="nav-links" href="recordPage.html">Records</a>
-            <a class="nav-links" href="aboutPageMain.html">About Us</a>
-            
-            <a class="nav-links" href="Volunteering-Homepage.html">Volunteering</a>
-            <a href="Login.html" class="nav-links"><i class="fa-solid fa-user"></i></a>
-        </div>
-    </nav>
+    <?php
+    include("../repeated.php");
+    navBar();   
+    ?>
     <header class="header-section">
     </header>
     <div class="header-title">
@@ -67,7 +33,7 @@
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
                 <div class="col">
                     <div class="card">
-                        <img src="CSS Sheets/Images/AboutUsImages/Gallery/photo1.jpg" class="card-img-top w-100" alt="...">
+                        <img src="../CSS Sheets/Images/AboutUsImages/Gallery/photo1.jpg" class="card-img-top w-100" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Inside the Hospital</h5>
                             <div class="card-date">
@@ -79,7 +45,7 @@
     
                 <div class="col">
                     <div class="card">
-                        <img src="CSS Sheets/Images/AboutUsImages/Gallery/photo2.jpg" class="card-img-top" alt="...">
+                        <img src="../CSS Sheets/Images/AboutUsImages/Gallery/photo2.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Inside the Hospital</h5>
                             <div class="card-date">
@@ -91,7 +57,7 @@
     
                 <div class="col">
                     <div class="card">
-                        <img src="CSS Sheets/Images/AboutUsImages/Gallery/photo6.jpg" class="card-img-top" alt="...">
+                        <img src="../CSS Sheets/Images/AboutUsImages/Gallery/photo6.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Inside the Hospital</h5>
                             <div class="card-date">
@@ -103,7 +69,7 @@
     
                 <div class="col">
                     <div class="card">
-                        <img src="CSS Sheets/Images/AboutUsImages/Gallery/photo4.jpg" class="card-img-top" alt="...">
+                        <img src="../CSS Sheets/Images/AboutUsImages/Gallery/photo4.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Inside the Hospital</h5>
                             <div class="card-date">
@@ -115,7 +81,7 @@
     
                 <div class="col">
                     <div class="card">
-                        <img src="CSS Sheets/Images/AboutUsImages/Gallery/photo3.jpg" class="card-img-top" alt="...">
+                        <img src="../CSS Sheets/Images/AboutUsImages/Gallery/photo3.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Inside the Hospital</h5>
                             <div class="card-date">
@@ -127,7 +93,7 @@
     
                 <div class="col">
                     <div class="card">
-                        <img src="CSS Sheets/Images/AboutUsImages/Gallery/photo5.jpg" class="card-img-top" alt="...">
+                        <img src="../CSS Sheets/Images/AboutUsImages/Gallery/photo5.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Inside the Hospital</h5>
                             <div class="card-date">
@@ -139,7 +105,7 @@
                 
                 <div class="col">
                     <div class="card">
-                        <img src="CSS Sheets/Images/AboutUsImages/Gallery/photo7.jpg" class="card-img-top" alt="...">
+                        <img src="../CSS Sheets/Images/AboutUsImages/Gallery/photo7.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Inside the Hospital</h5>
                             <div class="card-date">
@@ -151,7 +117,7 @@
 
                 <div class="col">
                     <div class="card">
-                        <img src="CSS Sheets/Images/AboutUsImages/Gallery/photo8.jpg" class="card-img-top" alt="...">
+                        <img src="../CSS Sheets/Images/AboutUsImages/Gallery/photo8.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Inside the Hospital</h5>
                             <div class="card-date">
@@ -163,7 +129,7 @@
 
                 <div class="col">
                     <div class="card">
-                        <img src="CSS Sheets/Images/AboutUsImages/Gallery/photo9.jpg" class="card-img-top" alt="...">
+                        <img src="../CSS Sheets/Images/AboutUsImages/Gallery/photo9.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Inside the Hospital</h5>
                             <div class="card-date">
@@ -199,29 +165,10 @@
 
         <!-- This is where user get to other links -->
         <div class="aside-div">
-            <aside>
-                <h2 class="aside-title">Related Topics</h2>
-                <hr>
-                <div class="aside-container">
-                    <a class="aside-links" href="aboutPageMain.html"><i class="fa-regular fa-bookmark"></i> About Us</a>
-                    <hr class="aside-horizontal">
-                    <a class="aside-links" href="aboutPageVision.html"><i class="fa-regular fa-bookmark"></i> Vision, Mission & Values</a>
-                    <hr class="aside-horizontal">
-                    <a class="aside-links" href="aboutPageBoard.html"><i class="fa-regular fa-bookmark"></i> Board of Trustees</a>
-                    <hr class="aside-horizontal">
-                    <a class="aside-links" href="aboutPageMember.html"><i class="fa-regular fa-bookmark"></i> Members of Board of Directors</a>
-                    <hr class="aside-horizontal">
-                    <a class="aside-links" href="aboutPageHistory.html"><i class="fa-regular fa-bookmark"></i> History & Milestone</a>
-                    <hr class="aside-horizontal">
-                    <a class="aside-links" href="aboutPageAwards.html"><i class="fa-regular fa-bookmark"></i> Awards</a>
-                    <hr class="aside-horizontal">
-                    <a class="aside-links" href="aboutPageGallery.html"><i class="fa-solid fa-bookmark"></i> Gallery</a>
-                    <hr class="aside-horizontal">
-                    <a class="aside-links" href="aboutPageCareer.html"><i class="fa-regular fa-bookmark"></i> Careers</a>
-                    <hr class="aside-horizontal">
-                    <a class="aside-links" href="aboutPageDoctors.html"><i class="fa-regular fa-bookmark"></i> Our Physicians</a>
-                </div>
-            </aside>
+        <?php
+            include("AboutFunctions.php");
+            showAboutAside();
+         ?>
         </div>
     </section>
 
