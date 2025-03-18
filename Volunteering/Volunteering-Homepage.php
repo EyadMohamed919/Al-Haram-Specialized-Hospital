@@ -12,6 +12,28 @@
         <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
         <script src="https://kit.fontawesome.com/c19e8a164c.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="../CSS Sheets/aboutNavStyle.css">
+        <style>
+            .flex-container {
+                display: flex;
+                justify-content: center;
+                gap: 20px;
+            }
+            .links {
+                text-align: center;
+                margin: 0 10px;
+            }
+            .button-link {
+                display: inline-block;
+            }
+            .button-image {
+                border-radius: 9px;
+                margin-bottom: 10px;
+            }
+            .links label {
+                margin-top: 10px;
+                display: block;
+            }
+        </style>
         <h1 id="title" style="font-family: Arial; font-size: 50px; text-align: center; color: lightseagreen;">Types Of Volunteering</h1>
     </head>
     <body>
@@ -29,17 +51,24 @@
             Their efforts can uplift patients' spirits, reduce stress, and accelerate the healing process. Ultimately,
             hospital volunteers play a vital role in enhancing the overall quality of healthcare and creating a more compassionate healthcare system.</p><hr> 
              <h1>Types Of Volunteering</h1>
-             <a href="Medical Volunteering.php" target="_blank"></a>
-             <a href="Medical Volunteering.php" class="button-link">
-             <img src="../CSS Sheets/Images/Volunteering/Medical Volunteer.jpg" width="200" height="200" alt="Icon" class="button-image" align="center"></a>
-             <label for="myButton">Medical Volunteering</label>
-             <a href="Office Volunteering.php" target="_blank"></a>
-             <a href="Office Volunteering.php" class="button-link">
-             <img src="../CSS Sheets/Images/Volunteering/Office Volunteer.jpg" width="200" height="200" alt="Icon" class="button-image" align="center"></a>
-             <label for="myButton">Office Volunteering</label>
-             <a href="Child Life Volunteering.php" target="_blank"></a>
-             <a href="Child Life Volunteering.php" class="button-link">
-             <img src="../CSS Sheets/Images/Volunteering/Child Life Volunteer.jpg" width="200" height="200" alt="Icon" class="button-image" align="center"></a>
-             <label for="myButton">Child Life Volunteering</label>
+             <center>
+                <section class="flex-container">
+                    <div class="links">
+                        <a href="Medical Volunteering.php" class="button-link">
+                        <img src="../CSS Sheets/Images/Volunteering/Medical Volunteer.jpg" width="200" height="200" alt="Icon" class="button-image" align="center"></a>
+                        <label for="myButton">Medical Volunteering</label>
+                    </div>
+                    <div class="links">
+                        <a href="Office Volunteering.php" class="button-link">
+                        <img src="../CSS Sheets/Images/Volunteering/Office Volunteer.jpg" width="200" height="200" alt="Icon" class="button-image" align="center"></a>
+                        <label for="myButton">Office Volunteering</label>
+                    </div>
+                    <div class="links">
+                        <a href="Child Life Volunteering.php" class="button-link">
+                        <img src="../CSS Sheets/Images/Volunteering/Child Life Volunteer.jpg" width="200" height="200" alt="Icon" class="button-image" align="center"></a>
+                        <label for="myButton">Child Life Volunteering</label>
+                    </div>
+                </section>
+             </center>
     </body>
 </html>

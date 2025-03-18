@@ -17,3 +17,6 @@ body {
     justify-content: space-between;
     width: 100%; 
 }
+section{
+    display: flex;
+}
