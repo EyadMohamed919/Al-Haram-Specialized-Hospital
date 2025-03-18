@@ -26,10 +26,10 @@ function navBar()
                 <div class='nav-dropdown'>
                     <a class='nav-links' href='../contact Details.html'>Contact Us<i class='fa-solid fa-caret-down'></i></a>
                     <div class='nav-dropdown-links'>
-                        <a href='../contact Details.html'>Contact Details</a>
-                        <a href='../Online Consultaitions.html'>Online Consultations</a>
-                        <a href='../heart checks.html'>Heart Checks</a>
-                        <a href='../Directions to hospital.html'>Directions to the Hospital</a>
+                        <a href='../contactUs/contact Details.php'>Contact Details</a>
+                        <a href='../contactUs/Online Consultaitions.php'>Online Consultations</a>
+                        <a href='../contactUs/heart checks.php'>Heart Checks</a>
+                        <a href='../contactUs/Directions to hospital.php'>Directions to the Hospital</a>
                     </div>
                 </div>
                 <a class='nav-links' href='../recordPage.html'>Records</a>
