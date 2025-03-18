@@ -8,7 +8,7 @@ function navBar()
                 <a class='nav-links' href='../index.html'>Home</a>
                 <a class='nav-links' href='../Donations-Homepage.html'>Donation</a>
                 <div class='nav-dropdown'>
-                    <a class='nav-links' href='../vehiclesPage.html'>Services<i class='fa-solid fa-caret-down'></i></a>
+                    <a class='nav-links' href='../services/ServicesMain.php'>Services<i class='fa-solid fa-caret-down'></i></a>
                     <div class='nav-dropdown-links'>
                         <a class='dropdown-item' href='../services/ServicesMain.php'>Services Home</a>
                         <a class='dropdown-item' href='../services/Pharmacy.php'>Pharmacy</a>
