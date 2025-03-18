@@ -21,6 +21,7 @@
             navBar();
         ?>
         <h1 id="title">Child Life Volunteering</h1><hr>
+        <center>
         <form action="SaveChildVol.php" method="get">
         <table border="1">
                     <tr>
@@ -104,5 +105,6 @@
                 </tr>
             </table>
         </form>
+        </center>
     </body>
 </html>

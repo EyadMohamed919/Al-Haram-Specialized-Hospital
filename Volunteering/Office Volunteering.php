@@ -20,6 +20,7 @@
             navBar();
         ?>
         <h1 id="title">Office Volunteering</h1><hr>
+        <center>
         <form method="post" action="SaveOfcVol.php" method="get" onsubmit="return validateForm();">
         <table border="1">
                     <tr>
@@ -118,5 +119,6 @@
                 </tr>
             </table>
         </form>
+        </center>
     </body>
 </html>

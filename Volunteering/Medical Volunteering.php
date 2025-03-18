@@ -21,6 +21,7 @@
             navBar();
         ?>
         <h1 id="title">Medical Volunteering</h1><hr>
+        <center>
         <form method="post" action="SaveMedVol.php" onsubmit="event.preventDefault(); validateForm();">
         <table border="1">
                 <tr>
@@ -119,5 +120,6 @@
                 </tr>
             </table>
         </form>
+        </center>
     </body>
 </html>
