@@ -3,7 +3,7 @@
     <head>
         <link rel="stylesheet" href="CSS Sheets/HomePageStyle.css">
         <meta charset='utf-8'>
-        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <meta http-equiv='X-UA-Compatible'>
         <meta name='viewport' content='width=device-width, initial-scale=1'>
         <link rel="icon" type="image/x-icon" href="CSS Sheets/Images/AboutUsImages/favicon.svg">
         <title>Types Of Volunteering</title>
@@ -12,10 +12,14 @@
         <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
         <script src="https://kit.fontawesome.com/c19e8a164c.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="CSS Sheets/aboutNavStyle.css">
-        <h1 id="title" style="font-family: Arial; font-size: 50px; text-align: center; color: lightseagreen;">Donations</h1>
-        <title>Donations</title>
+        <div id="title"><h1 id="title" style="font-family: Arial; font-size: 50px; text-align: center; color: lightseagreen;">Donations</h1>
+        <title>Donations</title></div>
     </head>
     <body>
+        <?php
+            include_once(__DIR__ . '/../repeated.php');
+            navBar();
+        ?>
         <nav>
             <img src="CSS Sheets/Images/AboutUsImages/Hospital_Logo.svg" class="nav-logo" alt="">
             <div class="nav-container">
