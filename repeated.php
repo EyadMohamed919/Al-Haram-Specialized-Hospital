@@ -5,7 +5,7 @@ function navBar()
     echo "<nav>
             <img src='../CSS Sheets/Images/AboutUsImages/Hospital_Logo.svg' class='nav-logo' alt=''>
             <div class='nav-container'>
-                <a class='nav-links' href='../index.php'>Home</a>
+                <a class='nav-links' href='../contactUs/index.php'>Home</a>
                 <a class='nav-links' href='../Donations/Donations-Homepage.php'>Donation</a>
                 <div class='nav-dropdown'>
                     <a class='nav-links' href='../services/ServicesMain.php'>Services<i class='fa-solid fa-caret-down'></i></a>
