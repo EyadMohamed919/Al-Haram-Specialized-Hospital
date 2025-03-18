@@ -28,7 +28,7 @@
             <h2 class="content-box-title">Career</h2>
             <h3 class="content-box-subtitle">Career Form <hr class="content-box-subtitle-hr"></h3>
             <p class="content-box-paragraph">Al Haram Specialized Hospital constantly expanding, and we are regularly seeking qualified talent to join the team. If you are interested in working with us, please send us your CV with an appropriate covering letter.</p>
-            <form action="../success.html" method="get">
+            <form action="SendCareerData.php" method="post" enctype="multipart/form-data">
                 <table>
                     <tr>
                         <td class="name-cell"><label for="Fname">First Name</label></td>
@@ -50,8 +50,8 @@
 
                         <td class="name-cell">Gender</td>
                         <td class="gender-cell">
-                                <label for="gender">Male</label><input class="radio-btn" type="radio" name="gender" required>
-                                <label for="gender">Female</label><input class="radio-btn" type="radio" name="gender" required>
+                                <label for="gender">Male</label><input class="radio-btn" type="radio" name="gender" value="M" required>
+                                <label for="gender">Female</label><input class="radio-btn" type="radio" name="gender" value="F" required>
                         </td>
                     </tr>
                     <tr>
@@ -71,6 +71,6 @@
          ?>
     </section>
 
-    <script src="form.js"></script>
+    <script src="../form.js"></script>
 </body>
 </html>
