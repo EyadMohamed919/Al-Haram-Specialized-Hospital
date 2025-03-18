@@ -29,16 +29,16 @@
             Their efforts can uplift patients' spirits, reduce stress, and accelerate the healing process. Ultimately,
             hospital volunteers play a vital role in enhancing the overall quality of healthcare and creating a more compassionate healthcare system.</p><hr> 
              <h1>Types Of Volunteering</h1>
-             <a href="volunteeringUserSide/Medical Volunteering.html" target="_blank"></a>
-             <a href="volunteeringUserSide/Medical Volunteering.html" class="button-link">
+             <a href="Medical Volunteering.php" target="_blank"></a>
+             <a href="Medical Volunteering.php" class="button-link">
              <img src="../CSS Sheets/Images/Volunteering/Medical Volunteer.jpg" width="200" height="200" alt="Icon" class="button-image" align="center"></a>
              <label for="myButton">Medical Volunteering</label>
-             <a href="volunteeringUserSide/Office Volunteering.html" target="_blank"></a>
-             <a href="volunteeringUserSide/Office Volunteering.html" class="button-link">
+             <a href="Office Volunteering.php" target="_blank"></a>
+             <a href="Office Volunteering.php" class="button-link">
              <img src="../CSS Sheets/Images/Volunteering/Office Volunteer.jpg" width="200" height="200" alt="Icon" class="button-image" align="center"></a>
              <label for="myButton">Office Volunteering</label>
-             <a href="volunteeringUserSide/Child Life Volunteering.html" target="_blank"></a>
-             <a href="volunteeringUserSide/Child Life Volunteering.html" class="button-link">
+             <a href="Child Life Volunteering.php" target="_blank"></a>
+             <a href="Child Life Volunteering.php" class="button-link">
              <img src="../CSS Sheets/Images/Volunteering/Child Life Volunteer.jpg" width="200" height="200" alt="Icon" class="button-image" align="center"></a>
              <label for="myButton">Child Life Volunteering</label>
     </body>

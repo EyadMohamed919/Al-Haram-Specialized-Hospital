@@ -1,7 +1,7 @@
 <html>
     <head>
         <title>Volunteering Admin page</title>
-        <link rel="stylesheet" href="CSS Sheets/HomePageStyle.css">
+        <link rel="stylesheet" href="../../CSS Sheets/HomePageStyle.css">
         <h1 id="title" style="font-family: Arial; font-size: 50px; text-align: center; color: lightseagreen;">Volunteering Admin page</h1>    
     </head>
     <body>
@@ -14,19 +14,18 @@
             This organized approach not only enhances the efficiency of volunteer management but also fosters a sense of accountability and professionalism,
             ultimately contributing to the success of the organization's mission.</p><hr> 
              <h1>Types Of Volunteering</h1>
-             <a href="MedicalVolBE.html" target="_blank"></a>
-             <a href="MedicalVolBE.html" class="button-link">
+             <a href="MedicalVolBE.php" target="_blank"></a>
+             <a href="MedicalVolBE.php" class="button-link">
              <img src="CSS Sheets/Images/Volunteering/Medical Volunteer.jpg" width="200" height="200" alt="Icon" class="button-image" align="center"></a>
              <label for="myButton">Medical Volunteering</label>
-             <a href="OfficeVolBE.html" target="_blank"></a>
-             <a href="OfficeVolBE.html" class="button-link">
+             <a href="OfficeVolBE.php" target="_blank"></a>
+             <a href="OfficeVolBE.php" class="button-link">
              <img src="CSS Sheets/Images/Volunteering/Office Volunteer.jpg" width="200" height="200" alt="Icon" class="button-image" align="center"></a>
              <label for="myButton">Office Volunteering</label>
-             <a href="ChildLifeVolBE.html" target="_blank"></a>
-             <a href="ChildLifeVolBE.html" class="button-link">
+             <a href="ChildLifeVolBE.php" target="_blank"></a>
+             <a href="ChildLifeVolBE.php" class="button-link">
              <img src="CSS Sheets/Images/Volunteering/Child Life Volunteer.jpg" width="200" height="200" alt="Icon" class="button-image" align="center"></a>
              <label for="myButton">Child Life Volunteering</label>
-
 
              <div class="aside-dive">
                 <aside>
