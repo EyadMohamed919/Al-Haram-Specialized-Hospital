@@ -20,7 +20,7 @@
             navBar();
         ?>
         <h1 id="title">Office Volunteering</h1><hr>
-        <form id="officeVolForm" action="SaveOfcVol.php" method="get" onsubmit="return validateForm();">
+        <form method="post" action="SaveOfcVol.php" method="get" onsubmit="return validateForm();">
         <table border="1">
                     <tr>
                         <td>First Name</td>

@@ -21,8 +21,8 @@
             navBar();
         ?>
         <h1 id="title">Medical Volunteering</h1><hr>
-        <form method="post" action="MedVol.php" onsubmit="event.preventDefault(); validateForm();">
-            <table border="1">
+        <form method="post" action="SaveMedVol.php" onsubmit="event.preventDefault(); validateForm();">
+        <table border="1">
                 <tr>
                     <td>First Name</td>
                     <td><input type="text" id="FirstName" name="FirstName" placeholder="Enter First Name"></td>

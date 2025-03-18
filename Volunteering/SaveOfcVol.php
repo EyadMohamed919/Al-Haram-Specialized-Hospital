@@ -11,7 +11,7 @@ function saveFormData($data) {
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "GET") {  
-    // Collect form data
+
     $firstName = $_GET["FirstName"] ?? '';
     $secondName = $_GET["SecondName"] ?? '';
     $thirdName = $_GET["ThirdName"] ?? '';
