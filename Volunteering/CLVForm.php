@@ -13,9 +13,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     $dob = sanitizeInput($_POST['DOB'] ?? 'N/A');
     $mobileNumber = sanitizeInput($_POST['MobileNumber'] ?? 'N/A');
     $emailAddress = sanitizeInput($_POST['EmailAddress'] ?? 'N/A');
-    $understandChildDevelopment = sanitizeInput($_POST['understandChildDevelopment'] ?? 'N/A');
-    $prepareChildrenForMedicalProcedures = sanitizeInput($_POST['preparechildrenformedicalprocedures'] ?? 'N/A');
-    $communicateWithChildren = sanitizeInput($_POST['communicatewithchildren'] ?? 'N/A');
     $startDate = sanitizeInput($_POST['startDate'] ?? 'N/A');
 
     $errors = [];
@@ -38,13 +35,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
             "DOB: $dob\n" .
             "Mobile Number: $mobileNumber\n" .
             "Email Address: $emailAddress\n" .
-            "Understands Child Development: $understandChildDevelopment\n" .
-            "Prepares Children for Medical Procedures: $prepareChildrenForMedicalProcedures\n" .
-            "Can Communicate with Children: $communicateWithChildren\n" .
             "Start Date: $startDate\n" .
             "-------------------------\n";
 
-    // Save data to a text file
     $file = fopen("ClVol.txt", "a");
     if ($file) 
     {

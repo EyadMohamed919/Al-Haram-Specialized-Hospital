@@ -1,16 +1,3 @@
-First Name: Kim
-Second Name: Nam
-Third Name: Joon
-Gender: M
-Nationality: SK
-DOB: 1996-06-06
-Mobile Number: 741234567890
-Email Address: Kim.66@gmail.com
-Understands Child Development: YES
-Prepares Children for Medical Procedures: YES
-Can Communicate with Children: YES
-Start Date: 2025-06-06
--------------------------
 First Name: GiGi
 Second Name: Silver
 Third Name: Hadid
@@ -19,8 +6,5 @@ Nationality: USA
 DOB: 1998-08-08
 Mobile Number: 561234567890
 Email Address: GiGi.88@gmail.com
-Understands Child Development: YES
-Prepares Children for Medical Procedures: YES
-Can Communicate with Children: YES
 Start Date: 2025-08-08
 -------------------------

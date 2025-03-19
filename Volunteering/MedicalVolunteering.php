@@ -22,7 +22,7 @@
         ?>
         <h1 id="title">Medical Volunteering</h1><hr>
         <center>
-        <form method="post" action="SaveMedVol.php" onsubmit="event.preventDefault(); validateForm();">
+        <form action="MVForm.php" method="post">
         <table border="1">
                 <tr>
                     <td>First Name</td>
