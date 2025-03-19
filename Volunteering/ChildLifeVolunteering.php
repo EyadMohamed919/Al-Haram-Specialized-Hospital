@@ -22,7 +22,7 @@
         ?>
         <h1 id="title">Child Life Volunteering</h1><hr>
         <center>
-        <form action="SaveClVol.php" method="post">
+        <form action="CLVForm.php" method="post">
             <table border="1">
                     <tr>
                         <td>First Name</td>
