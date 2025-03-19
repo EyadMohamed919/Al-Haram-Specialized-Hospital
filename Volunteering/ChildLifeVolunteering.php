@@ -22,8 +22,8 @@
         ?>
         <h1 id="title">Child Life Volunteering</h1><hr>
         <center>
-        <form action="SaveChildVol.php" method="get">
-        <table border="1">
+        <form action="SaveClVol.php" method="post">
+            <table border="1">
                     <tr>
                         <td>First Name</td>
                         <td><input type="text" id="FirstName" name="FirstName" placeholder="Enter First Name"></td>

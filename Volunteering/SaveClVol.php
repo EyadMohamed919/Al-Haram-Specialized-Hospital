@@ -10,25 +10,30 @@ function saveFormData($data) {
     }
 }
 
-if ($_SERVER["REQUEST_METHOD"] == "GET") {
-    $firstName = trim($_GET["FirstName"] ?? '');
-    $secondName = trim($_GET["SecondName"] ?? '');
-    $thirdName = trim($_GET["ThirdName"] ?? '');
-    $gender = $_GET["Gender"] ?? '';
-    $nationality = $_GET["Country"] ?? '';
-    $dob = $_GET["DOB"] ?? '';
-    $mobileNumber = trim($_GET["MobileNumber"] ?? '');
-    $emailAddress = trim($_GET["EmailAddress"] ?? '');
-    $understandChildDevelopment = $_GET["understandChildDevelopment"] ?? '';
-    $prepareChildrenForMedicalProcedures = $_GET["preparechildrenformedicalprocedures"] ?? '';
-    $communicateWithChildren = $_GET["communicatewithchildren"] ?? '';
-    $startDate = $_GET["startDate"] ?? '';
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $firstName = trim($_POST["FirstName"] ?? '');
+    $secondName = trim($_POST["SecondName"] ?? '');
+    $thirdName = trim($_POST["ThirdName"] ?? '');
+    $gender = $_POST["Gender"] ?? '';
+    $nationality = $_POST["Country"] ?? '';
+    $dob = $_POST["DOB"] ?? '';
+    $mobileNumber = trim($_POST["MobileNumber"] ?? '');
+    $emailAddress = trim($_POST["EmailAddress"] ?? '');
+    $understandChildDevelopment = $_POST["understandChildDevelopment"] ?? '';
+    $prepareChildrenForMedicalProcedures = $_POST["preparechildrenformedicalprocedures"] ?? '';
+    $communicateWithChildren = $_POST["communicatewithchildren"] ?? '';
+    $startDate = $_POST["startDate"] ?? '';
+
+    if (empty($firstName) || empty($secondName) || empty($thirdName) || empty($gender) || empty($nationality) || empty($dob) || empty($mobileNumber) || empty($emailAddress) || empty($understandChildDevelopment) || empty($prepareChildrenForMedicalProcedures) || empty($communicateWithChildren) || empty($startDate)) {
+        echo "All fields are required.";
+        exit();
+    }
 
     $data = "$firstName | $secondName | $thirdName | $gender | $nationality | $dob | $mobileNumber | $emailAddress | $understandChildDevelopment | $prepareChildrenForMedicalProcedures | $communicateWithChildren | $startDate";
 
     if (saveFormData($data)) {
         echo "Data saved successfully!";
-        header("Location: ChildLifeVolForm.html?success=1"); 
+        header("Location: ChildLifeVolunteering.php?success=1"); 
         exit();
     } else {
         echo "Error saving data.";

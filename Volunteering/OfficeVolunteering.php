@@ -21,7 +21,7 @@
         ?>
         <h1 id="title">Office Volunteering</h1><hr>
         <center>
-        <form method="post" action="SaveOfcVol.php" method="get" onsubmit="return validateForm();">
+        <form action="SaveOfcVol.php" method="post">
         <table border="1">
                     <tr>
                         <td>First Name</td>

@@ -1,0 +1,3 @@
+Michael | Fredricke | Nolte | M | GE | 2006-06-06 | 491234567890 | Michael.66@gmail.com | YES | YES | YES | 2026-06-06
+Michael | Fredricke | Nolte | M | GE | 2006-06-06 | 491234567890 | Michael.66@gmail.com | YES | YES | YES | 2026-06-06
+Kim | Jong | Un | M | SK | 1984-06-07 | 741234567890 | Kim.67@gmail.com | NO | NO | NO | 2027-07-06
