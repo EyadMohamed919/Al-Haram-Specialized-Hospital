@@ -91,8 +91,8 @@ function validateEmailAddress() {
 }
 
 function validateBloodType() {
-    const selectedBloodType = document.querySelectorAll('input[name="TypeA"]:checked, input[name="TypeB"]:checked, input[name="TypeO"]:checked, input[name="TypeAB"]:checked');
-    const cell = document.getElementById('TypeA').parentElement;
+    const selectedBloodType = document.querySelectorAll('input[name="BloodType"]:checked');
+    const cell = document.getElementById('BloodType').parentElement;
     const errorMessage = "Please select at least one blood type.";
     if (selectedBloodType.length === 0) {
         displayError(cell, errorMessage);

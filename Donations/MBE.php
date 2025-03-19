@@ -16,3 +16,5 @@
 $file = fopen("MBE.txt","a");
 fwrite($file,$data);
 fclose($file);
+echo"Record Have been added!!";
+?>

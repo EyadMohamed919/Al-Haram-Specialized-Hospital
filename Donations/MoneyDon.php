@@ -26,11 +26,5 @@
 $file = fopen("MoneyForm.txt","a");
 fwrite($file,$data);
 fclose($file);
-
-
 echo "Your Form have been recieved, Thank you";
-
-
-
-
 ?>

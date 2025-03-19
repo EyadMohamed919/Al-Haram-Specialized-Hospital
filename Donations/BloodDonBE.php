@@ -1,7 +1,7 @@
 <html>
 <head>
     <title>Backend Blood Donations</title>
-    <link rel="stylesheet" type="text/css" href="CSS Sheets/BEstylesheet1.css">
+    <link rel="stylesheet" type="text/css" href="../CSS Sheets/BEstylesheet1.css">
     <script src="BloodDonBE.js" type="text/javascript"></script>
 </head>
 <body>
