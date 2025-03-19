@@ -1,7 +1,7 @@
-<html>
+<php>
     <head>
         <title>Donations Admin page</title>
-        <link rel="stylesheet" href="CSS Sheets/BEstylesheet1.css">
+        <link rel="stylesheet" href="../CSS Sheets/BEstylesheet1.css">
         <h1 id="title" style="font-family: Arial; font-size: 50px; text-align: center; color: lightseagreen;">Donations Admin page</h1>
     </head>
     <body>
@@ -16,17 +16,17 @@
          and engagement, an admin page plays a vital role in sustaining donor trust and ensuring the long-term success of fundraising efforts.
         </p><hr> 
         <h1>Types Of Donations</h1>
-        <a href="MoneyDonBE.html" target="_blank"></a>
-        <a href="MoneyDonBE.html" class="button-link">
-        <img src="CSS Sheets/Images/DonationsImages/Money.png" width="200" height="200" alt="Icon" class="button-image" align="center">
+        <a href="MoneyDonBE.php" target="_blank"></a>
+        <a href="MoneyDonBE.php" class="button-link">
+        <img src="../CSS Sheets/Images/DonationsImages/Money.png" width="200" height="200" alt="Icon" class="button-image" align="center">
         <label for="myButton">Money Donations</label>
-        <a href="BloodDonBE.html" target="_blank"></a>
-        <a href="BloodDonBE.html" class="button-link">
-        <img src="CSS Sheets/Images/DonationsImages/Blood bag.png" width="200" height="200" alt="Icon" class="button-image" align="center">
+        <a href="BloodDonBE.php" target="_blank"></a>
+        <a href="BloodDonBE.php" class="button-link">
+        <img src="../CSS Sheets/Images/DonationsImages/Blood bag.png" width="200" height="200" alt="Icon" class="button-image" align="center">
         <label for="myButton">Blood Donations</label>
-        <a href="OrganDonBE.html" target="_blank"></a>
-        <a href="OrganDonBE.html" class="button-link">
-        <img src="CSS Sheets/Images/DonationsImages/Heart.png" width="200" height="200" alt="Icon" class="button-image" align="center">
+        <a href="OrganDonBE.php" target="_blank"></a>
+        <a href="OrganDonBE.php" class="button-link">
+        <img src="../CSS Sheets/Images/DonationsImages/Heart.png" width="200" height="200" alt="Icon" class="button-image" align="center">
         <label for="myButton">Organ Donations</label>
 
 
@@ -35,20 +35,20 @@
                 <h2 class="aside-title">Admin Pages</h2>
                 <hr>
                 <div class="aside-container">
-                    <a class="aside-links" href="adminPage.html"><i class="fa-regular fa-bookmark"></i> Profile</a>
+                    <a class="aside-links" href="adminPage.php"><i class="fa-regular fa-bookmark"></i> Profile</a>
                     <hr class="aside-horizontal">
 
-                    <a class="aside-links" href="adminCareer.html"><i class="fa-regular fa-bookmark"></i> Career Applications</a>
+                    <a class="aside-links" href="adminCareer.php"><i class="fa-regular fa-bookmark"></i> Career Applications</a>
                     <hr class="aside-horizontal">
 
 
-                    <a class="aside-links" href="DonationsBE-Homepage.html"><i class="fa-regular fa-bookmark"></i> Admin Donations</a>
+                    <a class="aside-links" href="DonationsBE-Homepage.php"><i class="fa-regular fa-bookmark"></i> Admin Donations</a>
                     <hr class="aside-horizontal">
 
-                    <a class="aside-links" href="VolunteeringBE-Homepage.html"><i class="fa-regular fa-bookmark"></i> Admin Volunteering</a>
+                    <a class="aside-links" href="VolunteeringBE-Homepage.php"><i class="fa-regular fa-bookmark"></i> Admin Volunteering</a>
                     <hr class="aside-horizontal">
                 </div>
             </aside>
         </div>
     </body>
-</html>
+</php>
