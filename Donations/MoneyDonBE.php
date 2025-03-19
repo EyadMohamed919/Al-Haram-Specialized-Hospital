@@ -5,7 +5,7 @@
     <script src="MoneyDonBE.js" type="text/javascript"></script>
 </head>
 <body>
-    <a href="DonationsBE-Homepage.html">DonationsBE-HomePage</a><hr>
+    <a href="DonationsBE-Homepage.php">DonationsBE-HomePage</a><hr>
     <p>Donations<p>
     <table border="1" id="Donationtable">
         <tr>
@@ -55,7 +55,7 @@
     <p>Control Donations<p>
 
     <div>
-        <form method="post" action="MBE.php">
+        <form method="get">
 
             <b><label for="DonationID">ID:</label></b><br>
             <input type="text" id="DonationID" name="DonationID" required><br><br>

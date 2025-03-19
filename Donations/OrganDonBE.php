@@ -55,7 +55,7 @@
     <p>Control Donations<p>
 
     <div>
-        <form method="post" action="OBE.php">
+        <form method="post">
             <b><label for="DonationID">ID:</label></b><br>
             <input type="text" id="DonationID" name="DonationID" required><br><br>
             <b><label for="DonatorsName">Name:</label></b><br>
