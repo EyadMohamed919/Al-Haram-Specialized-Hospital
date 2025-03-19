@@ -21,7 +21,7 @@
         ?>
         <h1 id="title">Office Volunteering</h1><hr>
         <center>
-        <form action="SaveOfcVol.php" method="post">
+        <form action="OVForm.php" method="post">
         <table border="1">
                     <tr>
                         <td>First Name</td>
@@ -71,40 +71,25 @@
                         <td>Email Address</td>
                         <td><input type="email" id="EmailAddress" name="EmailAddress" placeholder="Enter Email Address"></td>
                     </tr>
-                <tr>
+                    <tr>
                     <td><label for="ComputerSkills">Are you familiar with basic computer skills?</label></td>
                     <td>
-                        <input type="radio" id="yes" name="ComputerSkills" value="YES"><label for="Yes" required>Yes</label><br>
-                        <input type="radio" id="No" name="ComputerSkills" value="NO"><label for="NO">No</label>
+                        <input type="radio" id="yes" name="ComputerSkills" value="YES"><label for="yes" required>Yes</label><br>
+                        <input type="radio" id="no" name="ComputerSkills" value="NO"><label for="no">No</label>
                     </td>
                 </tr>
                 <tr>
-                    <td><label for="OrganizationSkills">Are you an organized person?</label></td>
+                    <td><label for="Organization">Are you an organized person?</label></td>
                     <td>
-                        <input type="radio" id="yes" name="OrganizationSkills" value="YES"><label for="Yes" required>Yes</label><br>
-                        <input type="radio" id="no" name="OrganizationSkills" value="NO"><label for="NO">No</label>
-                    </td>
-                </tr>
-                <tr>
-                    <td><label for="AttentionToDetails">Do you pay attention to details?</label></td>
-                    <td>
-                        <input type="radio" id="yes" name="AttentionToDetails" value="YES"><label for="Yes" required>Yes</label><br>
-                        <input type="radio" id="no" name="AttentionToDetails" value="NO"><label for="NO">No</label>
+                        <input type="radio" id="yes" name="Organization" value="YES"><label for="yes" required>Yes</label><br>
+                        <input type="radio" id="no" name="Organization" value="NO"><label for="no">No</label>
                     </td>
                 </tr>
                 <tr>
                     <td><label for="PositiveAttitude">Do you possess a positive attitude?</label></td>
                     <td>
-                        <input type="radio" id="yes" name="PositiveAttitude" value="YES"><label for="Yes" required>Yes</label><br>
-                        <input type="radio" id="no" name="PositiveAttitude" value="NO"><label for="NO">No</label>
-                    </td>
-                </tr>
-                <tr>
-                    <td><label for="Confidence">Are you confident enough to believe that you will do your utmost best as a volunteer at our hospital?</label></td>
-                    <td>
-                        <input type="radio" name="Confidence" value="YES"><label for="Yes" required>Yes</label><br>
-                        <input type="radio" name="Confidence" value="NO"><label for="NO">No</label>
-                    </td>
+                        <input type="radio" id="yes" name="PositiveAttitude" value="YES"><label for="yes" required>Yes</label><br>
+                        <input type="radio" id="no" name="PositiveAttitude" value="NO"><label for="no">No</label>
                     </td>
                 </tr>
                 <tr>
