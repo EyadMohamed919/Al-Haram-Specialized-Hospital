@@ -67,7 +67,6 @@ if (isset($_POST['update'])) {
     exit();
 }
 
-// Handle delete request
 if (isset($_POST['delete'])) {
     $index = $_POST['row_id']; 
     $data = readData($file);
@@ -118,19 +117,19 @@ $data = readData($file);
 <body>
 <style>
     table {
-        width: 80%; /* Adjust width as needed */
-        margin: 20px auto; /* Centers the table */
-        border-collapse: collapse; /* Ensures inner borders are visible */
+        width: 80%; 
+        margin: 20px auto; 
+        border-collapse: collapse; 
         text-align: center;
     }
 
     th, td {
-        border: 2px solid black; /* Outer and inner borders */
+        border: 2px solid black; 
         padding: 10px;
     }
 
     th {
-        background-color:rgb(165, 195, 209); /* Light background for headers */
+        background-color:rgb(165, 195, 209); 
     }
 </style>
 
@@ -163,7 +162,7 @@ $data = readData($file);
     <?php endforeach; ?>
 </table>
 
-    <h2 style="text-align: center;">Edit or Delete Volunteer Details</h2>
+    <h2 style="text-align: center;">Update or Delete Volunteer Details</h2>
     <form method="POST">
         <input type="hidden" name="row_id" id="row_id">
         
