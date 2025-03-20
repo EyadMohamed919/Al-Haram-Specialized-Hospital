@@ -3,8 +3,7 @@ function sanitizeInput($input) {
     return htmlspecialchars(strip_tags(trim($input)));
 }
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") 
-{
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $firstName = sanitizeInput($_POST['FirstName'] ?? 'N/A');
     $secondName = sanitizeInput($_POST['SecondName'] ?? 'N/A');
     $thirdName = sanitizeInput($_POST['ThirdName'] ?? 'N/A');
@@ -15,16 +14,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     $emailAddress = sanitizeInput($_POST['EmailAddress'] ?? 'N/A');
     $startDate = sanitizeInput($_POST['startDate'] ?? 'N/A');
 
-    $errors = [];
-    if (empty($firstName)) $errors[] = "First Name is required.";
-    if (empty($emailAddress)) $errors[] = "Email Address is required.";
-    if (empty($mobileNumber)) $errors[] = "Mobile Number is required.";
-    if (empty($startDate)) $errors[] = "Start Date is required.";
-
-    if (!empty($errors)) {
-        $errorMessage = urlencode(implode(", ", $errors));
-        header("Location: ChildLifeVolunteering.php?error=$errorMessage");
-        exit();
+    if (empty($firstName) || empty($emailAddress) || empty($mobileNumber) || empty($startDate)) {
+        die("Error: All required fields must be filled.");
     }
 
     $data = "First Name: $firstName\n" .
@@ -38,21 +29,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
             "Start Date: $startDate\n" .
             "-------------------------\n";
 
-    $file = fopen("ClVol.txt", "a");
-    if ($file) 
-    {
-        fwrite($file, $data);
-        fclose($file);
-        header("Location: ChildLifeVolunteering.php?success=1"); 
-        exit();
-    } 
-    else 
-    {
-        echo "<h3>Error: Unable to save your form. Please try again later.</h3>";
-    }
-} 
-else 
-{
-    echo "<h3>Invalid request.</h3>";
-}
-?>
+            $filePath = __DIR__ . "/ClVol.txt"; 
+
+            $file = fopen($filePath, "a");
+            if (!$file) {
+                die("Error: Unable to open file for writing.");
+            }
+        {
+            fwrite($file, $data);
+            fclose($file);
+            header("Location: ChildLifeVolunteering.php");
+            exit(); 
+        }
+        }
+        ?>

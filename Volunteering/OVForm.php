@@ -36,12 +36,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (!$file) {
         die("Error: Unable to open file for writing.");
     }
-
+{
     fwrite($file, $data);
     fclose($file);
-
     header("Location: OfficeVolunteering.php");
     exit(); 
-    echo "Invalid request.";
+}
 }
 ?>
