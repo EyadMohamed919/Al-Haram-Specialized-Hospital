@@ -1,22 +1,104 @@
-body {
+body{
+    padding: 0;
     margin: 0;
-    font-family: 'Montserrat', sans-serif;
-    background: linear-gradient(120deg, #87CEEB, #C0C0C0);
-    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    font-family: "Josefin Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;   
+}
+
+
+.header-section{
+    width: 100%;
+    height: 400px;
+    background-image: url(Images/AboutUsImages/aboutBanner.jpg);
     background-size: cover;
-    color: #333;
-}
-.button-link img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-.donation-types {
+    background-position: 0 -500px;
+    z-index: 1;
     display: flex;
-    justify-content: space-between;
-    width: 100%; 
+    justify-content: center;
+    align-items: center;
+} 
+
+.header-section::after{
+    content: "";
+    position: absolute;
+    background: linear-gradient(rgba(0, 0, 0, 0), rgb(0, 91, 128));
+    filter: opacity(70%);
+    z-index: 3;
+    width: 100%;
+    height: 400px;
 }
-section{
+
+.header-title{
+    position: absolute;
+    font-size: 40px;
+    color: white;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 2;
+}
+
+.content-section{
+    width: 100%;
+    height: 600px;
     display: flex;
+    justify-content: center;
+    align-items: start;
+    padding-top: 20px;
+    flex-direction: column;
+}
+
+
+.content-section h1{
+    margin: auto;
+    margin-bottom: 0px;
+    margin-top: 20px;
+    font-size: 40px;
+    color: black;
+    position: relative;
+}
+
+.content-section h1::after{
+    content: "";
+    position: absolute;
+    width: 300%;
+    height: 6px;
+    left: 50%;
+    translate: -50%;
+    top: 45px;
+    background-color: rgb(0, 118, 164);
+}
+
+.card{
+    background-color: rgb(0, 118, 164);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2%;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.images-container{
+    margin: auto;
+    display: flex;
+}
+
+.image{
+    width: 400px;
+    height: 300px;
+    background-color: red;
+    border-radius: 20px;
+}
+
+#image1{
+    background: url("https://pharmdonline.findlay.edu/sites/default/files/2023-06/The%20Role%20of%20Pharmacists%20in%20Healthcare%20Systems.jpg");
+    background-size: cover;
 }
