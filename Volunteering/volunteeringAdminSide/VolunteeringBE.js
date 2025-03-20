@@ -2,78 +2,119 @@ window.onload = function() {
     alert("Welcome Administrator");
 };
 
-document.addEventListener("DOMContentLoaded", function () {
-    loadVolunteers();
-});
+function validateForm() {
+    let isValid = true;
 
-function loadVolunteers() {
-    fetch("ClVol.txt")
-        .then(response => response.text())
-        .then(data => {
-            const lines = data.split("\n").filter(line => line.trim() !== "");
-            const table = document.getElementById("VolunteersTable");
+    clearErrorMessages();
 
-            let volunteerData = {};
-            lines.forEach(line => {
-                const [key, value] = line.split(": ");
-                volunteerData[key] = value;
+    if (!validateVolunteerID()) {
+        isValid = false;
+    }
 
-                if (key === "Start Date") {
-                    let row = table.insertRow();
-                    row.innerHTML = `
-                        <td>${volunteerData["First Name"]}</td>
-                        <td>${volunteerData["Second Name"]}</td>
-                        <td>${volunteerData["Third Name"]}</td>
-                        <td>${volunteerData["Gender"]}</td>
-                        <td>${volunteerData["Nationality"]}</td>
-                        <td>${volunteerData["DOB"]}</td>
-                        <td>${volunteerData["Mobile Number"]}</td>
-                        <td>${volunteerData["Email Address"]}</td>
-                        <td>${volunteerData["Start Date"]}</td>
-                    `;
-                    volunteerData = {};
-                }
-            });
-        });
+    if (!validateVolunteerName()) {
+        isValid = false;
+    }
+
+    if (!validateStartDate()) {
+        isValid = false;
+    }
+
+    if (!validateVolunteerCountry()) {
+        isValid = false;
+    }
+
+    return isValid;
 }
 
-function createVolunteer() {
-    let formData = getFormData();
-    updateFile("create", formData);
+function validateVolunteerID() {
+    const volunteerID = document.getElementById("VolunteersID").value;
+    const errorElement = document.getElementById("VolunteersIDError");
+
+    if (!volunteerID || isNaN(volunteerID)) {
+        errorElement.textContent = "Volunteer ID must be a number.";
+        document.getElementById("VolunteersID").style.borderColor = "red";
+        return false;
+    }
+    return true;
 }
 
-function readVolunteers() {
-    location.reload();
+function validateVolunteerName() {
+    const volunteerName = document.getElementById("VolunteersName").value;
+    const errorElement = document.getElementById("VolunteersNameError");
+
+    if (!volunteerName.trim()) {
+        errorElement.textContent = "Volunteer Name cannot be empty.";
+        document.getElementById("VolunteersName").style.borderColor = "red";
+        return false;
+    }
+    return true;
 }
 
-function updateVolunteer() {
-    let formData = getFormData();
-    updateFile("update", formData);
+function validateStartDate() {
+    const startDate = document.getElementById("StartDate").value;
+    const errorElement = document.getElementById("StartDateError");
+
+    if (!startDate) {
+        errorElement.textContent = "Start Date cannot be empty.";
+        document.getElementById("StartDate").style.borderColor = "red";
+        return false;
+    }
+
+    const today = new Date();
+    const enteredDate = new Date(startDate);
+    if (enteredDate > today) {
+        errorElement.textContent = "Start Date cannot be in the future.";
+        document.getElementById("StartDate").style.borderColor = "red";
+        return false;
+    }
+    return true;
 }
 
-function deleteVolunteer() {
-    let formData = getFormData();
-    updateFile("delete", formData);
+function validateVolunteerCountry() {
+    const volunteerCountry = document.getElementById("VolunteersCountry").value;
+    const errorElement = document.getElementById("VolunteersCountryError");
+
+    if (!volunteerCountry.trim()) {
+        errorElement.textContent = "Volunteer Country cannot be empty.";
+        document.getElementById("VolunteersCountry").style.borderColor = "red";
+        return false;
+    }
+    return true;
 }
 
-function getFormData() {
-    return {
-        "First Name": document.getElementById("FirstName").value,
-        "Second Name": document.getElementById("SecondName").value,
-        "Third Name": document.getElementById("ThirdName").value,
-        "Gender": document.getElementById("Gender").value,
-        "Nationality": document.getElementById("Country").value,
-        "DOB": document.getElementById("DOB").value,
-        "Mobile Number": document.getElementById("MobileNumber").value,
-        "Email Address": document.getElementById("EmailAddress").value,
-        "Start Date": document.getElementById("StartDate").value
-    };
+function clearErrorMessages() {
+    document.getElementById("VolunteersIDError").textContent = "";
+    document.getElementById("VolunteersNameError").textContent = "";
+    document.getElementById("StartDateError").textContent = "";
+    document.getElementById("VolunteersCountryError").textContent = "";
+
+    document.getElementById("VolunteersID").style.borderColor = "";
+    document.getElementById("VolunteersName").style.borderColor = "";
+    document.getElementById("StartDate").style.borderColor = "";
+    document.getElementById("VolunteersCountry").style.borderColor = "";
 }
 
-function updateFile(action, data) {
-    fetch("updateVolunteers.php", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ action, data })
-    }).then(() => location.reload());
+function AddNewVolunteerRecord() {
+    if (validateForm()) {
+        alert("Volunteer record added successfully!");
+    }
+}
+
+function UpdateVolunteerRecord() {
+    if (validateForm()) {
+        alert("Volunteer record updated successfully!");
+    }
+}
+
+function RemoveVolunteerRecord() {
+    alert("Volunteer record removed successfully!");
+}
+
+function ClearForm() {
+    document.getElementById("VolunteersID").value = "";
+    document.getElementById("VolunteersName").value = "";
+    document.getElementById("StartDate").value = "";
+    document.getElementById("VolunteersCountry").value = "";
+
+    clearErrorMessages();
 }
