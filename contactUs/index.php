@@ -52,7 +52,7 @@
             font-size: 1.2em;
             display: inline-block;
             margin: 0 auto;
-            margin-top: 3rem;
+            margin-top: 3.7rem;
             display: inline;
             width: 100%;
         }
@@ -136,7 +136,7 @@
             font-weight: bold;
         }
         #body {
-            padding: 20px;
+            padding: 1rem;
         }
     </style>
 </head>
