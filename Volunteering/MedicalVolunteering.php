@@ -72,42 +72,6 @@
                     <td>Email Address</td>
                     <td><input type="email" id="EmailAddress" name="EmailAddress" placeholder="Enter Email Address"></td>
                 </tr>
-                <tr>
-                    <td>Which 2 of the following Medical Knowledges are you familiar with the most?</td>
-                    <td>
-                        <table>
-                            <tr><td>Basic Human Anatomy And Physiology</td><td><input type="checkbox" id="BHAAP" value="BHAAP" name="MedicalKnowledge"></td></tr>
-                            <tr><td>Understanding Of Common Medical Conditions And Illnesses</td><td><input type="checkbox" id="UOCMCAI" value="UOCMCAI" name="MedicalKnowledge"></td></tr>
-                            <tr><td>Knowledge Of Basic First Aid And CPR</td><td><input type="checkbox" id="KOBFAAC" value="KOBFAAC" name="MedicalKnowledge"></td></tr>
-                            <tr><td>Familiarity With Medical Terminology And Procedures</td><td><input type="checkbox" id="FWMTAP" value="FWMTAP" name="MedicalKnowledge"></td></tr>
-                        </table>
-                        <p id="MedicalKnowledgeError"></p>
-                    </td>
-                </tr>
-                    <tr>
-                    <td>Pick at least 2 of the following interpersonal skills that you truly possess:</td>
-                    <td>
-                        <table>
-                            <tr><td>Empathy And Compassion</td><td><input type="checkbox" id="EAC" value="EAC" name="InterpersonalSkills"></td></tr>
-                            <tr><td>Effective Communication Skills</td><td><input type="checkbox" id="ECS" value="ECS" name="InterpersonalSkills"></td></tr>
-                            <tr><td>Patience And Understanding</td><td><input type="checkbox" id="PAU" value="PAU" name="InterpersonalSkills"></td></tr>
-                            <tr><td>Ability To Work Well With People From Diverse Backgrounds</td><td><input type="checkbox" id="ATWWWPfDB" value="ATWWWPfDB" name="InterpersonalSkills"></td></tr>
-                        </table>
-                        <p id="InterpersonalSkillsError"></p>
-                    </td>
-                </tr>
-                    <tr>
-                    <td>Pick at least 2 of the following practical skills that you truly possess:</td>
-                    <td>
-                        <table>
-                            <tr><td>Ability To Follow Instructions And Protocols</td><td><input type="checkbox" id="ATFIAP" value="ATFIAP" name="PracticalSkills"></td></tr>
-                            <tr><td>Attention to Details</td><td><input type="checkbox" id="ATD" value="ATD" name="PracticalSkills"></td></tr>
-                            <tr><td>Time Management Skills</td><td><input type="checkbox" id="TMS" value="TMS" name="PracticalSkills"></td></tr>
-                            <tr><td>Basic Computer Skills</td><td><input type="checkbox" id="BCS" value="BCS" name="PracticalSkills"></td></tr>
-                        </table>
-                        <p id="PracticalSkillsError"></p>
-                    </td>
-                </tr>
                     <tr>
                         <td><label for="startDate">When are you going to start volunteering at our hospital?</label></td>
                         <td><input type="date" id="startDate" name="startDate" required></td>
