@@ -84,7 +84,7 @@ $data = readData($file);
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Backend Child Life Volunteering</title>
+    <title>Child Life Volunteering Admin Page</title>
     <link rel="stylesheet" type="text/css" href="../../CSS Sheets/BEstylesheet2.css">
     <script src="VolunteeringBE.js" defer></script>
 </head>
