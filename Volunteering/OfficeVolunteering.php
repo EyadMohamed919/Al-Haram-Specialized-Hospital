@@ -21,7 +21,7 @@
         ?>
         <h1 id="title">Office Volunteering</h1><hr>
         <center>
-        <form action="OVForm.php" method="post">
+        <form id="officeVolForm" action="OVForm.php" method="post">
         <table border="1">
                     <tr>
                         <td>First Name</td>
@@ -71,34 +71,13 @@
                         <td>Email Address</td>
                         <td><input type="email" id="EmailAddress" name="EmailAddress" placeholder="Enter Email Address"></td>
                     </tr>
-                    <tr>
-                    <td><label for="ComputerSkills">Are you familiar with basic computer skills?</label></td>
-                    <td>
-                        <input type="radio" id="yes" name="ComputerSkills" value="YES"><label for="yes" required>Yes</label><br>
-                        <input type="radio" id="no" name="ComputerSkills" value="NO"><label for="no">No</label>
-                    </td>
-                </tr>
-                <tr>
-                    <td><label for="Organization">Are you an organized person?</label></td>
-                    <td>
-                        <input type="radio" id="yes" name="Organization" value="YES"><label for="yes" required>Yes</label><br>
-                        <input type="radio" id="no" name="Organization" value="NO"><label for="no">No</label>
-                    </td>
-                </tr>
-                <tr>
-                    <td><label for="PositiveAttitude">Do you possess a positive attitude?</label></td>
-                    <td>
-                        <input type="radio" id="yes" name="PositiveAttitude" value="YES"><label for="yes" required>Yes</label><br>
-                        <input type="radio" id="no" name="PositiveAttitude" value="NO"><label for="no">No</label>
-                    </td>
-                </tr>
                 <tr>
                     <td><label for="startDate">When are you going to start volunteering at our hospital?</label></td>
                     <td><input type="date" id="startDate" name="startDate" required></td>
                 </tr>
                 <tr>
                     <td colspan="2" align="center">
-                        <button type="button" onclick="validateForm()">Proceed with the volunteering process</button>
+                    <button type="button" onclick="validateForm()">Proceed with the volunteering process</button>
                     <input type="reset" value="Stop the Volunteering Process">
                     </td>
                 </tr>
