@@ -46,7 +46,7 @@ body{
 
 .content-section{
     width: 100%;
-    height: 600px;
+    height: 700px;
     display: flex;
     justify-content: center;
     align-items: start;
@@ -75,20 +75,48 @@ body{
     background-color: rgb(0, 118, 164);
 }
 
+.content-section a{
+    width: 500px;
+    height: 60px;
+    border-radius: 20px;
+    border-width: 3px;
+    border-color: rgb(0, 118, 164);
+    border-style: solid;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+    background-color: transparent;
+    color: rgb(0, 118, 164);
+    transition: 0.2s;
+    margin: auto;
+}
+
+.content-section a:hover{
+    background-color: rgb(0, 118, 164);
+    color: white;
+}
+
 .card{
     background-color: rgb(0, 118, 164);
     display: flex;
+    margin-right: 30px;
+    margin-left: 30px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 2%;
+    padding-top: 0%;
+    width: 400px;
     border-radius: 20px;
     text-align: center;
+    color: white;
+    font-size: larger;
 }
 
 .images-container{
     margin: auto;
     display: flex;
+    margin-top: 50px;
 }
 
 .image{
@@ -96,9 +124,103 @@ body{
     height: 300px;
     background-color: red;
     border-radius: 20px;
+    background-size: cover;
 }
 
 #image1{
     background: url("https://pharmdonline.findlay.edu/sites/default/files/2023-06/The%20Role%20of%20Pharmacists%20in%20Healthcare%20Systems.jpg");
     background-size: cover;
+}
+
+#image2{
+    background: url("https://www.ucsfbenioffchildrens.org/-/media/project/ucsf/ucsf-bch/images/medical-tests/hero/comprehensive-metabolic-panel-708x556-2x.jpg?rev=2821e60b81c74c07929572a32aa33edd");
+    background-size: cover;
+}
+
+#image3{
+    background: url("https://petersonhealth.com/wp-content/uploads/2021/05/outpatient-therapy-1-scaled.jpg");
+    background-size: cover;
+}
+
+
+.donation-section{
+    width: 100%;
+    height: 700px;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    padding-top: 20px;
+    flex-direction: column;
+    background-color: rgb(0, 60, 83);
+}
+
+
+.donation-section h1{
+    margin-left: 20px;
+    margin-bottom: 0px;
+    margin-top: 20px;
+    font-size: 40px;
+    color: white;
+    position: relative;
+}
+
+.donation-section h1::after{
+    content: "";
+    position: absolute;
+    width: 150%;
+    height: 6px;
+    left: 0;
+    top: 45px;
+    background-color: white;
+}
+
+.donation-container{
+    margin: auto;
+    width: 96%;
+    height: 89%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.donation-box{
+    color: white;
+    width: 48%;
+    height: 85%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 28px;
+    justify-content: center;
+    
+}
+
+.donation-box a{
+    width: 500px;
+    height: 60px;
+    border-radius: 20px;
+    border-width: 3px;
+    border-color: white;
+    border-style: solid;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+    background-color: transparent;
+    color: white;
+    transition: 0.2s;
+    margin: auto;
+}
+
+.donation-box a:hover{
+    background-color: white;
+    color: rgb(0, 118, 164);
+}
+
+.donation-image{
+    width: 48%;
+    height: 100%;
+    background: url("https://annamrita.org/wp-content/uploads/2023/02/Why-should-you-donate-to-the-education-of-impoverished-children_.jpg");
+    background-size:cover;
+    border-radius: 20px;
 }

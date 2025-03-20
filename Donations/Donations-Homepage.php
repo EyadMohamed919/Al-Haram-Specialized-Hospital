@@ -17,7 +17,7 @@
     </head>
     <body>
         <?php
-            include_once(__DIR__ . '/../repeated.php');
+            include_once('../repeated.php');
             navBar();
         ?>
         <h1><b>Description:</b></h1>
