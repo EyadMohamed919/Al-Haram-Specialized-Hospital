@@ -1,0 +1,115 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, rgb(0, 60, 83), rgb(0, 118, 164));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #fff;
+  }
+  
+  .login-container {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+  }
+  
+  .login-box h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .login-box p {
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    color: #e0e0e0;
+  }
+  
+  .input-group {
+    position: relative;
+    margin-bottom: 1.5rem;
+  }
+  
+  .input-group input {
+    width: 100%;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+  }
+  
+  .input-group input:focus {
+    border-color: #fff;
+    background: rgba(255, 255, 255, 0.2);
+  }
+  
+  .input-group label {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #e0e0e0;
+    font-size: 1rem;
+    pointer-events: none;
+    transition: all 0.3s ease;
+  }
+  
+  .input-group input:focus ~ label,
+  .input-group input:not(:placeholder-shown) ~ label {
+    top: 0;
+    font-size: 0.8rem;
+    color: #fff;
+  }
+  
+  button {
+    width: 100%;
+    padding: 10px;
+    background: rgb(0, 133, 185);
+    border: solid;
+    border-width: 1px;
+    border-radius: 5px;
+    border-color: rgb(0, 50, 70);
+    color: rgb(0, 50, 70);
+    font-weight:bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  button:hover {
+    background: rgb(0, 50, 70);
+    color: white;
+  }
+  
+  .links {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .links a {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+  }
+  
+  .links a:hover {
+    color: #fff;
+  }

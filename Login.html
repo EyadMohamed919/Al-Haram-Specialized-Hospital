@@ -1,53 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Login</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
-  <link href="CSS Sheets/LogRegStyle.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modern Login Page</title>
+  <link rel="stylesheet" href="CSS Sheets/LoginStyle.css">
 </head>
 <body>
-  <div class="wrapper">
-    <form method="get">
-      <h1>Login</h1> 
-      <div class="input-box">
-        <label for="username" class="sr-only">Username</label>
-        <input type="text" id="username" name="username" placeholder="Username" required>
-        <i class='bx bxs-user'></i>
+  <div class="login-container">
+    <div class="login-box">
+      <h1>Welcome Back</h1>
+      <p>Sign in to continue</p>
+      <form id="loginForm">
+        <div class="input-group">
+          <input type="email" id="email" name="email" required>
+          <label for="email">Email</label>
+        </div>
+        <div class="input-group">
+          <input type="password" id="password" name="password" required>
+          <label for="password">Password</label>
+        </div>
+        <button type="submit">Login</button>
+      </form>
+      <div class="links">
+        <a href="#">Forgot Password?</a>
+        <a href="#">Create Account</a>
       </div>
-      <div class="input-box">
-        <label for="password" class="sr-only">Password</label>
-        <input type="password" id="password" name="password" placeholder="Password" required>
-        <i class='bx bx-lock-alt'></i>
-      </div>
-      <div class="remember-forgot">
-        <label><input type="checkbox" name="remember">Remember me</label>
-        <a href="forgotpassword.html">Forgot password?</a>
-      </div>
-      <button onclick="checkPassword()"  type="submit" class="btn">Login</button>
-      <div class="register-link">
-        <p>Don't have an account? <a href="registerPage.html">Register</a></p>
-        <p>Log in as administrator? <a href="admin.html">Admin login</a></p>
-      </div>
-    </form>
+    </div>
   </div>
-
-  <script>
-
-    function checkPassword()
-    {
-      const username = document.getElementById("username").value;
-      const password = document.getElementById("password").value;
-      if(username === "123" && password === "123")
-      {
-        window.location.href = "index.html";
-      }
-      else
-      {
-        alert("Wrong Password or Email");
-      }
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
