@@ -23,7 +23,7 @@
             navBar();
         ?>
         <h1 id="title">Blood Donations</h1><hr>
-        <form method="post" action="BloodForm.php" onsubmit="return validateForm();">
+        <form method="post" action="BloodForm.php" onclick="validationForm()">
     <table border="1">
         <tr>
             <td>First Name</td>
@@ -63,15 +63,15 @@
         </tr>
         <tr>
             <td>Select your birth day</td>
-            <td><input type="date" id="DOB" name="DOB"></td>
+            <td><input type="date" id="DOB" name="DOB" min=2023-10-27></td>
         </tr>
         <tr>
             <td>Mobile Number</td>
-            <td><input type="tel" id="MobileNumber" name="MobileNumber" placeholder="Enter Mobile Number"></td>
+            <td><input type="tel" id="MobileNumber" name="MobileNumber" placeholder="Enter Mobile Number" required></td>
         </tr>
         <tr>
             <td>Email Address</td>
-            <td><input type="email" id="EmailAddress" name="EmailAddress" placeholder="Enter Email Address"></td>
+            <td><input type="email" id="EmailAddress" name="EmailAddress" placeholder="Enter Email Address" required></td>
         </tr>
         <tr>
             <td>Blood Type</td>
@@ -98,7 +98,7 @@
         </tr>
         <tr>
             <td>When did you draw blood in the hospital?</td>
-            <td><input type="date" id="BloodDonationDate" name="BloodDonationDate"></td>
+            <td><input type="date" id="BloodDonationDate" name="BloodDonationDate" required></td>
         </tr>
         <tr>
             <td>Which post office are you going to use to send the donated blood?</td>
@@ -110,11 +110,11 @@
         </tr>
         <tr>
             <td>Post Office Location</td>
-            <td><input type="text" id="PostOffice" name="PostOffice"></td>
+            <td><input type="text" id="PostOffice" name="PostOffice" required></td>
         </tr>
         <tr>
             <td>Package Tracking Number</td>
-            <td><input type="text" id="PackageTrackingNumber" name="PackageTrackingNumber"></td>
+            <td><input type="text" id="PackageTrackingNumber" name="PackageTrackingNumber" required></td>
         </tr>
         <tr>
             <td colspan="2" align="center">

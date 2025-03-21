@@ -2,7 +2,7 @@
     <head>
         <title>Volunteering Admin page</title>
         <link rel="stylesheet" href="../../CSS Sheets/HomePageStyle.css">
-        <h1 id="title" style="font-family: Arial; font-size: 50px; text-align: center; color: lightseagreen;">Volunteering Admin page</h1>    
+        <h1 id="title" style="font-family: Arial; font-size: 50px; text-align: center; color: lightseagreen;">Volunteering Admin page</h1>  
     </head>
     <body>
         <h1><b>Description:</b></h1>
@@ -16,15 +16,15 @@
              <h1>Types Of Volunteering</h1>
              <a href="MedicalVolBE.php" target="_blank"></a>
              <a href="MedicalVolBE.php" class="button-link">
-             <img src="CSS Sheets/Images/Volunteering/Medical Volunteer.jpg" width="200" height="200" alt="Icon" class="button-image" align="center"></a>
+             <img src="../../CSS Sheets/Images/Volunteering/Medical Volunteer.jpg" width="200" height="200" alt="Icon" class="button-image" align="center"></a>
              <label for="myButton">Medical Volunteering</label>
              <a href="OfficeVolBE.php" target="_blank"></a>
              <a href="OfficeVolBE.php" class="button-link">
-             <img src="CSS Sheets/Images/Volunteering/Office Volunteer.jpg" width="200" height="200" alt="Icon" class="button-image" align="center"></a>
+             <img src="../../CSS Sheets/Images/Volunteering/Office Volunteer.jpg" width="200" height="200" alt="Icon" class="button-image" align="center"></a>
              <label for="myButton">Office Volunteering</label>
              <a href="ChildLifeVolBE.php" target="_blank"></a>
              <a href="ChildLifeVolBE.php" class="button-link">
-             <img src="CSS Sheets/Images/Volunteering/Child Life Volunteer.jpg" width="200" height="200" alt="Icon" class="button-image" align="center"></a>
+             <img src="../../CSS Sheets/Images/Volunteering/Child Life Volunteer.jpg" width="200" height="200" alt="Icon" class="button-image" align="center"></a>
              <label for="myButton">Child Life Volunteering</label>
 
              <div class="aside-dive">
@@ -32,17 +32,13 @@
                     <h2 class="aside-title">Admin Pages</h2>
                     <hr>
                     <div class="aside-container">
-                        <a class="aside-links" href="adminPage.html"><i class="fa-regular fa-bookmark"></i> Profile</a>
+                        <a class="aside-links" href="../../Admin/adminPage.php"><i class="fa-regular fa-bookmark"></i> Profile</a>
                         <hr class="aside-horizontal">
-    
-                        <a class="aside-links" href="adminCareer.html"><i class="fa-regular fa-bookmark"></i> Career Applications</a>
+
+                        <a class="aside-links" href="../../Admin/adminCareer.php"><i class="fa-regular fa-bookmark"></i> Career Applications</a>
                         <hr class="aside-horizontal">
-    
-    
-                        <a class="aside-links" href="DonationsBE-Homepage.html"><i class="fa-regular fa-bookmark"></i> Admin Donations</a>
-                        <hr class="aside-horizontal">
-    
-                        <a class="aside-links" href="VolunteeringBE-Homepage.html"><i class="fa-regular fa-bookmark"></i> Admin Volunteering</a>
+
+                        <a class="aside-links" href="../../Donations/DonationsBE-Homepage.php"><i class="fa-regular fa-bookmark"></i> Admin Donations</a>
                         <hr class="aside-horizontal">
                     </div>
                 </aside>
