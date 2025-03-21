@@ -1,4 +1,15 @@
 <html lang="en">
+<?php
+session_start();
+
+
+if (!isset($_SESSION["user_email"]) || !isset($_SESSION["is_admin"]) || $_SESSION["is_admin"] !== true) {
+    header("Location: index.php"); // Redirect non-admins
+    exit();
+}
+
+echo "Welcome, Admin " . $_SESSION["user_email"]; // Show admin content
+?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,44 +23,7 @@
     <title>Al Haram Hospital</title>
 </head>
 <body>
-    <nav>
-        <img src="CSS Sheets/Images/AboutUsImages/Hospital_Logo.svg" class="nav-logo" alt="">
-        <div class="nav-container">
-            <a class="nav-links" href="index.html">Home</a>
-            <a class="nav-links" href="Donations-Homepage.html">Donation</a>
-            <div class="nav-dropdown">
-                <a class="nav-links" href="vehiclesPage.html">Services<i class="fa-solid fa-caret-down"></i></a>
-                <div class="nav-dropdown-links">
-                    <a class="dropdown-item" href="ServicesMain.html">Services Home</a>
-                    <a class="dropdown-item" href="Pharmacy.html">Pharmacy</a>
-                    <a class="dropdown-item" href="Tests.html">Tests</a>
-                    <a class="dropdown-item" href="Appointments.html">Book Us</a>
-                    <a class="dropdown-item" href="Outpatient.html">Outpatient</a>
-                    <a class="dropdown-item" href="Surgery.html">Surgery</a>
-                    <a class="dropdown-item" href="PrevMed.html">PrevMed™</a>
-                    <a class="dropdown-item" href="Emergency.html">Emergency</a>
-                    <a class="dropdown-item" href="Dentistry.html">Dentistry</a>
-                    <a class="dropdown-item" href="ICU.html">ICU</a>
-                    <a class="dropdown-item" href="Oncology.html">Oncology</a>
-                </div>
-            </div>
-            
-            <div class="nav-dropdown">
-                <a class="nav-links" href="contact Details.html">Contact Us<i class="fa-solid fa-caret-down"></i></a>
-                <div class="nav-dropdown-links">
-                    <a href="contact Details.html">Contact Details</a>
-                    <a href="Online Consultaitions.html">Online Consultations</a>
-                    <a href="heart checks.html">Heart Checks</a>
-                    <a href="Directions to hospital.html">Directions to the Hospital</a>
-                </div>
-            </div>
-            <a class="nav-links" href="recordPage.html">Records</a>
-            <a class="nav-links" href="aboutPageMain.html">About Us</a>
-            
-            <a class="nav-links" href="Volunteering-Homepage.html">Volunteering</a>
-            <a href="Login.html" class="nav-links"><i class="fa-solid fa-user"></i></a>
-        </div>
-    </nav>
+    <?php include("../repeated.php"); navBar(); ?>
     <header class="header-section">
     </header>
     <div class="header-title">
@@ -65,9 +39,11 @@
                 <i class="fa-solid fa-user"></i>
             </div>
 
-            <h2 id="adminName">Name: Hamada</h2>
-            <h2 id="adminEmail">Email: </h2>
-            <h2 id="adminPassword">Password: </h2>
+            <?php
+                echo "<h2 id=adminName>Name: " . $_SESSION["user_name"] . "</h2>";
+                echo "<h2 id=adminEmail>Email: " . $_SESSION["user_email"] . "</h2>";
+                echo "<h2 id=adminPassword>Password: " . $_SESSION["user_pass"] . "</h2>";
+            ?>
             
             <form  method="get">
                 <h2>Change Admin Profile</h2>
@@ -97,10 +73,10 @@
                 <h2 class="aside-title">Related Topics</h2>
                 <hr>
                 <div class="aside-container">
-                    <a class="aside-links" href="adminPage.html"><i class="fa-regular fa-bookmark"></i> Profile</a>
+                    <a class="aside-links" href="adminPage.php"><i class="fa-regular fa-bookmark"></i> Profile</a>
                     <hr class="aside-horizontal">
 
-                    <a class="aside-links" href="adminCareer.html"><i class="fa-regular fa-bookmark"></i> Career Applications</a>
+                    <a class="aside-links" href="adminCareer.php"><i class="fa-regular fa-bookmark"></i> Career Applications</a>
                     <hr class="aside-horizontal">
 
                     <a class="aside-links" href="DonationsBE-Homepage.html"><i class="fa-regular fa-bookmark"></i> Admin Donations</a>
