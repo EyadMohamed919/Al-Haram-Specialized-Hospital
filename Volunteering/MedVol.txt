@@ -1,23 +1,4 @@
-First Name: GiGi
-Second Name: Silver
-Third Name: Hadid
-Gender: F
-Nationality: USA
-DOB: 1998-08-08
-Mobile Number: 561234567890
-Email Address: GiGi.88@gmail.com
-Start Date: 2025-08-08
--------------------------
-First Name: Stella
-Second Name: Eyad
-Third Name: ding
-Gender: F
-Nationality: EG
-DOB: 2004-02-02
-Mobile Number: 201234567890
-Email Address: stella22@gmail.com
-Start Date: 2025-02-02
--------------------------First Name: Michael
+First Name: Michael
 Second Name: Fredricke
 Third Name: Nolte
 Gender: M
@@ -26,4 +7,43 @@ DOB: 1996-06-06
 Mobile Number: 491234567890
 Email Address: Michael.66@gmail.com
 Start Date: 2025-06-06
+-------------------------First Name: GiGi
+Second Name: Silver
+Third Name: Hadid
+Gender: F
+Nationality: USA
+DOB: 1998-08-08
+Mobile Number: 691234567890
+Email Address: GiGi.88@gmail.com
+Start Date: 2025-08-08
+-------------------------
+First Name: Bella
+Second Name: Silver
+Third Name: Hadid
+Gender: F
+Nationality: USA
+DOB: 1997-07-07
+Mobile Number: 691234567890
+Email Address: Bella.77@gmail.com
+Start Date: 2025-07-07
+-------------------------
+First Name: Kendall
+Second Name: Kardashian
+Third Name: Jenner
+Gender: F
+Nationality: USA
+DOB: 1995-11-03
+Mobile Number: 691234567890
+Email Address: Kendall.311@gmail.com
+Start Date: 2025-11-03
+-------------------------
+First Name: Kylie
+Second Name: Kardashian
+Third Name: Jenner
+Gender: F
+Nationality: USA
+DOB: 1997-08-10
+Mobile Number: 691234567890
+Email Address: Kylie.108@gmail.com
+Start Date: 2025-08-10
 -------------------------

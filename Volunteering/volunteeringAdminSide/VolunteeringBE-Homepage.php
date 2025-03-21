@@ -2,7 +2,7 @@
     <head>
         <title>Volunteering Admin page</title>
         <link rel="stylesheet" href="../../CSS Sheets/HomePageStyle.css">
-        <h1 id="title" style="font-family: Arial; font-size: 50px; text-align: center; color: lightseagreen;">Volunteering Admin page</h1>    
+        <h1 id="title" style="font-family: Arial; font-size: 50px; text-align: center; color: lightseagreen;">Volunteering Admin page</h1>  
     </head>
     <body>
         <h1><b>Description:</b></h1>
