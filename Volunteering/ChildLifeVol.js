@@ -90,45 +90,6 @@ function validateEmailAddress() {
     return true;
 }
 
-function validateUnderstandChildDevelopment() {
-    const radios = document.getElementsByName("understandChildDevelopment");
-    const cell = radios[0].parentElement;
-    const errorMessage = "Please select an option for understanding child development.";
-    
-    if (![...radios].some(radio => radio.checked)) {
-        displayError(cell, errorMessage);
-        return false;
-    }
-    clearError(cell);
-    return true;
-}
-
-function validatePrepareChildrenForMedicalProcedures() {
-    const radios = document.getElementsByName("preparechildrenformedicalprocedures");
-    const cell = radios[0].parentElement;
-    const errorMessage = "Please select an option for preparing children for medical procedures.";
-    
-    if (![...radios].some(radio => radio.checked)) {
-        displayError(cell, errorMessage);
-        return false;
-    }
-    clearError(cell);
-    return true;
-}
-
-function validateCommunicateWithChildren() {
-    const radios = document.getElementsByName("communicatewithchildren");
-    const cell = radios[0].parentElement;
-    const errorMessage = "Please select an option for communicating with children.";
-    
-    if (![...radios].some(radio => radio.checked)) {
-        displayError(cell, errorMessage);
-        return false;
-    }
-    clearError(cell);
-    return true;
-}
-
 function validateStartDate() {
     const startDate = document.getElementById("startDate");
     const cell = startDate.parentElement;
@@ -151,17 +112,14 @@ function validateForm() {
         validateDOB() &&
         validateMobileNumber() &&
         validateEmailAddress() &&
-        validateUnderstandChildDevelopment() &&
-        validatePrepareChildrenForMedicalProcedures() &&
-        validateCommunicateWithChildren() &&
         validateStartDate();
-        
-    if (isValid) {
-        alert("Form submitted successfully!");
-        document.querySelector("form").submit();
-    } else {
+
+    if (!isValid) {
         alert("Please fix the errors before submitting the form.");
-    }
+        return false; 
+
+    return true; 
+}
 }
 
 function displayError(cell, message) {

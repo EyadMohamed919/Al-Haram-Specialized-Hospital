@@ -54,17 +54,17 @@
              <center>
                 <section class="flex-container">
                     <div class="links">
-                        <a href="Medical Volunteering.php" class="button-link">
+                        <a href="MedicalVolunteering.php" class="button-link">
                         <img src="../CSS Sheets/Images/Volunteering/Medical Volunteer.jpg" width="200" height="200" alt="Icon" class="button-image" align="center"></a>
                         <label for="myButton">Medical Volunteering</label>
                     </div>
                     <div class="links">
-                        <a href="Office Volunteering.php" class="button-link">
+                        <a href="OfficeVolunteering.php" class="button-link">
                         <img src="../CSS Sheets/Images/Volunteering/Office Volunteer.jpg" width="200" height="200" alt="Icon" class="button-image" align="center"></a>
                         <label for="myButton">Office Volunteering</label>
                     </div>
                     <div class="links">
-                        <a href="Child Life Volunteering.php" class="button-link">
+                        <a href="ChildLifeVolunteering.php" class="button-link">
                         <img src="../CSS Sheets/Images/Volunteering/Child Life Volunteer.jpg" width="200" height="200" alt="Icon" class="button-image" align="center"></a>
                         <label for="myButton">Child Life Volunteering</label>
                     </div>

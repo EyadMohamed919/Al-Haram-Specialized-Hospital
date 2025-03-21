@@ -2,15 +2,60 @@ window.onload = function() {
     alert("Welcome Administrator");
 };
 
+// function AddNewdonationRecord() {
+//     if (validateForm()) {
+//         alert("New organ donation record added successfully.");
+//     }
+// }
 function AddNewdonationRecord() {
-    if (validateForm()) {
-        alert("New organ donation record added successfully.");
+    const id = document.getElementById("DonationID").value;
+    const name = document.getElementById("DonatorsName").value;
+    const organ = document.getElementById("Organ").value;
+    const date = document.getElementById("DonationDate").value;
+    const country = document.getElementById("DonationCountry").value;
+
+    if (validateForm(id, name, organ, date, country)) {
+        const table = document.getElementById("Donationtable");
+        const row = table.insertRow(-1);
+
+        row.insertCell(0).innerText = id;
+        row.insertCell(1).innerText = name;
+        row.insertCell(2).innerText = organ;
+        row.insertCell(3).innerText = date;
+        row.insertCell(4).innerText = country;
+
+        alert("Record added successfully!");
+        ClearForm();
     }
 }
 
+
 function UpdateDonationRecord() {
-    if (validateForm()) {
-        alert("Organ donation record updated successfully.");
+    const id = document.getElementById("DonationID").value;
+    const name = document.getElementById("DonatorsName").value;
+    const organ = document.getElementById("organ").value;
+    const date = document.getElementById("DonationDate").value;
+    const country = document.getElementById("DonationCountry").value;
+
+    if (!validateForm(id, name, organ, date, country)) return;
+
+    const table = document.getElementById("Donationtable");
+    let found = false;
+
+    for (let i = 1; i < table.rows.length; i++) {
+        if (table.rows[i].cells[0].innerText === id) {
+            table.rows[i].cells[1].innerText = name;
+            table.rows[i].cells[2].innerText = organ;
+            table.rows[i].cells[3].innerText = date;
+            table.rows[i].cells[4].innerText = country;
+            found = true;
+            alert("Record updated successfully!");
+            break;
+        }
+    }
+
+    if (!found) {
+        alert("No record found with the provided ID.");
     }
 }
 
