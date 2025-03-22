@@ -16,16 +16,19 @@ $filepath = "txtFiles/" . $fileName;
 ?>
 <!DOCTYPE html>
 
-<?php
-session_start();
+
+<!-- Session Code -->
+
+<!-- <?php 
+// session_start();
 
 
-if (!isset($_SESSION["user_email"]) || !isset($_SESSION["is_admin"]) || $_SESSION["is_admin"] !== true) {
-    header("Location: ../index.php"); // Redirect non-admins
-    exit();
-}
+// if (!isset($_SESSION["user_email"]) || !isset($_SESSION["is_admin"]) || $_SESSION["is_admin"] !== true) {
+//     header("Location: ../index.php"); // Redirect non-admins
+//     exit();
+// }
 
-?>
+?> -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -79,6 +82,7 @@ if (file_exists($filepath)) {
                 <form method='post' action='delete.php' style='display:inline;'>
                     <input type='hidden' name='file' value='$filepath'>
                     <input type='hidden' name='id' value='{$fields[0]}'>
+                    <input type='hidden' name='form' value='$formType'> 
                     <button type='submit'>Delete</button>
                 </form>
                 <form method='get' action='edit.php' style='display:inline;'>

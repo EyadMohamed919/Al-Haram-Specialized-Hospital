@@ -2,6 +2,7 @@
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $file = $_POST['file'] ?? '';
     $idToDelete = $_POST['id'] ?? '';
+    $formType = $_POST['form'] ?? '';  // grab form type for redirect
 
     if (file_exists($file)) {
         $lines = file($file, FILE_IGNORE_NEW_LINES);
@@ -15,7 +16,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
 
         file_put_contents($file, implode(PHP_EOL, $newLines));
-        header("Location: admin.php?form=" . urlencode($_POST['form']));
+        // Redirect cleanly with form type
+        header("Location: admin.php?form=" . urlencode($formType));
         exit;
     } else {
         echo "File not found.";
