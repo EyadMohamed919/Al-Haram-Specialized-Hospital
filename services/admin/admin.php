@@ -20,16 +20,7 @@ $filepath = "../txtFiles/" . $fileName;
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Panel</title>
-    <style>
-        body { font-family: Arial; }
-        .tabs { display: flex; gap: 10px; margin-bottom: 20px; }
-        .tabs a { padding: 10px; background: #eee; text-decoration: none; border-radius: 5px; }
-        .tabs a.active { background: #333; color: #fff; }
-        table { width: 100%; border-collapse: collapse; margin-bottom: 40px; }
-        th, td { border: 1px solid #ccc; padding: 8px; }
-        th { background: #f4f4f4; }
-        .actions button { margin-right: 5px; }
-    </style>
+    <link rel="stylesheet" href="servicesAdminCSS/admin.css">
 </head>
 <body>
 <h1>Admin Dashboard</h1>
