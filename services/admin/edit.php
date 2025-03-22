@@ -4,6 +4,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     $idToEdit = $_GET['id'] ?? '';
     $formType = $_GET['form'] ?? '';
 
+    ?>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Edit Record</title>
+        <link rel="stylesheet" href="servicesAdminCSS/edit.css">
+    </head>
+    <body>
+
+    <?php
     if (file_exists($file)) {
         $lines = file($file, FILE_IGNORE_NEW_LINES);
         $recordLine = null;
@@ -26,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             echo "<input type='hidden' name='form' value='$formType'>";
 
             foreach ($fields as $index => $value) {
-                echo "Field $index: <input type='text' name='field$index' value='" . htmlspecialchars($value) . "'><br>";
+            echo "<label>Field $index:</label><input type='text' name='field$index' value='" . htmlspecialchars($value) . "'>";
             }
             echo "<button type='submit'>Save Changes</button>";
             echo "</form>";
