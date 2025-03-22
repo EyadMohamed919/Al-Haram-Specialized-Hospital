@@ -1,35 +1,41 @@
 <?php
-$formType = isset($_GET['form']) ? $_GET['form'] : '';
-$txtFile = "txtFiles/" . $formType . "Form.txt";
+$formFiles = [
+    "Appointments" => "appointForm.txt",
+    "Dentistry" => "dentForm.txt",
+    "Oncology" => "oncoForm.txt",
+    "Outpatient" => "outPatForm.txt",
+    "Pharmacy" => "pharmaForm.txt",
+    "PrevMed" => "prevMedForm.txt",
+    "Surgery" => "surgForm.txt",
+    "Tests" => "testsForm.txt"
+];
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    // Read existing data to find last ID
-    $data = file($txtFile, FILE_IGNORE_NEW_LINES);
-    $lastId = 0;
-    if (!empty($data)) {
-        $lastRow = explode("|", end($data));
-        $lastId = (int)$lastRow[0];
+$headersMap = [
+    'Appointments' => ['ID','Doctor','First Name','Last Name','Sex','Phone','Email','Date','Time'],
+    'Dentistry' => ['ID','First Name','Last Name','Phone','Email','Date','Time'],
+    'Oncology' => ['ID','Treatment','First Name','Last Name','Sex','Phone','Email','Date','Time'],
+    'Outpatient' => ['ID','Service','First Name','Last Name','Address','Phone','Email','Date','Time'],
+    'Pharmacy' => ['ID','Medicine','First Name','Last Name','Address','Phone','Email'],
+    'PrevMed' => ['ID','Time Slot','First Name','Last Name','Phone','NID','Email'],
+    'Surgery' => ['ID','Surgery Type','First Name','Last Name','Phone','Auth ID','Email','Date','Time'],
+    'Tests' => ['ID','Test','First Name','Last Name','Sex','Phone','Email','Date','Time']
+];
+
+$formType = $_GET['form'] ?? 'Appointments';
+$fileName = $formFiles[$formType] ?? 'appointForm.txt';
+$filePath = "../txtFiles/" . $fileName;
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $data = [];
+    foreach ($headersMap[$formType] as $field) {
+        $fieldKey = str_replace(' ', '_', strtolower($field));
+        $data[] = $_POST[$fieldKey] ?? '';
     }
-
-    $newId = $lastId + 1;
-
-    $record = [
-        $newId,
-        $_POST['doctor'],
-        $_POST['fname'],
-        $_POST['lname'],
-        $_POST['sex'],
-        $_POST['phone'],
-        $_POST['email'],
-        $_POST['date'],
-        $_POST['time']
-    ];
-
-    $line = implode("|", $record) . "\n";
-    file_put_contents($txtFile, $line, FILE_APPEND);
     
-    echo "<script>alert('Record added successfully!'); window.location.href='admin.php';</script>";
-    exit;
+    $line = implode("~", $data) . "\n";
+    file_put_contents($filePath, $line, FILE_APPEND);
+    header("Location: admin.php?form=" . urlencode($formType));
+    exit();
 }
 ?>
 
@@ -49,30 +55,24 @@ if (!isset($_SESSION["user_email"]) || !isset($_SESSION["is_admin"]) || $_SESSIO
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add New Record - <?= ucfirst($formType) ?></title>
-    <style>
-        form { max-width: 500px; margin: auto; }
-        input, select { width: 100%; margin: 5px 0; padding: 8px; }
-        button { padding: 10px 15px; background: #4CAF50; color: white; border: none; cursor: pointer; }
-        button:hover { background: #45a049; }
-    </style>
+    <title>Add New <?= htmlspecialchars($formType) ?> Record</title>
+    <link rel="stylesheet" href="servicesAdminCSS/admin.css">
 </head>
 <body>
-<h2 style="text-align:center;">Add New <?= ucfirst($formType) ?> Record</h2>
+<h1>Add New <?= htmlspecialchars($formType) ?> Record</h1>
+
 <form method="post">
-    <input type="text" name="doctor" placeholder="Doctor" required>
-    <input type="text" name="fname" placeholder="First Name" required>
-    <input type="text" name="lname" placeholder="Last Name" required>
-    <select name="sex" required>
-        <option value="">Sex</option>
-        <option value="Male">Male</option>
-        <option value="Female">Female</option>
-    </select>
-    <input type="text" name="phone" placeholder="Phone" required>
-    <input type="email" name="email" placeholder="Email" required>
-    <input type="date" name="date" required>
-    <input type="time" name="time" required>
-    <button type="submit">Add Record</button>
+    <?php foreach ($headersMap[$formType] as $field): 
+        $fieldKey = str_replace(' ', '_', strtolower($field)); ?>
+        <label><?= htmlspecialchars($field) ?>:</label>
+        <input type="text" name="<?= $fieldKey ?>" required><br>
+    <?php endforeach; ?>
+    <button type="submit">Save Record</button>
 </form>
+
+<div style="margin-top: 20px;">
+    <a href="admin.php?form=<?= urlencode($formType) ?>" style="background: #2196F3; color: white; padding: 8px 12px; border-radius: 5px; text-decoration: none;">⬅ Back to <?= htmlspecialchars($formType) ?> Records</a>
+</div>
+
 </body>
 </html>
