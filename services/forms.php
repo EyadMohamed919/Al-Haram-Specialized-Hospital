@@ -19,7 +19,8 @@
         $doc = $_POST["Doctor"];
         $firstName = $_POST["FirstName"];
         $lastName = $_POST["LastName"];
-        $sex = $_POST["Sex"];
+        // $sex = $_POST["Sex"]; 
+        $sex = "Male";
         $PN = $_POST["PN"];
         $email = $_POST["Email"];
         $date = $_POST["Date"];
