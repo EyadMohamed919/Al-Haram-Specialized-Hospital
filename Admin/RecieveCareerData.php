@@ -6,7 +6,7 @@
 
 $servername = "localhost"; 
 $username = "eyad_mohamed";
-
+$password = "EYMH55ad19001919";
 $database = "hospital";
 
 // Create connection

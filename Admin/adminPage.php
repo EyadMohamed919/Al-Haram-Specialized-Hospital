@@ -4,11 +4,10 @@ session_start();
 
 
 if (!isset($_SESSION["user_email"]) || !isset($_SESSION["is_admin"]) || $_SESSION["is_admin"] !== true) {
-    header("Location: index.php"); // Redirect non-admins
+    header("Location: ../index.php"); // Redirect non-admins
     exit();
 }
 
-echo "Welcome, Admin " . $_SESSION["user_email"]; // Show admin content
 ?>
 <head>
     <meta charset="UTF-8">
@@ -67,26 +66,7 @@ echo "Welcome, Admin " . $_SESSION["user_email"]; // Show admin content
             </form>
         </div>
 
-        <!-- This is where user get to other links -->
-        <div class="aside-dive">
-            <aside>
-                <h2 class="aside-title">Related Topics</h2>
-                <hr>
-                <div class="aside-container">
-                    <a class="aside-links" href="adminPage.php"><i class="fa-regular fa-bookmark"></i> Profile</a>
-                    <hr class="aside-horizontal">
-
-                    <a class="aside-links" href="adminCareer.php"><i class="fa-regular fa-bookmark"></i> Career Applications</a>
-                    <hr class="aside-horizontal">
-
-                    <a class="aside-links" href="DonationsBE-Homepage.html"><i class="fa-regular fa-bookmark"></i> Admin Donations</a>
-                    <hr class="aside-horizontal">
-
-                    <a class="aside-links" href="VolunteeringBE-Homepage.html"><i class="fa-regular fa-bookmark"></i> Admin Volunteering</a>
-                    <hr class="aside-horizontal">
-                </div>
-            </aside>
-        </div>
+        <?php include_once("../repeated.php"); adminNav(); ?>
     </section>
 
     <script src="form.js"></script>

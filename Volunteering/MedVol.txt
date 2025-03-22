@@ -1,13 +1,4 @@
-First Name: Michael
-Second Name: Fredricke
-Third Name: Nolte
-Gender: M
-Nationality: GE
-DOB: 1996-06-06
-Mobile Number: 491234567890
-Email Address: Michael.66@gmail.com
-Start Date: 2025-06-06
--------------------------First Name: GiGi
+First Name: GiGi
 Second Name: Silver
 Third Name: Hadid
 Gender: F

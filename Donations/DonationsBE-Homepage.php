@@ -1,4 +1,14 @@
 <php>
+<?php
+session_start();
+
+
+if (!isset($_SESSION["user_email"]) || !isset($_SESSION["is_admin"]) || $_SESSION["is_admin"] !== true) {
+    header("Location: ../index.php");
+    exit();
+}
+
+?>
     <head>
         <title>Donations Admin page</title>
         <link rel="stylesheet" href="../CSS Sheets/BEstylesheet1.css">
@@ -30,25 +40,6 @@
         <label for="myButton">Organ Donations</label>
 
 
-        <div class="aside-dive">
-            <aside>
-                <h2 class="aside-title">Admin Pages</h2>
-                <hr>
-                <div class="aside-container">
-                    <a class="aside-links" href="adminPage.php"><i class="fa-regular fa-bookmark"></i> Profile</a>
-                    <hr class="aside-horizontal">
-
-                    <a class="aside-links" href="adminCareer.php"><i class="fa-regular fa-bookmark"></i> Career Applications</a>
-                    <hr class="aside-horizontal">
-
-
-                    <a class="aside-links" href="DonationsBE-Homepage.php"><i class="fa-regular fa-bookmark"></i> Admin Donations</a>
-                    <hr class="aside-horizontal">
-
-                    <a class="aside-links" href="VolunteeringBE-Homepage.php"><i class="fa-regular fa-bookmark"></i> Admin Volunteering</a>
-                    <hr class="aside-horizontal">
-                </div>
-            </aside>
-        </div>
+        <?php include_once("../repeated.php"); adminNav(); ?>
     </body>
 </php>

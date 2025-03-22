@@ -1,13 +1,3 @@
-First Name: Madison
-Second Name: Elle
-Third Name: Beer
-Gender: F
-Nationality: USA
-DOB: 1999-03-05
-Mobile Number: 691234567890
-Email Address: MaBe53@gmail.com
-Start Date: 2025-04-05
--------------------------
 First Name: Ariana
 Second Name: Grande
 Third Name: Butera
