@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?php
 $file = "../BF.txt"; 
 
@@ -46,7 +45,7 @@ function writeData($file, $data) {
     file_put_contents($file, trim($content)); 
 }
 
-// Load existing data
+
 $data = readData($file);
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -58,7 +57,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             "DonationDate" => $_POST["DonationDate"],
             "DonationCountry" => $_POST["DonationCountry"],
         ];
-        $data[] = $newRecord; // Add new record
+        $data[] = $newRecord;
         writeData($file, $data);
     }
 
@@ -74,7 +73,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     if (isset($_POST['delete']) && !empty($data)) {
-        array_pop($data); // Remove last added record
+        array_pop($data);
         writeData($file, $data);
     }
     header("Location: " . $_SERVER['PHP_SELF']); 
@@ -84,19 +83,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <!DOCTYPE html>
 <html lang="en">
-=======
-<html>
-<?php
-session_start();
-
-
-if (!isset($_SESSION["user_email"]) || !isset($_SESSION["is_admin"]) || $_SESSION["is_admin"] !== true) {
-    header("Location: ../index.php");
-    exit();
-}
-
-?>
->>>>>>> 96d2521643808bb6b027e72a309e6d0e67517858
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -176,8 +162,8 @@ if (!isset($_SESSION["user_email"]) || !isset($_SESSION["is_admin"]) || $_SESSIO
             <input type="text" id="DonationCountry" name="DonationCountry" required><br><br>
 
             <button type="submit" name="add">Add Record</button><br><br>
-            <button type="submit" name="update">Update Last Record</button><br><br>
-            <button type="submit" name="delete">Remove Last Record</button><br><br>
+            <button type="submit" name="update">Update Record</button><br><br>
+            <button type="submit" name="delete">Remove Record</button><br><br>
         </form>
     </div>
 </body>
