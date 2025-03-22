@@ -78,6 +78,9 @@ function adminNav()
 
             <a class=aside-links href=../Volunteering/VolunteeringBE-Homepage.php><i class='fa-regular fa-bookmark'></i> Admin Volunteering</a>
             <hr class=aside-horizontal>
+
+            <a class=aside-links href=../services/admin.php><i class='fa-regular fa-bookmark'></i> Admin Services</a>
+            <hr class=aside-horizontal>
         </div>
     </aside>
 </div>";

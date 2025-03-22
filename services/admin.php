@@ -12,9 +12,20 @@ $formFiles = [
 
 $formType = $_GET['form'] ?? 'Appointments';
 $fileName = $formFiles[$formType] ?? 'appointForm.txt';
-$filepath = "../txtFiles/" . $fileName;
+$filepath = "txtFiles/" . $fileName;
 ?>
 <!DOCTYPE html>
+
+<?php
+session_start();
+
+
+if (!isset($_SESSION["user_email"]) || !isset($_SESSION["is_admin"]) || $_SESSION["is_admin"] !== true) {
+    header("Location: ../index.php"); // Redirect non-admins
+    exit();
+}
+
+?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
