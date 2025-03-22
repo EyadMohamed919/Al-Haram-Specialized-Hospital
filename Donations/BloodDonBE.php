@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 $file = "../BF.txt"; 
 
@@ -83,6 +84,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <!DOCTYPE html>
 <html lang="en">
+=======
+<html>
+<?php
+session_start();
+
+
+if (!isset($_SESSION["user_email"]) || !isset($_SESSION["is_admin"]) || $_SESSION["is_admin"] !== true) {
+    header("Location: ../index.php");
+    exit();
+}
+
+?>
+>>>>>>> 96d2521643808bb6b027e72a309e6d0e67517858
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">

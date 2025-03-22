@@ -1,9 +1,9 @@
 <?php
-$file = "../ClVol.txt"; 
+$file = "MedVol.txt"; 
 
 function readData($file) {
     if (!file_exists($file)) {
-        die("Error: ClVol.txt not found!"); 
+        die("Error: MedVol.txt not found!"); 
     }
 
     $content = trim(file_get_contents($file));
@@ -63,7 +63,7 @@ if (isset($_POST['update'])) {
         ];
         writeData($file, $data);
     }
-    header("Location: ChildLifeVolBE.php"); 
+    header("Location: MedicalVolBE.php"); 
     exit();
 }
 
@@ -75,7 +75,7 @@ if (isset($_POST['delete'])) {
         array_splice($data, $index, 1); 
         writeData($file, $data);
     }
-    header("Location: ChildLifeVolBE.php"); 
+    header("Location: MedicalVolBE.php"); 
     exit();
 }
 
@@ -83,14 +83,24 @@ $data = readData($file);
 ?>
 <!DOCTYPE html>
 <html>
+
+<?php
+session_start();
+
+
+if (!isset($_SESSION["user_email"]) || !isset($_SESSION["is_admin"]) || $_SESSION["is_admin"] !== true) {
+    header("Location: ../index.php"); // Redirect non-admins
+    exit();
+}
+?>
 <head>
-    <title>Child Life Volunteering Admin Page</title>
+    <title>Medical Volunteering Admin Page</title>
     <link rel="stylesheet" type="text/css" href="../../CSS Sheets/BEstylesheet2.css">
     <script src="VolunteeringBE.js" defer></script>
 </head>
 <body>
-    <a href="VolunteeringBE-Homepage.html">VolunteeringBE-HomePage</a><hr>
-    <p>Child Life Volunteers</p>
+    <a href="VolunteeringBE-Homepage.php">VolunteeringBE-HomePage</a><hr>
+    <p>Medical Volunteers</p>
     <script>
         let selectedRow = null;
         let selectedId = null;

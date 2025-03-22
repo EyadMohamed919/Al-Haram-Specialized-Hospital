@@ -1,10 +1,20 @@
 <html>
+<?php
+session_start();
+
+
+if (!isset($_SESSION["user_email"]) || !isset($_SESSION["is_admin"]) || $_SESSION["is_admin"] !== true) {
+    header("Location: ../index.php"); // Redirect non-admins
+    exit();
+}
+?>
     <head>
         <title>Volunteering Admin page</title>
         <link rel="stylesheet" href="../../CSS Sheets/BEstylesheet2.css">
         <h1 id="title" style="font-family: Arial; font-size: 50px; text-align: center; color: lightseagreen;">Volunteering Admin page</h1>  
     </head>
-    <body>
+<body>
+
     <p style="color: darkblue;"><br>An admin page for volunteers streamlines management by centralizing registration, schedules, and contributions. 
     It enables real-time tracking, efficient task allocation, and clear communication. Additionally, it helps identify trends,
     address challenges, and optimize resources, enhancing efficiency and accountability while supporting the hospital's mission.</p><hr>
@@ -24,28 +34,13 @@
         <label>Office Volunteering</label>
     </div>
 
-    <div class="icon">
-        <a href="ChildLifeVolBE.php" class="button-link">
-            <img src="../../CSS Sheets/Images/Volunteering/Child Life Volunteer.jpg" width="200" height="200" alt="Child Life Volunteering">
-        </a>
-        <label>Child Life Volunteering</label>
-    </div>
-    </div>
-             <div class="aside-dive">
-                <aside>
-                    <h2 class="aside-title">Admin Pages</h2>
-                    <hr>
-                    <div class="aside-container">
-                        <a class="aside-links" href="../../Admin/adminPage.php"><i class="fa-regular fa-bookmark"></i> Profile</a>
-                        <hr class="aside-horizontal">
-
-                        <a class="aside-links" href="../../Admin/adminCareer.php"><i class="fa-regular fa-bookmark"></i> Career Applications</a>
-                        <hr class="aside-horizontal">
-
-                        <a class="aside-links" href="../../Donations/DonationsBE-Homepage.php"><i class="fa-regular fa-bookmark"></i> Admin Donations</a>
-                        <hr class="aside-horizontal">
-                    </div>
-                </aside>
-            </div>
-    </body>
+        <div class="icon">
+            <a href="ChildLifeVolBE.php" class="button-link">
+                <img src="../../CSS Sheets/Images/Volunteering/Child Life Volunteer.jpg" width="200" height="200" alt="Child Life Volunteering">
+            </a>
+            <label>Child Life Volunteering</label>
+        </div>
+    
+        <?php include_once("../../repeated.php"); adminNav(); ?>
+</body>
 </html>
