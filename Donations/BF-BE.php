@@ -16,5 +16,6 @@ $DonationCountry = $_POST["DonationCountry"];
 $file = fopen("BF.txt","a");
 fwrite($file,$data);
 fclose($file);
-echo "Your Form have been recieved, Thank you";
+header("Location: BloodDonBE.php"); // Reload the page
+    exit();
 ?>

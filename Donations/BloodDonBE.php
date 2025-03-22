@@ -45,7 +45,7 @@ function writeData($file, $data) {
     file_put_contents($file, trim($content)); 
 }
 
-
+// Load existing data
 $data = readData($file);
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -57,7 +57,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             "DonationDate" => $_POST["DonationDate"],
             "DonationCountry" => $_POST["DonationCountry"],
         ];
-        $data[] = $newRecord;
+        $data[] = $newRecord; // Add new record
         writeData($file, $data);
     }
 
@@ -73,7 +73,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     if (isset($_POST['delete']) && !empty($data)) {
-        array_pop($data);
+        array_pop($data); // Remove last added record
         writeData($file, $data);
     }
     header("Location: " . $_SERVER['PHP_SELF']); 
@@ -162,8 +162,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <input type="text" id="DonationCountry" name="DonationCountry" required><br><br>
 
             <button type="submit" name="add">Add Record</button><br><br>
-            <button type="submit" name="update">Update Record</button><br><br>
-            <button type="submit" name="delete">Remove Record</button><br><br>
+            <button type="submit" name="update">Update Last Record</button><br><br>
+            <button type="submit" name="delete">Remove Last Record</button><br><br>
         </form>
     </div>
 </body>
