@@ -44,26 +44,7 @@ if (!isset($_SESSION["user_email"]) || !isset($_SESSION["is_admin"]) || $_SESSIO
                 echo "<h2 id=adminPassword>Password: " . $_SESSION["user_pass"] . "</h2>";
             ?>
             
-            <form  method="get">
-                <h2>Change Admin Profile</h2>
-                <table>
-                    <tr>
-                        <td class="name-cell"><label for="name">Admin Name</label></td>
-                        <td><input type="text" name="name" id="name" required></td>
-                        <td class="name-cell"><label for="email">Email</label></td>
-                        <td><input oninput="completer()" type="email" name="email" id="email" required></td>
-                    </tr>
-                    <tr>
-                        <td class="name-cell"><label for="password">Old Password</label></td>
-                        <td><input oninput="completer()" type="password" name="password" id="password"></td>
-
-                        <td class="name-cell"><label for="newPassword">New Password</label></td>
-                        <td><input oninput="completer()" type="password" name="newPassword" id="newPassword" required></td>
-                    </tr>
-                </table>
-
-                <input onclick="saveAdminData()" class="submit-btn" type="submit" value="Save">
-            </form>
+          
         </div>
 
         <?php include_once("../repeated.php"); adminNav(); ?>

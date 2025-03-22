@@ -17,14 +17,14 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT id, firstname, firstname, email, dob, phone, gender, resume FROM career";
+$sql = "SELECT id, firstname, lastname, email, dob, phone, gender, resume FROM career";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
         echo "<tr>
                 <td>" . $row['firstname'] . "</td>
-                <td>" . $row['firstname'] . "</td>
+                <td>" . $row['lastname'] . "</td>
                 <td>" . $row['email'] . "</td>
                 <td>" . $row['dob'] . "</td>
                 <td>" . $row['phone'] . "</td>

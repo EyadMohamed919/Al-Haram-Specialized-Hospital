@@ -31,10 +31,7 @@ if (isset($_SESSION["user_email"])) {
         </div>
         <button type="submit">Login</button>
       </form>
-      <div class="links">
-        <a href="#">Forgot Password?</a>
-        <a href="#">Create Account</a>
-      </div>
+      
     </div>
     
   </div>
