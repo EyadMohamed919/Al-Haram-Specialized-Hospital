@@ -1,32 +1,36 @@
 <html>
     <head>
         <title>Volunteering Admin page</title>
-        <link rel="stylesheet" href="../../CSS Sheets/HomePageStyle.css">
+        <link rel="stylesheet" href="../../CSS Sheets/BEstylesheet2.css">
         <h1 id="title" style="font-family: Arial; font-size: 50px; text-align: center; color: lightseagreen;">Volunteering Admin page</h1>  
     </head>
     <body>
-        <h1><b>Description:</b></h1>
-        <p><br>An admin page for volunteers is crucial for effectively managing and streamlining volunteer operations in any organization.
-            It provides administrators with a centralized platform to oversee all aspects of volunteer activities,
-            such as tracking volunteer registration, schedules, and contributions. By having access to detailed records and real-time updates,
-            administrators can ensure proper allocation of tasks, recognize volunteer achievements, and maintain clear communication.
-            Additionally, an admin page helps in identifying trends, addressing challenges, and optimizing resource usage.
-            This organized approach not only enhances the efficiency of volunteer management but also fosters a sense of accountability and professionalism,
-            ultimately contributing to the success of the organization's mission.</p><hr> 
-             <h1>Types Of Volunteering</h1>
-             <a href="MedicalVolBE.php" target="_blank"></a>
-             <a href="MedicalVolBE.php" class="button-link">
-             <img src="../../CSS Sheets/Images/Volunteering/Medical Volunteer.jpg" width="200" height="200" alt="Icon" class="button-image" align="center"></a>
-             <label for="myButton">Medical Volunteering</label>
-             <a href="OfficeVolBE.php" target="_blank"></a>
-             <a href="OfficeVolBE.php" class="button-link">
-             <img src="../../CSS Sheets/Images/Volunteering/Office Volunteer.jpg" width="200" height="200" alt="Icon" class="button-image" align="center"></a>
-             <label for="myButton">Office Volunteering</label>
-             <a href="ChildLifeVolBE.php" target="_blank"></a>
-             <a href="ChildLifeVolBE.php" class="button-link">
-             <img src="../../CSS Sheets/Images/Volunteering/Child Life Volunteer.jpg" width="200" height="200" alt="Icon" class="button-image" align="center"></a>
-             <label for="myButton">Child Life Volunteering</label>
+    <p style="color: darkblue;"><br>An admin page for volunteers streamlines management by centralizing registration, schedules, and contributions. 
+    It enables real-time tracking, efficient task allocation, and clear communication. Additionally, it helps identify trends,
+    address challenges, and optimize resources, enhancing efficiency and accountability while supporting the hospital's mission.</p><hr>
+            <h1 style="text-align: center;">Types Of Volunteering</h1>
+            <div class="icon-container">
+    <div class="icon">
+        <a href="MedicalVolBE.php" class="button-link">
+            <img src="../../CSS Sheets/Images/Volunteering/Medical Volunteer.jpg" width="200" height="200" alt="Medical Volunteering">
+        </a>
+        <label>Medical Volunteering</label>
+    </div>
 
+    <div class="icon">
+        <a href="OfficeVolBE.php" class="button-link">
+            <img src="../../CSS Sheets/Images/Volunteering/Office Volunteer.jpg" width="200" height="200" alt="Office Volunteering">
+        </a>
+        <label>Office Volunteering</label>
+    </div>
+
+    <div class="icon">
+        <a href="ChildLifeVolBE.php" class="button-link">
+            <img src="../../CSS Sheets/Images/Volunteering/Child Life Volunteer.jpg" width="200" height="200" alt="Child Life Volunteering">
+        </a>
+        <label>Child Life Volunteering</label>
+    </div>
+    </div>
              <div class="aside-dive">
                 <aside>
                     <h2 class="aside-title">Admin Pages</h2>
