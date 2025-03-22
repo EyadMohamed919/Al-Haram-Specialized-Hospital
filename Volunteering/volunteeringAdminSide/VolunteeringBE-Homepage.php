@@ -32,17 +32,13 @@
                     <h2 class="aside-title">Admin Pages</h2>
                     <hr>
                     <div class="aside-container">
-                        <a class="aside-links" href="adminPage.html"><i class="fa-regular fa-bookmark"></i> Profile</a>
+                        <a class="aside-links" href="../../Admin/adminPage.php"><i class="fa-regular fa-bookmark"></i> Profile</a>
                         <hr class="aside-horizontal">
-    
-                        <a class="aside-links" href="adminCareer.html"><i class="fa-regular fa-bookmark"></i> Career Applications</a>
+
+                        <a class="aside-links" href="../../Admin/adminCareer.php"><i class="fa-regular fa-bookmark"></i> Career Applications</a>
                         <hr class="aside-horizontal">
-    
-    
-                        <a class="aside-links" href="DonationsBE-Homepage.html"><i class="fa-regular fa-bookmark"></i> Admin Donations</a>
-                        <hr class="aside-horizontal">
-    
-                        <a class="aside-links" href="VolunteeringBE-Homepage.html"><i class="fa-regular fa-bookmark"></i> Admin Volunteering</a>
+
+                        <a class="aside-links" href="../../Donations/DonationsBE-Homepage.php"><i class="fa-regular fa-bookmark"></i> Admin Donations</a>
                         <hr class="aside-horizontal">
                     </div>
                 </aside>

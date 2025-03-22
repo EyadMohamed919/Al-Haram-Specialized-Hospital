@@ -36,7 +36,7 @@ function navBar()
                 <a class='nav-links' href='../AboutUs/aboutPageMain.php'>About Us</a>
                 <a class='nav-links' href='https://www.youtube.com/'>HAMADA</a>
                 <a class='nav-links' href='../Volunteering/Volunteering-Homepage.php'>Volunteering</a>
-                <a href='../Login.html' class='nav-links'><i class='fa-solid fa-user'></i></a>
+                <a href='../Login.php' class='nav-links'><i class='fa-solid fa-user'></i></a>
             </div>
         </nav>";
 }
