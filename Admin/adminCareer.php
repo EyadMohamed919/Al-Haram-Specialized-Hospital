@@ -4,7 +4,7 @@ session_start();
 
 
 if (!isset($_SESSION["user_email"]) || !isset($_SESSION["is_admin"]) || $_SESSION["is_admin"] !== true) {
-    header("Location: index.php"); // Redirect non-admins
+    header("Location: ../index.php"); // Redirect non-admins
     exit();
 }
 

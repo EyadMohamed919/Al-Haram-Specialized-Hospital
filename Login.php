@@ -27,6 +27,7 @@
         <a href="#">Create Account</a>
       </div>
     </div>
+    
   </div>
   <script src="script.js"></script>
 </body>
