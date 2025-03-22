@@ -16,15 +16,15 @@
              <h1>Types Of Volunteering</h1>
              <a href="MedicalVolBE.php" target="_blank"></a>
              <a href="MedicalVolBE.php" class="button-link">
-             <img src="CSS Sheets/Images/Volunteering/Medical Volunteer.jpg" width="200" height="200" alt="Icon" class="button-image" align="center"></a>
+             <img src="../../CSS Sheets/Images/Volunteering/Medical Volunteer.jpg" width="200" height="200" alt="Icon" class="button-image" align="center"></a>
              <label for="myButton">Medical Volunteering</label>
              <a href="OfficeVolBE.php" target="_blank"></a>
              <a href="OfficeVolBE.php" class="button-link">
-             <img src="CSS Sheets/Images/Volunteering/Office Volunteer.jpg" width="200" height="200" alt="Icon" class="button-image" align="center"></a>
+             <img src="../../CSS Sheets/Images/Volunteering/Office Volunteer.jpg" width="200" height="200" alt="Icon" class="button-image" align="center"></a>
              <label for="myButton">Office Volunteering</label>
              <a href="ChildLifeVolBE.php" target="_blank"></a>
              <a href="ChildLifeVolBE.php" class="button-link">
-             <img src="CSS Sheets/Images/Volunteering/Child Life Volunteer.jpg" width="200" height="200" alt="Icon" class="button-image" align="center"></a>
+             <img src="../../CSS Sheets/Images/Volunteering/Child Life Volunteer.jpg" width="200" height="200" alt="Icon" class="button-image" align="center"></a>
              <label for="myButton">Child Life Volunteering</label>
 
              <div class="aside-dive">
