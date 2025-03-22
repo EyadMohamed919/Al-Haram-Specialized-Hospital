@@ -39,6 +39,15 @@ $filepath = "../txtFiles/" . $fileName;
 <?php endforeach; ?>
 </div>
 
+<?php if (!empty($formType)) { ?>
+    <div style="margin: 10px 0;">
+        <a href="add.php?form=<?= $formType ?>" style="background: #4CAF50; color: white; padding: 8px 12px; border-radius: 5px; text-decoration: none;">
+            ➕ Add New <?= ucfirst($formType) ?> Record
+        </a>
+    </div>
+<?php } ?>
+
+
 <?php
 $headersMap = [
     'Appointments' => ['ID','Doctor','First Name','Last Name','Sex','Phone','Email','Date','Time'],
