@@ -31,11 +31,10 @@ if (!isset($_SESSION["user_email"]) || !isset($_SESSION["is_admin"]) || $_SESSIO
     </tr>
     <?php
     
-    $servername = "sql312.infinityfree.com"; 
-$username = "if0_38545498"; 
-$password = "oNcWcXZM3fR"; 
-$database = "if0_38545498_hospital"; 
-
+    $servername = "sql103.infinityfree.com"; 
+$username = "if0_38377371"; 
+$password = "kotfdYxZTuM"; 
+$database = "if0_38377371_hospital"; 
     
     // Create connection
     $conn = new mysqli($servername, $username, $password, $database);
