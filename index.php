@@ -12,7 +12,34 @@
     <title>Al Haram Hospital</title>
 </head>
 <body>
-    <?php include("repeated.php"); navBar();?>
+    <nav>
+            <img src='../CSS Sheets/Images/AboutUsImages/Hospital_Logo.svg' class='nav-logo' alt=''>
+            <div class='nav-container'>
+                <a class='nav-links' href='index.php'>Home</a>
+                <a class='nav-links' href='Donations/Donations-Homepage.php'>Donation</a>
+                <div class='nav-dropdown'>
+                    <a class='nav-links' href='../services/ServicesMain.php'>Services<i class='fa-solid fa-caret-down'></i></a>
+                    <div class='nav-dropdown-links'>
+                        <a class='dropdown-item' href='services/ServicesMain.php'>Services Home</a>
+                        <a class='dropdown-item' href='services/Pharmacy.php'>Pharmacy</a>
+                        <a class='dropdown-item' href='services/Tests.php'>Tests</a>
+                        <a class='dropdown-item' href='services/Appointments.php'>Book Us</a>
+                        <a class='dropdown-item' href='services/Outpatient.php'>Outpatient</a>
+                        <a class='dropdown-item' href='services/Surgery.php'>Surgery</a>
+                        <a class='dropdown-item' href='services/PrevMed.php'>PrevMed™</a>
+                        <a class='dropdown-item' href='services/Emergency.php'>Emergency</a>
+                        <a class='dropdown-item' href='services/Dentistry.php'>Dentistry</a>
+                        <a class='dropdown-item' href='services/ICU.php'>ICU</a>
+                        <a class='dropdown-item' href='services/Oncology.php'>Oncology</a>
+                    </div>
+                </div>
+                
+                <a class='nav-links' href='contactUs.php'>Contact Us</a>
+                <a class='nav-links' href='AboutUs/aboutPageMain.php'>About Us</a>
+                <a class='nav-links' href='Volunteering/Volunteering-Homepage.php'>Volunteering</a>
+                <a href='../Login.php' class='nav-links'><i class='fa-solid fa-user'></i></a>
+            </div>
+        </nav
 
     <header class="header-section">
     </header>

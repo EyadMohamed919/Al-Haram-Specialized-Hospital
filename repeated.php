@@ -23,18 +23,9 @@ function navBar()
                         <a class='dropdown-item' href='../services/Oncology.php'>Oncology</a>
                     </div>
                 </div>
-                <div class='nav-dropdown'>
-                    <a class='nav-links' href='../contact Details.html'>Contact Us<i class='fa-solid fa-caret-down'></i></a>
-                    <div class='nav-dropdown-links'>
-                        <a href='../contactUs/contact Details.php'>Contact Details</a>
-                        <a href='../contactUs/Online Consultaitions.php'>Online Consultations</a>
-                        <a href='../contactUs/heart checks.php'>Heart Checks</a>
-                        <a href='../contactUs/Directions to hospital.php'>Directions to the Hospital</a>
-                    </div>
-                </div>
-                <a class='nav-links' href='../recordPage.html'>Records</a>
+                
+                <a class='nav-links' href='../contactUs.php'>Contact Us</a>
                 <a class='nav-links' href='../AboutUs/aboutPageMain.php'>About Us</a>
-                <a class='nav-links' href='https://www.youtube.com/'>HAMADA</a>
                 <a class='nav-links' href='../Volunteering/Volunteering-Homepage.php'>Volunteering</a>
                 <a href='../Login.php' class='nav-links'><i class='fa-solid fa-user'></i></a>
             </div>
@@ -64,7 +55,7 @@ function adminNav()
 {
     echo "<div class=aside-dive>
     <aside>
-        <h2 class=aside-title>Related Topics</h2>
+        <h2 class=aside-title>Links</h2>
         <hr>
         <div class=aside-container>
             <a class=aside-links href=../Admin/adminPage.php><i class='fa-regular fa-bookmark'></i> Profile</a>
@@ -80,6 +71,9 @@ function adminNav()
             <hr class=aside-horizontal>
 
             <a class=aside-links href=../services/admin.php><i class='fa-regular fa-bookmark'></i> Admin Services</a>
+            <hr class=aside-horizontal>
+
+            <a class=aside-links href=../services/RecieveContactUs.php><i class='fa-regular fa-bookmark'></i> Messages</a>
             <hr class=aside-horizontal>
         </div>
     </aside>

@@ -19,16 +19,16 @@ $filepath = "txtFiles/" . $fileName;
 
 <!-- Session Code -->
 
-<!-- <?php 
-// session_start();
+<?php 
+session_start();
 
 
-// if (!isset($_SESSION["user_email"]) || !isset($_SESSION["is_admin"]) || $_SESSION["is_admin"] !== true) {
-//     header("Location: ../index.php"); // Redirect non-admins
-//     exit();
-// }
+if (!isset($_SESSION["user_email"]) || !isset($_SESSION["is_admin"]) || $_SESSION["is_admin"] !== true) {
+    header("Location: ../index.php"); 
+    exit();
+}
 
-?> -->
+?> 
 <html lang="en">
 <head>
     <meta charset="UTF-8">

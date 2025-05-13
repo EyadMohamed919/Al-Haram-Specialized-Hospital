@@ -1,8 +1,9 @@
 <?php
-$servername = "localhost"; 
-$username = "eyad_mohamed";
-$password = "EYMH55ad19001919";
-$database = "hospital";
+$servername = "sql103.infinityfree.com"; 
+$username = "if0_38377371"; 
+$password = "kotfdYxZTuM"; 
+$database = "if0_38377371_hospital"; 
+
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $database);
