@@ -30,18 +30,14 @@
             <td><input type="text" id="FirstName" name="FirstName" placeholder="Enter First Name"></td>
         </tr>
         <tr>
-            <td>Second Name</td>
-            <td><input type="text" id="SecondName" name="SecondName" placeholder="Enter Second Name"></td>
-        </tr>
-        <tr>
-            <td>Third Name</td>
-            <td><input type="text" id="ThirdName" name="ThirdName" placeholder="Enter Third Name"></td>
+            <td>Last Name</td>
+            <td><input type="text" id="LastName" name="LastName" placeholder="Enter Last Name"></td>
         </tr>
         <tr>
             <td>Gender</td>
             <td>
-                <input type="radio" id="GenderMale" name="Gender" value="M"> Male<br>
-                <input type="radio" id="GenderFemale" name="Gender" value="F"> Female
+                <input type="radio" id="GenderMale" name="Gender" value="Male"> Male<br>
+                <input type="radio" id="GenderFemale" name="Gender" value="Female"> Female
             </td>
         </tr>
         <tr>
@@ -63,15 +59,7 @@
         </tr>
         <tr>
             <td>Select your birth day</td>
-            <td><input type="date" id="DOB" name="DOB" min=2023-10-27></td>
-        </tr>
-        <tr>
-            <td>Mobile Number</td>
-            <td><input type="tel" id="MobileNumber" name="MobileNumber" placeholder="Enter Mobile Number" required></td>
-        </tr>
-        <tr>
-            <td>Email Address</td>
-            <td><input type="email" id="EmailAddress" name="EmailAddress" placeholder="Enter Email Address" required></td>
+            <td><input type="date" id="DOB" name="DOB"></td>
         </tr>
         <tr>
             <td>Blood Type</td>
@@ -95,26 +83,6 @@
                     </tr>
                 </table>
             </td>
-        </tr>
-        <tr>
-            <td>When did you draw blood in the hospital?</td>
-            <td><input type="date" id="BloodDonationDate" name="BloodDonationDate" required></td>
-        </tr>
-        <tr>
-            <td>Which post office are you going to use to send the donated blood?</td>
-            <td>
-                <input type="radio" id="UPS" name="DonationMethod" value="UPS">UPS<br>
-                <input type="radio" id="DHL" name="DonationMethod" value="DHL">DHL<br>
-                <input type="radio" id="EgyptPost" name="DonationMethod" value="EgyptPost">Egypt Post<br>
-            </td>
-        </tr>
-        <tr>
-            <td>Post Office Location</td>
-            <td><input type="text" id="PostOffice" name="PostOffice" required></td>
-        </tr>
-        <tr>
-            <td>Package Tracking Number</td>
-            <td><input type="text" id="PackageTrackingNumber" name="PackageTrackingNumber" required></td>
         </tr>
         <tr>
             <td colspan="2" align="center">
