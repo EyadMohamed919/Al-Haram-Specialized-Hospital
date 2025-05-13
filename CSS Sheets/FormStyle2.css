@@ -15,20 +15,52 @@ p {
     font-family: sans-serif;
 }
 table {
-    border: 10px ridge cyan;
-    width: 30%;
-    border-spacing: 0;
+    width: 500px;
+    border-radius: 0.5625rem;
+    -webkit-border-radius: 0.5625rem;
+    -moz-border-radius: 0.5625rem;
+    -ms-border-radius: 0.5625rem;
+    -o-border-radius: 0.5625rem;
 }
 table td {
     background-color: lightblue;
     padding: 10px;
-    border: 1px solid black; 
+    border-radius: 0.5625rem;
+    -webkit-border-radius: 0.5625rem;
+    -moz-border-radius: 0.5625rem;
+    -ms-border-radius: 0.5625rem;
+    -o-border-radius: 0.5625rem;
 }
 body {
     margin: 0;
     font-family: 'Montserrat', sans-serif;
-    background: linear-gradient(120deg, lightseagreen, #C0C0C0);
+    background: linear-gradient(120deg, rgba(4, 196, 68, 0.725), #0059ffb7);
     background-attachment: fixed;
     background-size: cover;
     color: #333;
+    border-radius: 0.5625rem;
+    -webkit-border-radius: 0.5625rem;
+    -moz-border-radius: 0.5625rem;
+    -ms-border-radius: 0.5625rem;
+    -o-border-radius: 0.5625rem;
+}
+
+
+.td_names{
+    font-family: "Josefin Sans", sans-serif;
+    font-weight: bold;
+    border-radius: 0.5625rem;
+    -webkit-border-radius: 0.5625rem;
+    -moz-border-radius: 0.5625rem;
+    -ms-border-radius: 0.5625rem;
+    -o-border-radius: 0.5625rem;
+}
+
+.inputs{
+    font-size: 1.0rem;
+    border-radius: 0.5rem;
+    -webkit-border-radius: 0.5rem;
+    -moz-border-radius: 0.5rem;
+    -ms-border-radius: 0.5rem;
+    -o-border-radius: 0.5rem;
 }

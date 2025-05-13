@@ -13,9 +13,8 @@
         <script src="https://kit.fontawesome.com/c19e8a164c.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="../CSS Sheets/aboutNavStyle.css">
         <link rel="stylesheet" href="../CSS Sheets/aboutAwardStyle.css">
-        <link rel="stylesheet" href="../CSS Sheets/FormStyle1.css">
         <link rel="stylesheet" href="../CSS Sheets/FormStyle2.css">
-        <script src="BloodDon.js" defer></script>
+        <script src="BloodDon.js"></script>
     </head>
     <body>
     <?php
@@ -24,27 +23,27 @@
         ?>
         <h1 id="title">Blood Donations</h1><hr>
         <form method="post" action="BloodForm.php" onclick="validationForm()">
-    <table border="1">
+    <table align="center" width="100%">
         <tr>
-            <td>First Name</td>
-            <td><input type="text" id="FirstName" name="FirstName" placeholder="Enter First Name"></td>
+            <td class="td_names">First Name</td>
+            <td><input class="inputs" type="text" id="FirstName" name="FirstName" placeholder="Enter First Name" required></td>
         </tr>
         <tr>
-            <td>Last Name</td>
-            <td><input type="text" id="LastName" name="LastName" placeholder="Enter Last Name"></td>
+            <td class="td_names"> Last Name</td>
+            <td><input class="inputs" type="text" id="LastName" name="LastName" placeholder="Enter Last Name" required></td>
         </tr>
         <tr>
-            <td>Gender</td>
+            <td class="td_names">Gender</td>
             <td>
-                <input type="radio" id="GenderMale" name="Gender" value="Male"> Male<br>
-                <input type="radio" id="GenderFemale" name="Gender" value="Female"> Female
+                <input  class="inputs" type="radio" id="GenderMale" name="Gender" value="Male"required> Male<br>
+                <input class="inputs" type="radio" id="GenderFemale" name="Gender" value="Female"required> Female
             </td>
         </tr>
         <tr>
-            <td>Nationality</td>
+            <td class="td_names">Nationality</td>
             <td>
-                <select id="Country" name="Country">
-                    <option value="EG" selected>Egypt</option>
+                <select class="inputs" id="Country" name="Country"required>
+                    <option value="EG">Egypt</option>
                     <option value="GE">Germany</option>
                     <option value="SR">Turkey</option>
                     <option value="UAE">United Arab Emirates</option>
@@ -58,36 +57,36 @@
             </td>
         </tr>
         <tr>
-            <td>Select your birth day</td>
-            <td><input type="date" id="DOB" name="DOB"></td>
+            <td class="td_names">Select your birth day</td>
+            <td><input class="inputs" type="date" id="DOB" name="DOB"required></td>
         </tr>
         <tr>
-            <td>Blood Type</td>
+            <td class="td_names">Blood Type</td>
             <td>
                 <table>
                     <tr>
                         <td>Type A</td>
-                        <td><input type="checkbox" id="TypeA" value="A" name="BloodType"></td>
+                        <td><input class="inputs" type="radio" id="TypeA" value="A" name="BloodType" required></td>
                     </tr>
                     <tr>
                         <td>Type B</td>
-                        <td><input type="checkbox" id="TypeB" value="B" name="BloodType"></td>
+                        <td><input class="inputs" type="radio" id="TypeB" value="B" name="BloodType" required></td>
                     </tr>
                     <tr>
                         <td>Type O</td>
-                        <td><input type="checkbox" id="TypeO" value="O" name="BloodType"></td>
+                        <td><input class="inputs" type="radio" id="TypeO" value="O" name="BloodType" required></td>
                     </tr>
                     <tr>
                         <td>Type AB</td>
-                        <td><input type="checkbox" id="TypeAB" value="AB" name="BloodType"></td>
+                        <td><input class="inputs" type="radio" id="TypeAB" value="AB" name="BloodType" required></td>
                     </tr>
                 </table>
             </td>
         </tr>
         <tr>
             <td colspan="2" align="center">
-                <button type="submit">Proceed With Donation</button>
-                <input type="reset" value="Recede Donation Process">
+                <button class="inputs" type="submit">Proceed With Donation</button>
+                <input class="inputs"type="reset" value="Recede Donation Process">
             </td>
         </tr>
     </table>

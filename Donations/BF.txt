@@ -3,3 +3,5 @@ kkk~hamada~Female~EG~2025-05-01~O
 99~hamada~Female~EG~2025-05-01~O
 99~hamada~Male~EG~2025-05-01~A
 4~hamada~Male~EG~2025-05-02~A
+Selim~hamada~Male~EG~2025-05-01~A
+Selim~hamada~Male~EG~2025-04-30~B
