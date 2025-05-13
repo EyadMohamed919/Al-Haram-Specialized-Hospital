@@ -13,7 +13,7 @@
     $PostOffice = $_POST['PostOffice'];
     $PackageTrackingNumber = $_POST['PackageTrackingNumber'];
 
-    $data = "FirstName: $firstName\n" .
+    $data = "FirstName: $FirstName\n" .
             "SecondName: $SecondName\n" .
             "ThirdName: $ThirdName\n" .
             "Gender: $Gender\n" .
@@ -27,7 +27,7 @@
             "PostOffice: $PostOffice\n" .
             "PackageTrackingNumber: $PackageTrackingNumber\n";
 
-    $file = fopen("Bloodtype_Form.txt", "a");
+    $file = fopen("BF-BE.txt", "a");
     fwrite($file, $data);
     fclose($file);
 

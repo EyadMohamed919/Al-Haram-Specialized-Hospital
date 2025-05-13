@@ -73,11 +73,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     if (isset($_POST['delete']) && !empty($data)) {
-        array_pop($data); // Remove last added record
+        $donationIDToDelete = $_POST["DonationID"]; // Get the ID from input
+    
+        // Filter out the entry with the matching DonationID
+        $data = array_filter($data, function ($record) use ($donationIDToDelete) {
+            return $record["DonationID"] !== $donationIDToDelete;
+        });
+    
         writeData($file, $data);
     }
-    header("Location: " . $_SERVER['PHP_SELF']); 
-    exit();
 }
 ?>
 
@@ -162,8 +166,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <input type="text" id="DonationCountry" name="DonationCountry" required><br><br>
 
             <button type="submit" name="add">Add Record</button><br><br>
-            <button type="submit" name="update">Update Last Record</button><br><br>
-            <button type="submit" name="delete">Remove Last Record</button><br><br>
+            <button type="submit" name="update">Update</button><br><br>
+            <button type="submit" name="delete">Remove</button><br><br>
         </form>
     </div>
 </body>

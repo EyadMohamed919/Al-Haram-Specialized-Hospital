@@ -1,6 +1,0 @@
-DonationID: 6464
-DonatorsName: Eyad
-BloodType: O
-DonationDate: 2025-03-21
-DonationCountry: EGYPT
--------------------------
