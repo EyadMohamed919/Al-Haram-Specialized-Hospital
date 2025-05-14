@@ -22,32 +22,28 @@
             navBar();
         ?>
         <h1 id="title">Organ Donations</h1><hr>
-        <form action="OrganDo.php" method="post">
-            <table border="1">
+        <form action="OrganDo.php" method="POST">
+            <table border="1" align="center">
                 <tr>
                     <td>First Name</td>
-                    <td><input type="text" id="FirstName" name="FirstName" placeholder="Enter First Name"></td>
+                    <td><input type="text" id="FirstName" name="FirstName" placeholder="Enter First Name" required></td>
                 </tr>
                 <tr>
-                    <td>Second Name</td>
-                    <td><input type="text" id="SecondName" name="SecondName" placeholder="Enter Second Name"></td>
-                </tr>
-                <tr>
-                    <td>Third Name</td>
-                    <td><input type="text" id="ThirdName" name="ThirdName" placeholder="Enter Third Name"></td>
+                    <td>Last Name</td>
+                    <td><input type="text" id="LastName" name="LastName" placeholder="Enter Last Name" required></td>
                 </tr>
                 <tr>
                     <td>Gender</td>
                     <td>
-                        <input type="radio" id="GenderMale" name="Gender" value="M"> Male<br>
-                        <input type="radio" id="GenderFemale" name="Gender" value="F"> Female
+                        <input type="radio" id="Male" name="Gender" value="M" required> Male<br>
+                        <input type="radio" id="Female" name="Gender" value="F" required> Female
                     </td>
                 </tr>
                 <tr>
                     <td>Nationality</td>
                     <td>
-                        <select id="Country" name="Country">
-                            <option value="EG" selected>Egypt</option>
+                        <select id="Country" name="Country" required>
+                            <option value="EG">Egypt</option>
                             <option value="GE">Germany</option>
                             <option value="SR">Turkey</option>
                             <option value="UAE">United Arab Emirates</option>
@@ -62,62 +58,24 @@
                 </tr>
                 <tr>
                     <td>Select your birth day</td>
-                    <td><input type="date" id="DOB" name="DOB"></td>
+                    <td><input type="date" id="DOB" name="DOB" required></td>
                 </tr>
                 <tr>
                     <td>Mobile Number</td>
-                    <td><input type="tel" id="MobileNumber" name="MobileNumber" placeholder="Enter Mobile Number"></td>
-                </tr>
-                <tr>
-                    <td>Email Address</td>
-                    <td><input type="email" id="EmailAddress" name="EmailAddress" placeholder="Enter Email Address"></td>
+                    <td><input type="tel" id="MobileNumber" name="MobileNumber" placeholder="Enter Mobile Number" required></td>
                 </tr>
                 <tr>
                     <td>Organ Type</td>
                     <td>
-                        <table>
-                            <tr>
-                                <td>Heart</td>
-                                <td><input type="checkbox" id="Heart" value="Heart" name="organSelection"></td>
-                            </tr>
-                            <tr>
-                                <td>Kidneys</td>
-                                <td><input type="checkbox" id="Kidneys" value="Kidneys" name="organSelection"></td>
-                            </tr>
-                            <tr>
-                                <td>Liver</td>
-                                <td><input type="checkbox" id="Liver" value="Liver" name="organSelection"></td>
-                            </tr>
-                            <tr>
-                                <td>Other Organ</td>
-                                <td><input type="checkbox" id="OtherOrgan" value="OO" name="organSelection"></td>
-                            </tr>
-                        </table>
+                        <input type="Radio" Value="Kidney" name="OrganDonated" required>Kidney
+                        <input type="Radio" value="Heart" name="OrganDonated"required>Heart
+                        <input type="Radio" value="Lung" name="OrganDonated"required>Lung
+                        <input type="Radio" value="Other" name="OrganDonated"required>Other Organ
                     </td>
-                </tr>
-                <tr>
-                    <td>When is your organ removal surgery scheduled in the hospital?</td>
-                    <td><input type="date" id="SurgeryDate" name="SurgeryDate" required></td>
-                </tr>
-                <tr>
-                    <td>Which post office are you going to use to send the donated organ?</td>
-                    <td>
-                        <input type="radio" id="DonationMethodPost" name="DonationMethod" value="Post">UPS<br>
-                        <input type="radio" id="DonationMethodPost" name="DonationMethod" value="Post">DHL<br>
-                        <input type="radio" id="DonationMethodPost" name="DonationMethod" value="Post">Egypt Post<br>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Post Office Location</td>
-                    <td><input type="text" id="PostOffice" name="PostOffice"></td>
-                </tr>
-                <tr>
-                    <td>Package Tracking Number</td>
-                    <td><input type="text" id="PackageTrackingNumber" name="PackageTrackingNumber"></td>
                 </tr>
                 <tr>
                     <td colspan="2" align="center">
-                        <button type="button" onclick="validateForm()">Proceed With Donation</button>
+                        <button type="submit" onclick="validateForm()">Proceed With Donation</button>
                         <input type="reset" value="Recede Donation Process">
                 </td>
                 </tr>

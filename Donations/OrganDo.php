@@ -1,33 +1,18 @@
 <?php
 $FirstName=$_POST['FirstName'];
-$SecondName=$_POST['SecondName'];
-$ThirdName=$_POST['ThirdName'];
+$LastName=$_POST['LastName'];
 $Gender = $_POST['Gender'];
 $Country=$_POST['Country'];
 $DOB = $_POST['DOB'];
-$MobileNumber=$_POST['MobileNumber'];
-$EmailAddress=$_POST['EmailAddress'];
-$OrganDonated0=$_POST['organSelection'];
-$SurgeryDate=$_POST['SurgeryDate'];
-$DonationMethod=$_POST['DonationMethod'];
-$PostOffice=$_POST['PostOffice'];
-$PackageTrackingNumber=$_POST['PackageTrackingNumber'];
+$OrganDonated=$_POST['OrganDonated'];
 
 $data = 
-"FirstName:$FirstName \n".
-"SecondName:$SecondName \n".
-"ThirdName:$ThirdName \n".
-"Gender:$Gender \n".
-"Country:$Gender\n".
-"DOB:$DOB \n".
-"MobileNumber:$MobileNumber\n".
-"EmailAddress:$EmailAddress\n".
-
-"OrganDonated0:$OrganDonated0\n".
-"SurgeryDate:$SurgeryDate\n".
-"DonationMethod:$DonationMethod\n".
-"PostOffice:$PostOffice\n". 
-"PackageTrackingNumber=$PackageTrackingNumber";
+"\n".$FirstName."~".
+$LastName."~".
+$Gender."~".
+$Country."~".
+$DOB."~".
+$OrganDonated;
 
 $file=fopen("OrganFile.txt","a");
 fwrite($file,$data);

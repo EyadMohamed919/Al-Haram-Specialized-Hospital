@@ -1,13 +1,3 @@
-FirstName:Selim 
-SecondName:Youssef 
-ThirdName:Eleraky 
-Gender:M 
-Country:M
-DOB:2004-07-22 
-MobileNumber:0155006870
-EmailAddress:sss@gmail.com
-OrganDonated0:Liver
-SurgeryDate:2025-03-18
-DonationMethod:Post
-PostOffice:haram
-PackageTrackingNumber=01882
+Selim~Youssef~M~EG~2006-05-07~Heart
+Anthony~hamada~M~EG~2024-05-09~Kidney
+eyad~hamada~M~EG~2021-05-09~Kidney

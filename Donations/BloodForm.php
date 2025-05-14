@@ -6,12 +6,12 @@
     $DOB = $_POST['DOB'];
     $BloodType = $_POST['BloodType'];
 
-    $data = $FirstName."~".
+    $data = "\n".$FirstName."~".
             $LastName."~".
             $Gender."~".
             $Country."~".
             $DOB."~".
-            $BloodType ."\n";
+            $BloodType;
 
     $file = fopen("BF.txt", "a");
     fwrite($file, $data);
