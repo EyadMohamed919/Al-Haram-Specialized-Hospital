@@ -13,7 +13,7 @@
 </head>
 <body>
     <nav>
-            <img src='../CSS Sheets/Images/AboutUsImages/Hospital_Logo.svg' class='nav-logo' alt=''>
+            <img src='CSS Sheets/Images/AboutUsImages/Hospital_Logo.svg' class='nav-logo' alt=''>
             <div class='nav-container'>
                 <a class='nav-links' href='index.php'>Home</a>
                 <a class='nav-links' href='Donations/Donations-Homepage.php'>Donation</a>
@@ -37,7 +37,7 @@
                 <a class='nav-links' href='contactUs.php'>Contact Us</a>
                 <a class='nav-links' href='AboutUs/aboutPageMain.php'>About Us</a>
                 <a class='nav-links' href='Volunteering/Volunteering-Homepage.php'>Volunteering</a>
-                <a href='../Login.php' class='nav-links'><i class='fa-solid fa-user'></i></a>
+                <a href='Login.php' class='nav-links'><i class='fa-solid fa-user'></i></a>
             </div>
         </nav
 
