@@ -208,3 +208,10 @@ if (!isset($_SESSION["user_email"]) || !isset($_SESSION["is_admin"]) || $_SESSIO
     </form>
 </body>
 </html>
+
+<?php 
+foreach($data as $index => $record)
+{
+    
+}
+?>

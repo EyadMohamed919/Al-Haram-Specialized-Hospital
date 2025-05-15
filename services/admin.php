@@ -23,11 +23,18 @@ $filepath = "txtFiles/" . $fileName;
 session_start();
 
 
-if (!isset($_SESSION["user_email"]) || !isset($_SESSION["is_admin"]) || $_SESSION["is_admin"] !== true) {
-    header("Location: ../index.php"); 
-    exit();
-}
+if(isset($_SESSION["Admin"]))
+    {
+      if($_SESSION["Admin"] == true)
+      {
+        header("location: Admin/adminPage.php");
+      }
+      else
+      {
+        header("location: index.php");
+      }
 
+    }
 ?> 
 <html lang="en">
 <head>

@@ -3,10 +3,13 @@
 session_start();
 
 
-if (!isset($_SESSION["user_email"]) || !isset($_SESSION["is_admin"]) || $_SESSION["is_admin"] !== true) {
-    header("Location: ../index.php"); // Redirect non-admins
-    exit();
-}
+if(isset($_SESSION["Admin"]))
+    {
+      if($_SESSION["Admin"] == false)
+      {
+        header("location: index.php");
+      }
+    }
 
 ?>
 <head>
@@ -22,7 +25,7 @@ if (!isset($_SESSION["user_email"]) || !isset($_SESSION["is_admin"]) || $_SESSIO
     <title>Al Haram Hospital</title>
 </head>
 <body>
-    <?php include("../repeated.php"); navBar(); ?>
+    <?php include_once("../repeated.php"); navBar(); ?>
     <header class="header-section">
     </header>
     <div class="header-title">
@@ -39,9 +42,9 @@ if (!isset($_SESSION["user_email"]) || !isset($_SESSION["is_admin"]) || $_SESSIO
             </div>
 
             <?php
-                echo "<h2 id=adminName>Name: " . $_SESSION["user_name"] . "</h2>";
-                echo "<h2 id=adminEmail>Email: " . $_SESSION["user_email"] . "</h2>";
-                echo "<h2 id=adminPassword>Password: " . $_SESSION["user_pass"] . "</h2>";
+                echo "<h2 id=adminName>Name: " . $_SESSION["UserName"] . "</h2>";
+                // echo "<h2 id=adminEmail>Email: " . $_SESSION["user_email"] . "</h2>";
+                // echo "<h2 id=adminPassword>Password: " . $_SESSION["user_pass"] . "</h2>";
             ?>
             
           

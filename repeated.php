@@ -28,6 +28,7 @@ function navBar()
                 <a class='nav-links' href='../AboutUs/aboutPageMain.php'>About Us</a>
                 <a class='nav-links' href='../Volunteering/Volunteering-Homepage.php'>Volunteering</a>
                 <a href='../Login.php' class='nav-links'><i class='fa-solid fa-user'></i></a>
+                <a href='../Logout.php' class='nav-links'><i class='fa-solid fa-arrow-right-to-bracket'></i></a>
             </div>
         </nav>";
 }
@@ -58,7 +59,7 @@ function adminNav()
         <h2 class=aside-title>Links</h2>
         <hr>
         <div class=aside-container>
-            <a class=aside-links href=../Admin/adminPage.php><i class='fa-regular fa-bookmark'></i> Profile</a>
+            <a class=aside-links href=../Admin/AdminMain.php><i class='fa-regular fa-bookmark'></i> Profile</a>
             <hr class=aside-horizontal>
 
             <a class=aside-links href=../Admin/adminCareer.php><i class='fa-regular fa-bookmark'></i> Career Applications</a>

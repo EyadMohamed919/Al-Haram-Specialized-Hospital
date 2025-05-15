@@ -4,8 +4,23 @@
 session_start();
 
 
-if (isset($_SESSION["user_email"])) {
-    session_destroy();
+if (isset($_SESSION["Logged"])) {
+  if($_SESSION["Logged"] == true)
+  {
+    if(isset($_SESSION["Admin"]))
+    {
+      if($_SESSION["Admin"] == true)
+      {
+        header("location: Admin/adminMain.php");
+      }
+      else
+      {
+        header("location: index.php");
+      }
+
+    }
+  }
+    
 }
 
 ?>
@@ -20,15 +35,24 @@ if (isset($_SESSION["user_email"])) {
     <div class="login-box">
       <h1>Welcome Back</h1>
       <p>Sign in to continue</p>
-      <form id="loginForm" method="post" action="Authentication.php">
+      <form id="loginForm" method="post" action="Authentication/Authentication.php">
         <div class="input-group">
-          <input type="email" id="email" name="email" required>
+          <input type="email" id="email" name="email" required value="hamada@hospital.com">
           <label for="email">Email</label>
         </div>
         <div class="input-group">
-          <input type="password" id="password" name="password" required>
+          <input type="password" id="password" name="password" required value="123">
           <label for="password">Password</label>
         </div>
+        <?php
+        if(isset($_SESSION["Logged"]))
+        {
+          if ($_SESSION["Logged"] == false) {
+              echo "<p> Incorrect email or password<p>";
+          }
+        }
+
+        ?>
         <button type="submit">Login</button>
       </form>
       
