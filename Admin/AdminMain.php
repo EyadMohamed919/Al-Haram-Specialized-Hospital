@@ -43,7 +43,7 @@ if(isset($_SESSION["Admin"]))
 
             <?php
                 echo "<h2 id=adminName>Name: " . $_SESSION["UserName"] . "</h2>";
-                // echo "<h2 id=adminEmail>Email: " . $_SESSION["user_email"] . "</h2>";
+                echo "<h2 id=adminName>Email: " . $_SESSION["UserEmail"] . "</h2>";
                 // echo "<h2 id=adminPassword>Password: " . $_SESSION["user_pass"] . "</h2>";
             ?>
             

@@ -3,10 +3,13 @@
 session_start();
 
 
-if (!isset($_SESSION["user_email"]) || !isset($_SESSION["is_admin"]) || $_SESSION["is_admin"] !== true) {
-    header("Location: ../index.php"); // Redirect non-admins
-    exit();
-}
+if(isset($_SESSION["Admin"]))
+    {
+      if($_SESSION["Admin"] == false)
+      {
+        header("location: index.php");
+      }
+    }
 
 ?>
 <head>
