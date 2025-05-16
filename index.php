@@ -37,8 +37,8 @@
                 <a class='nav-links' href='contactUs.php'>Contact Us</a>
                 <a class='nav-links' href='AboutUs/aboutPageMain.php'>About Us</a>
                 <a class='nav-links' href='Volunteering/Volunteering-Homepage.php'>Volunteering</a>
-                <a href='../Login.php' class='nav-links'><i class='fa-solid fa-user'></i></a>
-                <a href='../Logout.php' class='nav-links'><i class="fa-solid fa-arrow-right-to-bracket"></i></a>
+                <a href='Login.php' class='nav-links'><i class='fa-solid fa-user'></i></a>
+                <a href='Logout.php' class='nav-links'><i class="fa-solid fa-arrow-right-to-bracket"></i></a>
             </div>
         </nav
 
