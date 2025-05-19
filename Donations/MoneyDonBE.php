@@ -1,5 +1,17 @@
 <html>
+<?php
+session_start();
 
+
+if(isset($_SESSION["Admin"]))
+    {
+      if($_SESSION["Admin"] == false)
+      {
+        header("location: index.php");
+      }
+    }
+
+?>
 <head>
     <title>Backend Money Donations</title>
     <link rel="stylesheet" type="text/css" href="../CSS Sheets/BEstylesheet1.css">
