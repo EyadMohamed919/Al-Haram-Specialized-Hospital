@@ -18,28 +18,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die("Error: All required fields must be filled.");
     }
 
-    $data = "First Name: $firstName\n" .
-            "Second Name: $secondName\n" .
-            "Third Name: $thirdName\n" .
-            "Gender: $gender\n" .
-            "Nationality: $nationality\n" .
-            "DOB: $dob\n" .
-            "Mobile Number: $mobileNumber\n" .
-            "Email Address: $emailAddress\n" .
-            "Start Date: $startDate\n" .
-            "-------------------------\n";
+    $data = "$firstName~$secondName~$thirdName~$gender~$nationality~$dob~$mobileNumber~$emailAddress~$startDate\n";
 
-            $filePath = __DIR__ . "/ClVol.txt"; 
+    $filePath = __DIR__ . "/ClVol.txt";
+    $file = fopen($filePath, "a");
+    if (!$file) {
+        die("Error: Unable to open file for writing.");
+    }
 
-            $file = fopen($filePath, "a");
-            if (!$file) {
-                die("Error: Unable to open file for writing.");
-            }
-        {
-            fwrite($file, $data);
-            fclose($file);
-            header("Location: ChildLifeVolunteering.php");
-            exit(); 
-        }
-        }
-        ?>
+    fwrite($file, $data);
+    fclose($file);
+    header("Location: ChildLifeVolunteering.php");
+    exit();
+}
+?>
