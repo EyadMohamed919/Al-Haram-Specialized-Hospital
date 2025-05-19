@@ -2,7 +2,6 @@
 function sanitizeInput($input) {
     return htmlspecialchars(strip_tags(trim($input)));
 }
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $firstName = sanitizeInput($_POST['FirstName'] ?? 'N/A');
     $secondName = sanitizeInput($_POST['SecondName'] ?? 'N/A');
