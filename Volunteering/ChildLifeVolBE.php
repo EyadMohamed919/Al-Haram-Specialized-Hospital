@@ -4,17 +4,14 @@ if (!isset($_SESSION["Admin"]) || $_SESSION["Admin"] == false) {
     header("location: index.php");
     exit();
 }
-
 $filePath = __DIR__ . "/ClVol.txt";
-
-// Function to read data from file into array of associative arrays
 function readData($filePath) {
     $data = [];
     if (!file_exists($filePath)) return $data;
     $lines = file($filePath, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
     foreach ($lines as $line) {
         $fields = explode("~", $line);
-        if (count($fields) === 9) { // expected 9 fields
+        if (count($fields) === 9) { 
             $data[] = [
                 'FirstName' => $fields[0],
                 'SecondName' => $fields[1],
@@ -30,8 +27,6 @@ function readData($filePath) {
     }
     return $data;
 }
-
-// Function to write data array back to file
 function writeData($filePath, $data) {
     $lines = [];
     foreach ($data as $record) {
@@ -49,18 +44,12 @@ function writeData($filePath, $data) {
     }
     file_put_contents($filePath, implode("\n", $lines) . "\n");
 }
-
-// Function to sanitize input
 function sanitize($input) {
     return htmlspecialchars(strip_tags(trim($input)));
 }
-
-// Load existing data
 $volunteers = readData($filePath);
-
 $message = "";
 
-// Handle form submissions
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Common fields sanitize
     $index = isset($_POST['index']) ? (int)$_POST['index'] : -1;
@@ -75,7 +64,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $StartDate = sanitize($_POST['StartDate'] ?? '');
 
     if (isset($_POST['create'])) {
-        // Create new record
         $volunteers[] = [
             'FirstName' => $FirstName,
             'SecondName' => $SecondName,
@@ -90,7 +78,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         writeData($filePath, $volunteers);
         $message = "New volunteer added successfully.";
     } elseif (isset($_POST['update'])) {
-        // Update existing record
         if ($index >= 0 && isset($volunteers[$index])) {
             $volunteers[$index] = [
                 'FirstName' => $FirstName,
@@ -109,7 +96,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $message = "Invalid record selected for update.";
         }
     } elseif (isset($_POST['delete'])) {
-        // Delete record
         if ($index >= 0 && isset($volunteers[$index])) {
             array_splice($volunteers, $index, 1);
             writeData($filePath, $volunteers);
@@ -120,7 +106,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-// If editing, get record to prefill form
 $editRecord = null;
 if (isset($_GET['edit'])) {
     $editIndex = (int)$_GET['edit'];
