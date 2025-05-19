@@ -1,73 +1,4 @@
-p {
-    text-align: center; 
-    font-style: italic; 
-    font-size: 2em; 
-    margin: 20px 0; 
-}
-
-#VolunteersTable {
-    border-collapse: collapse;
-    width: 50%;
-    margin: 20px auto;
-    border: 2px solid black; 
-}
-
-#VolunteersTable th, #VolunteersTable td {
-    border: 1px solid black; 
-    padding: 8px;
-    text-align: left;
-    background-color: skyblue; 
-}
-
-#VolunteersTable th {
-    background-color: lightblue; 
-    font-weight: bold;
-}
-
-form {
-    border: 2px solid black; 
-    padding: 20px;
-    margin: 20px auto;
-    width: 50%;
-    background-color: white; 
-    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1); 
-}
-
-form input[type="text"],
-form input[type="date"] {
-    width: 95%;
-    padding: 10px;
-    margin-bottom: 10px;
-    background-color: turquoise; 
-    border: 1px solid black; 
-    border-radius: 4px; 
-}
-
-form label {
-    font-weight: bold;
-    display: block;
-    margin-bottom: 5px;
-    color: black; 
-}
-
-
-form button {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    margin-top: 10px;
-    background-color: lightblue; 
-    border: 1px solid black; 
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-    color: black;
-}
-
-form button:hover {
-    background-color: deepskyblue; 
-}
-
+/* ===== GLOBAL STYLES ===== */
 body {
     margin: 0;
     font-family: 'Montserrat', sans-serif;
@@ -75,16 +6,170 @@ body {
     background-attachment: fixed;
     background-size: cover;
     color: #333;
+    padding: 20px;
 }
+
+/* ===== TEXT STYLES ===== */
+p {
+    text-align: center; 
+    font-style: italic; 
+    font-size: 2em; 
+    margin: 20px 0; 
+}
+
+h2 {
+    text-align: center;
+    margin: 20px 0;
+    color: #2c3e50;
+}
+
+/* ===== TABLE STYLES ===== */
+#Volunteeringtable {
+    border-collapse: collapse;
+    width: 90%;
+    margin: 20px auto;
+    border: 2px solid black;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+#Volunteeringtable th, 
+#Volunteeringtable td {
+    border: 1px solid black; 
+    padding: 12px;
+    text-align: left;
+    background-color: white;
+}
+
+#Volunteeringtable th {
+    background-color: lightblue; 
+    font-weight: bold;
+    text-align: center;
+}
+
+#Volunteeringtable tr:nth-child(even) td {
+    background-color: #f0f8ff;
+}
+
+/* ===== FORM STYLES ===== */
+form {
+    border: 2px solid black; 
+    padding: 20px;
+    margin: 20px auto;
+    width: 50%;
+    background-color: white; 
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+form table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+form table tr td {
+    padding: 10px;
+    vertical-align: middle;
+}
+
+form table tr td:first-child {
+    width: 30%;
+    font-weight: bold;
+}
+
+/* ===== INPUT STYLES ===== */
+form input[type="text"],
+form input[type="email"],
+form input[type="tel"],
+form input[type="date"],
+form select {
+    width: 95%;
+    padding: 10px;
+    margin: 5px 0;
+    background-color: turquoise; 
+    border: 1px solid black; 
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 16px;
+}
+
+input[type="date"] {
+    min-height: 40px;
+}
+
+/* ===== RADIO BUTTONS ===== */
+input[type="radio"] {
+    margin: 0 5px 0 15px;
+    transform: scale(1.2);
+}
+
+/* ===== BUTTON STYLES ===== */
+form button {
+    display: inline-block;
+    width: auto;
+    padding: 10px 25px;
+    margin: 15px 5px 0;
+    background-color: lightblue; 
+    border: 1px solid black; 
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    color: black;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+form button:hover {
+    background-color: deepskyblue; 
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* ===== ICON CONTAINERS ===== */
 .icon-container {
     display: flex;
     justify-content: center; 
     gap: 1.5cm; 
     text-align: center;
+    margin: 20px 0;
 }
 
 .icon {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+    form {
+        width: 90%;
+        padding: 15px;
+    }
+    
+    #Volunteeringtable {
+        display: block;
+        overflow-x: auto;
+        width: 100%;
+    }
+    
+    .icon-container {
+        flex-direction: column;
+        gap: 0.5cm;
+    }
+}
+
+/* ===== LINK STYLES ===== */
+a {
+    color: #2c3e50;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+hr {
+    border: 1px solid #2c3e50;
+    margin: 20px 0;
 }

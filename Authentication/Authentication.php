@@ -2,6 +2,7 @@
 include("GlobalFunctions.php");
 $email = $_POST["email"];
 $password = $_POST["password"];
+$password = md5($password);
 
 if(str_contains($email, "@hospital.com")) 
 {
@@ -13,6 +14,7 @@ if(str_contains($email, "@hospital.com"))
         session_start();
         $_SESSION["Logged"] = true;
         $_SESSION["UserName"] = $checker[1];
+        $_SESSION["UserEmail"] = $email;
         $_SESSION["Admin"] = true;
         header("location: ../Admin/AdminMain.php");
     }
@@ -34,6 +36,7 @@ else
         session_start();
         $_SESSION["Logged"] = true;
         $_SESSION["UserName"] = $checker[1];
+        $_SESSION["UserEmail"] = $email;
         $_SESSION["Admin"] = false;
         header("location: ../index.php");
     }

@@ -40,12 +40,23 @@
                 <a href='Login.php' class='nav-links'><i class='fa-solid fa-user'></i></a>
                 <a href='Logout.php' class='nav-links'><i class="fa-solid fa-arrow-right-to-bracket"></i></a>
             </div>
-        </nav
+</nav>
 
     <header class="header-section">
     </header>
     <div class="header-title">
-        <h1>Welcome to Al Haram Hospital</h1>
+        <?php
+            session_start();
+            if(isset($_SESSION["UserName"]))
+            {
+                echo "<h1>Welcome " . $_SESSION["UserName"] . "</h1>";   
+            }
+            else
+            {
+                echo "<h1>Welcome to Al Haram Hospital</h1>";
+            }
+        ?>
+        
     </div>
     
     <!-- Main Content of the page -->

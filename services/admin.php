@@ -19,23 +19,19 @@ $filepath = "txtFiles/" . $fileName;
 
 <!-- Session Code -->
 
-<?php 
+<?php
 session_start();
 
 
 if(isset($_SESSION["Admin"]))
     {
-      if($_SESSION["Admin"] == true)
-      {
-        header("location: Admin/adminPage.php");
-      }
-      else
+      if($_SESSION["Admin"] == false)
       {
         header("location: index.php");
       }
-
     }
-?> 
+
+?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
