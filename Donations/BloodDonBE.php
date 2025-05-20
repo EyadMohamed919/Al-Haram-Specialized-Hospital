@@ -39,6 +39,13 @@
         </tr>
     </table>
 
+    <a href="create.php"><button>Add New Donation</button></a><br><br>
+    <a href="update.php"><button>Update Donation</button></a><br><br>
+    <a href="delete.php"><button>Delete Donation</button></a><br><br>
+    <a href="sort.php"><button>Sort Donations</button></a><br><br>
+
+    
+
     
 </body>
 </html>
