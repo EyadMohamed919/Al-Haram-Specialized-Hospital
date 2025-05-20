@@ -1,0 +1,30 @@
+1~Panadol (Paracetamol)
+2~Brufen (Ibuprofen)
+3~Aspirin
+4~Augmentin  (Amoxicillin and Clavulanic Acid)
+5~Cataflam (Diclofenac Potassium)
+6~Amoxicilin
+7~Flagyl (Metronidazole)
+8~Paracetamol
+9~Omeprazole
+10~Voltaren (Diclofenac Sodium)
+11~Nexium (Esomeprazole)
+12~Strepsils
+13~Amoclan
+14~Panadol Cold and Flu
+15~Spasmo-Digestin
+16~Ciprosin (Ciprofloxacin)
+17~Ventolin (Salbutamol)
+18~Cetrizine
+19~Antinal (Nifuroxazide)
+20~Xithrone (Azithromycin)
+21~Concor (Bisoprolol)
+22~Enalapril
+23~Ator (Atorvastatin)
+24~Lasix (Furosemide)
+25~Zithromax (Azithromycin)
+26~Claritin (Loratadine)
+27~Colona
+28~Neuroton
+29~Depakine (Valproic Acid)
+20~Norgesic
