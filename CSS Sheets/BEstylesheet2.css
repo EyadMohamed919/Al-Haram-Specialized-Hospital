@@ -23,31 +23,29 @@ h2 {
     color: #2c3e50;
 }
 
-/* ===== TABLE STYLES ===== */
-#Volunteeringtable {
-    border-collapse: collapse;
+/* ===== TABLE STYLING ===== */
+table {
     width: 90%;
-    margin: 20px auto;
-    border: 2px solid black;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin: 20px auto; /* Center the table */
+    border-collapse: collapse;
+    background-color: white; /* White background */
+    box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Soft shadow */
+    font-family: Arial, sans-serif;
 }
 
-#Volunteeringtable th, 
-#Volunteeringtable td {
-    border: 1px solid black; 
-    padding: 12px;
-    text-align: left;
-    background-color: white;
-}
-
-#Volunteeringtable th {
-    background-color: lightblue; 
+/* Column headers row - Sky Blue */
+table thead tr {
+    background-color: #87CEEB; /* Sky blue */
+    color: #333; /* Dark text for contrast */
     font-weight: bold;
     text-align: center;
 }
 
-#Volunteeringtable tr:nth-child(even) td {
-    background-color: #f0f8ff;
+/* Table cells */
+table th, table td {
+    padding: 12px 15px;
+    border: 1px solid #0a0a0a;
+    text-align: left;
 }
 
 /* ===== FORM STYLES ===== */
@@ -116,6 +114,11 @@ form button {
     color: black;
     font-weight: bold;
     transition: all 0.3s;
+}
+
+/* For the form with multiple buttons (Edit/Cancel) */
+form table tr:last-child td {
+    text-align: center;
 }
 
 form button:hover {
