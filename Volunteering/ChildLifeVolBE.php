@@ -72,14 +72,14 @@ $countries = ["EG"=>"Egypt","GE"=>"Germany","SR"=>"Turkey","UAE"=>"United Arab E
 <?php foreach ($fields as $f): ?><td><?php echo htmlspecialchars($v[$f]); ?></td><?php endforeach; ?>
 <td>
 <a href="?edit=<?php echo $i; ?>">Edit</a> |
-<form method="post" style="display:inline;" onsubmit="return confirm('Delete?');">
+<form method="post" style="display:inline;" onsubmit="return confirm('Are you sure you want to delete this record ?');">
 <input type="hidden" name="index" value="<?php echo $i; ?>"><button type="submit" name="delete">Delete</button>
 </form>
 </td></tr>
 <?php endforeach; ?>
 </tbody></table>
 
-<hr><h2><?php echo $edit ? "Edit" : "Add"; ?> Volunteer</h2>
+<hr><h2><?php echo $edit ? "Edit" : "Add"; ?> a new volunteer</h2>
 <form method="post"><input type="hidden" name="index" value="<?php echo isset($edit['index']) ? $edit['index'] : -1; ?>">
 <table border="1" cellpadding="5" cellspacing="0" id="Volunteeringtable">
 <tr><td>First Name:</td><td><input type="text" name="FirstName" required value="<?php echo isset($edit['FirstName']) ? $edit['FirstName'] : ''; ?>"></td></tr>
