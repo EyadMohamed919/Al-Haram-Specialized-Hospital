@@ -25,6 +25,9 @@
         <form method="post" action="BloodForm.php" onclick="validationForm()">
     <table align="center" width="100%">
         <tr>
+            <td>ID</td>
+            <td><input type="text" id="ID" name="ID" placeholder="Automatically Added" readonly></td>
+        <tr>
             <td class="td_names">First Name</td>
             <td><input class="inputs" type="text" id="FirstName" name="FirstName" placeholder="Enter First Name" required></td>
         </tr>

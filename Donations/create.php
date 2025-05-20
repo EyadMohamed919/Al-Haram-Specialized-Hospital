@@ -1,54 +1,46 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../CSS Sheets/FormStyle2.css">
     <title>Add Donation</title>
 </head>
 <body>
-    <h2>Add New Donation</h2>
-    <form method="post">
-        <table>
+    <h2 align="center" >Add New Donation</h2>
+    <form method="POST" action="BloodForm.php">
+        <table border="1" align="center" width="100%"> 
             <tr>
+            <td>ID</td>
+            <td><input type="text" id="ID" name="ID" placeholder="Automatically Added" readonly></td>
+        <tr>
                 <td>First Name:</td>
-                <td><input type="text" name="fname" required></td>
+                <td><input type="text" name="FirstName" required></td>
             </tr>
             <tr>
                 <td>Last Name:</td>
-                <td><input type="text" name="lname" required></td>
+                <td><input type="text" name="LastName" required></td>
             </tr>
             <tr>
                 <td>Gender:</td>
-                <td><input type="text" name="gender" required></td>
+                <td><input type="text" name="Gender" required></td>
             </tr>
             <tr>
                 <td>Country:</td>
-                <td><input type="text" name="country" required></td>
+                <td><input type="text" name="Country" required></td>
             </tr>
             <tr>
-                <td>Date:</td>
-                <td><input type="date" name="date" required></td>
+                <td>DOB:</td>
+                <td><input type="date" name="DOB" required></td>
             </tr>
             <tr>
                 <td>Blood Type:</td>
-                <td><input type="text" name="blood" required></td>
-        <input type="submit" value="Add Donation">
+                <td><input type="text" name="BloodType" required></td>
+        
     </form>
-
-    <?php
-    
-    $fget = fopen("BF.txt", "r+");
-    while(!feof($fget)){
-        $line= fgets($fget);
-        $ArrayLine=explode("~",$line);
-        fopen("BF.txt", "a");
-        $data = "\n".$ArrayLine[0]."~".
-                $ArrayLine[1]."~".
-                $ArrayLine[2]."~".
-                $ArrayLine[3]."~".
-                $ArrayLine[4]."~".
-                $ArrayLine[5];
-        fwrite($fget, $data);
-        fclose($fget);
-    }
-    ?>
+</table><br>
+<div style="text-align: center;">
+    <input class="inputs" type="submit" value="Add Donation">
+</div>
 </body>
 </html>
