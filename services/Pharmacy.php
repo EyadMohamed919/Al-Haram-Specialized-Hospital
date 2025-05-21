@@ -1,3 +1,17 @@
+<?php
+session_start();
+
+if (!isset($_SESSION["Logged"]) || $_SESSION["Logged"] !== true) {
+    header("Location: ../index.php");
+    exit();
+}
+
+if (isset($_SESSION["Admin"]) && $_SESSION["Admin"] === true) {
+    header("Location: ../index.php");
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -21,36 +35,19 @@
                         <td class="td">Medicine:</td>
                         <td class="td">
                             <select class="input" name="Medicine">
-                                <option value="PA" selected>Panadol (Paracetamol)</option>
-                                <option value="BR">Brufen (Ibuprofen)</option>
-                                <option value="AS">Aspirin</option>
-                                <option value="AU">Augmentin  (Amoxicillin and Clavulanic Acid)</option>
-                                <option value="CA">Cataflam (Diclofenac Potassium)</option>
-                                <option value="AM">Amoxicilin</option>
-                                <option value="FL">Flagyl (Metronidazole)</option>
-                                <option value="PR">Paracetamol</option>
-                                <option value="OM">Omeprazole</option>
-                                <option value="VO">Voltaren (Diclofenac Sodium)</option>
-                                <option value="NE">Nexium (Esomeprazole)</option>
-                                <option value="ST">Strepsils</option>
-                                <option value="AMO">Amoclan</option>
-                                <option value="PACU">Panadol Cold and Flu</option>
-                                <option value="SD">Spasmo-Digestin</option>
-                                <option value="CI">Ciprosin (Ciprofloxacin)</option>
-                                <option value="VE">Ventolin (Salbutamol)</option>
-                                <option value="CE">Cetrizine</option>
-                                <option value="AN">Antinal (Nifuroxazide)</option>
-                                <option value="XI">Xithrone (Azithromycin)</option>
-                                <option value="CO">Concor (Bisoprolol)</option>
-                                <option value="EN">Enalapril</option>
-                                <option value="AT">Ator (Atorvastatin)</option>
-                                <option value="LA">Lasix (Furosemide)</option>
-                                <option value="ZI">Zithromax (Azithromycin)</option>
-                                <option value="CL">Claritin (Loratadine)</option>
-                                <option value="COL">Colona</option>
-                                <option value="NEU">Neuroton</option>
-                                <option value="DE">Depakine (Valproic Acid)</option>
-                                <option value="NO">Norgesic</option>
+                                <?php
+                                    $file = fopen("txtFiles/pharmaProds.txt", "r");
+                                    if ($file) {
+                                        while (($line = fgets($file)) !== false) {
+                                            $line = trim($line);
+                                            if ($line === "") continue;
+                                            $parts = explode("~", $line, 2);
+                                            $label = isset($parts[1]) ? htmlspecialchars(trim($parts[1])) : htmlspecialchars(trim($parts[0]));
+                                            echo "<option value=\"$label\">$label</option>";
+                                        }
+                                        fclose($file);
+                                    }
+                                ?>
                             </select>
                         </td>
                     </tr>
