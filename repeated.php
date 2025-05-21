@@ -74,7 +74,10 @@ function adminNav()
             <a class=aside-links href=../services/admin.php><i class='fa-regular fa-bookmark'></i> Admin Services</a>
             <hr class=aside-horizontal>
 
-            <a class=aside-links href=../services/RecieveContactUs.php><i class='fa-regular fa-bookmark'></i> Messages</a>
+            <a class=aside-links href=../Admin/RecieveContactUs.php><i class='fa-regular fa-bookmark'></i> Messages</a>
+            <hr class=aside-horizontal>
+
+            <a class=aside-links href=../Admin/AdminUsers.php><i class='fa-regular fa-bookmark'></i> Admin Users</a>
             <hr class=aside-horizontal>
         </div>
     </aside>

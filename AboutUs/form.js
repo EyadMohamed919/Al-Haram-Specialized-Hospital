@@ -29,15 +29,15 @@ function addOptions() // this is responsible for adding options depending on use
 
     if(governorate.value === "cai")
     {
-        city.innerHTML = '<option value="nsr">Nasr City</option> <option value="d5">District 5</option> <option value="mdi">Maadi</option> <option value="zam">Zamalek</option> <option value="cap">New Capital</option>';
+        city.innerHTML = '<option value="Nasr City">Nasr City</option> <option value="District 5">District 5</option> <option value="Maadi">Maadi</option> <option value="Zamalek">Zamalek</option> <option value="New Capital">New Capital</option>';
     }
     else if(governorate.value === "giz")
     {
-        city.innerHTML = '<option value="6oct">6th of October</option> <option value="zyd">Sheikh Zayed</option> <option value="hrm">El Haram</option> <option value="fas">Faisal</option>'
+        city.innerHTML = '<option value="6th of October">6th of October</option> <option value="Sheikh Zayed">Sheikh Zayed</option> <option value="El Haram">El Haram</option> <option value="Faisal">Faisal</option>'
     }
     else
     {
-        city.innerHTML = '<option value="mnd">El Mandara</option> <option value="asf">Asafra</option> <option value="bes">Sidi Beshr</option> <option value="gab">Sidi Gaber</option> <option value="san">San Stefano</option>'
+        city.innerHTML = '<option value="El Mandara">El Mandara</option> <option value="Asafra">Asafra</option> <option value="Sidi Beshr">Sidi Beshr</option> <option value="Sidi Gaber">Sidi Gaber</option> <option value="San Stefano">San Stefano</option>'
     }
 }
 
