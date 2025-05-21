@@ -1,16 +1,17 @@
 <html lang="en">
 <?php
 session_start();
-
-
-if(isset($_SESSION["Admin"]))
+    if(isset($_SESSION["Admin"]))
     {
       if($_SESSION["Admin"] == false)
       {
         header("location: index.php");
       }
     }
-
+    else
+    {
+        header("location: ../index.php");
+    }
 ?>
 <head>
     <meta charset="UTF-8">
@@ -47,7 +48,17 @@ if(isset($_SESSION["Admin"]))
                 // echo "<h2 id=adminPassword>Password: " . $_SESSION["user_pass"] . "</h2>";
             ?>
             
-          
+          <form class="admin-adder" action="../GlobalFunctions.php" method="post">
+            <label for="name">Add New Admin</label>
+            <input type="text" name="name" placeholder="Enter New admin's name">
+            <input type="email" name="email" value="example@hospital.com">
+            <select name="access" id="">
+                <option value="messages">Choose Access</option>
+                <option value="messages">Messages</option>
+                <option value="services">Services</option>
+            </select>
+            <button type="submit" name="addAdmin">Add</button>
+          </form>
         </div>
 
         <?php include_once("../repeated.php"); adminNav(); ?>

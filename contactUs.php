@@ -25,7 +25,7 @@
             <h2 class="content-box-title">Contact Us</h2>
             <h3 class="content-box-subtitle">Contact us<hr class="content-box-subtitle-hr"></h3>
 
-            <form action="SaveContact.php" method="post">
+            <form action="GlobalFunctions.php" method="post">
                 <table>
                     <tr>
                         <td class="name-cell"><label for="Fname">First Name</label></td>
@@ -45,9 +45,9 @@
                         <td>
                             <select oninput="addOptions()" name="Gaddress" id="governorateSelect">
                                 <option value="none"  selected>Choose Governorate</option>
-                                <option value="cai">Cairo</option>
-                                <option value="giz">Giza</option>
-                                <option value="alx">Alexandria</option>
+                                <option value="Cairo">Cairo</option>
+                                <option value="Giza">Giza</option>
+                                <option value="Alexandria">Alexandria</option>
                             </select>
                         </td>
                         <td><label for="Caddress">City</label></td>
@@ -61,6 +61,7 @@
                         <td><label for="address">Message Type</label></td>
                         <td colspan="4">
                             <select name="type" id="type">
+                                <option value="complain" selected>Inquiry</option>
                                 <option value="complain" selected>Complain</option>
                                 <option value="suggesstion">Suggesstion</option>
                                 <option value="other">other</option>
@@ -74,7 +75,7 @@
                     </tr>
                 </table>
 
-                <input class="submit-btn" type="submit" value="Request Record">
+                <input class="submit-btn" type="submit" value="Send" name="contactUsSubmit">
             </form>
         </div>
     </section>

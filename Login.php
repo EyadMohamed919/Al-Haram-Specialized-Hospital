@@ -35,7 +35,8 @@ if (isset($_SESSION["Logged"])) {
     <div class="login-box">
       <h1>Welcome Back</h1>
       <p>Sign in to continue</p>
-      <form id="loginForm" method="post" action="Authentication/Authentication.php">
+
+      <form id="loginForm" method="post" action="GlobalFunctions.php">
         <div class="input-group">
           <input type="email" id="email" name="email" required value="hamada@hospital.com">
           <label for="email">Email</label>
@@ -53,7 +54,7 @@ if (isset($_SESSION["Logged"])) {
         }
 
         ?>
-        <button type="submit">Login</button>
+        <button type="submit" name="login">Login</button>
       </form>
       
     </div>
