@@ -26,7 +26,7 @@
     <table align="center" width="100%">
         <tr>
             <td>ID</td>
-            <td><input type="text" id="ID" class="inputs" name="ID" placeholder="Automatically Added" readonly></td>
+            <td><input type="text" id="ID" name="ID" placeholder="Automatically Added" readonly></td>
         <tr>
             <td class="td_names">First Name</td>
             <td><input class="inputs" type="text" id="FirstName" name="FirstName" placeholder="Enter First Name" required></td>
@@ -61,7 +61,7 @@
         </tr>
         <tr>
             <td class="td_names">Select your birth day</td>
-            <td><input class="inputs" type="date" id="DOB" name="DOB"required></td>
+            <td><input class="inputs" type="date" id="DOB" name="DOB"required max=2005-12-31></td>
         </tr>
         <tr>
             <td class="td_names">Blood Type</td>

@@ -64,7 +64,7 @@
                 </tr>
                 <tr>
                     <td>Select your birth day</td>
-                    <td><input type="date" id="DOB" name="DOB" required></td>
+                    <td><input type="date" id="DOB" name="DOB" required max=2005-12-31></td>
                 </tr>
                 <tr>
                     <td>Mobile Number</td>
