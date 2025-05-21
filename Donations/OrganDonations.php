@@ -81,8 +81,7 @@
                 </tr>
                 <tr>
                     <td colspan="2" align="center">
-                        <button type="submit" onclick="validateForm()">Proceed With Donation</button>
-                        <input type="reset" value="Recede Donation Process">
+                        <input class="inputs" type="submit" value="Add Donation">
                 </td>
                 </tr>
             </table>

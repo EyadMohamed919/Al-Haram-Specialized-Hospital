@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="../CSS Sheets/BEstylesheet1.css">
 </head>
 <body>
-    <a href="DonationsBE-Homepage.php">DonationsBE-HomePage</a><hr>
+    <a href="DonationsBE-Homepage.php"><input class="inputs" type="submit" value="Return🔙"></a><hr>
     <p>Donations</p>
     <table border="1" id="Donationtable">
         <tr>
@@ -41,8 +41,8 @@
         </tr>
     </table>
 <div style="text-align: center;">
-     <a href="CreateBloodDonationAP.php"><button>Add New Donation</button></a><br><br>
-    <a href="DeleteBloodDonation.php"><button>Delete Donation</button></a><br><br>
+     <a href="CreateBloodDonationAP.php"><input class="inputs" type="submit" value="Create Donation"></button></a><br><br>
+    <a href="DeleteBloodDonation.php"><input class="inputs" type="submit" value="Delete Donation"></button></a><br><br>
 </div>
 
    

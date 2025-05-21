@@ -18,7 +18,7 @@ if(isset($_SESSION["Admin"]))
     <script src="OrganDonBE.js" type="text/javascript"></script>
 </head>
 <body>
-    <a href="DonationsBE-Homepage.php">DonationsBE-HomePage</a><hr>
+    <a href="DonationsBE-Homepage.php"><input class="inputs" type="submit" value="Return🔙"></a><hr>
     <p>Donations<p>
     <table border="1" id="Donationtable">
         <tr>
@@ -51,8 +51,8 @@ if(isset($_SESSION["Admin"]))
         </tr>
     </table>
     <div style="text-align: center;">
-     <a href="OrganCreateButton.php"><button>Add New Donation</button></a><br><br>
-    <a href="OrganDeleteButton.php"><button>Delete Donation</button></a><br><br>
+     <a href="OrganCreateButton.php"><input class="inputs" type="submit" value="Create Donation"></a><br><br>
+    <a href="OrganDeleteButton.php"><input class="inputs" type="submit" value="Delete Donation"></a><br><br>
 </div>
 </body>
 </html>

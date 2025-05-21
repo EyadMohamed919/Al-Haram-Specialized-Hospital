@@ -50,8 +50,8 @@ if(isset($_SESSION["Admin"]))
         </tr>
     </table>
 <div style="text-align: center;">
-     <a href="CreateMoneyDonation.php"><button>Add New Donation</button></a><br><br>
-    <a href="DeleteMoneyDonation.php"><button>Delete Donation</button></a><br><br>
+     <a href="CreateMoneyDonation.php"><input class="inputs" type="submit" value="Create Donation"></a><br><br>
+    <a href="DeleteMoneyDonation.php"><input class="inputs" type="submit" value="Delete Donation"></a><br><br>
 </div>
 </body>
 </html>
