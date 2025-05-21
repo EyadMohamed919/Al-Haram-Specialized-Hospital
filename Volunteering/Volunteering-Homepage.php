@@ -34,7 +34,7 @@
                 display: block;
             }
         </style>
-        <h1 id="title" style="font-family: Arial; font-size: 50px; text-align: center; color: lightseagreen;">Types Of Volunteering</h1>
+        <h1 id="title" style="font-family: Arial; font-size: 50px; text-align: center; color: lightseagreen; margin-top: 75px;">Types Of Volunteering</h1>
     </head>
     <body>
         <?php
@@ -50,7 +50,7 @@
             volunteers contribute to a more positive and caring hospital environment.
             Their efforts can uplift patients' spirits, reduce stress, and accelerate the healing process. Ultimately,
             hospital volunteers play a vital role in enhancing the overall quality of healthcare and creating a more compassionate healthcare system.</p><hr> 
-             <h1>Types Of Volunteering</h1>
+             <h1 style="text-align: center;">Types Of Volunteering</h1>
              <center>
                 <section class="flex-container">
                     <div class="links">
