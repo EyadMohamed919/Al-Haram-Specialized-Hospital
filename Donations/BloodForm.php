@@ -16,8 +16,6 @@
         $lastID = max($lastID,$arrayLine[0]);
         }
         }
-
-
         $newID = $lastID + 1;
         $ID = $newID;
 

@@ -25,6 +25,12 @@
         <form action="OrganDo.php" method="POST">
             <table border="1" align="center">
                 <tr>
+                    <td>ID</td>
+                    <td>
+                        <input type="text" id="ID" name="ID" placeholder="Automatically Added" readonly>
+                </td>
+                </tr>
+                <tr>
                     <td>First Name</td>
                     <td><input type="text" id="FirstName" name="FirstName" placeholder="Enter First Name" required></td>
                 </tr>

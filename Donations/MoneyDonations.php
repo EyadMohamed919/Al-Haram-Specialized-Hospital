@@ -25,6 +25,9 @@
     <form action="MoneyDon.php" method="POST" onsubmit="validateForm();">
         <table border="1" align="center">
             <tr>
+                <td>ID</td>
+                <td><input type="text" id="ID" name="ID" placeholder="Automatically Added" readonly></td>
+            <tr>
                 <td>First Name</td>
                 <td><input type="text" id="FirstName" name="FirstName" placeholder="Enter First Name"></td>
             </tr>
@@ -67,7 +70,7 @@
             <tr>
                 <td>Donation Amount</td>
                 <td>
-                    <select id="Amount" name="Amount">
+                    <select id="Amount" name="DonationAmount">
                         <option value="0" selected>0</option>
                         <option value="100">$100</option>
                         <option value="200">$200</option>
@@ -84,5 +87,6 @@
             </tr>
         </table>
     </form>
+    
 </body>
 </html>

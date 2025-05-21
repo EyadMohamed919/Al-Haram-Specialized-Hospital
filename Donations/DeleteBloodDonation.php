@@ -1,5 +1,5 @@
 <?php
-include_once "Function.php";
+include_once "DeletefunctionB.php";
 
 if (isset($_POST['ID'])) {
     $id = $_POST['ID'];
@@ -9,7 +9,7 @@ if (isset($_POST['ID'])) {
 ?>
 
 
-<form method="post" action="del.php">
+<form method="post" action="DeleteBloodDonation.php">
     <table>
         <tr>
             <td><input type="number" name="ID" placeholder="Enter ID" required></td>

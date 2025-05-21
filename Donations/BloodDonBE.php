@@ -41,10 +41,8 @@
         </tr>
     </table>
 <div style="text-align: center;">
-     <a href="create.php"><button>Add New Donation</button></a><br><br>
-    <a href="update.php"><button>Update Donation</button></a><br><br>
-    <a href="del.php"><button>Delete Donation</button></a><br><br>
-    <a href="sort.php"><button>Sort Donations</button></a><br><br>
+     <a href="CreateBloodDonationAP.php"><button>Add New Donation</button></a><br><br>
+    <a href="DeleteBloodDonation.php"><button>Delete Donation</button></a><br><br>
 </div>
 
    

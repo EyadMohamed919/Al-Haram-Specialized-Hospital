@@ -8,7 +8,7 @@
 </head>
 <body>
     <h2 align="center" >Add New Donation</h2>
-    <form method="POST" action="BloodForm.php">
+    <form method="POST" action="MoneyDon.php">
         <table border="1" align="center" width="100%"> 
             <tr>
             <td>ID</td>
@@ -23,7 +23,12 @@
             </tr>
             <tr>
                 <td>Gender:</td>
-                <td><input type="text" name="Gender" required></td>
+                <td>
+                    <select name="Gender" required>
+                        <option value="M">Male</option>
+                        <option value="F">Female</option>
+                    </select>
+                </td>
             </tr>
             <tr>
                 <td>Country:</td>
@@ -31,11 +36,11 @@
             </tr>
             <tr>
                 <td>DOB:</td>
-                <td><input type="date" name="DOB" required></td>
+                <td><input type="date" name="DOB" required max=2005-12-31></td>
             </tr>
             <tr>
-                <td>Blood Type:</td>
-                <td><input type="text" name="BloodType" required></td>
+                <td>Amount:</td>
+                <td><input type="text" name="DonationAmount" required></td>
         
     </form>
 </table><br>
