@@ -15,7 +15,7 @@
         <center>
             <h1 id="h1">Book an appointment with a specialist today!</h1><br>
             <form method="post" action="forms.php" onsubmit="return ValidateForm(event)">
-                <input type="hidden" name="formType" value="Appointments">
+                <input type="hidden" name="AppointmentForm" value="Appointments">
                 <table id="table1">
                     <tr>
                         <td class="td">Specialization:</td>

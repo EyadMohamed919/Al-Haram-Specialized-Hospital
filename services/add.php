@@ -1,5 +1,5 @@
 <?php
-// Mapping form names to text file names
+
 $formFiles = [
     "Appointments" => "appointForm.txt",
     "Dentistry" => "dentForm.txt",
@@ -11,7 +11,6 @@ $formFiles = [
     "Tests" => "testsForm.txt"
 ];
 
-// Define headers for each form type
 $headersMap = [
     'Appointments' => ['ID','Doctor','First Name','Last Name','Sex','Phone','Email','Date','Time'],
     'Dentistry' => ['ID','First Name','Last Name','Phone','Email','Date','Time'],

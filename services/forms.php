@@ -12,15 +12,14 @@
 </body>
 <?php
     $filePath = '';
-    $formType = $_POST['formType'];
-
+    $formType = $_POST['AppointmentForm'];
+    
     if ($formType == "Appointments") {
         $filepath = 'txtFiles/appointForm.txt';
         $doc = $_POST["Doctor"];
         $firstName = $_POST["FirstName"];
         $lastName = $_POST["LastName"];
-        // $sex = $_POST["Sex"]; 
-        $sex = "Male";
+        $sex = $_POST["Sex"]; 
         $PN = $_POST["PN"];
         $email = $_POST["Email"];
         $date = $_POST["Date"];
