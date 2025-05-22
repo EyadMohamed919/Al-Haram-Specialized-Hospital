@@ -28,9 +28,9 @@ if (isset($_SESSION["Admin"]) && $_SESSION["Admin"] === true) {
         ?>
         <center>
             <h1 id="h1"> Hello <?php
-                echo $_SESSION
+                echo $_SESSION['UserName'] . "!";
             ?>
-            . Order your medicine from home!</h1><br>
+             Order your medicine from home!</h1><br>
             <form method="post" action="forms.php" onsubmit="return ValidateForm(event)">
                 <input type="hidden" name="formType" value="Pharmacy">
                 <table id="table1">
