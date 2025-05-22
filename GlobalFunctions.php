@@ -17,6 +17,13 @@ else if(isset($_POST["updateAdmin"]))
 {
     updateAdmin();
 }
+else if(isset($_POST["deleteAdmin"]))
+{
+    foreach($_POST["delArray"] as $idArray)
+    {
+        deleteAdmin($idArray);
+    }
+}
 
 function checkUser($file, $email, $password)
 {
@@ -212,13 +219,19 @@ function updateRecord($file, $newRecord, $oldRecord)
 {
     $contents = file_get_contents($file);
     $contents = str_replace($oldRecord, $newRecord, $contents);
-    echo $newRecord;
-    file_put_contents($file, $contents);
+    file_put_contents($file, trim($contents));
+}
+
+function deleteRecord($file, $record)
+{
+    $contents = file_get_contents($file);
+    $contents = str_replace($record, "", $contents);
+    file_put_contents($file, trim($contents));
 }
 
 function updateAdmin()
 {   
-    $file = fopen("Database/AdminUserTextFile.txt", "a+");
+    $file = fopen("Database/AdminUserTextFile.txt", "r+");
     $id  = $_POST["id"];
     $email = $_POST["email"];
     $name = $_POST["name"];
@@ -238,7 +251,26 @@ function updateAdmin()
         }
     }
     header("location: Admin/AdminUsers.php");
+    fclose($file);
+}
 
+function deleteAdmin($idArray)
+{
+    $file = fopen("Database/AdminUserTextFile.txt", "r+");
+    $i = 0;
+    while(!feof($file))
+    {
+        $line = fgets($file);
+        $ArrayLine = explode("~", $line);
+        if($idArray[$i] == $ArrayLine[0]) // if name matched
+        {
+            $record = implode("~", $ArrayLine);
+            deleteRecord("Database/AdminUserTextFile.txt", $record);
+            break;
+        }
+    }
+    header("location: Admin/AdminUsers.php");
+    fclose($file);
 }
 
 ?>
