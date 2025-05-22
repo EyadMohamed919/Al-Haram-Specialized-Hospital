@@ -27,7 +27,10 @@ if (isset($_SESSION["Admin"]) && $_SESSION["Admin"] === true) {
             navBar();
         ?>
         <center>
-            <h1 id="h1">Order your medicine from home!</h1><br>
+            <h1 id="h1"> Hello <?php
+                echo $_SESSION
+            ?>
+            . Order your medicine from home!</h1><br>
             <form method="post" action="forms.php" onsubmit="return ValidateForm(event)">
                 <input type="hidden" name="formType" value="Pharmacy">
                 <table id="table1">
@@ -36,16 +39,13 @@ if (isset($_SESSION["Admin"]) && $_SESSION["Admin"] === true) {
                         <td class="td">
                             <select class="input" name="Medicine">
                                 <?php
-                                    $file = fopen("txtFiles/pharmaProds.txt", "r");
-                                    if ($file) {
-                                        while (($line = fgets($file)) !== false) {
-                                            $line = trim($line);
-                                            if ($line === "") continue;
+                                    $lines = file("txtFiles/pharmaProds.txt", FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+                                    if ($lines) {
+                                        foreach ($lines as $line) {
                                             $parts = explode("~", $line, 2);
                                             $label = isset($parts[1]) ? htmlspecialchars(trim($parts[1])) : htmlspecialchars(trim($parts[0]));
                                             echo "<option value=\"$label\">$label</option>";
                                         }
-                                        fclose($file);
                                     }
                                 ?>
                             </select>
