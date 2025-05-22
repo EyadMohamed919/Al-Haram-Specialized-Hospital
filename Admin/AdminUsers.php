@@ -5,7 +5,7 @@ session_start();
     {
       if($_SESSION["Admin"] == false)
       {
-        header("location: index.php");
+        header("location: ../index.php");
       }
     }
     else
@@ -21,44 +21,56 @@ session_start();
 </head>
 <body>
     
-    <h1>Messages</h1>
+    <h1>Admin Users</h1>
     <table>
     <tr>
         <td><strong>ID</strong></td>
-        <td><strong>First Name</strong></td>
-        <td><strong>Last Name</strong></td>
+        <td><strong>Name</strong></td>
         <td><strong>Email</strong></td>
-        <td><strong>Phone</strong></td>
-        <td><strong>Governorate</strong></td>
-        <td><strong>City</strong></td>
-        <td><strong>Type</strong></td>
+        <td><strong>Access</strong></td>
     </tr>
     <?php
         include("../GlobalFunctions.php");
 
-        $array = sendContactUsMessages();
-        var_dump($array);
+        $array = sendAdminUsers();
         foreach($array as $line)
         {
             echo "<tr>";
             echo "<td>" . $line["id"] . "</td>";
-            echo "<td>" . $line["fname"] . "</td>";
-            echo "<td>" . $line["lname"] . "</td>";
+            echo "<td>" . $line["name"] . "</td>";
             echo "<td>" . $line["email"] . "</td>";
-            echo "<td>" . $line["phone"] . "</td>";
-            echo "<td>" . $line["Gaddress"] . "</td>";
-            echo "<td>" . $line["Caddress"] . "</td>";
-            echo "<td>" . $line["type"] . "</td>";
-            echo "</tr>";
-            
-            echo "<tr>";
-            echo "<td><strong>Message:</strong></td>";
-            echo "<td colspan=7><strong>" . $line["message"] . "</strong></td>";
+            echo "<td>" . $line["access"] . "</td>";
             echo "</tr>";
         }
     ?>
 
 </table>
+
+<br>
+<form action="../GlobalFunctions.php" method="post">
+    <label for="name">Select user to update</label>
+    <select name="id" required>
+        <option value="" disabled selected>Select user</option>
+        <?php
+            
+            foreach($array as $name)
+            {
+                echo "<option value=" . $name["id"] . ">" . $name["name"] . "</option>";
+            }
+        ?>
+    </select>
+
+    <input type="text" name="name" placeholder="Update name" required>
+    <input type="email" name="email" placeholder="Update email" value="example@hospital.com" required>
+
+    <label for="user">Update Privilages</label>
+    <select name="access">
+        <option value="top">top</option>
+        <option value="messages">Messages</option>
+        <option value="pharmacist">Pharmacist</option>
+    </select>
+    <button type="submit" name="updateAdmin">Update</button>
+</form>
 
 <?php include("../repeated.php"); adminNav(); ?>
 </body>

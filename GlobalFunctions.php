@@ -13,18 +13,25 @@ else if(isset($_POST["addAdmin"]))
 {
     addAdmin();
 }
+else if(isset($_POST["updateAdmin"]))
+{
+    updateAdmin();
+}
 
 function checkUser($file, $email, $password)
 {
     $result = [];
     while(!feof($file))
     {
+        
         $line = fgets($file);
         $userLine = explode("~", $line);
-        if($email == $userLine[2] && $password == $userLine[3])
+        if($email == $userLine[2] && $password == trim($userLine[4]))
         {   
             $result[0] = true;
-            $result[1] = $userLine[1];
+            $result[1] = $userLine[1]; 
+            $result[2] = $userLine[3];
+            var_dump($result);
             return $result;
         }
         
@@ -84,7 +91,7 @@ function contactUsReciever()
 function sendContactUsMessages()
 {
     $file = fopen("../Database/Messages.txt", "r+");
-    echo "Hello world";
+   
     $fileArray = [];
     $i = 0;
     while(!feof($file))
@@ -119,8 +126,9 @@ function authentication()
 
     if(str_contains($email, "@hospital.com")) 
     {
-        $file = fopen("Database/AdminUserTextFile.txt", "r");
+        $file = fopen("Database/AdminUserTextFile.txt", "r+");
         $checker = checkUser($file, $email, $password);
+        var_dump($checker);
         if($checker[0] == true)
         {
             echo "Admin and Logged in";
@@ -129,15 +137,8 @@ function authentication()
             $_SESSION["UserName"] = $checker[1];
             $_SESSION["UserEmail"] = $email;
             $_SESSION["Admin"] = true;
+            $_SESSION["Access"] = $checker[2];
 
-            if($checker[1] == "hamada")
-            {
-                $_SESSION["TopAdmin"] = true;
-            }
-            else
-            {
-                $_SESSION["TopAdmin"] = true;
-            }
             header("location: ../Admin/AdminMain.php");
         }
         else
@@ -145,7 +146,7 @@ function authentication()
             echo "Admin but not correct";
             session_start();
             $_SESSION["Logged"] = false;
-            header("location: ../Login.php");
+            // header("location: ../Login.php");
         }
     }
     else
@@ -177,12 +178,67 @@ function addAdmin()
     $name = $_POST["name"];
     $email = $_POST["email"];
     $access = $_POST["access"];
-    $file = fopen("Database/AdminUserTextFile.php", "a+");
-    $lastID = lastID($file);
-    $newAdmin = "\n" . $lastID . "~" . $name . "~" . $email . "~" . md5("123");
+    $file = fopen("Database/AdminUserTextFile.txt", "a+");
+    $lastID = lastID($file) + 1;
+    $newAdmin = "\n" . $lastID . "~" . $name . "~" . $email . "~" . $access . "~". md5("123");
     fwrite($file, $newAdmin);
     fclose($file);
     header("location:Admin/AdminUsers.php");
+}
+
+function sendAdminUsers()
+{
+    $file = fopen("../Database/AdminUserTextFile.txt", "r+");
+    $fileArray = [];
+    $i = 0;
+    while(!feof($file))
+    {
+        $line = trim(fgets($file));
+        $ArrayLine = explode("~", $line);
+
+        $fileArray[$i] = array(
+            "id"=>$ArrayLine[0], 
+            "name"=>$ArrayLine[1],
+            "email"=>$ArrayLine[2],
+            "access"=>$ArrayLine[3]);
+        $i++;
+    }
+
+    fclose($file); 
+    return $fileArray;
+}
+
+function updateRecord($file, $newRecord, $oldRecord)
+{
+    $contents = file_get_contents($file);
+    $contents = str_replace($oldRecord, $newRecord, $contents);
+    echo $newRecord;
+    file_put_contents($file, $contents);
+}
+
+function updateAdmin()
+{   
+    $file = fopen("Database/AdminUserTextFile.txt", "a+");
+    $id  = $_POST["id"];
+    $email = $_POST["email"];
+    $name = $_POST["name"];
+    $access = $_POST["access"];
+    $contents = "";
+    while(!feof($file))
+    {
+        $line = fgets($file);
+        $ArrayLine = explode("~", $line);
+        if($id == $ArrayLine[0]) // if name matched
+        {
+            echo "true";
+            $NewRecord = $id . "~" . $name . "~" . $email . "~" . $access . "~" . $ArrayLine[4];
+            $OldRecord = implode("~", $ArrayLine);
+            updateRecord("Database/AdminUserTextFile.txt", $NewRecord, $OldRecord);
+            break;
+        }
+    }
+    header("location: Admin/AdminUsers.php");
+
 }
 
 ?>

@@ -43,21 +43,21 @@ session_start();
             </div>
 
             <?php
-                echo "<h2 id=adminName>Name: " . $_SESSION["UserName"] . "</h2>";
-                echo "<h2 id=adminName>Email: " . $_SESSION["UserEmail"] . "</h2>";
-                // echo "<h2 id=adminPassword>Password: " . $_SESSION["user_pass"] . "</h2>";
+                echo "<h2>Name: " . $_SESSION["UserName"] . "</h2>";
+                echo "<h2>Email: " . $_SESSION["UserEmail"] . "</h2>";
+                echo "<h2>Access: " . $_SESSION["Access"] . "</h2>";
             ?>
             
           <form class="admin-adder" action="../GlobalFunctions.php" method="post">
             <label for="name">Add New Admin</label>
-            <input type="text" name="name" placeholder="Enter New admin's name">
-            <input type="email" name="email" value="example@hospital.com">
-            <select name="access" id="">
+            <input type="text" name="name" placeholder="Enter New admin's name"<?php if($_SESSION["Access"]!="top"){echo "disabled";}?>>
+            <input type="email" name="email" value="example@hospital.com" <?php if($_SESSION["Access"]!="top"){echo "disabled";}?>>
+            <select name="access" <?php if($_SESSION["Access"]!="top"){echo "disabled";}?>>
                 <option value="messages">Choose Access</option>
                 <option value="messages">Messages</option>
-                <option value="services">Services</option>
+                <option value="pharmacist">Pharmacist</option>
             </select>
-            <button type="submit" name="addAdmin">Add</button>
+            <button type="submit" name="addAdmin" <?php if($_SESSION["Access"]!="top"){echo "disabled";}?>>Add</button>
           </form>
         </div>
 
