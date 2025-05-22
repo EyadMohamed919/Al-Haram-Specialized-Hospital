@@ -110,22 +110,36 @@
     $lastID = getlastID($filepath);
     $newID = $lastID + 1;
 
-    if ($formType == "Appointments") {
-        $buildLine = "\n".$newID."~".$doc."~".$firstName."~".$lastName."~".$sex."~".$PN."~".$email."~".$date."~".$time;
-    } elseif ($formType == "Dentistry") {
-        $buildLine = "\n".$newID."~".$firstName."~".$lastName."~".$PN."~".$email."~".$date."~".$time;
-    } elseif ($formType == "Oncology") {
-        $buildLine = "\n".$newID."~".$treatment."~".$firstName."~".$lastName."~".$sex."~".$PN."~".$email."~".$date."~".$time;
-    } elseif ($formType == "Outpatient") {
-        $buildLine = "\n".$newID."~".$service."~".$firstName."~".$lastName."~".$address."~".$PN."~".$email."~".$date."~".$time;
-    } elseif ($formType == "Pharmacy") {
-        $buildLine = "\n".$newID."~".$medicine."~".$firstName."~".$lastName."~".$address."~".$PN."~".$email;
-    } elseif ($formType == "PrevMed") {
-        $buildLine = "\n".$newID."~".$time."~".$firstName."~".$lastName."~".$PN."~".$NID."~".$email;
-    } elseif ($formType == "Surgery") {
-        $buildLine = "\n".$newID."~".$SurgeryType."~".$firstName."~".$lastName."~".$PN."~".$AuthID."~".$email."~".$date."~".$time;
-    } elseif ($formType == "Tests") {
-        $buildLine = "\n".$newID."~".$test."~".$firstName."~".$lastName."~".$sex."~".$PN."~".$email."~".$date."~".$time;
+    include_once(__DIR__ . '/../encrypt.php');
+    $key = 123;
+
+    switch ($formType) {
+        case "Appointments":
+            $buildLine = "\n" . $newID . "~" . encrypt($doc, $key) . "~" . encrypt($firstName, $key) . "~" . encrypt($lastName, $key) . "~" . encrypt($sex, $key) . "~" . encrypt($PN, $key) . "~" . encrypt($email, $key) . "~" . encrypt($date, $key) . "~" . encrypt($time, $key);
+    
+        case "Dentistry":
+            $buildLine = "\n" . $newID . "~" . encrypt($firstName, $key) . "~" . encrypt($lastName, $key) . "~" . encrypt($PN, $key) . "~" . encrypt($email, $key) . "~" . encrypt($date, $key) . "~" . encrypt($time, $key);
+            break;
+        case "Oncology":
+            $buildLine = "\n" . $newID . "~" . encrypt($treatment, $key) . "~" . encrypt($firstName, $key) . "~" . encrypt($lastName, $key) . "~" . encrypt($sex, $key) . "~" . encrypt($PN, $key) . "~" . encrypt($email, $key) . "~" . encrypt($date, $key) . "~" . encrypt($time, $key);
+            break;
+        case "Outpatient":
+            $buildLine = "\n" . $newID . "~" . encrypt($service, $key) . "~" . encrypt($firstName, $key) . "~" . encrypt($lastName, $key) . "~" . encrypt($address, $key) . "~" . encrypt($PN, $key) . "~" . encrypt($email, $key) . "~" . encrypt($date, $key) . "~" . encrypt($time, $key);
+            break;
+        case "Pharmacy":
+            $buildLine = "\n" . $newID . "~" . encrypt($medicine, $key) . "~" . encrypt($firstName, $key) . "~" . encrypt($lastName, $key) . "~" . encrypt($address, $key) . "~" . encrypt($PN, $key) . "~" . encrypt($email, $key);
+            break;
+        case "PrevMed":
+            $buildLine = "\n" . $newID . "~" . encrypt($time, $key) . "~" . encrypt($firstName, $key) . "~" . encrypt($lastName, $key) . "~" . encrypt($PN, $key) . "~" . encrypt($NID, $key) . "~" . encrypt($email, $key);
+            break;
+        case "Surgery":
+            $buildLine = "\n" . $newID . "~" . encrypt($SurgeryType, $key) . "~" . encrypt($firstName, $key) . "~" . encrypt($lastName, $key) . "~" . encrypt($PN, $key) . "~" . encrypt($AuthID, $key) . "~" . encrypt($email, $key) . "~" . encrypt($date, $key) . "~" . encrypt($time, $key);
+            break;
+        case "Tests":
+            $buildLine = "\n" . $newID . "~" . encrypt($test, $key) . "~" . encrypt($firstName, $key) . "~" . encrypt($lastName, $key) . "~" . encrypt($sex, $key) . "~" . encrypt($PN, $key) . "~" . encrypt($email, $key) . "~" . encrypt($date, $key) . "~" . encrypt($time, $key);
+            break;
+        default:
+            die('Unknown form submitted.');
     }
 
     $appointFile = fopen($filepath, 'a+');
