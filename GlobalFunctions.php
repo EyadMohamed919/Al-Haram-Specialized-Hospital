@@ -106,7 +106,7 @@ function contactUsReciever()
     {
         $newMessage = "\n" . $lastID . "~" . $Fname . "~" 
     . $Lname . "~" . $email . "~" . $phone . "~" . $Gaddress . "~"
-    . $Caddress . "~" . $type . "~" . $message . "\n";
+    . $Caddress . "~" . $type . "~" . $message;
     }
     
     fwrite($file, $newMessage);
