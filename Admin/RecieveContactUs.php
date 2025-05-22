@@ -1,12 +1,23 @@
 <html lang="en">
 <?php
 session_start();
-if(isset($_SESSION["Admin"]))
+    if(isset($_SESSION["Admin"]))
     {
       if($_SESSION["Admin"] == false)
       {
-        header("location: index.php");
+        header("location: ../index.php");
       }
+      else
+      {
+        if($_SESSION["Access"] == "pharmacist")
+        {
+            header("location: AdminMain.php");
+        }
+      }
+    }
+    else
+    {
+        header("location: ../index.php");
     }
 ?>
 <head>
@@ -33,7 +44,6 @@ if(isset($_SESSION["Admin"]))
         include("../GlobalFunctions.php");
 
         $array = sendContactUsMessages();
-        var_dump($array);
         foreach($array as $line)
         {
             echo "<tr>";

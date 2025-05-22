@@ -25,7 +25,7 @@ else if(isset($_POST["deleteAdmin"]))
     }
 }
 
-function checkUser($file, $email, $password)
+function checkAdminUser($file, $email, $password)
 {
     $result = [];
     while(!feof($file))
@@ -38,7 +38,26 @@ function checkUser($file, $email, $password)
             $result[0] = true;
             $result[1] = $userLine[1]; 
             $result[2] = $userLine[3];
-            var_dump($result);
+            return $result;
+        }
+        
+    }
+    $result[0] = false;
+    return $result;
+}
+
+function checkUser($file, $email, $password)
+{
+    $result = [];
+    while(!feof($file))
+    {
+        
+        $line = fgets($file);
+        $userLine = explode("~", $line);
+        if($email == $userLine[2] && $password == trim($userLine[3]))
+        {   
+            $result[0] = true;
+            $result[1] = $userLine[1];
             return $result;
         }
         
@@ -105,8 +124,6 @@ function sendContactUsMessages()
     {
         $line = trim(fgets($file));
         $ArrayLine = explode("~", $line);
-        echo $ArrayLine[3];
-        echo "MOZA";
         $fileArray[$i] = array(
             "id"=>$ArrayLine[0], 
             "fname"=>$ArrayLine[1],
@@ -134,7 +151,7 @@ function authentication()
     if(str_contains($email, "@hospital.com")) 
     {
         $file = fopen("Database/AdminUserTextFile.txt", "r+");
-        $checker = checkUser($file, $email, $password);
+        $checker = checkAdminUser($file, $email, $password);
         var_dump($checker);
         if($checker[0] == true)
         {
@@ -153,12 +170,12 @@ function authentication()
             echo "Admin but not correct";
             session_start();
             $_SESSION["Logged"] = false;
-            // header("location: ../Login.php");
+            header("location: ../Login.php");
         }
     }
     else
     {
-        $file = fopen("Database/UserTextFile.txt", "r");
+        $file = fopen("Database/UserTextFile.txt", "r+");
         $checker = checkUser($file, $email, $password);
         if($checker[0] == true)
         {
