@@ -127,10 +127,10 @@
             $buildLine = "\n" . $newID . "~" . encrypt($service, $key) . "~" . encrypt($firstName, $key) . "~" . encrypt($lastName, $key) . "~" . encrypt($address, $key) . "~" . encrypt($PN, $key) . "~" . encrypt($email, $key) . "~" . encrypt($date, $key) . "~" . encrypt($time, $key);
             break;
         case "Pharmacy":
-            $buildLine = "\n" . $newID . "~" . encrypt($medicine, $key) . "~" . encrypt($firstName, $key) . "~" . encrypt($lastName, $key) . "~" . encrypt($address, $key) . "~" . encrypt($PN, $key) . "~" . encrypt($email, $key);
+            $buildLine = "\n" . $newID . "~" . encrypt($medicine, $key) . "~" . encrypt($firstName, $key) . "~" . encrypt($lastName, $key) . "~" . encrypt($address, $key) . "~" . encrypt($PN, $key) . "~" . encrypt($email, $key) . "~" . encrypt($date, $key) . "~" . encrypt($time, $key);
             break;
         case "PrevMed":
-            $buildLine = "\n" . $newID . "~" . encrypt($time, $key) . "~" . encrypt($firstName, $key) . "~" . encrypt($lastName, $key) . "~" . encrypt($PN, $key) . "~" . encrypt($NID, $key) . "~" . encrypt($email, $key);
+            $buildLine = "\n" . $newID . "~" . encrypt($time, $key) . "~" . encrypt($firstName, $key) . "~" . encrypt($lastName, $key) . "~" . encrypt($PN, $key) . "~" . encrypt($NID, $key) . "~" . encrypt($email, $key) . "~" . encrypt($date, $key) . "~" . encrypt($time, $key);
             break;
         case "Surgery":
             $buildLine = "\n" . $newID . "~" . encrypt($SurgeryType, $key) . "~" . encrypt($firstName, $key) . "~" . encrypt($lastName, $key) . "~" . encrypt($PN, $key) . "~" . encrypt($AuthID, $key) . "~" . encrypt($email, $key) . "~" . encrypt($date, $key) . "~" . encrypt($time, $key);

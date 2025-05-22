@@ -77,6 +77,42 @@ if (isset($_SESSION["Admin"]) && $_SESSION["Admin"] === true) {
                     </tr>
                 </table>
             </form>
+            <h2>Past Orders</h2>
+            <table border="1" cellpadding="5">
+                <tr>
+                    <th>Order ID</th>
+                    <th>Medicine</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Address</th>
+                    <th>Phone</th>
+                    <th>Email</th>
+                </tr>
+                <?php
+                include_once __DIR__ . '/../encrypt.php';
+                $file = __DIR__ . "/txtFiles/pharmaForm.txt";
+                $email = $_SESSION['UserEmail'] ?? '';
+                $found = false;
+                if ($email && file_exists($file)) {
+                    foreach (file($file, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES) as $order) {
+                        $f = explode("~", $order);
+                        if (isset($f[6]) && decrypt($f[6], '123') === $email) {
+                            $found = true;
+                            echo "<tr>";
+                            foreach ($f as $i => $v) {
+                                if (in_array($i, [1, 2, 3, 4, 5, 6, 7, 8, 9])) {
+                                    echo "<td>" . htmlspecialchars(decrypt($v, '123')) . "</td>";
+                                } else {
+                                    echo "<td>" . htmlspecialchars($v) . "</td>";
+                                }
+                            }
+                            echo "</tr>";
+                        }
+                    }
+                }
+                if (!$found) echo '<tr><td colspan="9">No past orders found.</td></tr>';
+                ?>
+            </table>
             <footer id="footer">
                 <hr>
                 © 2024 Haram Public Hospital, all rights reserved
