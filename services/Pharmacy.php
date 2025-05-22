@@ -87,6 +87,8 @@ if (isset($_SESSION["Admin"]) && $_SESSION["Admin"] === true) {
                     <th>Address</th>
                     <th>Phone</th>
                     <th>Email</th>
+                    <th>Date</th>
+                    <th>Time</th>
                 </tr>
                 <?php
                 include_once __DIR__ . '/../encrypt.php';
@@ -100,7 +102,7 @@ if (isset($_SESSION["Admin"]) && $_SESSION["Admin"] === true) {
                             $found = true;
                             echo "<tr>";
                             foreach ($f as $i => $v) {
-                                if (in_array($i, [1, 2, 3, 4, 5, 6, 7, 8, 9])) {
+                                if (in_array($i, [1, 2, 3, 4, 5, 6, 7, 8])) {
                                     echo "<td>" . htmlspecialchars(decrypt($v, '123')) . "</td>";
                                 } else {
                                     echo "<td>" . htmlspecialchars($v) . "</td>";
