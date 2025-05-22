@@ -12,7 +12,7 @@
 </body>
 <?php
     $filePath = '';
-    $formType = $_POST['AppointmentForm'];
+    $formType = $_POST['formType'];
     
     if ($formType == "Appointments") {
         $filepath = 'txtFiles/appointForm.txt';
