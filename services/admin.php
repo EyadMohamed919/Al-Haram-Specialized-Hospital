@@ -56,14 +56,14 @@ if(isset($_SESSION["Admin"]))
 
 <?php
 $headersMap = [
-    'Appointments' => ['ID','Doctor','First Name','Last Name','Sex','Phone','Email','Date','Time'],
-    'Dentistry' => ['ID','First Name','Last Name','Phone','Email','Date','Time'],
-    'Oncology' => ['ID','Treatment','First Name','Last Name','Sex','Phone','Email','Date','Time'],
-    'Outpatient' => ['ID','Service','First Name','Last Name','Address','Phone','Email','Date','Time'],
-    'Pharmacy' => ['ID','Medicine','First Name','Last Name','Address','Phone','Email'],
-    'PrevMed' => ['ID','Time Slot','First Name','Last Name','Phone','NID','Email'],
-    'Surgery' => ['ID','Surgery Type','First Name','Last Name','Phone','Auth ID','Email','Date','Time'],
-    'Tests' => ['ID','Test','First Name','Last Name','Sex','Phone','Email','Date','Time']
+    'Appointments' => ['ID','Doctor','First Name','Last Name','Sex','Phone','Email','Date','Time', 'Submission-Day', 'Submission-Time'],
+    'Dentistry' => ['ID','First Name','Last Name','Phone','Email','Date','Time', 'Submission-Day', 'Submission-Time'],
+    'Oncology' => ['ID','Treatment','First Name','Last Name','Sex','Phone','Email','Date','Time', 'Submission-Day', 'Submission-Time'],
+    'Outpatient' => ['ID','Service','First Name','Last Name','Address','Phone','Email','Date','Time', 'Submission-Day', 'Submissio-Time'],
+    'Pharmacy' => ['ID','Medicine','First Name','Last Name','Address','Phone','Email', 'Submission-Day', 'Submissio-Time'],
+    'PrevMed' => ['ID','Time Slot','First Name','Last Name','Phone','NID','Email', 'Submission-Day', 'Submissio-Time'],
+    'Surgery' => ['ID','Surgery Type','First Name','Last Name','Phone','Auth ID','Email','Date','Time', 'Submission-Day', 'Submissio-Time'],
+    'Tests' => ['ID','Test','First Name','Last Name','Sex','Phone','Email','Date','Time', 'Submission-Day', 'Submissio-Time']
 ];
 
 if (file_exists($filepath)) {
@@ -82,7 +82,7 @@ if (file_exists($filepath)) {
             $fields = explode("~", $line);
 
         foreach ($fields as $index => $field) {
-            if ($index === 0) continue; // Skip ID (not encrypted)
+            if ($index === 0) continue; 
             $fields[$index] = decrypt($field, $key1);
             }
             echo "<tr>";

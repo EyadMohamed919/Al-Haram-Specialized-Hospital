@@ -4,6 +4,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     $idToEdit = $_GET['id'] ?? '';
     $formType = $_GET['form'] ?? '';
 
+
+    
+    include_once(__DIR__ . '/../encrypt.php');
+    $key = 123;
+
+
     ?>
     <!DOCTYPE html>
     <html lang="en">
@@ -37,7 +43,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             echo "<input type='hidden' name='id' value='$idToEdit'>";
             echo "<input type='hidden' name='form' value='$formType'>";
 
-            foreach ($fields as $index => $value) {
+            foreach ($fields as $index => $value){
+            $displayValue = ($index === 0) ? $value : decrypt($value, $key);  
             echo "<label>Field $index:</label><input type='text' name='field$index' value='" . htmlspecialchars($value) . "'>";
             }
             echo "<button type='submit'>Save Changes</button>";
@@ -59,11 +66,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         foreach ($lines as $line) {
             $fields = explode("~", $line);
             if ($fields[0] === $id) {
-                // Creating a new line with updated fieldss
                 $newLineFields = [];
                 for ($i = 0; isset($_POST["field$i"]); $i++) {
-                    $newLineFields[] = $_POST["field$i"];
-                }
+                    $inputValue = $_POST["field$i"];
+                    $newLineFields[] = ($i === 0) ? $inputValue : encrypt($inputValue, $key); // Do not encrypt ID
+                }                
                 $updatedLines[] = implode("~", $newLineFields);
             } else {
                 $updatedLines[] = $line;
