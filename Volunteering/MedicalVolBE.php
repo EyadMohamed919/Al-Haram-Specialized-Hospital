@@ -21,6 +21,23 @@ function writeData($path, $data) {
     file_put_contents($path, implode("\n", array_map(fn($r) => implode("~", $r), $data)) . "\n");
 }
 
+function Encrypt($data, $key) {
+    $result = '';
+    for ($i = 0; $i < strlen($data); $i++) {
+        $result .= chr(ord($data[$i]) ^ $key);
+    }
+    return base64_encode($result); 
+}
+
+function Decrypt($data, $key) {
+    $data = base64_decode($data); 
+    $result = '';
+    for ($i = 0; $i < strlen($data); $i++) {
+        $result .= chr(ord($data[$i]) ^ $key);
+    }
+    return $result;
+}
+
 function sanitize($v) {
     return htmlspecialchars(strip_tags(trim($v)));
 }

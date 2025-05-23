@@ -23,7 +23,8 @@
             </tr>
             <tr>
                 <td>Gender:</td>
-                <td><input type="text" name="Gender" required></td>
+                <td><input type="radio" name="Gender" value="Male"required>Male
+                <input type="radio" name="Gender" value="Female"required>Female</td>
             </tr>
             <tr>
                 <td>Country:</td>

@@ -23,7 +23,8 @@
             </tr>
             <tr>
                 <td>Gender:</td>
-                <td><input type="text" name="Gender" required></td>
+                <td><input type="radio" name="Gender" value="Male"required>Male
+                <input type="radio" name="Gender" value="Female"required>Female</td>
             </tr>
             <tr>
                 <td>Country:</td>
@@ -35,7 +36,11 @@
             </tr>
             <tr>
                 <td>Blood Type:</td>
-                <td><input type="text" name="BloodType" required></td>
+                <td><input type="radio" name="BloodType" value="A" required>A
+                <input type="radio" name="BloodType" value="B" required>B
+                <input type="radio" name="BloodType" value="AB" required>AB
+                <input type="radio" name="BloodType" value="O" required>O</td>
+
         
     </form>
 </table><br>
