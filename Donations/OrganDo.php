@@ -8,16 +8,16 @@ $OrganDonated=$_POST['OrganDonated'];
 
 
 
-                $lastID = 0;
-                $lines = file("OrganFile.txt");
-                foreach ($lines as $line) {
-                $arrayLine = explode("~", $line);
-                if (isset($arrayLine[0])) {
-                $lastID = max($lastID,$arrayLine[0]);
-                }
-                }
-                $newID = $lastID + 1;
-                $ID = $newID;
+$lastID = 0;
+$lines = file("OrganFile.txt");
+foreach ($lines as $line) {
+$arrayLine = explode("~", $line);
+if (isset($arrayLine[0])) {
+$lastID = max($lastID,$arrayLine[0]);
+            }
+        }
+$newID = $lastID + 1;
+$ID = $newID;
 
 
 

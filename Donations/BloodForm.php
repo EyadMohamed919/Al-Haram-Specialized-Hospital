@@ -1,11 +1,23 @@
 <?php
-    $ID = $_POST['ID'];
-    $FirstName = $_POST['FirstName'];
-    $LastName = $_POST['LastName'];
-    $Gender = $_POST['Gender'];
-    $Country = $_POST['Country'];
-    $DOB = $_POST['DOB'];
-    $BloodType = $_POST['BloodType'];
+
+include_once (__DIR__ . '/../encrypt.php');
+    $encID = Encrypt($_POST['ID'], $key);
+    $encFirstName = Encrypt($_POST['FirstName'],$key);
+    $encLastName = Encrypt($_POST['LastName'],$key);
+    $encGender = Encrypt($_POST['Gender'],$key);
+    $encCountry = Encrypt($_POST['Country'],$key);
+    $encDOB = Encrypt($_POST['DOB'],$key);
+    $encBloodType = Encrypt($_POST['BloodType'],$key);
+
+
+
+
+        $FirstName = Decrypt($encFirstName, $key);
+        $LastName = Decrypt($encLastName, $key);
+        $Gender = Decrypt($encGender, $key);
+        $Country = Decrypt($encCountry, $key);
+        $DOB = Decrypt($encDOB, $key);
+        $BloodType = Decrypt($encBloodType, $key);
 
 
         $lastID = 0;
