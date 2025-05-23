@@ -4,6 +4,8 @@
     servicesSEO();
     navBar();
 
+    var_dump($_POST);
+
 ?>
 <body>
     <center style="margin-top: 10%; font-size: 5rem;">
