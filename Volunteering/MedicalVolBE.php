@@ -5,16 +5,29 @@ if (!isset($_SESSION["Admin"]) || !$_SESSION["Admin"]) {
     exit();
 }
 
+include_once(__DIR__ . '/../encrypt.php');
+$key = 0; 
+
 $filePath = __DIR__ . "/MedVol.txt";
-$volunteers = file_exists($filePath) ? array_filter(array_map(function($line) {
+
+$volunteers = file_exists($filePath) ? array_filter(array_map(function($line) use ($key) {
     $fields = explode("~", $line);
-    return count($fields) == 9 ? [
-        'FirstName' => $fields[0], 'SecondName' => $fields[1], 'ThirdName' => $fields[2],
-        'Gender' => $fields[3], 'Nationality' => $fields[4], 'DOB' => $fields[5],
-        'MobileNumber' => $fields[6], 'EmailAddress' => $fields[7], 'StartDate' => $fields[8]
-    ] : null;
+    if (count($fields) != 9) return null;
+
+    return [
+        'FirstName' => Decrypt($fields[0], $key),
+        'SecondName' => Decrypt($fields[1], $key),
+        'ThirdName' => Decrypt($fields[2], $key),
+        'Gender' => Decrypt($fields[3], $key),
+        'Nationality' => Decrypt($fields[4], $key),
+        'DOB' => Decrypt($fields[5], $key),
+        'MobileNumber' => Decrypt($fields[6], $key),
+        'EmailAddress' => Decrypt($fields[7], $key),
+        'StartDate' => Decrypt($fields[8], $key)
+    ];
 }, file($filePath, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES))) : [];
 
+// Handle form submission
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $index = isset($_POST['index']) ? (int)$_POST['index'] : -1;
     $new = [
@@ -34,7 +47,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $_SESSION['message'] = "Volunteer deleted.";
     }
 
-    file_put_contents($filePath, implode("\n", array_map(function($v) { return implode("~", $v); }, $volunteers)));
+    // Encrypt and save
+    file_put_contents($filePath, implode("\n", array_map(function($v) use ($key) {
+        return implode("~", [
+            Encrypt($v['FirstName'], $key),
+            Encrypt($v['SecondName'], $key),
+            Encrypt($v['ThirdName'], $key),
+            Encrypt($v['Gender'], $key),
+            Encrypt($v['Nationality'], $key),
+            Encrypt($v['DOB'], $key),
+            Encrypt($v['MobileNumber'], $key),
+            Encrypt($v['EmailAddress'], $key),
+            Encrypt($v['StartDate'], $key)
+        ]);
+    }, $volunteers)));
+
     header("Location: MedicalVolBE.php");
     exit();
 }
