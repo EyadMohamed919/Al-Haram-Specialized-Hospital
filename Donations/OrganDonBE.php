@@ -1,4 +1,7 @@
 <html>
+    <?php
+include_once (__DIR__ . '/../encrypt.php');
+?>
 <?php
 session_start();
 
@@ -31,19 +34,23 @@ if(isset($_SESSION["Admin"]))
             <td>Organ Type</td>
         </tr>
         <tr>
-            <?php
-    $file = fopen("OrganFile.txt", "r+");
-    while(!feof($file)){
-    echo "<tr>" ;
-    $line= fgets($file);
-    $ArrayLine=explode("~",$line);
-    foreach ($ArrayLine as $value) {
-    echo "<td>" . htmlspecialchars($value) . "</td>";
-        }
+             <?php
+    $key = 0;
+    $file = fopen("OrganFile.txt", "r");
+    while (!feof($file)) {
+        $line = fgets($file);
+        $arrayline = explode("~", $line);
 
+        echo "<tr>";
+        echo "<td>" . htmlspecialchars($arrayline[0]) . "</td>";
+
+        for ($i = 1; $i <= 7; $i++) {
+            if (isset($arrayline[$i])) {
+                echo "<td>" . htmlspecialchars(Decrypt($arrayline[$i], $key)) . "</td>";
+            }
+        }
         echo "</tr>";
     }
-
     fclose($file);
     ?>
         </tr>

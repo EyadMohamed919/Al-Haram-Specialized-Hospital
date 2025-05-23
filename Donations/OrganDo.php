@@ -1,4 +1,6 @@
 <?php
+include_once (__DIR__ . '/../encrypt.php');
+
 $FirstName=$_POST['FirstName'];
 $LastName=$_POST['LastName'];
 $Gender = $_POST['Gender'];
@@ -22,13 +24,13 @@ $ID = $newID;
 
 
 $data = 
-"\n".$ID."~".
-$FirstName."~".
-$LastName."~".
-$Gender."~".
-$Country."~".
-$DOB."~".
-$OrganDonated;
+$ID."~".
+encrypt($FirstName, $key)."~".
+encrypt($LastName,$key)."~".
+encrypt($Gender,$key)."~".
+encrypt($Country, $key)."~".
+encrypt($DOB,$key)."~".
+encrypt($OrganDonated ,$key)."\n";
 
 $file=fopen("OrganFile.txt","a");
 fwrite($file,$data);

@@ -6,6 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Backend Blood Donations</title>
     <link rel="stylesheet" type="text/css" href="../CSS Sheets/BEstylesheet1.css">
+    <?php
+function Decrypt($data, $key) {
+    $data = base64_decode($data); 
+    $result = '';
+    for ($i = 0; $i < strlen($data); $i++) {
+        $result .= chr(ord($data[$i]) ^ $key);
+    }
+    return $result;
+}
+
+?>
 </head>
 <body>
     <a href="DonationsBE-Homepage.php"><input class="inputs" type="submit" value="Return🔙"></a><hr>
@@ -20,17 +31,25 @@
             <td>Date</td>
             <td>BloodType</td>
     <?php
-    $file = fopen("BF.txt", "r+");
-        while(!feof($file)){
-        echo "<tr>";
+    $key = 0;
+    $file = fopen("BF.txt", "r");
+    while (!feof($file)) {
         $line = fgets($file);
-        $arrayline = explode("~",$line);
-        foreach ($arrayline as $value)
-        echo "<td>" . htmlspecialchars($value) . "</td>";
+        $arrayline = explode("~", $line);
+
+        echo "<tr>";
+        echo "<td>" . htmlspecialchars($arrayline[0]) . "</td>";
+
+        for ($i = 1; $i <= 6; $i++) {
+            if (isset($arrayline[$i])) {
+                echo "<td>" . htmlspecialchars(Decrypt($arrayline[$i], $key)) . "</td>";
+            }
+        }
         echo "</tr>";
     }
     fclose($file);
     ?>
+
     
             </td>
         </tr>
