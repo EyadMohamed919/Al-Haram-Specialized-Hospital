@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 
         if ($recordLine) {
             $fields = explode("~", $recordLine);
-            // Show form
+           
             echo "<h1>Edit Record (ID: $idToEdit)</h1>";
             echo "<form method='post'>";
             echo "<input type='hidden' name='file' value='$file'>";
@@ -59,7 +59,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         foreach ($lines as $line) {
             $fields = explode("~", $line);
             if ($fields[0] === $id) {
-                // build new line from submitted fields
+                // Creating a new line with updated fieldss
                 $newLineFields = [];
                 for ($i = 0; isset($_POST["field$i"]); $i++) {
                     $newLineFields[] = $_POST["field$i"];

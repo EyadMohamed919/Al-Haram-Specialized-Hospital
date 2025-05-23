@@ -17,8 +17,6 @@ $filepath = "txtFiles/" . $fileName;
 <!DOCTYPE html>
 
 
-<!-- Session Code -->
-
 <?php
 session_start();
 
