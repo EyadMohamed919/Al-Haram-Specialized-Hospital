@@ -75,8 +75,16 @@ if (file_exists($filepath)) {
         foreach ($headers as $header) echo "<th>$header</th>";
         echo "<th>Actions</th></tr>";
 
+        include_once(__DIR__ . '/../encrypt.php');
+        $key1 = 123;
+
         foreach ($lines as $line) {
             $fields = explode("~", $line);
+
+        foreach ($fields as $index => $field) {
+            if ($index === 0) continue; // Skip ID (not encrypted)
+            $fields[$index] = decrypt($field, $key1);
+            }
             echo "<tr>";
             foreach ($fields as $f) echo "<td>".htmlspecialchars($f)."</td>";
             echo "<td class='actions'>

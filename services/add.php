@@ -29,12 +29,16 @@ if (empty($formType) || !isset($formFiles[$formType])) {
 
 $filePath = __DIR__ . "/txtFiles/" . $formFiles[$formType];
 
+include_once(__DIR__ . '/../encrypt.php');
+    $key1 = 123;
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $data = [];
     foreach ($headersMap[$formType] as $field) {
         $key = str_replace([' ', '-'], '_', strtolower($field));
-        $data[] = $_POST[$key] ?? '';
+        $data[] = encrypt($_POST[$key], $key1) ?? '';
     }
+
     $line = implode("~", $data) . "\n";
     file_put_contents($filePath, $line, FILE_APPEND);
     header("Location: admin.php?form=" . urlencode($formType));
