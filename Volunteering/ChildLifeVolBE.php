@@ -1,105 +1,117 @@
 <?php
 session_start();
-if (!isset($_SESSION["Admin"]) || $_SESSION["Admin"] == false) {
-    header("location: index.php");
+if (!isset($_SESSION["Admin"]) || !$_SESSION["Admin"]) {
+    header("Location: index.php");
     exit();
 }
 
-$filePath = __DIR__ . "/ClVol.txt";
+include_once(__DIR__ . '/../encrypt.php');
+$key = 0; 
 
-function readData($path) {
-    if (!file_exists($path)) return [];
-    return array_map(function($line) {
-        $f = explode("~", $line);
-        return count($f) === 9 ? array_combine(
-            ['FirstName','SecondName','ThirdName','Gender','Nationality','DOB','MobileNumber','EmailAddress','StartDate'],
-            $f) : null;
-    }, array_filter(file($path, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES)));
-}
+$filePath = __DIR__ . "/CLVol.txt";
 
-function writeData($path, $data) {
-    file_put_contents($path, implode("\n", array_map(fn($r) => implode("~", $r), $data)) . "\n");
-}
+$volunteers = file_exists($filePath) ? array_filter(array_map(function($line) use ($key) {
+    $fields = explode("~", $line);
+    if (count($fields) != 9) return null;
 
-function sanitize($v) {
-    return htmlspecialchars(strip_tags(trim($v)));
-}
+    return [
+        'FirstName' => Decrypt($fields[0], $key),
+        'SecondName' => Decrypt($fields[1], $key),
+        'ThirdName' => Decrypt($fields[2], $key),
+        'Gender' => Decrypt($fields[3], $key),
+        'Nationality' => Decrypt($fields[4], $key),
+        'DOB' => Decrypt($fields[5], $key),
+        'MobileNumber' => Decrypt($fields[6], $key),
+        'EmailAddress' => Decrypt($fields[7], $key),
+        'StartDate' => Decrypt($fields[8], $key)
+    ];
+}, file($filePath, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES))) : [];
 
-$volunteers = array_values(array_filter(readData($filePath)));
-$message = "";
-$fields = ['FirstName','SecondName','ThirdName','Gender','Nationality','DOB','MobileNumber','EmailAddress','StartDate'];
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+// Handle form submission
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $index = isset($_POST['index']) ? (int)$_POST['index'] : -1;
-    $new = array();
-    foreach ($fields as $f) {
-        $new[] = isset($_POST[$f]) ? sanitize($_POST[$f]) : '';
-    }
-    $assoc = array_combine($fields, $new);
+    $new = [
+        $_POST['FirstName'], $_POST['SecondName'], $_POST['ThirdName'],
+        $_POST['Gender'], $_POST['Nationality'], $_POST['DOB'],
+        $_POST['MobileNumber'], $_POST['EmailAddress'], $_POST['StartDate']
+    ];
 
     if (isset($_POST['create'])) {
-        $volunteers[] = $assoc;
-        $message = "New volunteer added.";
+        $volunteers[] = array_combine(['FirstName','SecondName','ThirdName','Gender','Nationality','DOB','MobileNumber','EmailAddress','StartDate'], $new);
+        $_SESSION['message'] = "New volunteer added.";
     } elseif (isset($_POST['update']) && isset($volunteers[$index])) {
-        $volunteers[$index] = $assoc;
-        $message = "Volunteer updated.";
+        $volunteers[$index] = array_combine(['FirstName','SecondName','ThirdName','Gender','Nationality','DOB','MobileNumber','EmailAddress','StartDate'], $new);
+        $_SESSION['message'] = "Volunteer updated.";
     } elseif (isset($_POST['delete']) && isset($volunteers[$index])) {
-        unset($volunteers[$index]);
-        $message = "Volunteer deleted.";
+        array_splice($volunteers, $index, 1);
+        $_SESSION['message'] = "Volunteer deleted.";
     }
-    writeData($filePath, $volunteers);
+
+    // Encrypt and save
+    file_put_contents($filePath, implode("\n", array_map(function($v) use ($key) {
+        return implode("~", [
+            Encrypt($v['FirstName'], $key),
+            Encrypt($v['SecondName'], $key),
+            Encrypt($v['ThirdName'], $key),
+            Encrypt($v['Gender'], $key),
+            Encrypt($v['Nationality'], $key),
+            Encrypt($v['DOB'], $key),
+            Encrypt($v['MobileNumber'], $key),
+            Encrypt($v['EmailAddress'], $key),
+            Encrypt($v['StartDate'], $key)
+        ]);
+    }, $volunteers)));
+
+    header("Location: ChildLifeVolBE.php");
+    exit();
 }
 
 $editIndex = isset($_GET['edit']) ? (int)$_GET['edit'] : -1;
-$edit = isset($volunteers[$editIndex]) ? $volunteers[$editIndex] : null;
-if ($edit) $edit['index'] = $editIndex;
-
+$edit = ($editIndex >= 0 && isset($volunteers[$editIndex])) ? $volunteers[$editIndex] : null;
 $countries = ["EG"=>"Egypt","GE"=>"Germany","SR"=>"Turkey","UAE"=>"United Arab Emirates","SAR"=>"Saudi Arabia","QTR"=>"Qatar","ENG"=>"England","FR"=>"France","USA"=>"United States","SK"=>"South Korea"];
 ?>
 
-<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Admin Backend</title>
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>Admin Backend</title>
 <link rel="stylesheet" href="../../CSS Sheets/BEstylesheet2.css"></head>
 <body>
 <a href="VolunteeringBE-Homepage.php">Volunteering Backend HomePage</a><hr>
-<h2>Child life volunteers records</h2>
-<?php if ($message) echo "<p style='color:green;'>$message</p>"; ?>
+<h2>Office volunteers records</h2>
+<?php if (isset($_SESSION['message'])) { echo "<p style='color:green'>".$_SESSION['message']."</p>"; unset($_SESSION['message']); } ?>
 
-<table border="1" cellpadding="5" cellspacing="0"><thead><tr>
+<table border="1"><thead><tr>
 <th>#</th><th>First</th><th>Second</th><th>Third</th><th>Gender</th><th>Nationality</th><th>DOB</th><th>Mobile</th><th>Email</th><th>Start</th><th>Actions</th>
 </tr></thead><tbody>
-<?php foreach ($volunteers as $i => $v): ?>
-<tr><td><?php echo $i+1; ?></td>
-<?php foreach ($fields as $f): ?><td><?php echo htmlspecialchars($v[$f]); ?></td><?php endforeach; ?>
+<?php foreach ($volunteers as $i => $v) { ?>
+<tr><td><?= $i+1 ?></td>
+<?php foreach (['FirstName','SecondName','ThirdName','Gender','Nationality','DOB','MobileNumber','EmailAddress','StartDate'] as $f) { ?>
+<td><?= htmlspecialchars($v[$f]) ?></td><?php } ?>
 <td>
-<a href="?edit=<?php echo $i; ?>">Edit</a> |
-<form method="post" style="display:inline;" onsubmit="return confirm('Are you sure you want to delete this record ?');">
-<input type="hidden" name="index" value="<?php echo $i; ?>"><button type="submit" name="delete">Delete</button>
-</form>
-</td></tr>
-<?php endforeach; ?>
+<a href="?edit=<?= $i ?>">Edit</a> |
+<form method="post" style="display:inline"><input type="hidden" name="index" value="<?= $i ?>">
+<button type="submit" name="delete" onclick="return confirm('Are you sure you want to delete this row ?')">Delete</button></form>
+</td></tr><?php } ?>
 </tbody></table>
 
-<hr><h2><?php echo $edit ? "Edit" : "Add"; ?> a volunteer</h2>
-<form method="post"><input type="hidden" name="index" value="<?php echo isset($edit['index']) ? $edit['index'] : -1; ?>">
-<table border="1" cellpadding="5" cellspacing="0" id="Volunteeringtable">
-<tr><td>First Name:</td><td><input type="text" name="FirstName" required value="<?php echo isset($edit['FirstName']) ? $edit['FirstName'] : ''; ?>"></td></tr>
-<tr><td>Second Name:</td><td><input type="text" name="SecondName" value="<?php echo isset($edit['SecondName']) ? $edit['SecondName'] : ''; ?>"></td></tr>
-<tr><td>Third Name:</td><td><input type="text" name="ThirdName" value="<?php echo isset($edit['ThirdName']) ? $edit['ThirdName'] : ''; ?>"></td></tr>
+<hr><h2><?= $edit ? "Edit" : "Add" ?> a volunteer</h2>
+<form method="post"><input type="hidden" name="index" value="<?= $edit ? $editIndex : -1 ?>">
+<table border="1" id="Volunteeringtable">
+<tr><td>First Name:</td><td><input type="text" name="FirstName" required value="<?= $edit ? $edit['FirstName'] : '' ?>"></td></tr>
+<tr><td>Second Name:</td><td><input type="text" name="SecondName" value="<?= $edit ? $edit['SecondName'] : '' ?>"></td></tr>
+<tr><td>Third Name:</td><td><input type="text" name="ThirdName" value="<?= $edit ? $edit['ThirdName'] : '' ?>"></td></tr>
 <tr><td>Gender:</td><td>
-<input type="radio" name="Gender" value="M" <?php if (isset($edit['Gender']) && $edit['Gender'] === 'M') echo 'checked'; ?>>Male
-<input type="radio" name="Gender" value="F" <?php if (isset($edit['Gender']) && $edit['Gender'] === 'F') echo 'checked'; ?>>Female</td></tr>
+<input type="radio" name="Gender" value="M" <?= $edit && $edit['Gender']=='M' ? 'checked' : '' ?>>Male
+<input type="radio" name="Gender" value="F" <?= $edit && $edit['Gender']=='F' ? 'checked' : '' ?>>Female</td></tr>
 <tr><td>Nationality:</td><td><select name="Nationality" required>
-<?php foreach ($countries as $code => $name): ?>
-<option value="<?php echo $code; ?>" <?php if (isset($edit['Nationality']) && $edit['Nationality'] === $code) echo 'selected'; ?>><?php echo $name; ?></option>
-<?php endforeach; ?></select></td></tr>
-<tr><td>DOB:</td><td><input type="date" name="DOB" value="<?php echo isset($edit['DOB']) ? $edit['DOB'] : ''; ?>"></td></tr>
-<tr><td>Mobile:</td><td><input type="tel" name="MobileNumber" value="<?php echo isset($edit['MobileNumber']) ? $edit['MobileNumber'] : ''; ?>"></td></tr>
-<tr><td>Email:</td><td><input type="email" name="EmailAddress" value="<?php echo isset($edit['EmailAddress']) ? $edit['EmailAddress'] : ''; ?>"></td></tr>
-<tr><td>Start Date:</td><td><input type="date" name="StartDate" required value="<?php echo isset($edit['StartDate']) ? $edit['StartDate'] : ''; ?>"></td></tr>
-<tr><td colspan="2" align="center">
-<?php if ($edit): ?>
-<button type="submit" name="update">Update</button>
-<a href="ChildLifeVolBE.php"><button type="button">Cancel</button></a>
-<?php else: ?><button type="submit" name="create">Create</button><?php endif; ?>
+<?php foreach ($countries as $code => $name) { ?>
+<option value="<?= $code ?>" <?= $edit && $edit['Nationality']==$code ? 'selected' : '' ?>><?= $name ?></option>
+<?php } ?></select></td></tr>
+<tr><td>DOB:</td><td><input type="date" name="DOB" value="<?= $edit ? $edit['DOB'] : '' ?>"></td></tr>
+<tr><td>Mobile:</td><td><input type="tel" name="MobileNumber" value="<?= $edit ? $edit['MobileNumber'] : '' ?>"></td></tr>
+<tr><td>Email:</td><td><input type="email" name="EmailAddress" value="<?= $edit ? $edit['EmailAddress'] : '' ?>"></td></tr>
+<tr><td>Start Date:</td><td><input type="date" name="StartDate" required value="<?= $edit ? $edit['StartDate'] : '' ?>"></td></tr>
+<tr><td colspan="2"><button type="submit" name="<?= $edit ? 'update' : 'create' ?>"><?= $edit ? 'Update' : 'Create' ?></button>
+<?php if ($edit) { ?> <a href="ChildLifeVolBE.php"><button type="button">Cancel</button></a><?php } ?>
 </td></tr></table></form>
 </body></html>
