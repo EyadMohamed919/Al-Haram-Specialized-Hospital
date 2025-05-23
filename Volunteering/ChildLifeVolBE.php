@@ -77,7 +77,7 @@ $countries = ["EG"=>"Egypt","GE"=>"Germany","SR"=>"Turkey","UAE"=>"United Arab E
 <link rel="stylesheet" href="../../CSS Sheets/BEstylesheet2.css"></head>
 <body>
 <a href="VolunteeringBE-Homepage.php">Volunteering Backend HomePage</a><hr>
-<h2>Office volunteers records</h2>
+<h2>Child Life volunteers records</h2>
 <?php if (isset($_SESSION['message'])) { echo "<p style='color:green'>".$_SESSION['message']."</p>"; unset($_SESSION['message']); } ?>
 
 <table border="1"><thead><tr>
