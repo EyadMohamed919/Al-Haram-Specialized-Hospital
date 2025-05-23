@@ -21,19 +21,14 @@
             <td>BloodType</td>
     <?php
     $file = fopen("BF.txt", "r+");
-
-    while(!feof($file)){
-                 echo "<tr>" ;
-                  $line= fgets($file);
-                  $ArrayLine=explode("~",$line);
-
-        foreach ($ArrayLine as $value) {
-            echo "<td>" . htmlspecialchars($value) . "</td>";
-        }
-
+        while(!feof($file)){
+        echo "<tr>";
+        $line = fgets($file);
+        $arrayline = explode("~",$line);
+        foreach ($arrayline as $value)
+        echo "<td>" . htmlspecialchars($value) . "</td>";
         echo "</tr>";
     }
-
     fclose($file);
     ?>
     
