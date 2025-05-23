@@ -1,29 +1,29 @@
 <?php
-function sanitizeInput($input) {
-    return htmlspecialchars(strip_tags(trim($input)));
-}
+session_start();
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $firstName     = isset($_POST['FirstName'])     ? sanitizeInput($_POST['FirstName'])     : 'N/A';
-    $secondName    = isset($_POST['SecondName'])    ? sanitizeInput($_POST['SecondName'])    : 'N/A';
-    $thirdName     = isset($_POST['ThirdName'])     ? sanitizeInput($_POST['ThirdName'])     : 'N/A';
-    $gender        = isset($_POST['Gender'])        ? sanitizeInput($_POST['Gender'])        : 'N/A';
-    $nationality   = isset($_POST['Country'])       ? sanitizeInput($_POST['Country'])       : 'N/A';
-    $dob           = isset($_POST['DOB'])           ? sanitizeInput($_POST['DOB'])           : 'N/A';
-    $mobileNumber  = isset($_POST['MobileNumber'])  ? sanitizeInput($_POST['MobileNumber'])  : 'N/A';
-    $emailAddress  = isset($_POST['EmailAddress'])  ? sanitizeInput($_POST['EmailAddress'])  : 'N/A';
-    $startDate     = isset($_POST['startDate'])     ? sanitizeInput($_POST['startDate'])     : 'N/A';
-    if (empty($firstName) || empty($emailAddress) || empty($mobileNumber) || empty($startDate)) {
-        die("Error: All required fields must be filled.");
+    $required = ['FirstName', 'EmailAddress', 'MobileNumber', 'startDate'];
+    foreach ($required as $field) {
+        if (empty($_POST[$field])) {
+            $_SESSION['error'] = "Required fields missing";
+            header("Location: MedicalVolunteering.php");
+            exit();
+        }
     }
-    $data = "$firstName~$secondName~$thirdName~$gender~$nationality~$dob~$mobileNumber~$emailAddress~$startDate\n";
-    $filePath = __DIR__ . "/MedVol.txt";
-    $file = fopen($filePath, "a");
-    if (!$file) {
-        die("Error: Unable to open file for writing.");
-    }
-    fwrite($file, $data);
-    fclose($file);
+
+    $data = [
+        $_POST['FirstName'],
+        $_POST['SecondName'] ?? 'N/A',
+        $_POST['ThirdName'] ?? 'N/A',
+        $_POST['Gender'] ?? 'N/A',
+        $_POST['Country'] ?? 'N/A',
+        $_POST['DOB'] ?? 'N/A',
+        $_POST['MobileNumber'],
+        $_POST['EmailAddress'],
+        $_POST['startDate']
+    ];
+
+    file_put_contents(__DIR__."/MedVol.txt", implode("~", $data)."\n", FILE_APPEND);
+    $_SESSION['message'] = "Thank you for volunteering!";
     header("Location: MedicalVolunteering.php");
     exit();
 }
-?>
