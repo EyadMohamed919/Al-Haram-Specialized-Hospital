@@ -76,10 +76,10 @@
         $firstName = $_POST["FirstName"];
         $lastName = $_POST["LastName"];
         $PN = $_POST["PN"];
-        $AuthID = $_POST["AuthID"];
+        $AuthID = $_POST["AID"];
         $email = $_POST["Email"];
         $date = $_POST["Date"];
-        $time = $_POST["Time"];
+        $time = $_POST["time"];
     } elseif ($formType == "Tests") {
         $filepath = 'txtFiles/testsForm.txt';
         $test = $_POST["Test"];
@@ -119,34 +119,34 @@
 
     switch ($formType) {
         case "Appointments":
-            $buildLine = "\n" . $newID . "~" . encrypt($doc, $key) . "~" . encrypt($firstName, $key) . "~" . encrypt($lastName, $key) . "~" . encrypt($sex, $key) . "~" . encrypt($PN, $key) . "~" . encrypt($email, $key) . "~" . encrypt($date, $key) . "~" . encrypt($time, $key) . "~" . encrypt(date("Y-m-d"), $key) . "~" . encrypt(date("H:i:s"), $key);
+            $buildLine = $newID . "~" . encrypt($doc, $key) . "~" . encrypt($firstName, $key) . "~" . encrypt($lastName, $key) . "~" . encrypt($sex, $key) . "~" . encrypt($PN, $key) . "~" . encrypt($email, $key) . "~" . encrypt($date, $key) . "~" . encrypt($time, $key) . "~" . encrypt(date("Y-m-d"), $key) . "~" . encrypt(date("H:i:s"), $key);
             break;
         case "Dentistry":
-            $buildLine = "\n" . $newID . "~" . encrypt($firstName, $key) . "~" . encrypt($lastName, $key) . "~" . encrypt($PN, $key) . "~" . encrypt($email, $key) . "~" . encrypt($date, $key) . "~" . encrypt($time, $key) . "~" . encrypt(date("Y-m-d"), $key) . "~" . encrypt(date("H:i:s"), $key);
+            $buildLine = $newID . "~" . encrypt($firstName, $key) . "~" . encrypt($lastName, $key) . "~" . encrypt($PN, $key) . "~" . encrypt($email, $key) . "~" . encrypt($date, $key) . "~" . encrypt($time, $key) . "~" . encrypt(date("Y-m-d"), $key) . "~" . encrypt(date("H:i:s"), $key);
             break;
         case "Oncology":
-            $buildLine = "\n" . $newID . "~" . encrypt($treatment, $key) . "~" . encrypt($firstName, $key) . "~" . encrypt($lastName, $key) . "~" . encrypt($sex, $key) . "~" . encrypt($PN, $key) . "~" . encrypt($email, $key) . "~" . encrypt($date, $key) . "~" . encrypt($time, $key) . "~" . encrypt(date("Y-m-d"), $key) . "~" . encrypt(date("H:i:s"), $key);
+            $buildLine = $newID . "~" . encrypt($treatment, $key) . "~" . encrypt($firstName, $key) . "~" . encrypt($lastName, $key) . "~" . encrypt($sex, $key) . "~" . encrypt($PN, $key) . "~" . encrypt($email, $key) . "~" . encrypt($date, $key) . "~" . encrypt($time, $key) . "~" . encrypt(date("Y-m-d"), $key) . "~" . encrypt(date("H:i:s"), $key);
             break;
         case "Outpatient":
-            $buildLine = "\n" . $newID . "~" . encrypt($service, $key) . "~" . encrypt($firstName, $key) . "~" . encrypt($lastName, $key) . "~" . encrypt($address, $key) . "~" . encrypt($PN, $key) . "~" . encrypt($email, $key) . "~" . encrypt($date, $key) . "~" . encrypt($time, $key) . "~" . encrypt(date("Y-m-d"), $key) . "~" . encrypt(date("H:i:s"), $key);
+            $buildLine = $newID . "~" . encrypt($service, $key) . "~" . encrypt($firstName, $key) . "~" . encrypt($lastName, $key) . "~" . encrypt($address, $key) . "~" . encrypt($PN, $key) . "~" . encrypt($email, $key) . "~" . encrypt($date, $key) . "~" . encrypt($time, $key) . "~" . encrypt(date("Y-m-d"), $key) . "~" . encrypt(date("H:i:s"), $key);
             break;
         case "Pharmacy":
-            $buildLine = "\n" . $newID . "~" . encrypt($medicine, $key) . "~" . encrypt($firstName, $key) . "~" . encrypt($lastName, $key) . "~" . encrypt($address, $key) . "~" . encrypt($PN, $key) . "~" . encrypt($email, $key) . "~" . encrypt(date("Y-m-d"), $key) . "~" . encrypt(date("H:i:s"), $key);
+            $buildLine = $newID . "~" . encrypt($medicine, $key) . "~" . encrypt($firstName, $key) . "~" . encrypt($lastName, $key) . "~" . encrypt($address, $key) . "~" . encrypt($PN, $key) . "~" . encrypt($email, $key) . "~" . encrypt(date("Y-m-d"), $key) . "~" . encrypt(date("H:i:s"), $key);
             break;
         case "PrevMed":
-            $buildLine = "\n" . $newID . "~" . encrypt($time, $key) . "~" . encrypt($firstName, $key) . "~" . encrypt($lastName, $key) . "~" . encrypt($PN, $key) . "~" . encrypt($NID, $key) . "~" . encrypt($email, $key) . "~" . encrypt(date("Y-m-d"), $key) . "~" . encrypt(date("H:i:s"), $key);
+            $buildLine = $newID . "~" . encrypt($time, $key) . "~" . encrypt($firstName, $key) . "~" . encrypt($lastName, $key) . "~" . encrypt($PN, $key) . "~" . encrypt($NID, $key) . "~" . encrypt($email, $key) . "~" . encrypt(date("Y-m-d"), $key) . "~" . encrypt(date("H:i:s"), $key);
             break;
         case "Surgery":
-            $buildLine = "\n" . $newID . "~" . encrypt($SurgeryType, $key) . "~" . encrypt($firstName, $key) . "~" . encrypt($lastName, $key) . "~" . encrypt($PN, $key) . "~" . encrypt($AuthID, $key) . "~" . encrypt($email, $key) . "~" . encrypt($date, $key) . "~" . encrypt($time, $key) . "~" . encrypt(date("Y-m-d"), $key) . "~" . encrypt(date("H:i:s"), $key);
+            $buildLine = $newID . "~" . encrypt($SurgeryType, $key) . "~" . encrypt($firstName, $key) . "~" . encrypt($lastName, $key) . "~" . encrypt($PN, $key) . "~" . encrypt($AuthID, $key) . "~" . encrypt($email, $key) . "~" . encrypt($date, $key) . "~" . encrypt($time, $key) . "~" . encrypt(date("Y-m-d"), $key) . "~" . encrypt(date("H:i:s"), $key);
             break;
         case "Tests":
-            $buildLine = "\n" . $newID . "~" . encrypt($test, $key) . "~" . encrypt($firstName, $key) . "~" . encrypt($lastName, $key) . "~" . encrypt($sex, $key) . "~" . encrypt($PN, $key) . "~" . encrypt($email, $key) . "~" . encrypt($date, $key) . "~" . encrypt($time, $key) . "~" . encrypt(date("Y-m-d"), $key) . "~" . encrypt(date("H:i:s"), $key);
+            $buildLine = $newID . "~" . encrypt($test, $key) . "~" . encrypt($firstName, $key) . "~" . encrypt($lastName, $key) . "~" . encrypt($sex, $key) . "~" . encrypt($PN, $key) . "~" . encrypt($email, $key) . "~" . encrypt($date, $key) . "~" . encrypt($time, $key) . "~" . encrypt(date("Y-m-d"), $key) . "~" . encrypt(date("H:i:s"), $key);
             break;
         default:
             die('Unknown form submitted.');
     }
 
     $appointFile = fopen($filepath, 'a+');
-    fwrite($appointFile, $buildLine);
+    fwrite($appointFile, $buildLine . "\n");
     fclose($appointFile);
 ?>
