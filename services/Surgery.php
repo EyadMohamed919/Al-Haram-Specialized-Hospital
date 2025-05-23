@@ -41,7 +41,7 @@
                 </div><br>
                 <div class="divs">
                     <label>Surgery authorization ID:</label>
-                    <input type="number" id="AuthID" class="input" name="PN" placeholder="12345678">
+                    <input type="number" id="AuthID" class="input" name="AID" placeholder="12345678">
                 </div><br>
                 <div class="divs">
                     <label>Email:</label>

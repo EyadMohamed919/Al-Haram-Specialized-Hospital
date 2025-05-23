@@ -12,14 +12,14 @@ $formFiles = [
 ];
 
 $headersMap = [
-    'Appointments' => ['ID','Doctor','First Name','Last Name','Sex','Phone','Email','Date','Time'],
-    'Dentistry' => ['ID','First Name','Last Name','Phone','Email','Date','Time'],
-    'Oncology' => ['ID','Treatment','First Name','Last Name','Sex','Phone','Email','Date','Time'],
-    'Outpatient' => ['ID','Service','First Name','Last Name','Address','Phone','Email','Date','Time'],
-    'Pharmacy' => ['ID','Medicine','First Name','Last Name','Address','Phone','Email'],
-    'PrevMed' => ['ID','Time Slot','First Name','Last Name','Phone','NID','Email'],
-    'Surgery' => ['ID','Surgery Type','First Name','Last Name','Phone','Auth ID','Email','Date','Time'],
-    'Tests' => ['ID','Test','First Name','Last Name','Sex','Phone','Email','Date','Time']
+    'Appointments' => ['ID','Doctor','First Name','Last Name','Sex','Phone','Email','Date','Time', 'Submission-Day', 'Submission-Time'],
+    'Dentistry' => ['ID','First Name','Last Name','Phone','Email','Date','Time', 'Submission-Day', 'Submission-Time'],
+    'Oncology' => ['ID','Treatment','First Name','Last Name','Sex','Phone','Email','Date','Time', 'Submission-Day', 'Submission-Time'],
+    'Outpatient' => ['ID','Service','First Name','Last Name','Address','Phone','Email','Date','Time', 'Submission-Day', 'Submission-Time'],
+    'Pharmacy' => ['ID','Medicine','First Name','Last Name','Address','Phone','Email', 'Submission-Day', 'Submission-Time'],
+    'PrevMed' => ['ID','Time Slot','First Name','Last Name','Phone','NID','Email', 'Submission-Day', 'Submission-Time'],
+    'Surgery' => ['ID','Surgery Type','First Name','Last Name','Phone','Auth ID','Email','Date','Time', 'Submission-Day', 'Submission-Time'],
+    'Tests' => ['ID','Test','First Name','Last Name','Sex','Phone','Email','Date','Time', 'Submission-Day', 'Submission-Time']
 ];
 
 $formType = $_GET['form'] ?? ''; 
@@ -36,15 +36,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $data = [];
     foreach ($headersMap[$formType] as $index => $field) {
         $key = str_replace([' ', '-'], '_', strtolower($field));
-            
-        if ($index === 0) {
+        if ($field === 'Submission-Day') {
+            $data[] = encrypt(date("Y-m-d"), $key1);
+        } elseif ($field === 'Submission-Time') {
+            $data[] = encrypt(date("H:i:s"), $key1);
+        } elseif ($index === 0) {
             $data[] = $_POST[$key] ?? '';
         } else {
             $data[] = encrypt($_POST[$key], $key1) ?? '';
         }
-        }
-    
-
+    }
     $line = implode("~", $data) . "\n";
     file_put_contents($filePath, $line, FILE_APPEND);
     header("Location: admin.php?form=" . urlencode($formType));
