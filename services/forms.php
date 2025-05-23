@@ -4,6 +4,8 @@
     servicesSEO();
     navBar();
 
+    var_dump($_POST);
+
 ?>
 <body>
     <center style="margin-top: 10%; font-size: 5rem;">
@@ -118,7 +120,7 @@
     switch ($formType) {
         case "Appointments":
             $buildLine = "\n" . $newID . "~" . encrypt($doc, $key) . "~" . encrypt($firstName, $key) . "~" . encrypt($lastName, $key) . "~" . encrypt($sex, $key) . "~" . encrypt($PN, $key) . "~" . encrypt($email, $key) . "~" . encrypt($date, $key) . "~" . encrypt($time, $key) . "~" . encrypt(date("Y-m-d"), $key) . "~" . encrypt(date("H:i:s"), $key);
-    
+            break;
         case "Dentistry":
             $buildLine = "\n" . $newID . "~" . encrypt($firstName, $key) . "~" . encrypt($lastName, $key) . "~" . encrypt($PN, $key) . "~" . encrypt($email, $key) . "~" . encrypt($date, $key) . "~" . encrypt($time, $key) . "~" . encrypt(date("Y-m-d"), $key) . "~" . encrypt(date("H:i:s"), $key);
             break;

@@ -34,10 +34,16 @@ include_once(__DIR__ . '/../encrypt.php');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $data = [];
-    foreach ($headersMap[$formType] as $field) {
+    foreach ($headersMap[$formType] as $index => $field) {
         $key = str_replace([' ', '-'], '_', strtolower($field));
-        $data[] = encrypt($_POST[$key], $key1) ?? '';
-    }
+            
+        if ($index === 0) {
+            $data[] = $_POST[$key] ?? '';
+        } else {
+            $data[] = encrypt($_POST[$key], $key1) ?? '';
+        }
+        }
+    
 
     $line = implode("~", $data) . "\n";
     file_put_contents($filePath, $line, FILE_APPEND);
