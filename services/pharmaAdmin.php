@@ -21,7 +21,7 @@ else
 
 $filePath = 'txtFiles/pharmaProds.txt';
 
-// Helper: Re-index products and save to file
+
 function reindexProducts($lines, $filePath) {
     $newLines = [];
     $idx = 1;
@@ -37,18 +37,17 @@ function reindexProducts($lines, $filePath) {
     return $newLines;
 }
 
-// Handle delete
 if (isset($_POST['delete_id'])) {
     $deleteId = intval($_POST['delete_id']);
     $lines = file($filePath, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
     unset($lines[$deleteId]);
-    $lines = array_values($lines); // reindex array numerically
+    $lines = array_values($lines); 
     $lines = reindexProducts($lines, $filePath);
     header("Location: pharmaAdmin.php");
     exit();
 }
 
-// Handle edit
+
 if (isset($_POST['edit_id']) && isset($_POST['edit_name'])) {
     $editId = intval($_POST['edit_id']);
     $editName = trim($_POST['edit_name']);
@@ -60,7 +59,7 @@ if (isset($_POST['edit_id']) && isset($_POST['edit_name'])) {
     exit();
 }
 
-// Handle add
+
 if (isset($_POST['AddProduct']) && !empty($_POST['ProductName'])) {
     $productName = trim($_POST['ProductName']);
     $lines = file($filePath, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
@@ -82,6 +81,15 @@ $products = file($filePath, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 </head>
 <body>
 <h1>Pharmacist Dashboard</h1>
+
+
+<div style="margin-bottom: 20px;">
+    <a href="../index.php" class="nav-btn">Home</a>
+    <a href="admin.php" class="nav-btn">Services Admin</a>
+    <a href="pharmaAdmin.php" class="nav-btn">Pharmacy Dashboard</a>
+    <a href="../logout.php" class="nav-btn" style="color:red;">Logout</a>
+</div>
+
 <div class="tabs">
     <h2>Product List</h2>
     <table>
@@ -114,7 +122,6 @@ $products = file($filePath, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
                 </td>
                 <td>
                     <?php if (isset($_GET['edit']) && $_GET['edit'] == $i): ?>
-                        <!-- Editing, no actions -->
                     <?php else: ?>
                         <a href="pharmaAdmin.php?edit=<?= $i ?>">Edit</a>
                         <form method="post" style="display:inline;">
