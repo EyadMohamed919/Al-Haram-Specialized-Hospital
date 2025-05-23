@@ -1,14 +1,12 @@
 <?php
+include_once(__DIR__ . '/../encrypt.php');
+$key = 123;
+
+
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     $file = $_GET['file'] ?? '';
     $idToEdit = $_GET['id'] ?? '';
     $formType = $_GET['form'] ?? '';
-
-
-    
-    include_once(__DIR__ . '/../encrypt.php');
-    $key = 123;
-
 
     ?>
     <!DOCTYPE html>
@@ -36,7 +34,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 
         if ($recordLine) {
             $fields = explode("~", $recordLine);
-           
+            foreach ($fields as $index => $field) {
+                if ($index === 0) {
+                    $fields[$index] = $field; // ID, do not decrypt
+                } else {
+                    $fields[$index] = decrypt($field, $key); // Decrypt for display
+                }
+            }
             echo "<h1>Edit Record (ID: $idToEdit)</h1>";
             echo "<form method='post'>";
             echo "<input type='hidden' name='file' value='$file'>";
@@ -44,8 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             echo "<input type='hidden' name='form' value='$formType'>";
 
             foreach ($fields as $index => $value){
-            $displayValue = ($index === 0) ? $value : decrypt($value, $key);  
-            echo "<label>Field $index:</label><input type='text' name='field$index' value='" . htmlspecialchars($value) . "'>";
+                echo "<label>Field $index:</label><input type='text' name='field$index' value='" . htmlspecialchars($value) . "'>";
             }
             echo "<button type='submit'>Save Changes</button>";
             echo "</form>";
