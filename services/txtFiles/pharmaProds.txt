@@ -1,30 +1,29 @@
-1~Panadol (Paracetamol)
-2~Brufen (Ibuprofen)
-3~Aspirin
-4~Augmentin  (Amoxicillin and Clavulanic Acid)
-5~Cataflam (Diclofenac Potassium)
-6~Amoxicilin
-7~Flagyl (Metronidazole)
-8~Paracetamol
-9~Omeprazole
-10~Voltaren (Diclofenac Sodium)
-11~Nexium (Esomeprazole)
-12~Strepsils
-13~Amoclan
-14~Panadol Cold and Flu
-15~Spasmo-Digestin
-16~Ciprosin (Ciprofloxacin)
-17~Ventolin (Salbutamol)
-18~Cetrizine
-19~Antinal (Nifuroxazide)
-20~Xithrone (Azithromycin)
-21~Concor (Bisoprolol)
-22~Enalapril
-23~Ator (Atorvastatin)
-24~Lasix (Furosemide)
-25~Zithromax (Azithromycin)
-26~Claritin (Loratadine)
-27~Colona
-28~Neuroton
-29~Depakine (Valproic Acid)
-20~Norgesic
+1~Aspirin 2
+2~Augmentin  (Amoxicillin and Clavulanic Acid)
+3~Cataflam (Diclofenac Potassium)
+4~Amoxicilin
+5~Flagyl (Metronidazole)
+6~Paracetamol
+7~Omeprazole
+8~Voltaren (Diclofenac Sodium)
+9~Nexium (Esomeprazole)
+10~Strepsils
+11~Amoclan
+12~Panadol Cold and Flu
+13~Spasmo-Digestin
+14~Ciprosin (Ciprofloxacin)
+15~Ventolin (Salbutamol)
+16~Cetrizine
+17~Antinal (Nifuroxazide)
+18~Xithrone (Azithromycin)
+19~Concor (Bisoprolol)
+20~Enalapril
+21~Ator (Atorvastatin)
+22~Lasix (Furosemide)
+23~Zithromax (Azithromycin)
+24~Claritin (Loratadine)
+25~Colona
+26~Neuroton
+27~Depakine (Valproic Acid)Panadol
+28~Panadol
+29~برشام
