@@ -177,7 +177,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
             
             <h2>Cart</h2>
 
-            <form method="POST" action="">
+            <form method="POST" action="" style="background: transparent;">
     <table border="1" cellpadding="5">
         <tr>
             <th>Select</th>
@@ -218,8 +218,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit'])) {
         if (!$found) echo '<tr><td colspan="10"><center>No items in cart.</center></td></tr>';
         ?>
     </table>
-    <input type="submit" name="deleteSelected" value="Delete Selected" class="input">
-</form>
+    <input type="submit" name="deleteSelected" value="Delete Selected" class="input" style="margin-top: 10px;">
+</form> <br>
 
             <form method="POST" action="" style="background: transparent;">
             <input type="submit" name="confirm" class="input" value="confirm">
