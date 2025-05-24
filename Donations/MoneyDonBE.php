@@ -58,6 +58,7 @@ if(isset($_SESSION["Admin"]))
 <div style="text-align: center;">
      <a href="CreateMoneyDonation.php"><input class="inputs" type="submit" value="Create Donation"></a><br><br>
     <a href="DeleteMoneyDonation.php"><input class="inputs" type="submit" value="Delete Donation"></a><br><br>
+    <a href="DowloadMoneyDonation.php"><input class="inputs" type="submit" value="Download Donation"></a><br><br>
 </div>
 </body>
 </html>
