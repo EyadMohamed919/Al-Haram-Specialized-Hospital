@@ -24,6 +24,10 @@ else if(isset($_POST["deleteAdmin"]))
         deleteAdmin($idArray);
     }
 }
+else if(isset($_POST["cvUpload"]))
+{
+    uploadResume();
+}
 
 function checkAdminUser($file, $email, $password)
 {
@@ -288,6 +292,15 @@ function deleteAdmin($idArray)
     }
     header("location: Admin/AdminUsers.php");
     fclose($file);
+}
+
+function uploadResume()
+{
+    $target_dir = "Database/uploads";
+    $target_file = $target_dir . "/". time() . basename($_FILES["cv"]["name"]);
+    echo $target_file;
+    move_uploaded_file($_FILES["cv"]["tmp_name"], $target_file);
+    header("location: success.html");
 }
 
 ?>

@@ -1,17 +1,4 @@
 <html lang="en">
-<?php
-session_start();
-
-
-if(isset($_SESSION["Admin"]))
-    {
-      if($_SESSION["Admin"] == false)
-      {
-        header("location: index.php");
-      }
-    }
-
-?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -43,16 +30,23 @@ if(isset($_SESSION["Admin"]))
             
             <table class="career-table">
                 <tr>
-                    <td><strong>First Name</strong></td>
-                    <td><strong>Last Name</strong></td>
-                    <td><strong>Email</strong></td>
-                    <td><strong>Date of Birth</strong></td>
-                    <td><strong>Phone Number</strong></td>
-                    <td><strong>Gender</strong></td>
-                    <td><strong>Remove</strong></td>
+                    <td><strong>Download Resumes</strong></td>
                 </tr>
                 <?php
-                include("RecieveCareerData.php");
+                    $folder = "../Database/Uploads";
+                    $files = scandir("../Database/Uploads");
+
+                    foreach ($files as $file) {
+                       
+                        if ($file !== '.' && $file !== '..') {
+                            $name = basename($file);
+                            echo "<tr>";
+                            echo "<td>";
+                            echo "<a href='$folder/$name' download><i class=\"fa-solid fa-download\"></i> $name</a><br>";
+                            echo "</td>";
+                            echo "</tr>";
+                        }
+                    }
                  ?>
             </table>                   
         </div>
