@@ -1,3 +1,17 @@
+<?php
+session_start();
+    if(isset($_SESSION["Admin"]))
+    {
+      if($_SESSION["Admin"] == false)
+      {
+        header("location: ../index.php");
+      }
+    }
+    else
+    {
+        header("location: ../index.php");
+    }
+?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -37,7 +51,7 @@
                     $files = scandir("../Database/Uploads");
 
                     foreach ($files as $file) {
-                       
+                
                         if ($file !== '.' && $file !== '..') {
                             $name = basename($file);
                             echo "<tr>";

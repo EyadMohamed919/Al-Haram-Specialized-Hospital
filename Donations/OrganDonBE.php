@@ -1,20 +1,18 @@
 <?php
 session_start();
-?>
-<html>
-    <?php
-include_once (__DIR__ . '/../encrypt.php');
-
-
-if(isset($_SESSION["Admin"]))
+    if(isset($_SESSION["Admin"]))
     {
       if($_SESSION["Admin"] == false)
       {
-        header("location: index.php");
+        header("location: ../index.php");
       }
     }
-
+    else
+    {
+        header("location: ../index.php");
+    }
 ?>
+<html>
 <head>
     <title>Backend Blood Donations</title>
     <link rel="stylesheet" type="text/css" href="../CSS Sheets/BEstylesheet1.css">

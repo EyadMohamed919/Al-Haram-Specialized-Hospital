@@ -47,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
     $line = implode("~", $data) . "\n";
-    file_put_contents($filePath, $line, FILE_APPEND);
+    file_put_contents($filePath, $line, flags: FILE_APPEND);
     header("Location: admin.php?form=" . urlencode($formType));
     exit();
 }

@@ -1,16 +1,19 @@
 <?php
 session_start();
-
-
-if(isset($_SESSION["Admin"]))
+    if(isset($_SESSION["Admin"]))
     {
       if($_SESSION["Admin"] == false)
       {
-        header("location: index.php");
+        header("location: ../index.php");
       }
     }
-
+    else
+    {
+        header("location: ../index.php");
+    }
 ?>
+<html>
+
     <head>
         <title>Donations Admin page</title>
         <link rel="stylesheet" href="../CSS Sheets/BEstylesheet1.css">
@@ -44,4 +47,4 @@ if(isset($_SESSION["Admin"]))
 
         <?php include_once("../repeated.php"); adminNav(); ?>
     </body>
-</php>
+</html>
