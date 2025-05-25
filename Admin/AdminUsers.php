@@ -1,5 +1,9 @@
 <?php
 session_start();
+?>
+
+<html lang="en">
+<?php
     if(isset($_SESSION["Admin"]))
     {
       if($_SESSION["Admin"] == false)

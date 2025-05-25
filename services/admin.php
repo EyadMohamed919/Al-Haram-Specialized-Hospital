@@ -1,4 +1,5 @@
 <?php
+session_start();
 $formFiles = [
     "Appointments" => "appointForm.txt",
     "Dentistry" => "dentForm.txt",
@@ -18,7 +19,6 @@ $filepath = "txtFiles/" . $fileName;
 
 
 <?php
-session_start();
 
 
 if(isset($_SESSION["Admin"]))
