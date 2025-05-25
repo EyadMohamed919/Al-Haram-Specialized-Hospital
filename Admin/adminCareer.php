@@ -37,7 +37,7 @@
                     $files = scandir("../Database/Uploads");
 
                     foreach ($files as $file) {
-                       
+                
                         if ($file !== '.' && $file !== '..') {
                             $name = basename($file);
                             echo "<tr>";

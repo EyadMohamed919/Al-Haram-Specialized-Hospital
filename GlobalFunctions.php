@@ -215,7 +215,7 @@ function addAdmin()
     $newAdmin = "\n" . $lastID . "~" . $name . "~" . $email . "~" . $access . "~". md5("123");
     fwrite($file, $newAdmin);
     fclose($file);
-    header("location:Admin/AdminUsers.php");
+    header(header: "location:Admin/AdminUsers.php");
 }
 
 function sendAdminUsers()
@@ -302,7 +302,6 @@ function uploadResume()
 {
     $target_dir = "Database/uploads";
     $target_file = $target_dir . "/". time() . basename($_FILES["cv"]["name"]);
-    echo $target_file;
     move_uploaded_file($_FILES["cv"]["tmp_name"], $target_file);
     header("location: success.html");
 }

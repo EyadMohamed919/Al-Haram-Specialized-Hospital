@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -46,7 +49,6 @@
     </header>
     <div class="header-title">
         <?php
-            session_start();
             if(isset($_SESSION["UserName"]))
             {
                 echo "<h1>Welcome " . $_SESSION["UserName"] . "</h1>";   
