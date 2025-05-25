@@ -87,13 +87,12 @@ foreach ($formEntries as $entry) {
     ];
 }
 
-// Build month/year options
 $months = [];
 $years = [];
 foreach ($dates as $dt) {
     if (preg_match('/^\d{4}-\d{2}-\d{2}$/', $dt['date'])) {
         $year = substr($dt['date'], 0, 4);
-        $month = substr($dt['date'], 0, 7); // YYYY-MM
+        $month = substr($dt['date'], 0, 7);
         $months[$month] = true;
         $years[$year] = true;
     }
@@ -103,7 +102,6 @@ $years = array_keys($years);
 sort($months);
 sort($years);
 
-// Handle filter
 $selectedMonth = $_GET['month'] ?? '';
 $selectedYear = $_GET['year'] ?? '';
 $monthlyCount = 0;
@@ -113,7 +111,6 @@ foreach ($dates as $dt) {
     if ($selectedYear && strpos($dt['date'], $selectedYear) === 0) $yearlyCount++;
 }
 
-// Determine active tab
 $activeTab = $_GET['tab'] ?? 'products';
 
 ?>
@@ -150,13 +147,11 @@ $activeTab = $_GET['tab'] ?? 'products';
     <a href="../logout.php" class="nav-btn" style="color:red;">Logout</a>
 </div>
 
-<!-- Tabs (no JS, just links) -->
 <div>
     <a href="pharmaAdmin.php?tab=products" class="tab-btn<?= $activeTab == 'products' ? ' active' : '' ?>">Product List</a>
     <a href="pharmaAdmin.php?tab=analytics" class="tab-btn<?= $activeTab == 'analytics' ? ' active' : '' ?>">Analytics</a>
 </div>
 
-<!-- Product List Tab -->
 <?php if ($activeTab == 'products'): ?>
 <div class="tab-content">
     <h2>Product List</h2>
@@ -210,7 +205,6 @@ $activeTab = $_GET['tab'] ?? 'products';
 </div>
 <?php endif; ?>
 
-<!-- Analytics Tab -->
 <?php if ($activeTab == 'analytics'): ?>
 <div class="tab-content">
     <h2>Pharmacy Form Analytics</h2>
