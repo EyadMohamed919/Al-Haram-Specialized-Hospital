@@ -54,6 +54,7 @@ if (isset($_SESSION["Logged"])) {
         }
 
         ?>
+        <a href="Register.php">Register?</a>
         <button type="submit" name="login">Login</button>
       </form>
       

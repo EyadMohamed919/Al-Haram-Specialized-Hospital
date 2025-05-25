@@ -28,6 +28,10 @@ else if(isset($_POST["cvUpload"]))
 {
     uploadResume();
 }
+else if(isset($_POST["register"]))
+{
+    registerUser();
+}
 
 function checkAdminUser($file, $email, $password)
 {
@@ -301,6 +305,25 @@ function uploadResume()
     echo $target_file;
     move_uploaded_file($_FILES["cv"]["tmp_name"], $target_file);
     header("location: success.html");
+}
+
+function registerUser()
+{
+    $name = $_POST["name"];
+    $email = $_POST["email"];
+    $access = $_POST["access"];
+    $file = fopen("Database/UserTextFile.txt", "a+");
+    $lastID = lastID($file) + 1;
+    $newAdmin = "\n" . $lastID . "~" . $name . "~" . $email . "~". md5("123");
+    fwrite($file, $newAdmin);
+    fclose($file);
+    echo "User and logged in";
+    session_start();
+    $_SESSION["Logged"] = true;
+    $_SESSION["UserName"] = $name;
+    $_SESSION["UserEmail"] = $email;
+    $_SESSION["Admin"] = false;
+    header("location: ../index.php");
 }
 
 ?>
