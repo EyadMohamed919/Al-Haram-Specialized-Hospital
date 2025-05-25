@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 // Routing requests
 if(isset($_POST["contactUsSubmit"]))
 {
@@ -164,7 +164,7 @@ function authentication()
         if($checker[0] == true)
         {
             echo "Admin and Logged in";
-            session_start();
+            
             $_SESSION["Logged"] = true;
             $_SESSION["UserName"] = $checker[1];
             $_SESSION["UserEmail"] = $email;
@@ -176,7 +176,7 @@ function authentication()
         else
         {
             echo "Admin but not correct";
-            session_start();
+            
             $_SESSION["Logged"] = false;
             header("location: ../Login.php");
         }
@@ -188,7 +188,7 @@ function authentication()
         if($checker[0] == true)
         {
             echo "User and logged in";
-            session_start();
+            
             $_SESSION["Logged"] = true;
             $_SESSION["UserName"] = $checker[1];
             $_SESSION["UserEmail"] = $email;
@@ -198,7 +198,7 @@ function authentication()
         else
         {
             echo "User but not correct";
-            session_start();
+           
             $_SESSION["Logged"] = false;
             header("location: ../Login.php");
         }
@@ -317,7 +317,7 @@ function registerUser()
     fwrite($file, $newAdmin);
     fclose($file);
     echo "User and logged in";
-    session_start();
+   
     $_SESSION["Logged"] = true;
     $_SESSION["UserName"] = $name;
     $_SESSION["UserEmail"] = $email;
