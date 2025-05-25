@@ -1,21 +1,18 @@
-<html>
-
-<?php
-include_once (__DIR__ . '/../encrypt.php'); 
-?>
 <?php
 session_start();
-
-
-if(isset($_SESSION["Admin"]))
+    if(isset($_SESSION["Admin"]))
     {
       if($_SESSION["Admin"] == false)
       {
-        header("location: index.php");
+        header("location: ../index.php");
       }
     }
-
+    else
+    {
+        header("location: ../index.php");
+    }
 ?>
+<html>
 <head>
     <title>Backend Money Donations</title>
     <link rel="stylesheet" type="text/css" href="../CSS Sheets/BEstylesheet1.css">
@@ -61,4 +58,4 @@ if(isset($_SESSION["Admin"]))
     <a href="DowloadMoneyDonation.php"><input class="inputs" type="submit" value="Download Donation"></a><br><br>
 </div>
 </body>
-</html>
+</ht>
