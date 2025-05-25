@@ -22,7 +22,7 @@ $headersMap = [
     'Tests' => ['ID','Test','First Name','Last Name','Sex','Phone','Email','Date','Time', 'Submission-Day', 'Submission-Time']
 ];
 
-$formType = $_GET['form'] ?? ''; 
+$formType = $_GET['form']; 
 if (empty($formType) || !isset($formFiles[$formType])) {
     die("Invalid form type.");
 }
@@ -41,9 +41,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         } elseif ($field === 'Submission-Time') {
             $data[] = encrypt(date("H:i:s"), $key1);
         } elseif ($index === 0) {
-            $data[] = $_POST[$key] ?? '';
+            $data[] = $_POST[$key];
         } else {
-            $data[] = encrypt($_POST[$key], $key1) ?? '';
+            $data[] = encrypt($_POST[$key], $key1);
         }
     }
     $line = implode("~", $data) . "\n";

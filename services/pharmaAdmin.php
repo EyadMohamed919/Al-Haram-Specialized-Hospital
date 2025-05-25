@@ -19,6 +19,7 @@ else
     header("location: ../index.php");
 }
 
+### Medicine/Product 
 $filePath = 'txtFiles/pharmaProds.txt';
 include_once(__DIR__ . '/../encrypt.php');
 $key = 123;
@@ -63,7 +64,7 @@ if (isset($_POST['edit_id']) && isset($_POST['edit_name'])) {
 
 if (isset($_POST['AddProduct']) && !empty($_POST['ProductName'])) {
     $productName = trim($_POST['ProductName']);
-    $lines = file($filePath, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+    $lines = file($filePath, FILE_IGNORE_NEW_LINES);
     $nextIndex = count($lines) + 1;
     $lines[] = $nextIndex . '~' . $productName;
     file_put_contents($filePath, implode("\n", $lines) . "\n");
@@ -71,11 +72,13 @@ if (isset($_POST['AddProduct']) && !empty($_POST['ProductName'])) {
     exit();
 }
 
-$products = file($filePath, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 
 
+$products = file($filePath, FILE_IGNORE_NEW_LINES);
+
+#### Analytics
 $pharmaFormPath = 'txtFiles/pharmaForm.txt';
-$formEntries = file_exists($pharmaFormPath) ? file($pharmaFormPath, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES) : [];
+$formEntries = file_exists($pharmaFormPath) ? file($pharmaFormPath, FILE_IGNORE_NEW_LINES) : [];
 $dates = [];
 foreach ($formEntries as $entry) {
     $fields = explode('~', $entry);
