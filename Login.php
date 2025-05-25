@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+// This is session
 
 if (isset($_SESSION["Logged"])) {
   if($_SESSION["Logged"] == true)
