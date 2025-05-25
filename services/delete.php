@@ -1,8 +1,8 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $file = $_POST['file'] ?? '';
-    $idToDelete = $_POST['id'] ?? '';
-    $formType = $_POST['form'] ?? '';  
+    $file = $_POST['file'] ;
+    $idToDelete = $_POST['id'] ;
+    $formType = $_POST['form'] ;  
 
     if (file_exists($file)) {
         $lines = file($file, FILE_IGNORE_NEW_LINES);

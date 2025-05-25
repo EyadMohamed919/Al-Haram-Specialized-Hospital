@@ -10,7 +10,7 @@ $formFiles = [
     "Tests" => "testsForm.txt"
 ];
 
-$formType = $_GET['form'] ?? 'Appointments';
+$formType = $_GET['form'] ?? 'Appointments'; #Keep
 $fileName = $formFiles[$formType] ?? 'appointForm.txt';
 $filepath = "txtFiles/" . $fileName;
 ?>

@@ -4,9 +4,9 @@ $key = 123;
 
 
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-    $file = $_GET['file'] ?? '';
-    $idToEdit = $_GET['id'] ?? '';
-    $formType = $_GET['form'] ?? '';
+    $file = $_GET['file'] ;
+    $idToEdit = $_GET['id'];
+    $formType = $_GET['form'];
 
     ?>
     <!DOCTYPE html>
@@ -36,9 +36,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             $fields = explode("~", $recordLine);
             foreach ($fields as $index => $field) {
                 if ($index === 0) {
-                    $fields[$index] = $field; // ID, do not decrypt
+                    $fields[$index] = $field; 
                 } else {
-                    $fields[$index] = decrypt($field, $key); // Decrypt for display
+                    $fields[$index] = decrypt($field, $key); 
                 }
             }
             echo "<h1>Edit Record (ID: $idToEdit)</h1>";
@@ -72,7 +72,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
                 $newLineFields = [];
                 for ($i = 0; isset($_POST["field$i"]); $i++) {
                     $inputValue = $_POST["field$i"];
-                    $newLineFields[] = ($i === 0) ? $inputValue : encrypt($inputValue, $key); // Do not encrypt ID
+                    $newLineFields[] = ($i === 0) ? $inputValue : encrypt($inputValue, $key); 
                 }                
                 $updatedLines[] = implode("~", $newLineFields);
             } else {
