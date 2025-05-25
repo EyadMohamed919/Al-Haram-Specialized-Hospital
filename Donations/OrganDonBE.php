@@ -1,9 +1,9 @@
+<?php
+session_start();
+?>
 <html>
     <?php
 include_once (__DIR__ . '/../encrypt.php');
-?>
-<?php
-session_start();
 
 
 if(isset($_SESSION["Admin"]))
