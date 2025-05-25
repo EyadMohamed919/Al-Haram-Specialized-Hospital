@@ -1,22 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<?php
+include_once (__DIR__ . '/../encrypt.php');
+?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Backend Blood Donations</title>
     <link rel="stylesheet" type="text/css" href="../CSS Sheets/BEstylesheet1.css">
-    <?php
-function Decrypt($data, $key) {
-    $data = base64_decode($data); 
-    $result = '';
-    for ($i = 0; $i < strlen($data); $i++) {
-        $result .= chr(ord($data[$i]) ^ $key);
-    }
-    return $result;
-}
-
-?>
 </head>
 <body>
     <a href="DonationsBE-Homepage.php"><input class="inputs" type="submit" value="Return🔙"></a><hr>
